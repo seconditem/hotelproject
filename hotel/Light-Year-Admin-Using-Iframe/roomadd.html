@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<title>按钮 - 光年(Light Year Admin)后台管理系统模板</title>
+		<link rel="icon" href="favicon.ico" type="image/ico">
+		<meta name="keywords" content="LightYear,光年,后台模板,后台管理系统,光年HTML模板">
+		<meta name="description" content="LightYear是一个基于Bootstrap v3.3.7的后台管理系统的HTML模板。">
+		<meta name="author" content="yinqi">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/materialdesignicons.min.css" rel="stylesheet">
+		<link href="css/style.min.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="container-fluid p-t-15">
+
+			<div class="row">
+
+				<div class="col-lg-12">
+					<div class="card">
+						<div class="card-header">
+							<h4>房间类型</h4></div>
+						<div class="card-body">
+							<div class="table-responsive">
+								<table class="table table-bordered table-hover">
+									<thead>
+										<tr>
+											<th>#</th>
+											<th>房间类型</th>
+											<th>作者</th>
+											<th>国籍</th>
+											<th>分类</th>
+											<th>库存</th>
+											<th>价格</th>
+											<th>操作</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th scope="row">1</th>
+											<td>钦差大臣</td>
+											<td>果戈理</td>
+											<td>俄国</td>
+											<td>国外名族</td>
+											<td>125</td>
+											<td>36.00</td>
+											<td>
+												<a href="#" onclick="dgshow()" class="btn btn-xs btn-default m-r-5 edit-btn" title="编辑" data-toggle="tooltip"><i class="mdi mdi-pencil"></i></a>
+
+												<a href="#!" class="btn btn-xs btn-default del-btn" title="删除" data-toggle="tooltip"><i class="mdi mdi-window-close"></i></a>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">2</th>
+											<td>西厢记</td>
+											<td>王实甫</td>
+											<td>中国</td>
+											<td>古文典籍</td>
+											<td>26</td>
+											<td>18.00</td>
+										</tr>
+										<tr>
+											<th scope="row">3</th>
+											<td>儒林外史</td>
+											<td>吴敬梓</td>
+											<td>中国</td>
+											<td>古文典籍</td>
+											<td>39</td>
+											<td>22.00</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+
+					<div class="modal fade" id="dianji" tabindex="-1" role="dialog">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									<h4 class="modal-title">修改信息</h4>
+								</div>
+								<form action="">
+									<div class="modal-body">
+										仿制的是价格和修改信息
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+										<button type="submit"  data-loading-text="Loading..." class="btn btn-primary" id="save">保存</button>
+									</div>
+								</form>
+							</div>
+							<!-- /.modal-content -->
+						</div>
+						<!-- /.modal-dialog -->
+					</div>
+					<!-- /.modal -->
+
+					<div class="card">
+						<div class="card-header">
+							<h4>添加房间类型</h4></div>
+						<div class="card-body">
+							<div class="table-responsive">
+								<form action="" method="post">
+									<div class="form-group">
+										<label for="example-nf-email">房间类型</label>
+										<input class="form-control" type="text" id="example-nf-email" name="example-nf-email">
+									</div>
+									<div class="form-group">
+										<label for="example-nf-radio">数量</label>
+										<input class="form-control" type="text" id="example-nf-password" name="example-nf-password">
+									</div>
+									<br />
+									<div class="example-box">
+										<!--窗户-->
+										<label for="example-nf-radio">是否有窗</label>
+										<label class="lyear-radio radio-inline radio-primary">
+              			<input type="radio" name="window" value="1"><span>是</span>
+            </label>
+										<label class="lyear-radio radio-inline radio-primary">
+              <input type="radio" name="window" value="0"><span>否</span>
+            </label>
+
+									</div>
+									<br />
+									<div class="example-box">
+										<label for="example-nf-radio">是否独卫</label>
+										<label class="lyear-radio radio-inline radio-primary">
+              			<input type="radio" name="bath" value="1"><span>是</span>
+            </label>
+										<label class="lyear-radio radio-inline radio-primary">
+              <input type="radio" name="bath" value="0"><span>否</span>
+            </label>
+
+									</div>
+									<br />
+									<div class="example-box">
+										<label for="example-nf-radio">是否有网络</label>
+										<label class="lyear-radio radio-inline radio-primary">
+              			<input type="radio" name="net" value="1"><span>是</span>
+            </label>
+										<label class="lyear-radio radio-inline radio-primary">
+              <input type="radio" name="net" value="0"><span>否</span>
+            </label>
+
+									</div>
+									<div class="form-group">
+										<button class="btn btn-primary" type="submit">添加</button>
+									</div>
+								</form>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="">
+
+		</div>
+
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/main.min.js"></script>
+		<script type="text/javascript">
+			function dgshow() {
+				$('#dianji').modal({
+					keyboard: false
+				})
+			}
+
+			
+		</script>
+	</body>
+
+</html>
