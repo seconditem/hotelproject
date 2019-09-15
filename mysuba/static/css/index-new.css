@@ -1,0 +1,52 @@
+.focus { width: 100%;min-width: 1200px;height: 615px;overflow: hidden;position: relative; }
+.f-img-list { height: 615px;overflow: hidden;position: absolute;left: 0;top: 0;z-index: 100;width: 100%;background: #ECECEC; }
+.f-img-list li { height: 615px;text-align: center;width: 100%;position: absolute;left: 0;top: 0;z-index: 101 }
+.f-img-list li.on {z-index: 105;}
+.focus-page-btn { width: 61px;height: 71px;background:url(../images/home/focus-page-btns.png) no-repeat;position: absolute;top: 283px;z-index: 110 }
+.focus-btn-prev { background-position: 0 0;left: 30px }
+.focus-btn-next { background-position: right 0;right: 30px }
+.banner-div{ background-position:center 0; background-repeat:no-repeat; background-color:#D9D9D9; width:100%; height:650px; display:block }
+
+.search-box{ position:absolute; left:50%; margin-left:-600px; top:495px; z-index:300; background:#fff; width:1200px; padding:12px 0; height:52px }
+.search-box .i-txt{ border:1px solid #c5c5c5; height:50px; padding-left:12px; float:left; margin:0 12px; font:16px/50px microsoft Yahei; outline:none; width:180px }
+.search-box .date-box{ border:1px solid #c5c5c5; float:left; line-height:18px; padding:7px 0 7px 12px; height:36px; width:162px; margin-left:-1px; }
+.search-box .i-key-word{ padding-left:40px; background:url(../images/home/icon-search.png) no-repeat 10px center; width:200px }
+.search-box .btn-search{ background:#c81f0d; width:220px; height:50px; color:#fff; font:16px/50px microsoft Yahei; margin-right:12px; border:none; cursor:pointer; float:left }
+.search-box .btn-map{ background:url(../images/home/icon-map.png) no-repeat 14px center #b7b0a1; color:#fff; font-size:14px; padding-left:37px; text-align:left; width:83px; display:block; line-height:50px; height:50px; float:left }
+.search-box .date-box .tit { font-size:10px;}
+.search-box .input-calendar{ height:25px; width:150px; line-height:25px; -moz-border-radius:0.2em; -webkit-border-radius: 0.2em; border-radius:0.2em; border:none;outline:medium;cursor:pointer;}
+.search-box .input-calendar:focus {border:none;}
+
+.brand-wrap{ width:100%; height:327px }
+.brand-wrap .brand-inner{ width:1200px; margin:0 auto; padding-top:73px }
+.brand-wrap .logo-wrap{ float:left; margin:0 25px 0 40px; width:95px; text-align:center; display:block }
+.brand-wrap .logo-wrap .tit{ font-size:16px; color:#b9b8b8; padding-top:10px }
+.brand-wrap .brand-txts{ float:right; width:550px; margin-right:40px }
+.brand-wrap .brand-txts h2{ font-size:30px; margin-bottom:33px; color:#2e2923 }
+.brand-wrap .brand-txts p{ font-size:13px; line-height:24px; margin-bottom:15px; color:#666 }
+.brand-wrap .about-link{ color:#c81f0d; font-size:18px; line-height:22px }
+
+.sale-box{ background:#f8f8f8; width:100%; height:777px; text-align:center }
+.sale-box .sale-box-inner{ width:1200px; margin:0 auto; padding-top:50px }
+.sale-box .sale-blocks-wrap .no-mr{ margin-right:0 }
+.sale-box h4.tit{ padding-top:50px; background:url(../images/home/icon-sale-recommend.png) no-repeat center 0; color:#333339; margin-bottom:32px }
+.sale-blocks-wrap img{ vertical-align:bottom }
+.sale-blocks-wrap .sale-big, .sale-blocks-wrap .sale-small{ float:left; position:relative; margin-right:8px }
+.sale-blocks-wrap .sale-small{ margin-bottom:8px; }
+.sale-blocks-wrap h3.tit{ position:absolute; left:30px; bottom:35px; color:#fff; font-size:24px; font-weight:normal }
+.sale-blocks-wrap .hover-sale{ position:absolute; left:0; right:0;top:0; bottom:0; z-index:10; background:url(../images/home/bg-hover-red.png) repeat 0 0; padding:0 50px; display:none }
+.sale-blocks-wrap .sale-big .hover-sale{ padding-top:160px }
+.sale-blocks-wrap .sale-small .hover-sale{ padding-top:60px }
+.sale-blocks-wrap .hover-tit{ font-size:28px; color:#fff; margin-bottom:24px }
+.sale-blocks-wrap .explaination{ font-size:13px; line-height:24px; color:#fff }
+.sale-blocks-wrap .btn-sale{ display:block; border:3px solid #fff; line-height:40px; height:40px; color:#fff; font-size:16px }
+.sale-blocks-wrap .sale-big .btn-sale{ margin-top:60px }
+.sale-blocks-wrap .sale-small .btn-sale{ margin-top:36px }
+
+.other-part{ width:100%; height:400px }
+.other-part .other-part-inner{width:1200px; margin:0 auto; padding-top:75px }
+.other-part .other-part-ul li{ float:left; width:391px; height:255px; margin-right:12px; text-align:center }
+.other-part .other-part-ul li a{ color:#fff }
+.other-part .tit{ margin:85px 0 25px; font-size:30px; }
+.other-part .division{ border-bottom:4px solid #fff; width:67px; margin:0 auto 25px }
+.other-part p{ font-weight:bold }

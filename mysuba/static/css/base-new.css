@@ -1,0 +1,300 @@
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,fieldset,lengend,button,input,textarea,th,td{margin:0;padding:0}body,button,input,select,textarea{font:12px/1 Tahoma,Helvetica,Arial,microsoft Yahei}h1{font-size:18px}h2{font-size:16px}h3{font-size:14px}h4,h5,h6{font-size:100%}address,cite,dfn,em,var{font-style:normal}code,kbd,pre,samp,tt{font-family:"Courier New",Courier,monospace}small{font-size:12px}ul,ol{list-style:none}a{text-decoration:none}a:hover{text-decoration:underline}abbr[title],acronym[title]{border-bottom:1px dotted;cursor:help}q:before,q:after{content:''}legend{color:#000}fieldset,img{border:0}button,input,select,textarea{font-size:100%; outline:none}table{border-collapse:collapse;border-spacing:0}hr{border:0;height:1px}html{overflow-y:scroll; font-size:14px}
+
+body{ font:14px/20px microsoft Yahei; color:#333; background:#fff }
+a, a:hover{text-decoration:none;}
+.content-wrap{ width:1200px; margin:0 auto; overflow:hidden }
+.clear{ clear:both }
+.hide{ display:none }
+
+::-moz-placeholder{color:#b0b0b0;}              
+::-webkit-input-placeholder{color:#b0b0b0;}     
+:-ms-input-placeholder{color:#b0b0b0;} 
+
+.btn-red{ background:#c81f0d }
+.btn-grey{ background:#d9d9d9 }
+.btn-red:hover{ background:#fba49b!important }
+.btn-grey:hover{ background:#eee!important }
+
+.header-nav{ position:absolute; left:0; top:0; right:0; z-index:200; background:url(../images/home/nav-bg-line.png) repeat-x 0 0; border-bottom:1px solid #fff; height:85px }
+.header-nav-inner{ width:1200px; margin:0 auto }
+.header-nav .logo{ float:left; padding-top:4px }
+.header-nav .nav{ line-height:85px; padding-left:200px }
+.header-nav .nav li{ padding:0 20px; float:left }
+.header-nav .nav li a{ color:#fff; font-size:14px }
+.header-nav .nav li a:hover{ text-decoration:underline }
+.header-nav .nav-member{ float:right; line-height:85px; text-align:right; width:230px; position:relative  }
+.header-nav .nav-member .link, .header-nav .nav-member-hover .room-night,.header-nav .nav-member-hover .member-name{ color:#fff; font-size:14px; float:right }
+.header-nav .nav-member-hover .member-name{ width:100px; overflow:hidden; text-overflow:ellipsis }
+.header-nav .nav-member .division-round{ width:25px; height:85px; background:url(../images/home/division-round.png) no-repeat center; float:right }
+.header-nav .hover-member{ position:absolute; z-index:500; right:0; top:85px; background:#fff; padding:25px 25px 0; text-align:left; width:150px; display:none }
+.header-nav .hover-member .member-menu{ border-bottom:1px solid #d9d9d9; line-height:30px }
+.header-nav .hover-member .member-menu a{ color:#555 }
+.header-nav .hover-member .member-menu a:hover{ color:#c81f0d }
+.header-nav .hover-member .member-center a{ color:#c81f0d; line-height:55px }
+.header-nav .hover-member .member-menu .num{ float:right; color:#333 }
+.header-nav .hover-member .exit{ line-height:85px; color:#c81f0d; display:block }
+.header-nav .phone-version{ height:85px;width:90px; float:right; position:relative }
+.header-nav .phone-version span{ background:url(../images/home/icon-nav-phone.png) no-repeat 0 center; padding-left:32px; line-height:85px; display:block; height:85px; color:#fff }
+.header-nav .hover-app-qrcode{ position:absolute; z-index:300; left:-35px; top:85px; background:#fff; padding:25px; height:125px; display:none }
+.header-nav .hover-app-qrcode img{ line-height:10px }
+.header-nav .hover-app-qrcode p{ color:#a88961; font-size:12px; line-height:20px; text-align:center }
+
+.global-header-nav{ background:#1d1d1d; position:relative; border-bottom:2px solid #c81f0d }
+
+.bottom-nav{ background:#f4f4f4; width:100% }
+.bottom-nav .bottom-nav-inner{ width:1200px; margin:0 auto; padding:60px 0; overflow:hidden }
+.bottom-nav .hot-line{ padding-top:25px; float:left; margin-right:80px }
+.bottom-nav .hot-line h3{ background:url(../images/home/icon-hot-line.png) no-repeat 0 center; font:normal 20px/26px microsoft Yahei; color:#555; padding-left:43px; margin-bottom:14px }
+.bottom-nav .hot-line h1{ font-size:30px; color:#c81f0d; line-height:36px; font-weight:normal }
+.bottom-nav .hot-line p.tel400{ font-size:30px; color:#c81f0d; line-height:36px; font-weight:normal }
+.bottom-nav .qrcodes{ float:left }
+.bottom-nav .qrcodes .one-qr{ width:110px; float:left; margin-right:27px; text-align:center; color:#555 }
+.bottom-nav .navs-ul{ float:right }
+.bottom-nav .navs-ul .one-col{ width:145px; float:left }
+.bottom-nav .navs-ul .tit{ font-size:16px; margin-bottom:25px; color:#555 }
+.bottom-nav .navs-ul a{ font-size:12px; color:#555 }
+
+.footer{ width:100%; background:#3b3b3b; text-align:center; min-width:1200px }
+.footer .b_link{ padding:80px 0; color:#fff; font-size:12px }
+.footer .b_link a{ color:#fff; padding:10px }
+.footer .site-brand-logo{ width:1200px; margin:0 auto; border-bottom:1px solid #818181; padding-bottom:50px }
+.footer .brand-bar{ width:1200px; margin:0 auto; text-align:center }
+.footer .brand-row .brand-logo{ padding:1.3%; display:inline-block; vertical-align:middle }
+.footer .brand-row .brand-logo img{ width:100% }
+.footer .copyright{ line-height:40px; padding:120px 0 20px; color:#ddd; font-size:12px }
+
+/*城市*/
+#hotel_citylist{position:absolute;width:345px;font-size:12px;border:2px solid #e9b099;background-color:#fff;margin:0;padding:0 0 7px 0;display:none;z-index:2000;overflow:hidden}
+.tab{margin:0;padding:0 5px}
+.tab_menu{margin:0;padding:0;clear:both}
+.tab_menu ul{margin:0;padding:0}
+.tab_menu li{float:left;text-align:center;cursor:pointer;list-style:none;margin:0 0;padding:0 5px;width:45px;height:24px;line-height:24px;vertical-align:middle;border-bottom:1px solid #d40f1f;color:#626262}
+    
+.tab_menu li.hover{color:#d8202c;font-weight:bold}
+.tab_menu li.selected{color:#b3141c;border-top:2px solid #d40f1f;border-left:1px solid #d40f1f;border-right:1px solid #d40f1f;border-bottom:0;height:23px}
+.tab_box{clear:both;margin-top:5px}
+.hide{display:none}
+.hotel_brand_list{ padding-top:0px; }
+.hotel_brand_list li{float:left;margin-right:5px;height:25px}
+.hotel_brand_list li a{color:#626262;float:left;height:18px;line-height:18px;overflow:hidden;padding:0 5px;white-space:nowrap;width:80px;text-align:center}
+.hotel_brand_list li a:hover{color:#fff;background-color:#df311a;border-radius:.5em;-webkit-border-radius:.5em;-moz-border-radius:.5em}
+.hotel_citylist_title{margin:0 0 10px 0;padding:0 10px;background-color:#f1f1f1;height:30px;line-height:30px;color:#aaa}
+.hotel_citylist_title .lft-tip{ float: left; text-align: left;}
+.hotel_citylist_title .rght-close{ float: right; text-align: right; cursor: pointer; color:#666; }
+
+/* ui-autocomplete */
+.ui-autocomplete{font-size:12px;font-family:Arial,Simsun;position:absolute;z-index:120;width:208px;background-color:#fff}
+.ui-widget-content{border:2px solid #e9b099}
+.ui-autocomplete .ui-autocomplete-message{display:block;line-height:20px;padding:4px 0 4px 5px;color:#888;border-bottom:1px dotted #aaa;font-family:"verdana";word-wrap:break-word;word-break:break-all;min-height:20px;z-index:1}
+.ui-autocomplete .ui-autocomplete-message span{color:#b3141c}
+.ui-autocomplete .ui-autocomplete-list{margin:5px 0 0 0;padding:0;overflow:hidden;z-index:1}
+.ui-autocomplete .ui-autocomplete-list a{padding:1px 5px 0 5px;text-align:right;border-top:1px solid #fff;border-bottom:1px solid #fff;cursor:pointer;line-height:24px;color:#626262;display:block;text-decoration:none;height:24px;overflow-x:hidden}
+.ui-autocomplete .ui-autocomplete-list a span{float:left;text-align:left}
+.ui-autocomplete .ui-autocomplete-list a:hover{background:#ffe4e1;border-top:1px solid #ed8b7e;border-bottom:1px solid #ed8b7e}
+.ui-autocomplete .ui-autocomplete-list a.ui-autocomplete-selected{background:#df311a;color:#fff}
+.ui-autocomplete .ui-autocomplete-page{padding:0;margin:0;line-height:25px;text-align:center;min-height:22px;border-top:1px dotted #aaa;z-index:1}
+.ui-autocomplete .ui-autocomplete-page span{color:#df311a}
+.ui-autocomplete .ui-autocomplete-page a{color:#05a;font-family:Arial,Simsun,sans-serif;text-decoration:none;padding:0 4px 0 4px;margin:0;font-size:14px;cursor:pointer}
+.ui-autocomplete .ui-autocomplete-page a:hover{text-decoration:underline}
+.ui-autocomplete .ui-autocomplete-page .ui-autocomplete-arrowl,.ui-autocomplete .ui-autocomplete-page .ui-autocomplete-arrowr{color:#df311a}
+.ui-autocomplete .ui-autocomplete-page a.ui-autocomplete-page-current{color:#fff;background:#df311a;text-decoration:none}
+
+
+/*热门商圈*/
+.address_suggestionC .key_word_lhsl { width:300px; padding:8px 10px; border:2px solid #e9b099; background-color:#fff; } 
+.address_suggestionC .key_word_key{display:none;height:30px;}
+.address_suggestionC .key_word_lhsl .close { float:right; width:20px; height:20px; color:#666; text-align:center; font:bold 16px/20px Simsun; }
+.address_suggestionC .key_word_lhsl .close:hover { text-decoration:none; color:#FFA800; }
+.address_suggestionC .key_word_lhsl .key_word_list { margin-bottom:11px; border-bottom:1px dotted #ccc; }
+.address_suggestionC .key_word_lhsl .key_word_list:last-child{ border:none;}
+.address_suggestionC .key_word_lhsl .key_word_list dt { font-weight:bold; padding-bottom:5px; color:#b3141c; }
+.address_suggestionC .key_word_lhsl .key_word_list dd { display:inline-block; padding-bottom:5px; }
+.address_suggestionC .key_word_lhsl .key_word_list dd {display:block;overflow:hidden;}
+.address_suggestionC .key_word_lhsl .key_word_list a { float:left; height:22px; padding:0 15px 0 5px; border:1px solid #fff; line-height:22px; white-space:nowrap; color:#333;}
+.address_suggestionC .key_word_lhsl .key_word_list a:hover { background-color:#df311a; text-decoration:none; color:#fff;}
+.address_suggestionC .key_word_lhsl .keyword_sub_city { margin:0 -10px -8px; padding:5px 10px; border-top:1px solid #CCC; background-color:#F3F3F3; color:#333; }
+.address_suggestionC .key_word_lhsl .keyword_sub_city a { margin-right:10px; color:#4D4D4D; }
+.address_suggestionC .key_word_lhsl_pad .key_word_key { display:block; }
+
+.address_filterC .keyword_prompting_lhsl{width:300px; border:2px solid #e9b099; background-color:#fff;}
+.address_filterC .keyword_prompting_lhsl .title{min-height:26px; margin:0 10px 4px; padding:0 2px; border-bottom:1px dotted #ccc; line-height:26px; color:#999;}
+.address_filterC .keyword_prompting_lhsl .close{float:right; width:26px; height:26px; font:bold 14px/26px Simsun; color:#666; text-align:center;}
+.address_filterC .keyword_prompting_lhsl .close:hover { text-decoration:none; color:#FFA800; }
+.address_filterC .keyword_prompting_lhsl .sug_item{overflow:hidden;padding-bottom: 5px; padding-top:5px; border-bottom: 1px solid #ccc;*zoom:1;}
+.address_filterC .keyword_prompting_lhsl .sug_item a{display:block; overflow:hidden; padding:5px 7px 5px 10px; color:#333;  line-height:18px; cursor:pointer;*zoom:1;}
+.address_filterC .keyword_prompting_lhsl .sug_item a:hover{ background:#ffe4e1; border-top:1px solid #ed8b7e; border-bottom:1px solid #ed8b7e; padding:4px 7px 4px 10px; }
+.address_filterC .keyword_prompting_lhsl .sug_item .hover { background-color:#df311a; color:#fff; text-decoration:none;}
+.address_filterC .keyword_prompting_lhsl .sug_item .hover span,.address_filterC  .keyword_prompting_lhsl .sug_item .hover b{color:#fff;}
+.address_filterC .keyword_prompting_lhsl .sug_item a:hover span{ color:#df311a; }
+.address_filterC .notfound_pop{ padding-bottom: 4px;}
+.address_filterC .keyword_prompting_lhsl .sug_item .b{font-weight:bold; color:#06c; }
+.address_filterC .notfound_pop .title{ line-height:26px; overflow: hidden; margin:0 10px 4px; padding:0 2px; color: #c01111; border-bottom: 0 none;}
+.address_filterC .notfound_pop .close{ margin-top: 2px;}
+.address_filterC .keyword_prompting_lhsl .text_input { float:left; max-width:160px; _width:160px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }            .address_filterC .keyword_prompting_lhsl .sug_item a:after{ clear:both; content:"."; display:block; height:0; overflow:hidden; }
+.address_filterC .keyword_prompting_lhsl .sug_item .num { float:left; width: 80px; overflow: hidden; color:#999; text-align: right;}
+.address_filterC .keyword_prompting_lhsl .sug_item .city { display:block; float: left; width:260px; padding-right:4px; overflow:hidden; }
+.address_filterC .keyword_prompting_lhsl .sug_item b{font-weight:bold; color:#06c; }
+.address_filterC .keyword_prompting_lhsl .sug_category{ float:right; height:18px; line-height:18px;padding-right:20px; padding-left:0; text-align:right;}
+.address_filterC .keyword_prompting_lhsl .sug_category_hover{ color: #fff; background-color: #2577e3; background-position: right 6px; background-color:#2577e3; }            .address_filterC .keyword_prompting_lhsl .item_list_city .sug_category{background-position: right -33px;}
+.address_filterC .keyword_prompting_lhsl .item_list_city .hover .sug_category{background-position: right 2px;}
+.address_filterC .keyword_prompting_lhsl .item_list_landmarks .sug_category{background-position: right -204px;}
+.address_filterC .keyword_prompting_lhsl .item_list_landmarks .hover .sug_category{background-position: right -238px;}
+.address_filterC .keyword_prompting_lhsl .item_list_traffic .sug_category{background-position: right -336px; padding-right:40px;}
+.address_filterC .keyword_prompting_lhsl .item_list_traffic .hover .sug_category{background-position: right -372px;}
+
+/*日历*/
+.su8-dp{ position:relative; display:inline-block; z-index:2; }
+.su8-dp{ *display:inline; }
+.su8-dp .dp-prefix{ position:absolute; top:3px; left:0; padding:0 0 0 4px; height:15px; font-size:12px; line-height:15px; text-align:right; cursor:pointer; *top:5px; _top:4px; top:6px\0 }
+:root .su8-dp .dp-prefix{ top:4px\9 }
+.su8-dp .dp-info{ position:absolute; top:8px; right:6px; padding:0 0 0 4px; height:15px; font-size:12px; line-height:15px; text-align:right; cursor:pointer; width:20px; }
+.su8-dp .dp-info b{ float:right; display:inline; width:20px; height:15px; background:url(../../images/icon-calendar.png) 0 0 no-repeat }
+.su8-dp .dp-info .dp-text{ float:right; display:none; font-family:simsun, arial, sans-serif; background-color:#fff; _margin-top:1px; margin-right:3px }
+.su8-dp .q-datepicker{ position:absolute; top:29px; left:1px; width:440px; height:225px; *zoom:1; z-index:3; }
+.su8-dp .q-datepicker .g{ position:absolute; top:1px; left:-1px; z-index:2; border:1px solid #bababa; width:440px; background-color:#fff; overflow:hidden }
+.su8-dp .q-datepicker .g:after{ clear:both; display:block; height:0; visibility:hidden; content:"\20" }
+.su8-dp .q-datepicker .c{ position:relative; z-index:1; float:left; display:inline; margin-left:-1px; border-left:1px solid #ccc; width:200px; overflow:hidden; padding:0 10px 5px 10px; height:217px }
+.su8-dp .q-datepicker .cm{ display:none; }
+.su8-dp .q-datepicker .h{ height:23px; text-align:center; font:bold 16px/20px tahoma, arial, sans-serif; padding:8px 12px; color:#444 }
+.su8-dp .q-datepicker .p{ position:absolute; top:0; left:0; width:27px; height:37px; background:url(../../images/icon-su8-dp.png) left 0 no-repeat; cursor:pointer }
+.su8-dp .q-datepicker .n{ position:absolute; top:0; right:0; cursor:pointer; background:url(../../images/icon-su8-dp.png) right 0 no-repeat; width:27px; height:37px }
+.su8-dp .q-datepicker .p:hover, .su8-dp .q-datepicker .n:hover{ background-color:#d2f2f4 }
+.su8-dp .q-datepicker table{ border-collapse:collapse; width:100%; z-index:40; position:relative }
+.su8-dp .q-datepicker th{ border-bottom:1px solid #ccc; width:28px; height:27px; line-height:27px; text-align:center; font-weight:normal; color:#444; }
+.su8-dp .q-datepicker td{ width:28px; height:25px; font:normal 12px/25px tahoma, arial, sans-serif; cursor:pointer; text-align:center; vertical-align:middle; color:#4b96fd; padding:0 !important }
+.su8-dp .q-datepicker td span{ display:block; width:100% }
+.su8-dp .q-datepicker .w0{ color:#375e97 }
+.su8-dp .q-datepicker .w6{ color:#375e97 }
+.su8-dp .q-datepicker .st-t{ color:#de2f3c; font-weight:normal }
+.su8-dp .q-datepicker .st-a{ background-color:#375e97; color:#fff }
+.su8-dp .q-datepicker .st-a.st-d{ color:#fff }
+.su8-dp .q-datepicker .st-a.st-d:hover{ background-color:#00afbc; color:#fff }
+.su8-dp .q-datepicker .st-s{ background-color:transparent; cursor:default }
+.su8-dp .q-datepicker .st-s:hover, .su8-dp .q-datepicker .st-s-hover{ background-color:transparent; _background-color:#fff; cursor:default }
+.su8-dp .q-datepicker .st-area{ background-color:#efefef; }
+.su8-dp .q-datepicker .holi{ color:#de2f3c; font-weight:normal }
+.su8-dp .q-datepicker .st-holi-default{ color:#de2f3c }
+.su8-dp .q-datepicker .st-h{ background-color:#f6c853; color:#fff }
+.su8-dp .q-datepicker .st-h.holi, .su8-dp .q-datepicker .st-h .st-holi-default{ color:#fff }
+.su8-dp .q-datepicker .st-d{ color:#bbb; cursor:default;}
+.su8-dp .q-datepicker .st-d:hover, .su8-dp .q-datepicker .st-d-hover{ background-color:transparent; color:#cde2e4; cursor:default; }
+.su8-dp .q-datepicker .st-a-r{ background-color:#375e97; color:#fff }
+.su8-dp .q-datepicker .st.holi.st-a .st-holi-default, .su8-dp .q-datepicker .st.holi.st-a-r .st-holi-default{ color:#fff }
+.su8-dp .su8-dp-toD td:hover, .su8-dp .su8-dp-toD .td-hover{ background-color:#6899ff; color:#fff; cursor:pointer }
+.su8-dp .su8-dp-toD td.st-a-r{ background-color:#6899ff; color:#fff }
+.su8-dp .errtext{ color:red }
+.su8-dp .prefix{ float:left }
+
+.nav-bar{ width:100%; background:#eee; color:#838383; font-size:12px; line-height:36px; height:36px; position:relative }
+.nav-bar-inner{ width:1200px; margin:0 auto; }
+.nav-bar .bread-nav{ width:16%; color:#555; float:left }
+.nav-bar .bread-nav a{ color:#555 }
+.nav-bar .bread-nav a:hover{ color:#c81f0d }
+.nav-bar .bread-nav .division{ padding:10px }
+.nav-bar .key-items{ width:68%; height:36px; float:left; text-align:center; overflow:hidden; text-overflow:ellipsis; white-space:nowrap }
+.nav-bar .modify-search{ width:16%; color:#c81f0d; float:left; text-align:right }
+.nav-bar .modify-search .modify-link{ cursor:pointer }
+
+
+.search-box{ position:absolute; left:50%; margin-left:-600px; top:530px; z-index:300; background:#fff; width:1200px; padding:12px 0; height:52px }
+.search-box .i-txt{ border:1px solid #c5c5c5; height:50px; padding-left:12px; float:left; margin:0 12px; font:16px/50px microsoft Yahei; outline:none; width:180px }
+.search-box .date-box{ border:1px solid #c5c5c5; float:left; line-height:18px; padding:7px 0 7px 12px; height:36px; width:162px; margin-left:-1px; }
+.search-box .i-key-word{ padding-left:40px; background:url(../images/home/icon-search.png) no-repeat 10px center; width:200px }
+.search-box .btn-search{ background:#c81f0d; width:220px; height:50px; color:#fff; font:16px/50px microsoft Yahei; margin-right:12px; border:none; cursor:pointer; float:left; text-align:center }
+.search-box .btn-map{ background:url(../images/home/icon-map.png) no-repeat 14px center #b7b0a1; color:#fff; font-size:14px; padding-left:37px; text-align:left; width:83px; display:block; line-height:50px; height:50px; float:left }
+.search-box .date-box .tit { font-size:10px;}
+.search-box .input-calendar{ height:25px; width:150px; line-height:25px; -moz-border-radius:0.2em; -webkit-border-radius: 0.2em; border-radius:0.2em; border:none;outline:medium;cursor:pointer;}
+.search-box .input-calendar:focus {border:none;}
+.search-box .room-select{ border:1px solid #c5c5c5; height:50px; padding-left:12px; float:left; margin:0 12px; font:16px/50px microsoft Yahei; outline:none; width:190px }
+.search-box.hotel-detail-search{ position:static; margin-left:0; width:100% }
+.search-box.hotel-detail-search .date-box{ width:200px }
+.search-box.hotel-detail-search .date-box:first-child{ margin-left:0; width:199px }
+.search-box.hotel-detail-search .btn-search{ width:240px; margin-right:0 }
+
+.hover-search{ position:absolute; left:0; right:0; top:0; z-index:100; height:76px; background:#fff; display:none }
+.hover-search .search-box{ position:static; margin:0 auto }
+.hover-search .inputw1{ width:204px; margin-left:0 }
+
+/*翻页*/
+.page{ padding:46px 0; text-align:center; line-height:42px; font-size:18px }
+.page .end-page{ border:1px solid #aaa; height:40px; line-height:40px; width:100px; color:#c81f0d; font-size:15px; text-align:center }
+.page .end-page:hover{ background:#c81f0d; color:#fff }
+.page .left-page{ float:left }
+.page .right-page{ float:right }
+.page .middle-page, .page .dot-page{ padding:0 25px; color:#555  }
+.page .current{ color:#c81f0d; cursor:default }
+.page .middle-page:hover{ color:#c81f0d }
+
+/*确认弹层*/
+.pop-confirm{ width:520px; padding:70px; background:#fff; position:relative }
+.pop-confirm .icon-close{ position:absolute; top:20px; right:20px; cursor:pointer }
+.pop-confirm .txt{ padding:15px 0 55px; text-align:center; line-height:36px; color:#555; font-size:26px }
+.pop-confirm .title{ font-size:26px; color:#c81f0d; text-align:center; padding-bottom:25px }
+.pop-confirm .subtxt{ font-size:20px; color:#555; padding-bottom:30px }
+.pop-confirm .pop-btn-wrap{ text-align:center }
+.pop-btn-wrap .btn{ width:150px; height:50px; line-height:50px; font-size:20px; color:#fff; display:inline-block; margin:0 18px; cursor:pointer }
+.pop-btn-wrap .btn-red{ background:#c81f0d; border:1px solid #c81f0d }
+.pop-btn-wrap .btn-grey{ background:#d9d9d9; border:1px solid #c5c5c5; color:#555 }
+
+.pop-pay-way{ width:610px; padding-bottom:90px }
+.pop-pay-way .return-link{ position:absolute; right:50px; bottom:40px; color:#0d59ca; font-size:14px; text-decoration:underline; cursor:pointer }
+.pop-pay-way .btn{ width:180px }
+
+
+
+/*登录注册头部*/
+.header-login{ height:70px; }
+.header-login .header-login-inner{ width:1200px; margin:0 auto; padding-top:8px }
+.header-login .logo{ height:55px }
+.header-login .reserve-tel{ float:right; font-size:18px; color:#333; line-height:55px }
+.header-login .reserve-tel .red{ font-size:22px; color:#c81f0d }
+
+/*登录注册底部*/
+.login-bottom-part{ height:280px }
+.login-bottom-part .login-bottom-inner{ width:1200px; margin:0 auto }
+.login-bottom-part .qrcodes{ float:right; padding:55px 75px 0 0 }
+.login-bottom-part .qrcodes .one-qr{ float:right; text-align:center; padding-left:25px }
+.login-bottom-part .b_link{ font-size:12px; color:#555; padding:100px 0 20px 0 }
+.login-bottom-part .b_link a{ color:#555; padding:0 7px }
+.login-bottom-part .copyright{ font-size:12px; color:#555; padding-left:7px }
+
+/*focus输入框背景色*/
+.i-txt-focus{ border:1px solid #7a610b!important; }
+
+/*单选-复选框样式*/
+.label-input{ cursor:pointer }
+.disabled .label-input{ cursor:default }
+.radio-check{ position:absolute; left:-9999px }
+.input-select{ width:16px; height:16px; float:left; margin:16px 20px 0 0; background:url(../images/check-radio-bg.png) no-repeat 0 0 }
+.select-on{ background-position:0 bottom }
+.select-disable{ background-position:0 center }
+
+/*popups*/
+.popup{
+	/*border:2px solid #c5c5c5;*/
+	box-shadow:0 0 3px #b7b7b7;
+	-moz-box-shadow:0 0 3px #b7b7b7;
+	-webkit-box-shadow:0 0 3px #b7b7b7;
+	border-radius:15px;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	position:relative;
+	background:#fff;
+}
+.popup .close, .box-login .close{
+	position:absolute;
+	top:10px;
+	right:10px;
+}
+.video-pop{ width:800px; height:400px; background:#000 }
+
+/*大banner*/
+.focus { width: 100%;min-width: 1200px;height: 615px;overflow: hidden;position: relative; }
+.f-img-list { height: 615px;overflow: hidden;position: absolute;left: 0;top: 0;z-index: 100;width: 100%;background: #ECECEC; }
+.f-img-list li { height: 615px;text-align: center;width: 100%;position: absolute;left: 0;top: 0;z-index: 101 }
+.f-img-list li.on {z-index: 105;}
+.focus-page-btn { width: 61px;height: 71px;background:url(../images/home/focus-page-btns.png) no-repeat;position: absolute;top: 283px;z-index: 110 }
+.focus-btn-prev { background-position: 0 0;left: 30px }
+.focus-btn-next { background-position: right 0;right: 30px }
+.banner-div{ background-position:center 0; background-repeat:no-repeat; background-color:#D9D9D9; width:100%; height:650px; display:block }
+

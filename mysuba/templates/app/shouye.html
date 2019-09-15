@@ -1,0 +1,488 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- saved from url=(0025)http://www.super8.com.cn/ -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    {% block titie %}
+    <title>速8酒店官网-速8连锁酒店,速8连锁酒店预订,速8快捷酒店官网,速8酒店</title>
+    {% endblock %}
+     {% block metas %}
+    <meta name="keywords" content="速8酒店预订,速8酒店官网,速8,Super8,速八,速8酒店,速八酒店预订,速8快捷酒店,酒店预定,快捷酒店官网,宾馆预订,连锁酒店,经济型酒店,特价酒店,网上订房,酒店订房网，连锁加盟,加盟酒店,温德姆酒店集团,WYNDHAM">
+    <meta name="description" content="速8酒店是世界著名的连锁酒店品牌，隶属于全球知名的酒店集团——温德姆酒店集团，在美国、加拿大、中国、巴西均有运营中和筹建中的酒店。截至2018年12月，速8全球酒店数量达近3000家，约18万间客房。">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    {% endblock %}
+    {% block links %}
+    <link rel="stylesheet" href="../../static/css/base-new.css">
+    <link rel="stylesheet" href="../../static/css/index-new.css">
+    <link type="text/css" rel="stylesheet" href="../../static/css/chatStyle.css">
+    {% endblock %}
+    {% block scripts %}
+    <script charset="UTF-8" src="../../static/js/uba.min.js"></script><script charset="UTF-8" src="../../static/js/QiMoIMSDK.js"></script><script src="../../static/js/push.js"></script><script src="../../static/js/gomobile.js"></script>
+    <script src="../../static/js/jquery.min.version-new.js"></script>
+    <script src="../../static/js/jquery.easing.min.js"></script>
+    <script src="../../static/js/jquery.focusbanner.js"></script>
+    <script src="../../static/js/arounddata.js" charset="utf8"></script>
+    <script src="../../static/js/citydata.js"></script>
+    <script src="../../static/js/hoteldata.js"></script>
+    <script src="../../static/js/baseJS"></script>
+
+    <script src="../../static/js/Index.js"></script>
+    <script src="../../static/js/baidu.js"></script>
+        <script type="text/javascript" src="../../static/scripts/getscript"></script>
+    {% endblock %}
+
+</head>
+
+<body>
+    <div class="hover-main-banner">
+
+        <div class="header-nav">
+            <div class="header-nav-inner">
+                <a href="">
+                    <img src="../../static/images/logo-round.gif" class="logo" alt="速8酒店">
+                </a>
+                <ul class="nav">
+                    <li>
+                        <a href="">首页</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'app:yuding' %}">酒店预定</a>
+                    </li>
+                    <li>
+                        <a href="">客房这个删掉团购</a>
+                    </li>
+                    <li>
+                        <a href="">速8商城</a>
+                    </li>
+                    <li>
+                                <a href="">会员专区</a>
+                    </li>
+                    <li>
+                        <a href="">加盟速8</a>
+                    </li>
+                    <li>
+                        <a href="">企业客户</a>
+                    </li>
+                </ul>
+                    <div class="nav-member nav-member-hover" onmouseover="$(&#39;.hover-member&#39;).show()" onmouseout="$(&#39;.hover-member&#39;).hide()">
+                        <span class="room-night">0间夜点数</span>
+                        <span class="division-round"></span>
+                        <span class="member-name">刘荣帅</span>
+                        <div class="hover-member">
+                                <ul class="member-menu">
+                                    <li>
+                                        <a href="">
+                                            <span class="num">0</span>
+                                            我的订单
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <span class="num">0</span>
+                                            现金券
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <span class="num">0</span>
+                                            抵扣券
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <span class="num">0</span>
+                                            我的收藏
+                                        </a>
+                                    </li>
+                                    <li class="member-center">
+                                        <a href="">
+                                            我的账户
+                                        </a>
+                                    </li>
+                                </ul>
+                            <a href="" class="exit">退出</a>
+                        </div>
+                    </div>
+                <div class="phone-version" onmouseover="$(&#39;.hover-app-qrcode&#39;).show()" onmouseout="$(&#39;.hover-app-qrcode&#39;).hide()">
+                    <span>手机版去掉</span>
+                    <div class="hover-app-qrcode">
+                        <img src="../../static/images/qrcode-app.png" class="app-qrcode-nav">
+                        <p>扫一扫下载APP</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-box">
+            <label name="cityText" class="i-txt inputw1" id="t-input-city" >欢迎来到你的速8</label>
+            <div class="date-box">
+                <p class="tit">入住日期</p>
+                <div class="su8-dp"><div class="dp-info"><b></b><span class="dp-text">今天</span></div><input id="fromdate" name="fromdate" type="text" class="input-calendar date textbox" node_type="from" maxlength="10"><div class="q-datepicker" style="display: none;"></div></div>
+                
+            </div>
+            <div class="date-box">
+                <p class="tit">离店日期</p>
+                <div class="su8-dp"><div class="dp-info"><b></b><span class="dp-text">明天</span></div><input id="todate" name="todate" type="text" class="input-calendar date textbox" node_type="to" maxlength="10"><div class="q-datepicker" style="display: none;"></div></div>
+                
+            </div>
+            <input name="" type="text" class="i-txt i-key-word" id="t-input-key" growing-track="true" fs="酒店名称 / 地址 / 行政区域等" placeholder="关键字">
+            <button class="btn-search" id="ajaxSerch">搜索</button>
+            <a class="btn-map" id="mapSearch">地图模式</a>
+        </div>
+    </div>
+
+    <div class="focus">
+
+        <div id="divmap"></div>
+        <input type="hidden" id="hid_city" value="110100">
+        <input type="hidden" id="hid_key" value="">
+        <input type="hidden" id="hid_keygov" value="">
+        <input type="hidden" id="hid_keyhotel" value="">
+
+        <ul id="banner_img" class="f-img-list" style="width: 2630px; left: 0px;">
+                    <li class="on" style="width: 1315px; left: 0px;"><a href="" target="_blank" class="banner-div" id="_AD_Jingshuijihua" style="background-image: url(&#39;http://admin.super8.com.cn/himage/Upload/NewsInfo/Original/20190830/20190830141945285.jpg&#39;)"></a></li>
+                    <li class="" style="width: 1315px; left: 0px;"><a href="" target="_blank" class="banner-div" id="_AD_Su8shangcheng" style="background-image: url(&#39;http://admin.super8.com.cn/himage/Upload/NewsInfo/Original/20190402/20190402145124505.jpg&#39;)"></a></li>
+                    <li class="" style="width: 1315px; left: 0px;"><a href="" target="_blank" class="banner-div" id="_AD_Xindiankaiye" style="background-image: url(&#39;http://admin.super8.com.cn/himage/Upload/NewsInfo/Original/20190829/20190829161518554.jpg&#39;)"></a></li>
+                    <li class="" style="width: 1315px; left: 0px;"><a href="" target="_blank" class="banner-div" id="_AD_Wandingwanyouhui" style="background-image: url(&#39;http://admin.super8.com.cn/himage/Upload/NewsInfo/Original/20190312/20190312162715660.jpg&#39;)"></a></li>
+        </ul>
+        <a href="javascript:void(0);" class="focus-page-btn focus-btn-prev" hidefocus="true"></a>
+        <a href="javascript:void(0);" class="focus-page-btn focus-btn-next" hidefocus="true"></a>
+    </div>
+
+{% comment %}    介绍酒店{% endcomment %}
+    {% block contents %}
+    <div class="brand-wrap">
+        <div class="brand-inner">
+            <a class="logo-wrap" href="" target="_blank">
+                <img src="../../static/images/oldlogo-65.png" class="logo">
+                <p class="tit">速8酒店</p>
+            </a>
+            <a class="logo-wrap" href="" target="_blank">
+                <img src="../../static/images/su8logo-65.png" class="logo">
+                <p class="tit">速8精选酒店</p>
+            </a>
+
+            <div class="brand-txts">
+                <h2>See you along the way.</h2>
+                <p>速8酒店是世界知名的连锁酒店品牌，隶属于全球著名酒店集团——温德姆酒店集团。自1974年发展至今，速8全球酒店数量达近3000家，约18万间客房，遍布全球四大洲。在中国，速8酒店已在300多座城市拥有近2000家开业或即将开业的门店。</p>
+                <a href="http://www.super8.com.cn/News/41119.html" target="_blank" class="about-link">关于速8酒店</a>
+            </div>
+        </div>
+    </div>
+
+{% comment %}    结束介绍酒店{% endcomment %}
+
+
+    <div class="sale-box">
+        <div class="sale-box-inner">
+            <h4 class="tit">酒店促销与推荐</h4>
+            <div class="sale-blocks-wrap">
+                <div class="sale-big">
+                    <div class="hover-sale">
+                        <h3 class="hover-tit">最新活动</h3>
+                        <p class="explaination">粉丝日</p>
+                        <a href="http://sl.oadz.com/00GBhl" class="btn-sale">立即查看</a>
+                    </div>
+                    <h3 class="tit">最新活动</h3>
+                    <img src="../../static/images/20190404151022676.jpg">
+                </div>
+                <div class="sale-small">
+                    <div class="hover-sale">
+                        <h3 class="hover-tit">速8删掉商城</h3>
+                        <p class="explaination">特价房、免费房、会员卡礼包、现金券等超值酒店类商品的购买与间夜点数兑换。</p>
+                        <a href="" class="btn-sale">立即查看</a>
+                    </div>
+                    <h3 class="tit">速8删掉商城</h3>
+                    <img src="../../static/images/su8mall.png">
+                </div>
+                <div class="sale-small no-mr">
+                    <div class="hover-sale">
+                        <h3 class="hover-tit">新店6折</h3>
+                        <p class="explaination">速8酒店全新开业，以6折优惠价欢迎您的光临！</p>
+                        <a href="" class="btn-sale">立即查看</a>
+                    </div>
+                    <h3 class="tit">新店6折</h3>
+                    <img src="../../static/images/new-hotel.png">
+                </div>
+                <div class="sale-small">
+                    <div class="hover-sale">
+                        <h3 class="hover-tit">特惠专区</h3>
+                        <p class="explaination">
+                            享受全国范围内68元起的超低折扣房间，<br>
+                            尽在客房团购。
+                        </p>
+                        <a href="" class="btn-sale">立即查看</a>
+                    </div>
+                    <h3 class="tit">会员专区</h3>
+                    <img src="../../static/images/super-sale-zone.png">
+                </div>
+                <div class="sale-small no-mr">
+                    <div class="hover-sale">
+                        <h3 class="hover-tit">礼包卡</h3>
+                        <p class="explaination">
+                            超值会员大礼包，<br>
+                            会员折扣、抵扣券、预定取消险应有尽有……
+                        </p>
+                        <a href="" class="btn-sale">立即查看</a>
+                    </div>
+                    <h3 class="tit">礼包卡</h3>
+                    <img src="../../static/images/gift-box.png">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="other-part">
+        <div class="other-part-inner">
+            <ul class="other-part-ul">
+                <li style="background: url(../../Statics/new/temp/join-su8.png) no-repeat 0 0">
+                    <a href="" target="_blank">
+                        <h3 class="tit">加盟速8</h3>
+                        <hr class="division">
+                        <p>加盟火热进行中，加盟热线：010-59348008</p>
+                    </a>
+                </li>
+                <li style="background: url(../../Statics/new/temp/su8pride-star.png) no-repeat 0 0">
+                    <a href="" target="_blank">
+                        <h3 class="tit">速8骄傲店及质量之星店</h3>
+                        <hr class="division">
+                        <p>致力于追求“干净&amp;友好”服务理念，速8酒店中的佼佼者</p>
+                    </a>
+                </li>
+                <li style="background: url(../../Statics/new/temp/service-month.png) no-repeat 0 0; margin: 0">
+                    <a href="" target="_blank">
+                        <h3 class="tit">服务主题月活动</h3>
+                        <hr class="division">
+                        <p>增进速8酒店凝聚力的服务特色活动</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    {% endblock %}
+
+{% comment %}    内容结束{% endcomment %}
+
+    <div class="bottom-nav">
+        <div class="bottom-nav-inner">
+            <div class="hot-line">
+                <h3>24小时预订热线</h3>
+                <p class="tel400">40018-40018</p>
+            </div>
+            <div class="qrcodes">
+                <div class="one-qr">
+                    <img src="../../static/images/qrcode-app.png">
+                    <p>速8酒店APP</p>
+                </div>
+                <div class="one-qr">
+                    <img src="../../static/images/qrcode-wechat.png">
+                    <p>速8酒店官方微信</p>
+                </div>
+            </div>
+            <ul class="navs-ul">
+                <li class="one-col">
+                    <h4 class="tit">订房指南</h4>
+                    <ul class="col-nav-ul">
+                        <li><a href="http://www.super8.com.cn/News/42004.html">预订酒店</a></li>
+                        <li><a href="http://www.super8.com.cn/News/42005.html">修改取消订单</a></li>
+                        <li><a href="http://www.super8.com.cn/News/42502.html">入住和离店</a></li>
+                        <li><a href="http://www.super8.com.cn/News/42503.html">团购和钟点房</a></li>
+                        <li><a href="http://www.super8.com.cn/News/42009.html">现金券规则</a></li>
+                        <li><a href="http://www.super8.com.cn/News/42007.html">抵扣券规则</a></li>
+                    </ul>
+                </li>
+                <li class="one-col">
+                    <h4 class="tit">会员服务</h4>
+                    <ul class="col-nav-ul">
+                        <li><a href="http://www.super8.com.cn/News/42001.html">成为速8会员</a></li>
+                        <li><a href="http://www.super8.com.cn/News/42017.html">会员等级和权益</a></li>
+                        <li><a href="http://www.super8.com.cn/News/42010.html">间夜点数获取与使用</a></li>
+                        <li><a href="http://www.super8.com.cn/Article/MemberAnnouncement">会员公告</a></li>
+                    </ul>
+                </li>
+                <li class="one-col">
+                    <h4 class="tit">支付方式</h4>
+                    <ul class="col-nav-ul">
+                        <li><a href="http://www.super8.com.cn/News/42019.html">前台付款</a></li>
+                        <li><a href="http://www.super8.com.cn/News/42021.html">网上预付房费</a></li>
+                        <li><a href="http://www.super8.com.cn/News/42022.html">信用卡担保</a></li>
+                        <li><a href="http://www.super8.com.cn/News/42020.html">发票说明</a></li>
+                    </ul>
+                </li>
+                <li class="one-col">
+                    <h4 class="tit">酒店加盟</h4>
+                    <ul class="col-nav-ul">
+                        <li><a href="http://www.super8.com.cn/News/40282.html">合作方式</a></li>
+                        <li><a href="http://www.super8.com.cn/Article/Investment">招商会信息</a></li>
+                        <li><a href="http://www.super8.com.cn/News/40281.html">速8中国样板间</a></li>
+                        <li><a href="http://www.super8.com.cn/News/40283.html">在线加盟申请表</a></li>
+                        <li><a href="http://www.super8.com.cn/News/40430.html">投资方向</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+
+        <div class="b_link">
+            <a href="http://www.super8.com.cn/News/41119.html">关于速8</a>|
+            <a href="http://www.super8.com.cn/Article/Contact">联系我们</a>|
+            <a href="http://www.super8.com.cn/Article/News">速8动态</a>|
+            <a href="http://www.super8.com.cn/Hotel/List">酒店列表</a>|
+            <a target="_blank" href="http://myportal.super8.com.cn/">业主门户</a>|
+            <a href="http://www.super8.com.cn/News/41005.html">使用条款</a>|
+            <a href="http://www.super8.com.cn/News/41120.html">温德姆集团</a>|
+            <a target="_blank" href="http://job.super8.com.cn/">招贤纳士</a>|
+            <a href="http://www.super8.com.cn/News/41006.html">友情链接</a>|
+            <a href="http://www.super8.com.cn/News/41007.html">隐私声明</a>
+        </div>
+
+        <div class="site-brand-logo">
+            <a href="https://www.wyndhamhotels.com/">
+                <img src="../../static/images/jucmde2rY.png" alt="Wyndham Rewards">
+            </a>
+        </div>
+
+        <div class="brand-bar">
+            <div class="brand-row">
+                <span class="brand-logo">
+                    <a href="http://www.dolce.com/" target="_blank">
+                        <img src="../../static/images/SWLZgNUWA.png" alt="icon">
+                    </a>
+                </span>
+                <span class="brand-logo">
+                    <a href="https://www.wyndhamhotels.com/" target="_blank">
+                        <img src="../../static/images/SEom7mmSo.png" alt="icon">
+                    </a>
+                </span>
+                <span class="brand-logo">
+                    <a href="https://www.wyndhamhotels.com/wyndham" target="_blank">
+                        <img src="../../static/images/C8zGjvgUw.png" alt="icon">
+                    </a>
+                </span>
+                <span class="brand-logo">
+                    <a href="https://www.wyndhamhotels.com/" target="_blank">
+                        <img src="../../static/images/kEjGNK9_s.png" alt="icon">
+                    </a>
+                </span>
+                <span class="brand-logo">
+                    <a href="http://www.tryphotels.com/" target="_blank">
+                        <img src="../../static/images/JkrC0Nt0g.png" alt="icon">
+                    </a>
+                </span>
+                <span class="brand-logo">
+                    <a href="https://www.wyndhamhotels.com/wingate" target="_blank">
+                        <img src="../../static/images/yLRXjDkVs.png" alt="icon">
+                    </a>
+                </span>
+                <span class="brand-logo">
+                    <a href="https://www.wyndhamhotels.com/hawthorn-extended-stay" target="_blank">
+                        <img src="../../static/images/1bS1lSGIo.png" alt="icon">
+                    </a>
+                </span>
+                <span class="brand-logo">
+                    <a href="https://www.wyndhamhotels.com/microtel" target="_blank">
+                        <img src="../../static/images/QPl4khOZM.png" alt="icon">
+                    </a>
+                </span>
+
+            </div>
+
+
+
+            <div class="brand-row">
+                <span class="brand-logo">
+                    <a href="https://www.wyndhamhotels.com/ramada" target="_blank">
+                        <img src="../../static/images/DI6z4u394.png" alt="icon">
+                    </a>
+                </span>
+                <span class="brand-logo">
+                    <a href="https://www.wyndhamhotels.com/baymont" target="_blank">
+                        <img src="../../static/images/GFP13DJAs.png" alt="icon">
+                    </a>
+                </span>
+
+
+
+                <span class="brand-logo">
+                    <a href="https://www.wyndhamhotels.com/days-inn" target="_blank">
+                        <img src="../../static/images/4b3aYBhrw.png" alt="icon">
+                    </a>
+                </span>
+
+
+
+                <span class="brand-logo">
+                    <a href="https://www.wyndhamhotels.com/super-8" target="_blank">
+                        <img src="../../static/images/y-BT_km-0.png" alt="icon">
+                    </a>
+                </span>
+
+
+
+                <span class="brand-logo">
+                    <a href="https://www.wyndhamhotels.com/hojo" target="_blank">
+                        <img src="../../static/images/W2c4sYaj8.png" alt="icon">
+                    </a>
+                </span>
+
+
+
+                <span class="brand-logo">
+                    <a href="https://www.wyndhamhotels.com/travelodge" target="_blank">
+                        <img src="../../static/images/Bb0lSoNqk.png" alt="icon">
+                    </a>
+                </span>
+                <span class="brand-logo">
+                    <a href="https://www.wyndhamhotels.com/knights-inn" target="_blank">
+                        <img src="../../static/images/CaRMujugU.png" alt="icon">
+                    </a>
+                </span>
+            </div>
+        </div>
+
+        <p class="copyright">Copyright © 2004-2019 速8酒店 Super 8 Hotel (China) Co., Ltd, All Rights Reserved.   京ICP备13008407号-1   京公网安备110105005616</p>
+    </div>
+
+
+    <script src="../../static/js/o_code.js"></script>
+    <script src="../../static/js/index-new.js"></script>
+
+
+    <!-- 360收录 -->
+    <script>
+        (function () {
+            try {
+                var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?cfb171d85ee75f5d4b586910458605ce" : "https://jspassport.ssl.qhimg.com/11.0.1.js?cfb171d85ee75f5d4b586910458605ce";
+                document.write('<script src="' + src + '" id="sozz"><\/script>');
+            } catch (e) { }
+        })();
+    </script><script src="../../static/js/11.0.1.js" id="sozz"></script><script charset="utf-8" src="../../static/js/ab77b6ea7f3fbf79.js"></script>
+    <!-- 360收录 -->
+    <!-- 百度收录 -->
+    <script>
+        (function () {
+            try {
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            } catch (e) { }
+        })();
+    </script>
+    <!-- 百度收录 -->
+
+
+<script type="text/javascript">
+     var qimoClientId = { userId: 'WI2wYrkpmLBmvLSWRTt4lw==_a900aa6c0ba51bce_2019/9/11 20:14:54', nickName: "刘**女士" };// 自定义用户的唯一id,由英文字母,数字,下划线组成
+</script>
+<script type="text/javascript" src="../../static/js/7moorInit.js" async="async">
+</script><div id="hotel_citylist" style="display: none; z-index: 9999; border: 2px solid rgb(233, 176, 153); top: 559px; left: 69.5px; width: 350px; position: absolute;"><div class="hotel_citylist_title"><ul><li class="lft-tip">输入全拼/简拼 或直接选择城市</li><li class="rght-close" onclick="$(&#39;#hotel_citylist&#39;).hide();">关闭&nbsp;</li></ul></div><div class="tab"><div class="tab_menu"><ul><li class="selected">热门</li><li class="">ABCD</li><li class="">EFGHJ</li><li class="">KLMN</li><li class="">PQRST</li><li class="tab_menu_last">WXYZ</li></ul><div style="margin: 0px; padding: 0px; clear: both;"></div></div><div class="tab_box"><div tbstyle="热门" style="display: block;"><ul class="hotel_brand_list"><li><a datatag="110100" cityid="440080" title="北京市" href="javascript:void(0);" style="width: 50px; text-align: left">北京市</a></li><li><a datatag="350100" cityid="440080" title="福州市" href="javascript:void(0);" style="width: 50px; text-align: left">福州市</a></li><li><a datatag="310100" cityid="440080" title="上海市" href="javascript:void(0);" style="width: 50px; text-align: left">上海市</a></li><li><a datatag="340100" cityid="440080" title="合肥市" href="javascript:void(0);" style="width: 50px; text-align: left">合肥市</a></li><li><a datatag="610100" cityid="440080" title="西安市" href="javascript:void(0);" style="width: 50px; text-align: left">西安市</a></li><li><a datatag="330100" cityid="440080" title="杭州市" href="javascript:void(0);" style="width: 50px; text-align: left">杭州市</a></li><li><a datatag="510100" cityid="440080" title="成都市" href="javascript:void(0);" style="width: 50px; text-align: left">成都市</a></li><li><a datatag="320500" cityid="440080" title="苏州市" href="javascript:void(0);" style="width: 50px; text-align: left">苏州市</a></li><li><a datatag="440100" cityid="440080" title="广州市" href="javascript:void(0);" style="width: 50px; text-align: left">广州市</a></li><li><a datatag="320100" cityid="440080" title="南京市" href="javascript:void(0);" style="width: 50px; text-align: left">南京市</a></li><li><a datatag="420100" cityid="440080" title="武汉市" href="javascript:void(0);" style="width: 50px; text-align: left">武汉市</a></li><li><a datatag="620100" cityid="440080" title="兰州市" href="javascript:void(0);" style="width: 50px; text-align: left">兰州市</a></li><li><a datatag="370100" cityid="440080" title="济南市" href="javascript:void(0);" style="width: 50px; text-align: left">济南市</a></li><li><a datatag="370200" cityid="440080" title="青岛市" href="javascript:void(0);" style="width: 50px; text-align: left">青岛市</a></li><li><a datatag="210100" cityid="440080" title="沈阳市" href="javascript:void(0);" style="width: 50px; text-align: left">沈阳市</a></li><li><a datatag="370700" cityid="440080" title="潍坊市" href="javascript:void(0);" style="width: 50px; text-align: left">潍坊市</a></li><li><a datatag="220100" cityid="440080" title="长春市" href="javascript:void(0);" style="width: 50px; text-align: left">长春市</a></li><li><a datatag="650100" cityid="440080" title="乌鲁木齐市" href="javascript:void(0);" style="width: 50px; text-align: left">乌鲁木齐市</a></li><li><a datatag="410100" cityid="440080" title="郑州市" href="javascript:void(0);" style="width: 50px; text-align: left">郑州市</a></li><li><a datatag="131000" cityid="440080" title="廊坊市" href="javascript:void(0);" style="width: 50px; text-align: left">廊坊市</a></li></ul></div><div tbstyle="ABCD" class="hide" style="display: none;"><ul class="hotel_brand_list"><li><a datatag="110100" cityid="440080" title="北京市" href="javascript:void(0);" style="width: 50px; text-align: left">北京市</a></li><li><a datatag="510100" cityid="440080" title="成都市" href="javascript:void(0);" style="width: 50px; text-align: left">成都市</a></li><li><a datatag="220100" cityid="440080" title="长春市" href="javascript:void(0);" style="width: 50px; text-align: left">长春市</a></li><li><a datatag="320400" cityid="440080" title="常州市" href="javascript:void(0);" style="width: 50px; text-align: left">常州市</a></li><li><a datatag="500100" cityid="440080" title="重庆市" href="javascript:void(0);" style="width: 50px; text-align: left">重庆市</a></li><li><a datatag="210200" cityid="440080" title="大连市" href="javascript:void(0);" style="width: 50px; text-align: left">大连市</a></li><li><a datatag="130600" cityid="440080" title="保定市" href="javascript:void(0);" style="width: 50px; text-align: left">保定市</a></li><li><a datatag="621100" cityid="440080" title="定西市" href="javascript:void(0);" style="width: 50px; text-align: left">定西市</a></li><li><a datatag="410500" cityid="440080" title="安阳市" href="javascript:void(0);" style="width: 50px; text-align: left">安阳市</a></li><li><a datatag="130800" cityid="440080" title="承德市" href="javascript:void(0);" style="width: 50px; text-align: left">承德市</a></li><li><a datatag="220600" cityid="440080" title="白山市" href="javascript:void(0);" style="width: 50px; text-align: left">白山市</a></li><li><a datatag="520400" cityid="440080" title="安顺市" href="javascript:void(0);" style="width: 50px; text-align: left">安顺市</a></li><li><a datatag="652800" cityid="440080" title="巴音郭楞蒙古自治州" href="javascript:void(0);" style="width: 50px; text-align: left">巴音郭楞蒙古自治州</a></li><li><a datatag="371400" cityid="440080" title="德州市" href="javascript:void(0);" style="width: 50px; text-align: left">德州市</a></li><li><a datatag="130900" cityid="440080" title="沧州市" href="javascript:void(0);" style="width: 50px; text-align: left">沧州市</a></li><li><a datatag="441900" cityid="440080" title="东莞市" href="javascript:void(0);" style="width: 50px; text-align: left">东莞市</a></li><li><a datatag="152900" cityid="440080" title="阿拉善盟" href="javascript:void(0);" style="width: 50px; text-align: left">阿拉善盟</a></li><li><a datatag="341600" cityid="440080" title="亳州市" href="javascript:void(0);" style="width: 50px; text-align: left">亳州市</a></li><li><a datatag="340300" cityid="440080" title="蚌埠市" href="javascript:void(0);" style="width: 50px; text-align: left">蚌埠市</a></li><li><a datatag="340800" cityid="440080" title="安庆市" href="javascript:void(0);" style="width: 50px; text-align: left">安庆市</a></li><li><a datatag="341100" cityid="440080" title="滁州市" href="javascript:void(0);" style="width: 50px; text-align: left">滁州市</a></li><li><a datatag="620400" cityid="440080" title="白银市" href="javascript:void(0);" style="width: 50px; text-align: left">白银市</a></li><li><a datatag="610900" cityid="440080" title="安康市" href="javascript:void(0);" style="width: 50px; text-align: left">安康市</a></li><li><a datatag="150400" cityid="440080" title="赤峰市" href="javascript:void(0);" style="width: 50px; text-align: left">赤峰市</a></li><li><a datatag="150200" cityid="440080" title="包头市" href="javascript:void(0);" style="width: 50px; text-align: left">包头市</a></li><li><a datatag="450500" cityid="440080" title="北海市" href="javascript:void(0);" style="width: 50px; text-align: left">北海市</a></li><li><a datatag="371600" cityid="440080" title="滨州市" href="javascript:void(0);" style="width: 50px; text-align: left">滨州市</a></li><li><a datatag="888888" cityid="440080" title="钓鱼岛" href="javascript:void(0);" style="width: 50px; text-align: left">钓鱼岛</a></li><li><a datatag="511700" cityid="440080" title="达州市" href="javascript:void(0);" style="width: 50px; text-align: left">达州市</a></li><li><a datatag="510600" cityid="440080" title="德阳市" href="javascript:void(0);" style="width: 50px; text-align: left">德阳市</a></li><li><a datatag="150800" cityid="440080" title="巴彦淖尔市" href="javascript:void(0);" style="width: 50px; text-align: left">巴彦淖尔市</a></li><li><a datatag="652300" cityid="440080" title="昌吉回族自治州" href="javascript:void(0);" style="width: 50px; text-align: left">昌吉回族自治州</a></li><li><a datatag="131081" cityid="440080" title="霸州市(廊坊)" href="javascript:void(0);" style="width: 50px; text-align: left">霸州市(廊坊)</a></li><li><a datatag="211121" cityid="440080" title="大洼县(盘锦)" href="javascript:void(0);" style="width: 50px; text-align: left">大洼县(盘锦)</a></li><li><a datatag="620982" cityid="440080" title="敦煌市(酒泉)" href="javascript:void(0);" style="width: 50px; text-align: left">敦煌市(酒泉)</a></li><li><a datatag="370784" cityid="440080" title="安丘市(潍坊)" href="javascript:void(0);" style="width: 50px; text-align: left">安丘市(潍坊)</a></li><li><a datatag="513337" cityid="440080" title="稻城县(甘孜藏族自治州)" href="javascript:void(0);" style="width: 50px; text-align: left">稻城县(甘孜藏族自治州)</a></li><li><a datatag="350182" cityid="440080" title="长乐市(福州)" href="javascript:void(0);" style="width: 50px; text-align: left">长乐市(福州)</a></li><li><a datatag="350524" cityid="440080" title="安溪县(泉州)" href="javascript:void(0);" style="width: 50px; text-align: left">安溪县(泉州)</a></li><li><a datatag="330783" cityid="440080" title="东阳市(金华)" href="javascript:void(0);" style="width: 50px; text-align: left">东阳市(金华)</a></li><li><a datatag="330327" cityid="440080" title="苍南县(温州)" href="javascript:void(0);" style="width: 50px; text-align: left">苍南县(温州)</a></li><li><a datatag="532300" cityid="440080" title="楚雄彝族自治州" href="javascript:void(0);" style="width: 50px; text-align: left">楚雄彝族自治州</a></li><li><a datatag="513200" cityid="440080" title="阿坝藏族羌族自治州" href="javascript:void(0);" style="width: 50px; text-align: left">阿坝藏族羌族自治州</a></li><li><a datatag="520500" cityid="440080" title="毕节市" href="javascript:void(0);" style="width: 50px; text-align: left">毕节市</a></li><li><a datatag="610300" cityid="440080" title="宝鸡市" href="javascript:void(0);" style="width: 50px; text-align: left">宝鸡市</a></li><li><a datatag="654300" cityid="440080" title="阿勒泰地区" href="javascript:void(0);" style="width: 50px; text-align: left">阿勒泰地区</a></li><li><a datatag="341700" cityid="440080" title="池州市" href="javascript:void(0);" style="width: 50px; text-align: left">池州市</a></li><li><a datatag="210500" cityid="440080" title="本溪市" href="javascript:void(0);" style="width: 50px; text-align: left">本溪市</a></li><li><a datatag="411609" cityid="440080" title="邓州市" href="javascript:void(0);" style="width: 50px; text-align: left">邓州市</a></li><li><a datatag="371721" cityid="440080" title="曹县(菏泽)" href="javascript:void(0);" style="width: 50px; text-align: left">曹县(菏泽)</a></li><li><a datatag="371728" cityid="440080" title="东明县(菏泽)" href="javascript:void(0);" style="width: 50px; text-align: left">东明县(菏泽)</a></li><li><a datatag="441322" cityid="440080" title="博罗县(惠州)" href="javascript:void(0);" style="width: 50px; text-align: left">博罗县(惠州)</a></li><li><a datatag="130322" cityid="440080" title="昌黎县(秦皇岛)" href="javascript:void(0);" style="width: 50px; text-align: left">昌黎县(秦皇岛)</a></li><li><a datatag="130682" cityid="440080" title="定州市(保定)" href="javascript:void(0);" style="width: 50px; text-align: left">定州市(保定)</a></li><li><a datatag="130683" cityid="440080" title="安国市(保定)" href="javascript:void(0);" style="width: 50px; text-align: left">安国市(保定)</a></li><li><a datatag="222403" cityid="440080" title="敦化市(延边朝鲜族自治州)" href="javascript:void(0);" style="width: 50px; text-align: left">敦化市(延边朝鲜族自治州)</a></li><li><a datatag="510181" cityid="440080" title="都江堰市(成都)" href="javascript:void(0);" style="width: 50px; text-align: left">都江堰市(成都)</a></li><li><a datatag="320922" cityid="440080" title="滨海县(盐城)" href="javascript:void(0);" style="width: 50px; text-align: left">滨海县(盐城)</a></li><li><a datatag="320981" cityid="440080" title="东台市(盐城)" href="javascript:void(0);" style="width: 50px; text-align: left">东台市(盐城)</a></li><li><a datatag="320982" cityid="440080" title="大丰市(盐城)" href="javascript:void(0);" style="width: 50px; text-align: left">大丰市(盐城)</a></li><li><a datatag="350526" cityid="440080" title="德化县(泉州)" href="javascript:void(0);" style="width: 50px; text-align: left">德化县(泉州)</a></li><li><a datatag="341125" cityid="440080" title="定远县(滁州)" href="javascript:void(0);" style="width: 50px; text-align: left">定远县(滁州)</a></li><li><a datatag="654022" cityid="440080" title="察布查尔锡伯自治县(伊犁哈萨克自治州)" href="javascript:void(0);" style="width: 50px; text-align: left">察布查尔锡伯自治县(伊犁哈萨克自治州)</a></li><li><a datatag="370725" cityid="440080" title="昌乐县(潍坊)" href="javascript:void(0);" style="width: 50px; text-align: left">昌乐县(潍坊)</a></li></ul></div><div tbstyle="EFGHJ" class="hide" style="display: none;"><ul class="hotel_brand_list"><li><a datatag="350100" cityid="440080" title="福州市" href="javascript:void(0);" style="width: 50px; text-align: left">福州市</a></li><li><a datatag="340100" cityid="440080" title="合肥市" href="javascript:void(0);" style="width: 50px; text-align: left">合肥市</a></li><li><a datatag="330100" cityid="440080" title="杭州市" href="javascript:void(0);" style="width: 50px; text-align: left">杭州市</a></li><li><a datatag="440100" cityid="440080" title="广州市" href="javascript:void(0);" style="width: 50px; text-align: left">广州市</a></li><li><a datatag="370100" cityid="440080" title="济南市" href="javascript:void(0);" style="width: 50px; text-align: left">济南市</a></li><li><a datatag="371700" cityid="440080" title="菏泽市" href="javascript:void(0);" style="width: 50px; text-align: left">菏泽市</a></li><li><a datatag="370800" cityid="440080" title="济宁市" href="javascript:void(0);" style="width: 50px; text-align: left">济宁市</a></li><li><a datatag="131100" cityid="440080" title="衡水市" href="javascript:void(0);" style="width: 50px; text-align: left">衡水市</a></li><li><a datatag="320800" cityid="440080" title="淮安市" href="javascript:void(0);" style="width: 50px; text-align: left">淮安市</a></li><li><a datatag="230100" cityid="440080" title="哈尔滨市" href="javascript:void(0);" style="width: 50px; text-align: left">哈尔滨市</a></li><li><a datatag="150600" cityid="440080" title="鄂尔多斯市" href="javascript:void(0);" style="width: 50px; text-align: left">鄂尔多斯市</a></li><li><a datatag="620900" cityid="440080" title="酒泉市" href="javascript:void(0);" style="width: 50px; text-align: left">酒泉市</a></li><li><a datatag="520100" cityid="440080" title="贵阳市" href="javascript:void(0);" style="width: 50px; text-align: left">贵阳市</a></li><li><a datatag="210700" cityid="440080" title="锦州市" href="javascript:void(0);" style="width: 50px; text-align: left">锦州市</a></li><li><a datatag="220200" cityid="440080" title="吉林市" href="javascript:void(0);" style="width: 50px; text-align: left">吉林市</a></li><li><a datatag="513300" cityid="440080" title="甘孜藏族自治州" href="javascript:void(0);" style="width: 50px; text-align: left">甘孜藏族自治州</a></li><li><a datatag="640400" cityid="440080" title="固原市" href="javascript:void(0);" style="width: 50px; text-align: left">固原市</a></li><li><a datatag="620200" cityid="440080" title="嘉峪关市" href="javascript:void(0);" style="width: 50px; text-align: left">嘉峪关市</a></li><li><a datatag="341000" cityid="440080" title="黄山市" href="javascript:void(0);" style="width: 50px; text-align: left">黄山市</a></li><li><a datatag="330400" cityid="440080" title="嘉兴市" href="javascript:void(0);" style="width: 50px; text-align: left">嘉兴市</a></li><li><a datatag="330700" cityid="440080" title="金华市" href="javascript:void(0);" style="width: 50px; text-align: left">金华市</a></li><li><a datatag="211400" cityid="440080" title="葫芦岛市" href="javascript:void(0);" style="width: 50px; text-align: left">葫芦岛市</a></li><li><a datatag="140700" cityid="440080" title="晋中市" href="javascript:void(0);" style="width: 50px; text-align: left">晋中市</a></li><li><a datatag="450300" cityid="440080" title="桂林市" href="javascript:void(0);" style="width: 50px; text-align: left">桂林市</a></li><li><a datatag="130400" cityid="440080" title="邯郸市" href="javascript:void(0);" style="width: 50px; text-align: left">邯郸市</a></li><li><a datatag="421000" cityid="440080" title="荆州市" href="javascript:void(0);" style="width: 50px; text-align: left">荆州市</a></li><li><a datatag="422800" cityid="440080" title="恩施土家族苗族自治州" href="javascript:void(0);" style="width: 50px; text-align: left">恩施土家族苗族自治州</a></li><li><a datatag="430400" cityid="440080" title="衡阳市" href="javascript:void(0);" style="width: 50px; text-align: left">衡阳市</a></li><li><a datatag="511600" cityid="440080" title="广安市" href="javascript:void(0);" style="width: 50px; text-align: left">广安市</a></li><li><a datatag="420700" cityid="440080" title="鄂州市" href="javascript:void(0);" style="width: 50px; text-align: left">鄂州市</a></li><li><a datatag="410800" cityid="440080" title="焦作市" href="javascript:void(0);" style="width: 50px; text-align: left">焦作市</a></li><li><a datatag="440600" cityid="440080" title="佛山市" href="javascript:void(0);" style="width: 50px; text-align: left">佛山市</a></li><li><a datatag="441300" cityid="440080" title="惠州市" href="javascript:void(0);" style="width: 50px; text-align: left">惠州市</a></li><li><a datatag="150100" cityid="440080" title="呼和浩特市" href="javascript:void(0);" style="width: 50px; text-align: left">呼和浩特市</a></li><li><a datatag="341200" cityid="440080" title="阜阳市" href="javascript:void(0);" style="width: 50px; text-align: left">阜阳市</a></li><li><a datatag="623000" cityid="440080" title="甘南藏族自治州" href="javascript:void(0);" style="width: 50px; text-align: left">甘南藏族自治州</a></li><li><a datatag="653200" cityid="440080" title="和田地区" href="javascript:void(0);" style="width: 50px; text-align: left">和田地区</a></li><li><a datatag="320482" cityid="440080" title="金坛市(常州)" href="javascript:void(0);" style="width: 50px; text-align: left">金坛市(常州)</a></li><li><a datatag="320621" cityid="440080" title="海安县(南通)" href="javascript:void(0);" style="width: 50px; text-align: left">海安县(南通)</a></li><li><a datatag="321282" cityid="440080" title="靖江市(泰州)" href="javascript:void(0);" style="width: 50px; text-align: left">靖江市(泰州)</a></li><li><a datatag="350181" cityid="440080" title="福清市(福州)" href="javascript:void(0);" style="width: 50px; text-align: left">福清市(福州)</a></li><li><a datatag="350582" cityid="440080" title="晋江市(泉州)" href="javascript:void(0);" style="width: 50px; text-align: left">晋江市(泉州)</a></li><li><a datatag="350982" cityid="440080" title="福鼎市(宁德)" href="javascript:void(0);" style="width: 50px; text-align: left">福鼎市(宁德)</a></li><li><a datatag="370281" cityid="440080" title="胶州市(青岛)" href="javascript:void(0);" style="width: 50px; text-align: left">胶州市(青岛)</a></li><li><a datatag="623001" cityid="440080" title="合作市(甘南藏族自治州)" href="javascript:void(0);" style="width: 50px; text-align: left">合作市(甘南藏族自治州)</a></li><li><a datatag="370687" cityid="440080" title="海阳市(烟台)" href="javascript:void(0);" style="width: 50px; text-align: left">海阳市(烟台)</a></li><li><a datatag="532801" cityid="440080" title="景洪市(西双版纳傣族自治州)" href="javascript:void(0);" style="width: 50px; text-align: left">景洪市(西双版纳傣族自治州)</a></li><li><a datatag="620421" cityid="440080" title="靖远县(白银)" href="javascript:void(0);" style="width: 50px; text-align: left">靖远县(白银)</a></li><li><a datatag="620423" cityid="440080" title="景泰县(白银)" href="javascript:void(0);" style="width: 50px; text-align: left">景泰县(白银)</a></li><li><a datatag="610582" cityid="440080" title="华阴市(渭南)" href="javascript:void(0);" style="width: 50px; text-align: left">华阴市(渭南)</a></li><li><a datatag="620826" cityid="440080" title="静宁县(平凉)" href="javascript:void(0);" style="width: 50px; text-align: left">静宁县(平凉)</a></li><li><a datatag="620921" cityid="440080" title="金塔县(酒泉)" href="javascript:void(0);" style="width: 50px; text-align: left">金塔县(酒泉)</a></li><li><a datatag="370284" cityid="440080" title="胶南市(青岛)" href="javascript:void(0);" style="width: 50px; text-align: left">胶南市(青岛)</a></li><li><a datatag="513225" cityid="440080" title="九寨沟县(阿坝藏族羌族自治州)" href="javascript:void(0);" style="width: 50px; text-align: left">九寨沟县(阿坝藏族羌族自治州)</a></li><li><a datatag="350922" cityid="440080" title="古田县(宁德)" href="javascript:void(0);" style="width: 50px; text-align: left">古田县(宁德)</a></li><li><a datatag="350784" cityid="440080" title="建阳市(南平)" href="javascript:void(0);" style="width: 50px; text-align: left">建阳市(南平)</a></li><li><a datatag="330283" cityid="440080" title="奉化市(宁波)" href="javascript:void(0);" style="width: 50px; text-align: left">奉化市(宁波)</a></li><li><a datatag="321284" cityid="440080" title="姜堰市(泰州)" href="javascript:void(0);" style="width: 50px; text-align: left">姜堰市(泰州)</a></li><li><a datatag="340123" cityid="440080" title="肥西县(合肥)" href="javascript:void(0);" style="width: 50px; text-align: left">肥西县(合肥)</a></li><li><a datatag="140781" cityid="440080" title="介休市(晋中)" href="javascript:void(0);" style="width: 50px; text-align: left">介休市(晋中)</a></li><li><a datatag="220621" cityid="440080" title="抚松县(白山)" href="javascript:void(0);" style="width: 50px; text-align: left">抚松县(白山)</a></li><li><a datatag="320684" cityid="440080" title="海门市(南通)" href="javascript:void(0);" style="width: 50px; text-align: left">海门市(南通)</a></li><li><a datatag="120225" cityid="440080" title="蓟县(天津)" href="javascript:void(0);" style="width: 50px; text-align: left">蓟县(天津)</a></li><li><a datatag="131022" cityid="440080" title="固安县(廊坊)" href="javascript:void(0);" style="width: 50px; text-align: left">固安县(廊坊)</a></li><li><a datatag="130826" cityid="440080" title="丰宁满族自治县(承德)" href="javascript:void(0);" style="width: 50px; text-align: left">丰宁满族自治县(承德)</a></li><li><a datatag="371724" cityid="440080" title="巨野县(菏泽)" href="javascript:void(0);" style="width: 50px; text-align: left">巨野县(菏泽)</a></li><li><a datatag="420325" cityid="440080" title="房县(十堰)" href="javascript:void(0);" style="width: 50px; text-align: left">房县(十堰)</a></li><li><a datatag="340400" cityid="440080" title="淮南市" href="javascript:void(0);" style="width: 50px; text-align: left">淮南市</a></li><li><a datatag="210400" cityid="440080" title="抚顺市" href="javascript:void(0);" style="width: 50px; text-align: left">抚顺市</a></li><li><a datatag="230300" cityid="440080" title="鸡西市" href="javascript:void(0);" style="width: 50px; text-align: left">鸡西市</a></li><li><a datatag="451200" cityid="440080" title="河池市" href="javascript:void(0);" style="width: 50px; text-align: left">河池市</a></li><li><a datatag="460100" cityid="440080" title="海口市" href="javascript:void(0);" style="width: 50px; text-align: left">海口市</a></li><li><a datatag="445200" cityid="440080" title="揭阳市" href="javascript:void(0);" style="width: 50px; text-align: left">揭阳市</a></li><li><a datatag="510800" cityid="440080" title="广元市" href="javascript:void(0);" style="width: 50px; text-align: left">广元市</a></li><li><a datatag="421100" cityid="440080" title="黄冈市" href="javascript:void(0);" style="width: 50px; text-align: left">黄冈市</a></li><li><a datatag="422801" cityid="440080" title="恩施市(恩施土家族苗族自治州)" href="javascript:void(0);" style="width: 50px; text-align: left">恩施市(恩施土家族苗族自治州)</a></li><li><a datatag="433101" cityid="440080" title="吉首市(湘西土家族苗族自治州)" href="javascript:void(0);" style="width: 50px; text-align: left">吉首市(湘西土家族苗族自治州)</a></li><li><a datatag="510781" cityid="440080" title="江油市(绵阳)" href="javascript:void(0);" style="width: 50px; text-align: left">江油市(绵阳)</a></li><li><a datatag="410782" cityid="440080" title="辉县市(新乡)" href="javascript:void(0);" style="width: 50px; text-align: left">辉县市(新乡)</a></li><li><a datatag="371325" cityid="440080" title="费县(临沂)" href="javascript:void(0);" style="width: 50px; text-align: left">费县(临沂)</a></li><li><a datatag="371525" cityid="440080" title="冠县(聊城)" href="javascript:void(0);" style="width: 50px; text-align: left">冠县(聊城)</a></li><li><a datatag="371526" cityid="440080" title="高唐县(聊城)" href="javascript:void(0);" style="width: 50px; text-align: left">高唐县(聊城)</a></li><li><a datatag="130730" cityid="440080" title="怀来县(张家口)" href="javascript:void(0);" style="width: 50px; text-align: left">怀来县(张家口)</a></li><li><a datatag="130127" cityid="440080" title="高邑县(石家庄)" href="javascript:void(0);" style="width: 50px; text-align: left">高邑县(石家庄)</a></li><li><a datatag="130183" cityid="440080" title="晋州市(石家庄)" href="javascript:void(0);" style="width: 50px; text-align: left">晋州市(石家庄)</a></li><li><a datatag="130684" cityid="440080" title="高碑店市(保定)" href="javascript:void(0);" style="width: 50px; text-align: left">高碑店市(保定)</a></li><li><a datatag="320829" cityid="440080" title="洪泽县(淮安)" href="javascript:void(0);" style="width: 50px; text-align: left">洪泽县(淮安)</a></li><li><a datatag="320125" cityid="440080" title="高淳县(南京)" href="javascript:void(0);" style="width: 50px; text-align: left">高淳县(南京)</a></li><li><a datatag="220622" cityid="440080" title="靖宇县(白山)" href="javascript:void(0);" style="width: 50px; text-align: left">靖宇县(白山)</a></li><li><a datatag="131126" cityid="440080" title="故城县(衡水)" href="javascript:void(0);" style="width: 50px; text-align: left">故城县(衡水)</a></li><li><a datatag="131181" cityid="440080" title="冀州市(衡水)" href="javascript:void(0);" style="width: 50px; text-align: left">冀州市(衡水)</a></li><li><a datatag="341524" cityid="440080" title="金寨县(六安)" href="javascript:void(0);" style="width: 50px; text-align: left">金寨县(六安)</a></li><li><a datatag="340321" cityid="440080" title="怀远县(蚌埠)" href="javascript:void(0);" style="width: 50px; text-align: left">怀远县(蚌埠)</a></li><li><a datatag="340122" cityid="440080" title="肥东县(合肥)" href="javascript:void(0);" style="width: 50px; text-align: left">肥东县(合肥)</a></li><li><a datatag="350783" cityid="440080" title="建瓯市(南平)" href="javascript:void(0);" style="width: 50px; text-align: left">建瓯市(南平)</a></li><li><a datatag="360983" cityid="440080" title="高安市(宜春)" href="javascript:void(0);" style="width: 50px; text-align: left">高安市(宜春)</a></li><li><a datatag="522731" cityid="440080" title="惠水县(黔南布依族苗族自治州)" href="javascript:void(0);" style="width: 50px; text-align: left">惠水县(黔南布依族苗族自治州)</a></li><li><a datatag="530326" cityid="440080" title="会泽县(曲靖)" href="javascript:void(0);" style="width: 50px; text-align: left">会泽县(曲靖)</a></li><li><a datatag="653201" cityid="440080" title="和田市(和田地区)" href="javascript:void(0);" style="width: 50px; text-align: left">和田市(和田地区)</a></li><li><a datatag="620523" cityid="440080" title="甘谷县(天水)" href="javascript:void(0);" style="width: 50px; text-align: left">甘谷县(天水)</a></li><li><a datatag="620724" cityid="440080" title="高台县(张掖)" href="javascript:void(0);" style="width: 50px; text-align: left">高台县(张掖)</a></li><li><a datatag="610126" cityid="440080" title="高陵县(西安)" href="javascript:void(0);" style="width: 50px; text-align: left">高陵县(西安)</a></li><li><a datatag="370785" cityid="440080" title="高密市(潍坊)" href="javascript:void(0);" style="width: 50px; text-align: left">高密市(潍坊)</a></li><li><a datatag="370828" cityid="440080" title="金乡县(济宁)" href="javascript:void(0);" style="width: 50px; text-align: left">金乡县(济宁)</a></li><li><a datatag="370983" cityid="440080" title="肥城市(泰安)" href="javascript:void(0);" style="width: 50px; text-align: left">肥城市(泰安)</a></li><li><a datatag="652302" cityid="440080" title="阜康市(昌吉回族自治州)" href="javascript:void(0);" style="width: 50px; text-align: left">阜康市(昌吉回族自治州)</a></li></ul></div><div tbstyle="KLMN" class="hide" style="display: none;"><ul class="hotel_brand_list"><li><a datatag="320100" cityid="440080" title="南京市" href="javascript:void(0);" style="width: 50px; text-align: left">南京市</a></li><li><a datatag="620100" cityid="440080" title="兰州市" href="javascript:void(0);" style="width: 50px; text-align: left">兰州市</a></li><li><a datatag="320700" cityid="440080" title="连云港市" href="javascript:void(0);" style="width: 50px; text-align: left">连云港市</a></li><li><a datatag="131000" cityid="440080" title="廊坊市" href="javascript:void(0);" style="width: 50px; text-align: left">廊坊市</a></li><li><a datatag="350900" cityid="440080" title="宁德市" href="javascript:void(0);" style="width: 50px; text-align: left">宁德市</a></li><li><a datatag="371300" cityid="440080" title="临沂市" href="javascript:void(0);" style="width: 50px; text-align: left">临沂市</a></li><li><a datatag="410200" cityid="440080" title="开封市" href="javascript:void(0);" style="width: 50px; text-align: left">开封市</a></li><li><a datatag="410300" cityid="440080" title="洛阳市" href="javascript:void(0);" style="width: 50px; text-align: left">洛阳市</a></li><li><a datatag="371500" cityid="440080" title="聊城市" href="javascript:void(0);" style="width: 50px; text-align: left">聊城市</a></li><li><a datatag="330200" cityid="440080" title="宁波市" href="javascript:void(0);" style="width: 50px; text-align: left">宁波市</a></li><li><a datatag="320600" cityid="440080" title="南通市" href="javascript:void(0);" style="width: 50px; text-align: left">南通市</a></li><li><a datatag="653100" cityid="440080" title="喀什地区" href="javascript:void(0);" style="width: 50px; text-align: left">喀什地区</a></li><li><a datatag="341500" cityid="440080" title="六安市" href="javascript:void(0);" style="width: 50px; text-align: left">六安市</a></li><li><a datatag="350700" cityid="440080" title="南平市" href="javascript:void(0);" style="width: 50px; text-align: left">南平市</a></li><li><a datatag="510700" cityid="440080" title="绵阳市" href="javascript:void(0);" style="width: 50px; text-align: left">绵阳市</a></li><li><a datatag="141100" cityid="440080" title="吕梁市" href="javascript:void(0);" style="width: 50px; text-align: left">吕梁市</a></li><li><a datatag="320583" cityid="440080" title="昆山市(苏州)" href="javascript:void(0);" style="width: 50px; text-align: left">昆山市(苏州)</a></li><li><a datatag="622900" cityid="440080" title="临夏回族自治州" href="javascript:void(0);" style="width: 50px; text-align: left">临夏回族自治州</a></li><li><a datatag="350800" cityid="440080" title="龙岩市" href="javascript:void(0);" style="width: 50px; text-align: left">龙岩市</a></li><li><a datatag="360100" cityid="440080" title="南昌市" href="javascript:void(0);" style="width: 50px; text-align: left">南昌市</a></li><li><a datatag="450100" cityid="440080" title="南宁市" href="javascript:void(0);" style="width: 50px; text-align: left">南宁市</a></li><li><a datatag="511300" cityid="440080" title="南充市" href="javascript:void(0);" style="width: 50px; text-align: left">南充市</a></li><li><a datatag="513400" cityid="440080" title="凉山彝族自治州" href="javascript:void(0);" style="width: 50px; text-align: left">凉山彝族自治州</a></li><li><a datatag="540100" cityid="440080" title="拉萨市" href="javascript:void(0);" style="width: 50px; text-align: left">拉萨市</a></li><li><a datatag="653101" cityid="440080" title="喀什市(喀什地区)" href="javascript:void(0);" style="width: 50px; text-align: left">喀什市(喀什地区)</a></li><li><a datatag="652801" cityid="440080" title="库尔勒市(巴音郭楞蒙古自治州)" href="javascript:void(0);" style="width: 50px; text-align: left">库尔勒市(巴音郭楞蒙古自治州)</a></li><li><a datatag="621122" cityid="440080" title="陇西县(定西)" href="javascript:void(0);" style="width: 50px; text-align: left">陇西县(定西)</a></li><li><a datatag="622901" cityid="440080" title="临夏市(临夏回族自治州)" href="javascript:void(0);" style="width: 50px; text-align: left">临夏市(临夏回族自治州)</a></li><li><a datatag="654003" cityid="440080" title="奎屯市(伊犁哈萨克自治州)" href="javascript:void(0);" style="width: 50px; text-align: left">奎屯市(伊犁哈萨克自治州)</a></li><li><a datatag="370681" cityid="440080" title="龙口市(烟台)" href="javascript:void(0);" style="width: 50px; text-align: left">龙口市(烟台)</a></li><li><a datatag="370682" cityid="440080" title="莱阳市(烟台)" href="javascript:void(0);" style="width: 50px; text-align: left">莱阳市(烟台)</a></li><li><a datatag="341623" cityid="440080" title="利辛县(亳州)" href="javascript:void(0);" style="width: 50px; text-align: left">利辛县(亳州)</a></li><li><a datatag="350121" cityid="440080" title="闽侯县(福州)" href="javascript:void(0);" style="width: 50px; text-align: left">闽侯县(福州)</a></li><li><a datatag="350122" cityid="440080" title="连江县(福州)" href="javascript:void(0);" style="width: 50px; text-align: left">连江县(福州)</a></li><li><a datatag="220681" cityid="440080" title="临江市(白山)" href="javascript:void(0);" style="width: 50px; text-align: left">临江市(白山)</a></li><li><a datatag="110228" cityid="440080" title="密云县(北京)" href="javascript:void(0);" style="width: 50px; text-align: left">密云县(北京)</a></li><li><a datatag="511623" cityid="440080" title="邻水县(广安)" href="javascript:void(0);" style="width: 50px; text-align: left">邻水县(广安)</a></li><li><a datatag="542600" cityid="440080" title="林芝市" href="javascript:void(0);" style="width: 50px; text-align: left">林芝市</a></li><li><a datatag="530700" cityid="440080" title="丽江市" href="javascript:void(0);" style="width: 50px; text-align: left">丽江市</a></li><li><a datatag="530100" cityid="440080" title="昆明市" href="javascript:void(0);" style="width: 50px; text-align: left">昆明市</a></li><li><a datatag="621200" cityid="440080" title="陇南市" href="javascript:void(0);" style="width: 50px; text-align: left">陇南市</a></li><li><a datatag="340500" cityid="440080" title="马鞍山市" href="javascript:void(0);" style="width: 50px; text-align: left">马鞍山市</a></li><li><a datatag="331100" cityid="440080" title="丽水市" href="javascript:void(0);" style="width: 50px; text-align: left">丽水市</a></li><li><a datatag="220400" cityid="440080" title="辽源市" href="javascript:void(0);" style="width: 50px; text-align: left">辽源市</a></li><li><a datatag="511400" cityid="440080" title="眉山市" href="javascript:void(0);" style="width: 50px; text-align: left">眉山市</a></li><li><a datatag="422802" cityid="440080" title="利川市(恩施土家族苗族自治州)" href="javascript:void(0);" style="width: 50px; text-align: left">利川市(恩施土家族苗族自治州)</a></li><li><a datatag="410225" cityid="440080" title="兰考县(开封)" href="javascript:void(0);" style="width: 50px; text-align: left">兰考县(开封)</a></li><li><a datatag="371421" cityid="440080" title="陵县(德州)" href="javascript:void(0);" style="width: 50px; text-align: left">陵县(德州)</a></li><li><a datatag="371581" cityid="440080" title="临清市(聊城)" href="javascript:void(0);" style="width: 50px; text-align: left">临清市(聊城)</a></li><li><a datatag="450123" cityid="440080" title="隆安县(南宁)" href="javascript:void(0);" style="width: 50px; text-align: left">隆安县(南宁)</a></li><li><a datatag="130224" cityid="440080" title="滦南县(唐山)" href="javascript:void(0);" style="width: 50px; text-align: left">滦南县(唐山)</a></li><li><a datatag="130528" cityid="440080" title="宁晋县(邢台)" href="javascript:void(0);" style="width: 50px; text-align: left">宁晋县(邢台)</a></li><li><a datatag="220581" cityid="440080" title="梅河口市(通化)" href="javascript:void(0);" style="width: 50px; text-align: left">梅河口市(通化)</a></li><li><a datatag="150523" cityid="440080" title="开鲁县(通辽)" href="javascript:void(0);" style="width: 50px; text-align: left">开鲁县(通辽)</a></li><li><a datatag="210123" cityid="440080" title="康平县(沈阳)" href="javascript:void(0);" style="width: 50px; text-align: left">康平县(沈阳)</a></li><li><a datatag="211282" cityid="440080" title="开原市(铁岭)" href="javascript:void(0);" style="width: 50px; text-align: left">开原市(铁岭)</a></li><li><a datatag="341622" cityid="440080" title="蒙城县(亳州)" href="javascript:void(0);" style="width: 50px; text-align: left">蒙城县(亳州)</a></li><li><a datatag="350424" cityid="440080" title="宁化县(三明)" href="javascript:void(0);" style="width: 50px; text-align: left">宁化县(三明)</a></li><li><a datatag="350825" cityid="440080" title="连城县(龙岩)" href="javascript:void(0);" style="width: 50px; text-align: left">连城县(龙岩)</a></li><li><a datatag="350583" cityid="440080" title="南安市(泉州)" href="javascript:void(0);" style="width: 50px; text-align: left">南安市(泉州)</a></li><li><a datatag="370683" cityid="440080" title="莱州市(烟台)" href="javascript:void(0);" style="width: 50px; text-align: left">莱州市(烟台)</a></li><li><a datatag="611021" cityid="440080" title="洛南县(商洛)" href="javascript:void(0);" style="width: 50px; text-align: left">洛南县(商洛)</a></li><li><a datatag="620723" cityid="440080" title="临泽县(张掖)" href="javascript:void(0);" style="width: 50px; text-align: left">临泽县(张掖)</a></li><li><a datatag="370921" cityid="440080" title="宁阳县(泰安)" href="javascript:void(0);" style="width: 50px; text-align: left">宁阳县(泰安)</a></li><li><a datatag="640181" cityid="440080" title="灵武市(银川)" href="javascript:void(0);" style="width: 50px; text-align: left">灵武市(银川)</a></li></ul></div><div tbstyle="PQRST" class="hide" style="display: none;"><ul class="hotel_brand_list"><li><a datatag="310100" cityid="440080" title="上海市" href="javascript:void(0);" style="width: 50px; text-align: left">上海市</a></li><li><a datatag="320500" cityid="440080" title="苏州市" href="javascript:void(0);" style="width: 50px; text-align: left">苏州市</a></li><li><a datatag="370200" cityid="440080" title="青岛市" href="javascript:void(0);" style="width: 50px; text-align: left">青岛市</a></li><li><a datatag="210100" cityid="440080" title="沈阳市" href="javascript:void(0);" style="width: 50px; text-align: left">沈阳市</a></li><li><a datatag="350300" cityid="440080" title="莆田市" href="javascript:void(0);" style="width: 50px; text-align: left">莆田市</a></li><li><a datatag="350500" cityid="440080" title="泉州市" href="javascript:void(0);" style="width: 50px; text-align: left">泉州市</a></li><li><a datatag="120100" cityid="440080" title="天津市" href="javascript:void(0);" style="width: 50px; text-align: left">天津市</a></li><li><a datatag="130100" cityid="440080" title="石家庄市" href="javascript:void(0);" style="width: 50px; text-align: left">石家庄市</a></li><li><a datatag="131082" cityid="440080" title="三河市" href="javascript:void(0);" style="width: 50px; text-align: left">三河市</a></li><li><a datatag="150500" cityid="440080" title="通辽市" href="javascript:void(0);" style="width: 50px; text-align: left">通辽市</a></li><li><a datatag="440300" cityid="440080" title="深圳市" href="javascript:void(0);" style="width: 50px; text-align: left">深圳市</a></li><li><a datatag="321200" cityid="440080" title="泰州市" href="javascript:void(0);" style="width: 50px; text-align: left">泰州市</a></li><li><a datatag="130200" cityid="440080" title="唐山市" href="javascript:void(0);" style="width: 50px; text-align: left">唐山市</a></li><li><a datatag="140100" cityid="440080" title="太原市" href="javascript:void(0);" style="width: 50px; text-align: left">太原市</a></li><li><a datatag="130300" cityid="440080" title="秦皇岛市" href="javascript:void(0);" style="width: 50px; text-align: left">秦皇岛市</a></li><li><a datatag="420300" cityid="440080" title="十堰市" href="javascript:void(0);" style="width: 50px; text-align: left">十堰市</a></li><li><a datatag="211100" cityid="440080" title="盘锦市" href="javascript:void(0);" style="width: 50px; text-align: left">盘锦市</a></li><li><a datatag="321300" cityid="440080" title="宿迁市" href="javascript:void(0);" style="width: 50px; text-align: left">宿迁市</a></li><li><a datatag="620500" cityid="440080" title="天水市" href="javascript:void(0);" style="width: 50px; text-align: left">天水市</a></li><li><a datatag="370900" cityid="440080" title="泰安市" href="javascript:void(0);" style="width: 50px; text-align: left">泰安市</a></li><li><a datatag="652100" cityid="440080" title="吐鲁番地区" href="javascript:void(0);" style="width: 50px; text-align: left">吐鲁番地区</a></li><li><a datatag="350400" cityid="440080" title="三明市" href="javascript:void(0);" style="width: 50px; text-align: left">三明市</a></li><li><a datatag="620800" cityid="440080" title="平凉市" href="javascript:void(0);" style="width: 50px; text-align: left">平凉市</a></li><li><a datatag="530300" cityid="440080" title="曲靖市" href="javascript:void(0);" style="width: 50px; text-align: left">曲靖市</a></li><li><a datatag="640200" cityid="440080" title="石嘴山市" href="javascript:void(0);" style="width: 50px; text-align: left">石嘴山市</a></li><li><a datatag="659001" cityid="440080" title="石河子市" href="javascript:void(0);" style="width: 50px; text-align: left">石河子市</a></li><li><a datatag="510900" cityid="440080" title="遂宁市" href="javascript:void(0);" style="width: 50px; text-align: left">遂宁市</a></li><li><a datatag="440500" cityid="440080" title="汕头市" href="javascript:void(0);" style="width: 50px; text-align: left">汕头市</a></li><li><a datatag="460200" cityid="440080" title="三亚市" href="javascript:void(0);" style="width: 50px; text-align: left">三亚市</a></li><li><a datatag="341300" cityid="440080" title="宿州市" href="javascript:void(0);" style="width: 50px; text-align: left">宿州市</a></li><li><a datatag="611000" cityid="440080" title="商洛市" href="javascript:void(0);" style="width: 50px; text-align: left">商洛市</a></li><li><a datatag="130283" cityid="440080" title="迁安市(唐山)" href="javascript:void(0);" style="width: 50px; text-align: left">迁安市(唐山)</a></li><li><a datatag="320322" cityid="440080" title="沛县(徐州)" href="javascript:void(0);" style="width: 50px; text-align: left">沛县(徐州)</a></li><li><a datatag="652325" cityid="440080" title="奇台县(昌吉回族自治州)" href="javascript:void(0);" style="width: 50px; text-align: left">奇台县(昌吉回族自治州)</a></li><li><a datatag="640221" cityid="440080" title="平罗县(石嘴山)" href="javascript:void(0);" style="width: 50px; text-align: left">平罗县(石嘴山)</a></li><li><a datatag="653125" cityid="440080" title="莎车县(喀什地区)" href="javascript:void(0);" style="width: 50px; text-align: left">莎车县(喀什地区)</a></li><li><a datatag="350581" cityid="440080" title="石狮市(泉州)" href="javascript:void(0);" style="width: 50px; text-align: left">石狮市(泉州)</a></li><li><a datatag="370283" cityid="440080" title="平度市(青岛)" href="javascript:void(0);" style="width: 50px; text-align: left">平度市(青岛)</a></li><li><a datatag="341181" cityid="440080" title="天长市(滁州)" href="javascript:void(0);" style="width: 50px; text-align: left">天长市(滁州)</a></li><li><a datatag="341523" cityid="440080" title="舒城县(六安)" href="javascript:void(0);" style="width: 50px; text-align: left">舒城县(六安)</a></li><li><a datatag="320585" cityid="440080" title="太仓市(苏州)" href="javascript:void(0);" style="width: 50px; text-align: left">太仓市(苏州)</a></li><li><a datatag="522700" cityid="440080" title="黔南布依族苗族自治州" href="javascript:void(0);" style="width: 50px; text-align: left">黔南布依族苗族自治州</a></li><li><a datatag="621000" cityid="440080" title="庆阳市" href="javascript:void(0);" style="width: 50px; text-align: left">庆阳市</a></li><li><a datatag="654200" cityid="440080" title="塔城地区" href="javascript:void(0);" style="width: 50px; text-align: left">塔城地区</a></li><li><a datatag="211200" cityid="440080" title="铁岭市" href="javascript:void(0);" style="width: 50px; text-align: left">铁岭市</a></li><li><a datatag="220500" cityid="440080" title="通化市" href="javascript:void(0);" style="width: 50px; text-align: left">通化市</a></li><li><a datatag="410900" cityid="440080" title="濮阳市" href="javascript:void(0);" style="width: 50px; text-align: left">濮阳市</a></li><li><a datatag="421300" cityid="440080" title="随州市" href="javascript:void(0);" style="width: 50px; text-align: left">随州市</a></li><li><a datatag="511422" cityid="440080" title="彭山县(眉山)" href="javascript:void(0);" style="width: 50px; text-align: left">彭山县(眉山)</a></li><li><a datatag="510682" cityid="440080" title="什邡市(德阳)" href="javascript:void(0);" style="width: 50px; text-align: left">什邡市(德阳)</a></li><li><a datatag="445281" cityid="440080" title="普宁市(揭阳)" href="javascript:void(0);" style="width: 50px; text-align: left">普宁市(揭阳)</a></li><li><a datatag="511725" cityid="440080" title="渠县(达州)" href="javascript:void(0);" style="width: 50px; text-align: left">渠县(达州)</a></li><li><a datatag="130128" cityid="440080" title="深泽县(石家庄)" href="javascript:void(0);" style="width: 50px; text-align: left">深泽县(石家庄)</a></li><li><a datatag="130131" cityid="440080" title="平山县(石家庄)" href="javascript:void(0);" style="width: 50px; text-align: left">平山县(石家庄)</a></li><li><a datatag="130636" cityid="440080" title="顺平县(保定)" href="javascript:void(0);" style="width: 50px; text-align: left">顺平县(保定)</a></li><li><a datatag="131182" cityid="440080" title="深州市(衡水)" href="javascript:void(0);" style="width: 50px; text-align: left">深州市(衡水)</a></li><li><a datatag="140728" cityid="440080" title="平遥县(晋中)" href="javascript:void(0);" style="width: 50px; text-align: left">平遥县(晋中)</a></li><li><a datatag="350128" cityid="440080" title="平潭县(福州)" href="javascript:void(0);" style="width: 50px; text-align: left">平潭县(福州)</a></li><li><a datatag="330483" cityid="440080" title="桐乡市(嘉兴)" href="javascript:void(0);" style="width: 50px; text-align: left">桐乡市(嘉兴)</a></li><li><a datatag="340881" cityid="440080" title="桐城市(安庆)" href="javascript:void(0);" style="width: 50px; text-align: left">桐城市(安庆)</a></li><li><a datatag="370126" cityid="440080" title="商河县(济南)" href="javascript:void(0);" style="width: 50px; text-align: left">商河县(济南)</a></li><li><a datatag="520522" cityid="440080" title="黔西县(毕节)" href="javascript:void(0);" style="width: 50px; text-align: left">黔西县(毕节)</a></li><li><a datatag="370684" cityid="440080" title="蓬莱市(烟台)" href="javascript:void(0);" style="width: 50px; text-align: left">蓬莱市(烟台)</a></li><li><a datatag="654201" cityid="440080" title="塔城市(塔城地区)" href="javascript:void(0);" style="width: 50px; text-align: left">塔城市(塔城地区)</a></li><li><a datatag="370783" cityid="440080" title="寿光市(潍坊)" href="javascript:void(0);" style="width: 50px; text-align: left">寿光市(潍坊)</a></li><li><a datatag="652101" cityid="440080" title="吐鲁番市(吐鲁番地区)" href="javascript:void(0);" style="width: 50px; text-align: left">吐鲁番市(吐鲁番地区)</a></li><li><a datatag="652123" cityid="440080" title="托克逊县(吐鲁番地区)" href="javascript:void(0);" style="width: 50px; text-align: left">托克逊县(吐鲁番地区)</a></li><li><a datatag="652825" cityid="440080" title="且末县(巴音郭楞蒙古自治州)" href="javascript:void(0);" style="width: 50px; text-align: left">且末县(巴音郭楞蒙古自治州)</a></li></ul></div><div tbstyle="WXYZ" class="hide" style="display: none;"><ul class="hotel_brand_list"><li><a datatag="610100" cityid="440080" title="西安市" href="javascript:void(0);" style="width: 50px; text-align: left">西安市</a></li><li><a datatag="420100" cityid="440080" title="武汉市" href="javascript:void(0);" style="width: 50px; text-align: left">武汉市</a></li><li><a datatag="370700" cityid="440080" title="潍坊市" href="javascript:void(0);" style="width: 50px; text-align: left">潍坊市</a></li><li><a datatag="650100" cityid="440080" title="乌鲁木齐市" href="javascript:void(0);" style="width: 50px; text-align: left">乌鲁木齐市</a></li><li><a datatag="410100" cityid="440080" title="郑州市" href="javascript:void(0);" style="width: 50px; text-align: left">郑州市</a></li><li><a datatag="330300" cityid="440080" title="温州市" href="javascript:void(0);" style="width: 50px; text-align: left">温州市</a></li><li><a datatag="321000" cityid="440080" title="扬州市" href="javascript:void(0);" style="width: 50px; text-align: left">扬州市</a></li><li><a datatag="370600" cityid="440080" title="烟台市" href="javascript:void(0);" style="width: 50px; text-align: left">烟台市</a></li><li><a datatag="350200" cityid="440080" title="厦门市" href="javascript:void(0);" style="width: 50px; text-align: left">厦门市</a></li><li><a datatag="640100" cityid="440080" title="银川市" href="javascript:void(0);" style="width: 50px; text-align: left">银川市</a></li><li><a datatag="320200" cityid="440080" title="无锡市" href="javascript:void(0);" style="width: 50px; text-align: left">无锡市</a></li><li><a datatag="320300" cityid="440080" title="徐州市" href="javascript:void(0);" style="width: 50px; text-align: left">徐州市</a></li><li><a datatag="130700" cityid="440080" title="张家口市" href="javascript:void(0);" style="width: 50px; text-align: left">张家口市</a></li><li><a datatag="321100" cityid="440080" title="镇江市" href="javascript:void(0);" style="width: 50px; text-align: left">镇江市</a></li><li><a datatag="371000" cityid="440080" title="威海市" href="javascript:void(0);" style="width: 50px; text-align: left">威海市</a></li><li><a datatag="222400" cityid="440080" title="延边朝鲜族自治州" href="javascript:void(0);" style="width: 50px; text-align: left">延边朝鲜族自治州</a></li><li><a datatag="320900" cityid="440080" title="盐城市" href="javascript:void(0);" style="width: 50px; text-align: left">盐城市</a></li><li><a datatag="340200" cityid="440080" title="芜湖市" href="javascript:void(0);" style="width: 50px; text-align: left">芜湖市</a></li><li><a datatag="620700" cityid="440080" title="张掖市" href="javascript:void(0);" style="width: 50px; text-align: left">张掖市</a></li><li><a datatag="610500" cityid="440080" title="渭南市" href="javascript:void(0);" style="width: 50px; text-align: left">渭南市</a></li><li><a datatag="654000" cityid="440080" title="伊犁哈萨克自治州" href="javascript:void(0);" style="width: 50px; text-align: left">伊犁哈萨克自治州</a></li><li><a datatag="370400" cityid="440080" title="枣庄市" href="javascript:void(0);" style="width: 50px; text-align: left">枣庄市</a></li><li><a datatag="410700" cityid="440080" title="新乡市" href="javascript:void(0);" style="width: 50px; text-align: left">新乡市</a></li><li><a datatag="421200" cityid="440080" title="咸宁市" href="javascript:void(0);" style="width: 50px; text-align: left">咸宁市</a></li><li><a datatag="420600" cityid="440080" title="襄阳市" href="javascript:void(0);" style="width: 50px; text-align: left">襄阳市</a></li><li><a datatag="130500" cityid="440080" title="邢台市" href="javascript:void(0);" style="width: 50px; text-align: left">邢台市</a></li><li><a datatag="430800" cityid="440080" title="张家界市" href="javascript:void(0);" style="width: 50px; text-align: left">张家界市</a></li><li><a datatag="510300" cityid="440080" title="自贡市" href="javascript:void(0);" style="width: 50px; text-align: left">自贡市</a></li><li><a datatag="150300" cityid="440080" title="乌海市" href="javascript:void(0);" style="width: 50px; text-align: left">乌海市</a></li><li><a datatag="210800" cityid="440080" title="营口市" href="javascript:void(0);" style="width: 50px; text-align: left">营口市</a></li><li><a datatag="370300" cityid="440080" title="淄博市" href="javascript:void(0);" style="width: 50px; text-align: left">淄博市</a></li><li><a datatag="350600" cityid="440080" title="漳州市" href="javascript:void(0);" style="width: 50px; text-align: left">漳州市</a></li><li><a datatag="630100" cityid="440080" title="西宁市" href="javascript:void(0);" style="width: 50px; text-align: left">西宁市</a></li><li><a datatag="610800" cityid="440080" title="榆林市" href="javascript:void(0);" style="width: 50px; text-align: left">榆林市</a></li><li><a datatag="532800" cityid="440080" title="西双版纳傣族自治州" href="javascript:void(0);" style="width: 50px; text-align: left">西双版纳傣族自治州</a></li><li><a datatag="131024" cityid="440080" title="香河县(廊坊)" href="javascript:void(0);" style="width: 50px; text-align: left">香河县(廊坊)</a></li><li><a datatag="222401" cityid="440080" title="延吉市(延边朝鲜族自治州)" href="javascript:void(0);" style="width: 50px; text-align: left">延吉市(延边朝鲜族自治州)</a></li><li><a datatag="321081" cityid="440080" title="仪征市(扬州)" href="javascript:void(0);" style="width: 50px; text-align: left">仪征市(扬州)</a></li><li><a datatag="350921" cityid="440080" title="霞浦县(宁德)" href="javascript:void(0);" style="width: 50px; text-align: left">霞浦县(宁德)</a></li><li><a datatag="622923" cityid="440080" title="永靖县(临夏回族自治州)" href="javascript:void(0);" style="width: 50px; text-align: left">永靖县(临夏回族自治州)</a></li><li><a datatag="654002" cityid="440080" title="伊宁市(伊犁哈萨克自治州)" href="javascript:void(0);" style="width: 50px; text-align: left">伊宁市(伊犁哈萨克自治州)</a></li><li><a datatag="370481" cityid="440080" title="滕州市(枣庄)" href="javascript:void(0);" style="width: 50px; text-align: left">滕州市(枣庄)</a></li><li><a datatag="513401" cityid="440080" title="西昌市(凉山彝族自治州)" href="javascript:void(0);" style="width: 50px; text-align: left">西昌市(凉山彝族自治州)</a></li><li><a datatag="350782" cityid="440080" title="武夷山市(南平)" href="javascript:void(0);" style="width: 50px; text-align: left">武夷山市(南平)</a></li><li><a datatag="340322" cityid="440080" title="五河县(蚌埠)" href="javascript:void(0);" style="width: 50px; text-align: left">五河县(蚌埠)</a></li><li><a datatag="350481" cityid="440080" title="永安市(三明)" href="javascript:void(0);" style="width: 50px; text-align: left">永安市(三明)</a></li><li><a datatag="321281" cityid="440080" title="兴化市(泰州)" href="javascript:void(0);" style="width: 50px; text-align: left">兴化市(泰州)</a></li><li><a datatag="330782" cityid="440080" title="义乌市(金华)" href="javascript:void(0);" style="width: 50px; text-align: left">义乌市(金华)</a></li><li><a datatag="331125" cityid="440080" title="云和县(丽水)" href="javascript:void(0);" style="width: 50px; text-align: left">云和县(丽水)</a></li><li><a datatag="321322" cityid="440080" title="沭阳县(宿迁)" href="javascript:void(0);" style="width: 50px; text-align: left">沭阳县(宿迁)</a></li><li><a datatag="320830" cityid="440080" title="盱眙县(淮安)" href="javascript:void(0);" style="width: 50px; text-align: left">盱眙县(淮安)</a></li><li><a datatag="320921" cityid="440080" title="响水县(盐城)" href="javascript:void(0);" style="width: 50px; text-align: left">响水县(盐城)</a></li><li><a datatag="211481" cityid="440080" title="兴城市(葫芦岛)" href="javascript:void(0);" style="width: 50px; text-align: left">兴城市(葫芦岛)</a></li><li><a datatag="210283" cityid="440080" title="庄河市(大连)" href="javascript:void(0);" style="width: 50px; text-align: left">庄河市(大连)</a></li><li><a datatag="110229" cityid="440080" title="延庆县(北京)" href="javascript:void(0);" style="width: 50px; text-align: left">延庆县(北京)</a></li><li><a datatag="131026" cityid="440080" title="文安县(廊坊)" href="javascript:void(0);" style="width: 50px; text-align: left">文安县(廊坊)</a></li><li><a datatag="440183" cityid="440080" title="增城市(广州)" href="javascript:void(0);" style="width: 50px; text-align: left">增城市(广州)</a></li><li><a datatag="130722" cityid="440080" title="张北县(张家口)" href="javascript:void(0);" style="width: 50px; text-align: left">张北县(张家口)</a></li><li><a datatag="130726" cityid="440080" title="蔚县(张家口)" href="javascript:void(0);" style="width: 50px; text-align: left">蔚县(张家口)</a></li><li><a datatag="512000" cityid="440080" title="资阳市" href="javascript:void(0);" style="width: 50px; text-align: left">资阳市</a></li><li><a datatag="610400" cityid="440080" title="咸阳市" href="javascript:void(0);" style="width: 50px; text-align: left">咸阳市</a></li><li><a datatag="640300" cityid="440080" title="吴忠市" href="javascript:void(0);" style="width: 50px; text-align: left">吴忠市</a></li><li><a datatag="371121" cityid="440080" title="五莲县(日照)" href="javascript:void(0);" style="width: 50px; text-align: left">五莲县(日照)</a></li><li><a datatag="371321" cityid="440080" title="沂南县(临沂)" href="javascript:void(0);" style="width: 50px; text-align: left">沂南县(临沂)</a></li><li><a datatag="371624" cityid="440080" title="沾化县(滨州)" href="javascript:void(0);" style="width: 50px; text-align: left">沾化县(滨州)</a></li><li><a datatag="511381" cityid="440080" title="阆中市(南充)" href="javascript:void(0);" style="width: 50px; text-align: left">阆中市(南充)</a></li><li><a datatag="360900" cityid="440080" title="宜春市" href="javascript:void(0);" style="width: 50px; text-align: left">宜春市</a></li><li><a datatag="433100" cityid="440080" title="湘西土家族苗族自治州" href="javascript:void(0);" style="width: 50px; text-align: left">湘西土家族苗族自治州</a></li><li><a datatag="430600" cityid="440080" title="岳阳市" href="javascript:void(0);" style="width: 50px; text-align: left">岳阳市</a></li><li><a datatag="072750" cityid="440080" title="涿州市" href="javascript:void(0);" style="width: 50px; text-align: left">涿州市</a></li><li><a datatag="421125" cityid="440080" title="浠水县(黄冈)" href="javascript:void(0);" style="width: 50px; text-align: left">浠水县(黄冈)</a></li><li><a datatag="410821" cityid="440080" title="修武县(焦作)" href="javascript:void(0);" style="width: 50px; text-align: left">修武县(焦作)</a></li><li><a datatag="371522" cityid="440080" title="莘县(聊城)" href="javascript:void(0);" style="width: 50px; text-align: left">莘县(聊城)</a></li><li><a datatag="371523" cityid="440080" title="茌平县(聊城)" href="javascript:void(0);" style="width: 50px; text-align: left">茌平县(聊城)</a></li><li><a datatag="130822" cityid="440080" title="兴隆县(承德)" href="javascript:void(0);" style="width: 50px; text-align: left">兴隆县(承德)</a></li><li><a datatag="130828" cityid="440080" title="围场满族蒙古族自治县(承德)" href="javascript:void(0);" style="width: 50px; text-align: left">围场满族蒙古族自治县(承德)</a></li><li><a datatag="420321" cityid="440080" title="郧县(十堰)" href="javascript:void(0);" style="width: 50px; text-align: left">郧县(十堰)</a></li><li><a datatag="130281" cityid="440080" title="遵化市(唐山)" href="javascript:void(0);" style="width: 50px; text-align: left">遵化市(唐山)</a></li><li><a datatag="450321" cityid="440080" title="阳朔县(桂林)" href="javascript:void(0);" style="width: 50px; text-align: left">阳朔县(桂林)</a></li><li><a datatag="451281" cityid="440080" title="宜州市(河池)" href="javascript:void(0);" style="width: 50px; text-align: left">宜州市(河池)</a></li><li><a datatag="130633" cityid="440080" title="易县(保定)" href="javascript:void(0);" style="width: 50px; text-align: left">易县(保定)</a></li><li><a datatag="130638" cityid="440080" title="雄县(保定)" href="javascript:void(0);" style="width: 50px; text-align: left">雄县(保定)</a></li><li><a datatag="320582" cityid="440080" title="张家港市(苏州)" href="javascript:void(0);" style="width: 50px; text-align: left">张家港市(苏州)</a></li><li><a datatag="320324" cityid="440080" title="睢宁县(徐州)" href="javascript:void(0);" style="width: 50px; text-align: left">睢宁县(徐州)</a></li><li><a datatag="320124" cityid="440080" title="溧水县(南京)" href="javascript:void(0);" style="width: 50px; text-align: left">溧水县(南京)</a></li><li><a datatag="320282" cityid="440080" title="宜兴市(无锡)" href="javascript:void(0);" style="width: 50px; text-align: left">宜兴市(无锡)</a></li><li><a datatag="065201" cityid="440080" title="燕郊(三河)" href="javascript:void(0);" style="width: 50px; text-align: left">燕郊(三河)</a></li><li><a datatag="404500" cityid="440080" title="云阳县(重庆)" href="javascript:void(0);" style="width: 50px; text-align: left">云阳县(重庆)</a></li><li><a datatag="510124" cityid="440080" title="郫县(成都)" href="javascript:void(0);" style="width: 50px; text-align: left">郫县(成都)</a></li><li><a datatag="341621" cityid="440080" title="涡阳县(亳州)" href="javascript:void(0);" style="width: 50px; text-align: left">涡阳县(亳州)</a></li><li><a datatag="341226" cityid="440080" title="颍上县(阜阳)" href="javascript:void(0);" style="width: 50px; text-align: left">颍上县(阜阳)</a></li><li><a datatag="341322" cityid="440080" title="萧县(宿州)" href="javascript:void(0);" style="width: 50px; text-align: left">萧县(宿州)</a></li><li><a datatag="341324" cityid="440080" title="泗县(宿州)" href="javascript:void(0);" style="width: 50px; text-align: left">泗县(宿州)</a></li><li><a datatag="321324" cityid="440080" title="泗洪县(宿迁)" href="javascript:void(0);" style="width: 50px; text-align: left">泗洪县(宿迁)</a></li><li><a datatag="330324" cityid="440080" title="永嘉县(温州)" href="javascript:void(0);" style="width: 50px; text-align: left">永嘉县(温州)</a></li><li><a datatag="350322" cityid="440080" title="仙游县(莆田)" href="javascript:void(0);" style="width: 50px; text-align: left">仙游县(莆田)</a></li><li><a datatag="520423" cityid="440080" title="镇宁布依族苗族自治县(安顺)" href="javascript:void(0);" style="width: 50px; text-align: left">镇宁布依族苗族自治县(安顺)</a></li><li><a datatag="532325" cityid="440080" title="姚安县(楚雄彝族自治州)" href="javascript:void(0);" style="width: 50px; text-align: left">姚安县(楚雄彝族自治州)</a></li><li><a datatag="621123" cityid="440080" title="渭源县(定西)" href="javascript:void(0);" style="width: 50px; text-align: left">渭源县(定西)</a></li><li><a datatag="621125" cityid="440080" title="漳县(定西)" href="javascript:void(0);" style="width: 50px; text-align: left">漳县(定西)</a></li><li><a datatag="640422" cityid="440080" title="西吉县(固原)" href="javascript:void(0);" style="width: 50px; text-align: left">西吉县(固原)</a></li><li><a datatag="652122" cityid="440080" title="鄯善县(吐鲁番地区)" href="javascript:void(0);" style="width: 50px; text-align: left">鄯善县(吐鲁番地区)</a></li><li><a datatag="653124" cityid="440080" title="泽普县(喀什地区)" href="javascript:void(0);" style="width: 50px; text-align: left">泽普县(喀什地区)</a></li></ul></div></div></div></div><div style="z-index: 9999; display: none; position: absolute; top: 248px; left: 543px; border: 2px solid rgb(233, 176, 153);" id="mydiv" class="AC-cityId ui-autocomplete ui-widget ui-widget-content ui-helper-clearfix ui-corner-all ui-helper-hidden-accessible"><div class="ui-autocomplete-message"><span data-id="shuru">b</span> ,您可以用回车选择城市</div><div class="ui-autocomplete-list"></div><div class="ui-autocomplete-page"><a goto="1" class="ui-autocomplete-arrowr ui-autocomplete-page-current" href="http://www.super8.com.cn/#">1</a><div>←→翻页, 共<span>0</span>项, 共<span>0</span>页</div></div></div><script type="text/javascript" charset="UTF-8" src="../../static/online/online"></script><div><div class="qimo_chatpup" id="qimo_chatpup" style="display: none; right: 18px; bottom: 0px; width: 355px; height: 500px;"><iframe id="chatIframe" src="./shouye_files/moor_chat.html" height="100%" width="100%"></iframe><div id="maskChat"></div></div><div id="chatBtn" class="chatBtn" style="display: block; background-color: rgb(0, 204, 205); border-radius: 5px 5px 0px 0px; right: 18px; bottom: -1px; padding: 8px 10px;"><img width="25px" height="25px" src="../../static/images/1.png" style="margin: 0px 5px -6px 0px;"><span>咨询客服</span><span id="qimo_badge"></span></div><div id="qimo_showNewMsg" class="qimo_showNewMsg" style="display: none; "><div id="qimo_showNewMsg_box" class="qimo_showNewMsg_box"><div id="qimo_showNewMsg_title_box" class="qimo_showNewMsg_title_box"><img src="../../static/images/agentLogo.png"><span id="qimo_showNewMsg_title" class="qimo_showNewMsg_title"></span></div> <div id="qimo_showNewMsg_content" class="qimo_showNewMsg_content"></div></div><span id="qimo_showNewMsg_close" class="qimo_showNewMsg_close">x</span></div></div><div><div class="qimo_inviteBox" id="qimo_inviteBox" style="display: none; right: 10px; bottom: 10px; background: rgb(63, 184, 253);"><img class="qimo_invite_close" id="qimo_invite_close" src="../../static/images/invite-close.png"><div class="qimo_inviteBox_top"><div class="qimo_inviteBox_top_img" id="qimo_inviteBox_top_img"><img id="qimo_inviteBox_img" src="../../static/images/896beb70-d81a-11e7-b6e7-9da891414b0f.png"></div><div class="qimo_inviteBox_top_right" id="qimo_inviteBox_top_right"><p id="qimo_inviteBox_InviteWords">欢迎咨询，请问有什么可以帮您的吗？</p><div class="qimo_inviteBox_top_button" id="qimo_inviteBox_top_button"><div id="invite_click_button_1" class="divbuttons msie11PadTop" style="color: rgb(255, 255, 255); border-color: rgb(255, 255, 255);">立即咨询</div><div id="invite_click_button_2" class="divbuttons msie11PadTop" style="color: rgb(255, 255, 255); border-color: rgb(255, 255, 255);">以后再说</div></div></div></div><div class="qimo_inviteBox_bottom"><textarea id="sendInviteText" placeholder="请输入您想要输入的内容..." rows="2"></textarea><div id="sendInviteContent" class="sendInviteContent msie11PadTop" style="background: rgb(63, 184, 253);">发送</div></div></div></div><div><div class="qimo_screenpop" id="qimo_screenpop" style="display: none"><div class="screendragbar" id="screendrag"></div><div class="qimo_headerimg" id="qimo_headerimg"><div class="screenminimg" style="display: none" id="screenminimg"><img src="../../static/images/small.png"></div><div class="screenminimg" id="screenmaximg"><img src="../../static/images/big.png"></div><div class="screenminimg" id="screencloseimg"><img src="../../static/images/close.png" style="width: 16px;height: 16px;"></div></div> <div id="mask"></div><iframe id="screenIframe" src="./shouye_files/saved_resource.html" height="100%" width="100%" allow="microphone; camera"></iframe></div></div><div><div class="qimo_videopup" id="qimo_videopup" style="display: none"><div style="" class="dragbar" id="drag"></div><div class="qimo_minimg" id="qimo_minimg"><img src="../../static/images/small.png"></div><img src="../../static/images/big.png" class="qimo_maximg" id="qimo_maximg" style="display: none"> <div id="mask"></div><iframe id="videoIframe" src="./shouye_files/saved_resource(1).html" height="100%" width="100%" allow="microphone; camera"></iframe></div></div></body></html>
