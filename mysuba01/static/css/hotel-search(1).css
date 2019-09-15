@@ -1,0 +1,111 @@
+
+/*搜索*/
+.search-filter{ padding-top:5px; }
+.search-filter .item-filter{ line-height:28px; padding-left:110px; clear:both;  }
+.search-filter .item-filter-area { line-height:30px; height:30px; }
+.search-filter .item-filter-area dt {  line-height:30px; float:left; }
+.search-filter .item-filter-area dd {  line-height:30px; }
+.search-filter .item-filter-area .dd .current{ border:1px solid #f9cdcf;  background:#fff9f9; line-height:25px; height:30px; font-weight:bold; border-bottom:none; border-top:2px solid #e21e1e; color:#222; border-radius:0; margin-bottom:-1px; }
+.search-filter .item-filter-area dd a{ margin-right:10px; float:left; line-height:25px; }
+
+.search-filter .item-filter-inner { margin-left:70px; padding:4px 10px; border:1px solid #f9cdcf; background:#fff9f9; }
+.search-filter .item-filter-inner .subway-line { border-bottom:1px dashed #ddd; width:910px; }
+.search-filter .subway-line a.current { background:none; font-weight:bold; color:#3867bb; }
+.search-filter .bussiness-circle { overflow:hidden; zoom:1; }
+.search-filter .bussiness-circle .dd {width:850px; float:left; }
+.search-filter .bussiness-circle .filter-more { float:right; cursor:pointer; color:#cd0000; line-height:28px;  }
+.search-filter .bussiness-circle .filter-more .arrow { height:6px; width:8px; background:url(../images/icon-more-filter.png) no-repeat left top; vertical-align:middle; display:inline-block; margin-left:5px; }
+.search-filter .bussiness-circle .filter-more .arrow-up { background-position:left bottom; }
+
+.search-filter dt{ float:left; padding-left:5px; margin-left:-110px; width:105px; color:#909090; text-align:right; _margin-left:-55px; }
+.search-filter dt a{ color:#3867bb; padding:0 10px; }
+.search-filter dt span{ float:left; }
+.search-filter .dd{ margin:2px 0 0 0; width:880px; }
+.search-filter .dd a{ display:inline-block; padding:0 7px; line-height:19px; _margin:4px 0; font-family:Verdana, Geneva, sans-serif; color:#333; }
+.search-filter .dd a{ *display:inline-block; }
+.search-filter .dd a.current, .search-filter dt a.current{ background-color:#38b0ee; color:#fff; border-radius:3px; }
+.search-filter .hotel-brand-select a{ padding:0 20px 0 28px; position:relative; display:inline-block }
+.search-filter .hotel-brand-select a.current{ background:#ff2211 }
+.search-filter .hotel-brand-select a .logo-brand-select{ position:absolute; left:6px; top:-2px }
+
+.search-filter .chosen-filter{ padding-left:60px; }
+.search-filter .chosen-filter dt{ width:62px; margin-left:-60px; }
+.search-filter .chosen-filter dd span{ border:1px dashed #fab6b9;line-height:24px; display:inline-block; }
+.search-filter .chosen-filter dd em{ padding:0 5px; }
+
+.search-sort{ height:30px; padding:5px 18px; line-height:30px; border:1px solid #e8e8e8; }
+.search-sort .item-name{ float:left; display:block; width:68px; }
+.search-sort .item-sort{ float:left; margin-right:30px; }
+.search-sort .item-sort li{ float:left; }
+.search-sort .item-sort li a{ float:left; display:block; text-decoration:none; text-align:center; width:85px; border:1px solid #e8e8e8; height:28px; line-height:28px; margin-right:5px; }
+.search-sort .item-sort li.current a{  color:#fff; background-color:#d7161e; border-color:#d7161e; font-weight:bold; }
+.search-sort .item-result{ float:right; padding-left:40px; }
+.search-sort .item-result .red-number{ color:#e60012; font-family:Verdana, Geneva, sans-serif; padding-right:3px; }
+.search-sort .item-map{ display:block; float:left; background:url("../images/icon-map-red.png") no-repeat 0 6px; padding-left:20px; color:#de171f; }
+.search-sort .quick-filter{ float:left; color:#333; padding-right:17px; }
+.search-sort .quick-filter:hover{ color:#e77f10; }
+.search-sort .balance-filter{ padding:0 5px; background:#42a4e2; color:#fff; border-radius:5px; -webkit-border-radius:5px; -moz-border-radius:5px; line-height:20px; height:20px; display:inline-block }
+.search-sort input{ margin-right:7px; }
+
+.search-result{ min-height:750px; _height:750px; }
+.search-result .item-result-subject{ padding-top:25px; margin-bottom:15px; *zoom:1; padding-left:165px; width:510px; position:relative }
+.search-result .item-result-subject .icon-new-product{ position:absolute; z-index:200; left:0; top:15px }
+.search-result .item-result-subject .price{ font-family:"microsoft yahei"; color:#d7161e; /*float:right; */font-size:22px; font-weight:normal }
+    .search-result .item-result-subject .icon-video {
+        position: absolute;
+        z-index: 200;
+        left: 84px;
+        top: 97px
+    }
+.search-result .item-result-subject .price em{ font-size:14px; padding-left:2px; }
+.search-result .item-result-subject .pride{ background: url(../images/icon_pride_srch.gif) no-repeat 0 0; display:inline-block; margin-right:10px; vertical-align:top; position:relative}
+.search-result .item-result-subject .pride .hover-pride{ position:absolute;background:#555; background:rgba(0,0,0,.7); color:#fff; font-weight:normal; font-size:12px; line-height:24px; padding:0 8px; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; white-space:nowrap; top:-35px; display:none; z-index:500  }
+.search-result .item-result-subject .jiaoao{ width:71px; height:21px; background:url(../images/icons/logo-pride.png) no-repeat 0 0 }
+.search-result .item-result-subject .star-gold{ width:28px; height:27px; background:url(../images/icons/logo-star-gold.png) no-repeat 0 0; margin-top:-3px }
+.search-result .item-result-subject .star-silver{ width:28px; height:27px; background:url(../images/icons/logo-star-silver.png) no-repeat 0 0; margin-top:-3px }
+.search-result .item-result-subject .new-open{ width:57px; height:15px; background:url(../images/icons/logo-new.png) no-repeat 0 0; vertical-align:middle; }
+.search-result .item-result-subject .tese{ width:37px; height:21px; background-position:-120px 0; }
+.search-result .item-result-subject .qingjie{ width:37px; height:21px; background-position:-173px 0; }
+.search-result .item-result-subject .new-open{ width:57px; height:15px; background-position:0 -31px; vertical-align:middle; }
+.search-result .item-result-subject .sale6{ width:64px; height:21px; background:url(../images/icon-sale-6B.png) no-repeat 0 0; vertical-align:middle; }
+.search-result .item-result-subject .rectify{ width:52px; height:15px; background-position:-62px -31px; vertical-align:middle; }
+.search-result .item-result-subject .no-recommend{ width:65px; height:15px; background-position:-123px -31px; vertical-align:middle; }
+.search-result .item-result-subject .ok-brand{ width:57px; height:22px; background:url(../images/ok-brand.png) no-repeat 0 0; margin-top:3px }
+
+.search-result .item-result-subject .img{ float:left; margin-left:-165px; }
+.search-result .item-result-subject .img img{ width:138px; height:98px; display:block; }
+.search-result .item-result-subject .desc .hotel-icons{ width:400px; padding-top:6px; min-height:18px; margin-bottom:8px }
+.search-result .item-result-subject .desc .hotel-icons img{ margin-right:5px;}
+.search-result .item-result-subject .desc h4{ line-height:26px; font-size:16px; margin-bottom:3px; position:relative; }
+.search-result .item-result-subject .desc h4 a{ color:#3867bb; padding-left:26px; }
+.search-result .item-result-subject .desc h4 .order-map{ position:absolute; z-index:10; left:0; top:1px; background: url(../images/order-map.gif) no-repeat 0 0;width:22px; height:25px; text-align:center; color:#fff; font:bold 12px/21px Tahoma, Geneva, sans-serif; cursor:pointer; }
+.search-result .item-result-subject .desc p{ line-height:19px; margin-bottom:3px; }
+.search-result .item-result-subject .desc p.distance-p{ color:#686868 }
+.search-result .item-result-subject .desc p.distance-p .red{ color:#3867bb }
+.search-result .item-result-subject .desc .time{ color:#b4b4b4; display:block; }
+.search-result .item-result-subject .icon-map{ background:url("../images/icon-map-red.png") no-repeat 0 -28px; padding-left:13px; margin-left:10px; display:inline-block; padding-bottom:1px; }
+.search-result .item-result-subject .score{ float:right; margin-top:5px; }
+.search-result .item-result-subject .score dt{ text-align:right; }
+.search-result .item-result-subject .score dt.price{ padding-bottom:8px }
+.search-result .item-result-subject .score dt.price b{ font-weight:normal }
+.search-result .item-result-subject .score dd.hotel-icons{ padding-top:8px }
+.search-result .item-result-subject .score dt a{ color:#6ead2b; }
+.search-result .item-result-subject .score dt span{ color:#6ead2b; font-size:18px; font-family:"arial"; }
+.search-result .item-result-subject .score dt.prepay-discount{ background:#ffea5f; color:#d7141c; text-align:center; border-radius:3px; -webkit-border-radius:3px; -moz-border-radius:3px; display:block; text-decoration:none; line-height:18px; margin-bottom:8px }
+.search-result .item-result-subject .score dd{ color:#b1b1b1; line-height:18px; text-align:right; font-family:"arial"; }
+
+.search-result .item-sep-bar{ height:3px; background-color:#f1f1f1; overflow:hidden; _font-size:0; margin-top:45px; margin-bottom:25px; }
+.search-result .item-sep-bar i{ float:left; width:140px; height:3px; background-color:#d7161e; }
+.search-result .table-expand-more{ height:33px; background-color:#f9f9f9; text-align:center; line-height:33px; cursor:pointer; }
+.search-result .table-expand-more a{ display:inline-block; _margin-top:10px; }
+.search-result .table-expand-more .icon-more{ display:inline-block; width:11px; height:11px; background:url("../images/icon-expand.png") no-repeat 0 -19px; }
+.search-result .table-expand-more .icon-more-top{ background-position:0 0; }
+.search-result .toggle-content{ display:none; }
+
+.search-result .pager{ margin-top:60px; margin-bottom:30px; }
+/*搜索无结果*/
+.search-empty-wrap{ border-bottom:3px dotted #d7161e; }
+.search-empty-wrap h3{ padding:80px 0 80px 50px; margin:0 auto; width:450px; color:#ae0000; font-size:14px; font-weight:normal; line-height:30px; background:url(../images/icon-srch-empty.gif) no-repeat left center; }
+.search-empty-wrap h3 a{ color:#3867bb; font-weight:bold; text-decoration:underline; }
+.search-nodata-wrap{ padding-left:50px; margin:80px auto 0; width:310px; color:#ae0000; font-size:14px; line-height:30px; background:url(../images/icon-srch-empty.gif) no-repeat left center; }
+

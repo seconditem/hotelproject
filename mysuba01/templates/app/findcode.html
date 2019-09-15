@@ -1,0 +1,105 @@
+
+
+{% extends 'app/yudingindex.html' %}
+{% load static %}
+{% block title %}
+    用户注册
+{% endblock %}
+{% block headone %}
+{% endblock %}
+{% block contents %}
+<link href="../../static/css/forgetpass.css" rel="stylesheet">
+<form action="http://www.super8.com.cn/Forgotpwd/Forgotpwd2" method="post">
+    <div class="wrapper grid-950">
+        <h4 class="fp-title mt50">找回密码</h4>
+        <div class="fpassCtnWrap">
+            <ul class="fsteps">
+                <li class="first fcurrent"><span><i>1</i><em>验证身份</em></span></li>
+                <li class="center"><span><i>2</i><em>重置密码</em></span></li>
+                <li class="end"><span><i>3</i><em>完成</em></span></li>
+
+            </ul>
+            <div class="formWrap">
+                <div class="fwSpan ui-placeholder-re">
+                    <label class="tit">手机号码</label>
+                    <label for="account">
+                        <input class="i_text_f" id="CuName" name="CuName" type="text" value="">
+                    </label>
+
+                </div>
+
+                <div class="fwSpan fwSpan2">
+                    <label class="tit">验证码</label>
+                    <input class="i_text_f" id="CuCode" name="CuCode" type="text" value="">
+                    <img id="sp_imag" src="findcode_files/NewValidateCodeImage" onclick="NewValidateCode()"
+                         class="img-vertif">
+                    <a class="a-vertif" href="http://www.super8.com.cn/Forgotpwd/Forgotpwd1#"
+                       onclick="NewValidateCode()">看不清 换一张</a>
+
+                </div>
+                <button id="issubmit" type="submit"  href="{% url 'app:findcodetwo' %}" onclick="return GetSubmit();" class="fp-btn">下一步</button>
+
+{% comment %}
+                <button id="issubmit" type="submit"  href="{% url 'app:findcodetwo' %}" onclick="return GetSubmit();" class="fp-btn">下一步</button>
+{% endcomment %}
+                 <a id="dregister" href="{% url 'app:findcodetwo' %}">下一步</a>
+            </div>
+        </div>
+    </div>
+</form>
+<script type="text/javascript">
+    function NewValidateCode() {
+        document.getElementById("sp_imag").src = "/Forgotpwd/NewValidateCodeImage?" + Math.random();
+    }
+
+    function GetSubmit() {
+        var tsMobile = $("#CuName").val();
+        var tsVCode = $("#CuCode").val();
+
+        if (!isMobil(tsMobile)) {
+            alert("请输入正确的手机号!");
+            return false;
+        }
+        if (tsVCode == "") {
+            alert("请输入验证码!");
+            return false;
+        }
+        return true;
+    }
+
+    function isMobil(s) {
+        var patrn = /(^0{0,1}1[3|4|5|6|7|8|9][0-9]{9}$)/;
+        if (!patrn.exec(s)) {
+            return false;
+        }
+        return true;
+    }
+</script>
+
+<!--REG END-->
+{% endblock %}
+
+{% block scripttwo %}
+
+<script>
+function checkReg(obj){
+	document.getElementById('tip_'+obj).style.display='block';
+}
+
+function checkRegOut(obj,test){
+	if(document.getElementById(obj).value==''){
+		document.getElementById('tip_'+obj).innerHTML='<b style="color:red;">'+test+'</b>';
+	}else{
+		document.getElementById('tip_'+obj).style.display='none';
+	}
+}
+
+function show(obj){
+	document.getElementById(obj).src='{% url "app:yzm" %}?math='+Math.random();
+}
+</script>
+{% endblock %}
+
+
+
+
