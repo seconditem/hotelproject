@@ -29,5 +29,7 @@ urlpatterns = [
     url(r'^findcode/$', views.findcode, name='findcode'),
     #忘记密码
     url(r'^findcodetwo/$', views.findcodetwo, name='findcodetwo'),
+    #酒店详情
+    url(r'^hoteldetail/$',views.HotelDetail,name='hoteldetail')
 
 ]

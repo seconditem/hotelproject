@@ -1,0 +1,151 @@
+.crumbs{ border-bottom:none; }
+.content{ border:1px solid #eaeaea; background-color:#fffcf4; }
+
+.blank-20{ height:20px; }
+
+label input{ vertical-align:middle; }
+
+.btn-pay{ color:#fff; font-size:14px; font-family:"microsoft yahei"; background:url("../images/btn-red-l.png") no-repeat 0 0; display:inline-block; width:125px; height:38px; line-height:36px; text-align:center; }
+
+.grid{ width:950px; }
+.grid .g1{ width:270px; float:left;  }
+.grid .g2{ width:680px; float:right; position:relative; background-color:#fff; }
+.grid .g2 .shadow{ position:absolute; left:0; border-left:1px solid #dadada; width:2px; top:0; bottom:0; height:100%; opacity:0.6; filter:alpha(Opacity=60);
+    _height:expression(document.getElementById('grid-g2').offsetHeight+"px");
+}
+
+.hotel-subject{ width:240px; padding:15px 0 0 15px; }
+.hotel-subject h3{ font-size:18px; color:#3867bb; line-height:24px;  }
+.hotel-subject .desc{ color:#b1b1b1; line-height:18px; margin:8px 0; }
+.hotel-subject .img{ margin-bottom:20px; }
+.hotel-subject img{ display:block; width:235px; height:176px; }
+.hotel-subject .attr{ line-height:25px; }
+.hotel-subject{}
+.hotel-subject .tip-list{ padding:45px 0 0; }
+
+
+.title-bar{ background-color:#f8c75c; height:31px; line-height:31px; margin-bottom:15px; }
+.title-bar h3{ color:#fff; font-size:14px; font-family:"microsoft yahei"; padding-left:25px; }
+
+.form{}
+.form .form-group{ *zoom:1; clear:both; padding-left:125px; margin-bottom:8px; }
+.form .col-name{ float:left; width:115px; margin-left:-125px; padding-right:10px; _position:relative; text-align:right; line-height:29px; font-weight:bold; color:#666; }
+.form .col-item{ line-height:29px; }
+.form .regular-client label{ width:70px; display:inline-block;text-overflow:ellipsis; overflow:hidden; white-space:nowrap; }
+
+.form .regular-client .toggle-content{ display:none; }
+.form .col-item .labl{ font-size:14px; font-weight:bold; color:#3867bb; padding-right:5px; }
+.form .danbao-tip{ color:#d7161e; line-height:18px; padding:4px 20px 4px 0; }
+.form .select-num{ border:2px solid #cecece; height:25px; line-height:25px; width:60px; }
+.form input.text{ border:2px solid #cecece; height:26px; width:90px; padding:0 6px; *line-height:25px; line-height:25px\9; }
+.form .tip{ color:#666; }
+.form .col-item input.w2{ width:168px; }
+
+.section{ color:#666; }
+.section .coupon-info{ padding:5px 25px 15px }
+.section .coupon-info dt{ font-size:14px; color:#d9980d; margin-bottom:15px; font-family:"microsoft yahei"; font-weight:bold; }
+.section .coupon-info dd{ line-height:26px; color:#666; }
+.section .coupon-info em{ font-family:tomaho,arial; color:#e60012; font-size:14px; }
+.section .coupon-info .txt{ display:inline-block; width:80px; font-weight:bold; font-size:13px; }
+.section .coupon-info .quan-group-label{ padding-right:12px; cursor:pointer }
+.section .coupon-info .t-input-balance{ line-height:24px; height:24px; border:1px solid #8f8f8f; width:35px; text-align:center; }
+.section .coupon-info dd.disable-sale, .section .coupon-info dd.disable-sale em{ color:#aaa; }
+.section .coupon-info dd.disable-sale .t-input-balance{ border:1px solid #c7c6c6; }
+.section .coupon-info dd .recharge-link{ color:#3867bb; text-decoration:underline; font-size:14px; padding-left:15px }
+.section .coupon-info dd .view-quan{ color:#e60012; text-decoration:underline; font-size:14px; padding-left:15px }
+
+.insurance-wrap{ padding:0 25px 25px; line-height:24px }
+.view-insurance-rule{ padding-left:15px; color:#3867bb; text-decoration:underline }
+
+.quan-detail-wrap{ margin:10px 0 15px; padding:18px 0 0 18px; background:#f8f6f2; overflow:hidden;  display:none }
+.quan-detail-wrap .one-quan{ padding:0 18px 18px 0; float:left }
+.quan-detail-wrap .one-quan .dkquan-block{ background:url(../images/kquan-bg.png) no-repeat 0 0; width:144px; height:103px; padding:20px 0 0 30px; line-height:18px; color:#ff1e00; cursor:pointer }
+.quan-detail-wrap .one-quan .selected{ background-position:0 bottom }
+.quan-detail-wrap .one-quan b{ display:block }
+.quan-detail-wrap .one-quan .cataloge{ font-size:14px; padding-bottom:5px; display:block }
+.quan-detail-wrap .one-quan .price{ font-size:30px; padding-bottom:6px }
+.quan-detail-wrap .one-quan .price em{ font-size:39px; color:#ff1e00; line-height:43px }
+
+.section .recharge-wrap{ margin:0 25px 15px; padding:8px; background:#f8f6f2; display:none }
+.section .recharge-wrap .i_text_recharge{ border:1px solid #d7c6b6; line-height:29px; height:29px; font-size:16px; font-weight:bold; font-family:Arial, Helvetica, sans-serif; color:#333; padding-left:5px; width:175px; float:left; margin-right:10px }
+.section .recharge-wrap ::-webkit-input-placeholder {color:#aea89e; font-size:12px; font-weight:normal}
+.section .recharge-wrap ::-moz-placeholder {color:#aea89e; font-size:12px; font-weight:normal}
+.section .recharge-wrap :-moz-placeholder {color:#aea89e; font-size:12px; font-weight:normal}
+.section .recharge-wrap :-ms-input-placeholder{ color:#aea89e; font-size:12px; font-weight:normal }
+
+.section .link-expand{ display:inline-block; padding-right:18px; background:url("../images/icon-expand.png") no-repeat right -16px; line-height:15px; height:15px; color:#3867bb; }
+.section .link-expand-show{ background-position:right 4px; }
+.day-price{ margin:5px 0 8px; font-size:14px; }
+.span-day-price{ display:inline-block; width:116px; height:55px; text-align:center; line-height:18px; border:1px solid #e1e1e1; margin-bottom:10px; vertical-align:top; background:#fff; }
+.span-day-price .date{ background-color:#f5f5f5; border-bottom:1px dotted #ddd; line-height:24px; margin-bottom:5px; }
+.span-day-price em{ color:#d7161e; font-family:"microsoft yahei"; }
+.span-day-price i{ font-size:12px; line-height:18px; font-style:normal; }
+.span-day-price i.quan{ background:#65be4d; color:#fff; padding:0 3px; border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px; }
+
+.section .submit-wrap{ background-color:#f7f7f7; padding:10px 25px 0; border-top:1px solid #eaeaea; overflow:hidden  }
+.pay-info{ border-top:1px solid #eaeaea }
+.pay-info li{ line-height:41px; border-bottom:1px solid #eaeaea; background-color:#f9f9f9; }
+.pay-info .current{ background-color:#fff; }
+.pay-info .current label{ color:#666; }
+.pay-info li{ _zoom:1; }
+.pay-info label{ padding-left:25px; color:#c7c6c6; display:block; height:41px; }
+.pay-info label .reserve-sale{ background:#fe801a; color:#fff; display:inline-block; padding:0 5px; line-height:17px; height:17px; vertical-align:middle; margin-left:5px; border-radius:3px; -webkit-border-radius:3px; -moz-border-radius:3px }
+.pay-info label input{ _float:left; _margin-top:10px; }
+
+.tip-list{ line-height:18px; color:#a0a0a0; padding:25px 25px 35px 25px; }
+
+.pay-button{ text-align:right; padding-right:25px; font-size:14px; font-family:"microsoft yahei"; float:right; padding-top:20px; padding-bottom:20px; }
+.pay-button .price-check{ min-width:180px; color:#888 }
+.pay-button .price-check em{ width:57px; text-align:right; display:inline-block }
+.pay-button .amount-due{ font-size:14px; line-height:26px }
+.pay-button .less-discount{ font-size:12px; line-height:22px; padding-bottom:3px; border-bottom:1px solid #e7e7e7 }
+.pay-button .paid-amount{ font-size:16px; line-height:26px; padding-top:6px; color:#454545 }
+.pay-button .btn-pay{ margin-top:15px; }
+.pay-button .agreement-p{ line-height:24px; padding-top:10px; color:#8c8c8c; font-size:12px }
+.pay-button .agreement-p a{ color:#3867bb }
+.btn-pay-off{ color:#fff; font-size:14px; font-family:"microsoft yahei"; background:url("../images/btn-grey-l1.png") no-repeat 0 0; display:inline-block; width:125px; height:38px; line-height:36px; text-align:center;margin-top:15px;  }
+
+.pay-warning{ background:url(../images/icon_warning.gif) no-repeat 0 center; padding-left:35px; line-height:23px; margin-top:20px; font-size:12px; font-weight:bold;}
+.refinish .pay-warning{ margin-top:22px; color:#000;}
+
+.confirm-pop{ width:360px; padding:10px 20px; }
+.confirm-pop .item-confirm{ line-height:27px; padding-left:120px; }
+.confirm-pop .item-confirm dt{ margin-left:-120px; _margin-left:-60px; display:inline-block; vertical-align:top; width:110px; text-align:right; color:#000; font-weight:bold; float:left; }
+.confirm-pop .item-confirm dd{ color:#333; display:inline-block; vertical-align:top; }
+.confirm-pop .item-confirm em{ color:#e60012; font-family:Tahoma, Geneva, sans-serif;}
+.confirm-pop .item-confirm em.money{ font-size:14px; font-weight:bold; }
+
+.login-pop{ width:360px; padding:10px 20px; color:#333; }
+.login-pop .tip{ font:bold 14px/20px simSun; padding: 16px 0 12px; text-align:center; }
+.login-pop .fwspan{ padding-left:60px; }
+.login-pop .fwspan .tit{ width:57px; display:inline-block; }
+.login-pop .fwspan input.text{ width:160px; height:30px; line-height:30px; border:2px solid #bdbdbd; padding-left:10px; }
+.login-pop .bottom-btns{ padding-bottom:10px;}
+.login-pop .bottom-btns .btn-orange{margin-bottom:13px;}
+
+.pay-pop{ width:400px; padding:10px 20px;}
+.pay-pop .tip-pay{ text-align:center; color:#333; padding:15px 0 0; }
+.pay-pop .return-pay{ text-align:center; padding:0 0 10px; }
+.pay-pop .return-pay a{ color:#3c7acd; text-decoration:underline;}
+
+.pay-summary{ margin:13px 17px; padding-left:32px; line-height:22px; background:url(../images/checkicon_check.gif) no-repeat 0 0; }
+.pay-summary .title{ font-size:14px; font-weight:bold; color:#3f81d2; padding-right:10px; }
+.pay-summary a{ color:#ed4909; font-family:Verdana, Geneva, sans-serif;}
+.pay-summary em{ color:#666; }
+.pay-summary em .english{ color:#ed4909; font-family:Verdana, Geneva, sans-serif; }
+.pay-summary em .red{ font-size:14px; font-family:Verdana, Geneva, sans-serif; }
+
+.pay-select{ background:#fffcf4; border:1px solid #f8c75c; margin-top:10px; }
+.pay-select .ctn{ padding:15px; color:#666;}
+.pay-select .tip{color:#000;}
+
+.pay-button-select{padding-top:15px;}
+.pay-button-select p{float:left;}
+.pay-button-select p.price{ padding:12px 0 0 15px; color:#666; font-size:14px; font-family:"microsoft yahei"; }
+.pay-button-select p.price .red{ font-family: Verdana, Geneva, sans-serif; font-weight:bold; }
+
+.solve-pop{ width:355px;  padding:10px 20px;}
+.solve-pop h4{ color:#414141; padding-left:30px; background: url(../images/icon_warning.gif) no-repeat left center; margin:15px 0; line-height:24px; font-size:14px;}
+.solve-pop p{ display:block; padding:0 0 10px 30px;}
+
+.pop-tip-flash{ position:fixed; width:180px; left:50%; top:0; text-align:center; z-index:800;background:#4A4A4A; background:rgba(0,0,0,.7); color:#fff; padding:15px 10px; border-radius:15px; display:none }

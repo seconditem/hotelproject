@@ -39,3 +39,7 @@ def findcodetwo(request):
     # if request.method == "POST":
     #     a = 1
     return render(request, 'app/findcode2.html', locals())
+
+
+def HotelDetail(request):
+    return render(request, 'app/BookInfo.html', locals())
