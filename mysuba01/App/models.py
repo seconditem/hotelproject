@@ -1,143 +1,90 @@
-# This is an auto-generated Django model module.
-# You'll have to do the following manually to clean this up:
-#   * Rearrange models' order
-#   * Make sure each model has one field with primary_key=True
-#   * Make sure each ForeignKey has `on_delete` set to the desired behavior.
-#   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
-# Feel free to rename the models, but don't rename db_table values or field names.
-from __future__ import unicode_literals
-
+import django
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 
-
-class Category(models.Model):
-    cid = models.AutoField(primary_key=True)
-    cname = models.CharField(max_length=60)
-    parentid = models.IntegerField()
-    compere = models.CharField(max_length=30, blank=True, null=True)
-    description = models.CharField(max_length=1000, blank=True, null=True)
-    orderby = models.IntegerField(blank=True, null=True)
-    namestyle = models.CharField(max_length=10, blank=True, null=True)
-    logo = models.CharField(max_length=200, blank=True, null=True)
-    themenum = models.IntegerField(blank=True, null=True)
-    replynum = models.IntegerField(blank=True, null=True)
-    lastpost = models.CharField(max_length=600, blank=True, null=True)
+# Create your models here.
+class User(AbstractUser):
+    uid = models.AutoField(primary_key=True)
+    # username = models.CharField(null=True, max_length=60, unique=True)
+    # password = models.CharField(max_length=128, null=True)
+    phone = models.CharField(max_length=11, null=True)
+    realname = models.CharField(max_length=60)
+    usertype = models.IntegerField(default=0, null=True)
+    # email = models.EmailField()
+    regtime = models.DateField(auto_now_add=True)
+    pict = models.CharField(null=True,max_length=128)
 
     class Meta:
-        managed = True
-        db_table = 'bbs_category'
-
-
-class Friendlink(models.Model):
-    site = models.CharField(max_length=100)
-    url = models.CharField(max_length=200, blank=True, null=True)
-    logo = models.CharField(max_length=300, blank=True, null=True)
-    orderby = models.IntegerField(blank=True, null=True)
-    description = models.CharField(max_length=300, blank=True, null=True)
-
-    class Meta:
-        managed = True
-        db_table = 'bbs_friendlink'
-
-
-class Lockip(models.Model):
-    ip = models.CharField(max_length=20)
-    starttime = models.DateTimeField(blank=True, null=True)
-    endtime = models.DateTimeField(blank=True, null=True)
-
-    class Meta:
-        managed = True
-        db_table = 'bbs_lockip'
+        db_table = "hotel_user"
 
 
 class Order(models.Model):
-    money = models.IntegerField()
-    paytime = models.DateTimeField(blank=True, null=True)
-    uid = models.ForeignKey('User', models.DO_NOTHING, db_column='uid', blank=True, null=True)
-    tid = models.ForeignKey('Posts', models.DO_NOTHING, db_column='tid', blank=True, null=True)
+    # order_id = models.AutoField(default=100000)
+    check_in_time = models.DateTimeField()
+    check_out_time = models.DateTimeField()
+    username = models.CharField(null=True,max_length=30)
+    user_nums = models.IntegerField(default=1)
+    order_room_num = models.IntegerField(default=1)
+    last_in_time = models.DateTimeField()
+    phone = models.CharField(max_length=11)
+    price = models.FloatField()
+    create_time = models.DateTimeField(auto_now_add=True)
+    order_status = models.IntegerField(default=0)
+    user_id = models.ForeignKey(User, related_name="user", db_column='user_id', on_delete=models.CASCADE, null=True)
+    room = models.OneToOneField('RoomStyle', on_delete=models.CASCADE, db_column='roomstyle')
 
     class Meta:
-        managed = True
-        db_table = 'bbs_order'
+        db_table = 'hotel_order'
 
 
-class Posts(models.Model):
-    title = models.CharField(max_length=600)
-    content = models.TextField(blank=True, null=True)
-    hits = models.IntegerField()
-    istop = models.IntegerField()
-    iselite = models.IntegerField()
-    ishot = models.IntegerField()
-    price = models.IntegerField()
-    isdel = models.SmallIntegerField()
-    cid = models.ForeignKey(Category, models.DO_NOTHING, db_column='cid', blank=True, null=True)
-    uid = models.ForeignKey('User', models.DO_NOTHING, db_column='uid', blank=True, null=True)
-    publishtime = models.DateTimeField(blank=True, null=True)
-    replies = models.IntegerField()
-
-    class Meta:
-        managed = True
-        db_table = 'bbs_posts'
-
-
-class Reply(models.Model):
-    rid = models.AutoField(primary_key=True)
-    content = models.CharField(max_length=1000, blank=True, null=True)
-    istop = models.IntegerField(blank=True, null=True)
-    isdel = models.SmallIntegerField(blank=True, null=True)
-    isblock = models.SmallIntegerField(blank=True, null=True)
-    createtime = models.DateTimeField(blank=True, null=True)
-    uid = models.ForeignKey('User', models.DO_NOTHING, db_column='uid', blank=True, null=True)
-    tid = models.ForeignKey(Posts, models.DO_NOTHING, db_column='tid', blank=True, null=True)
+class RoomStyle(models.Model):
+    # id = models.CharField(primary_key=True)
+    style = models.IntegerField(default=0)
+    size = models.IntegerField()
+    num = models.IntegerField(default=10)
+    iswindow = models.IntegerField(choices=[(0, "无"), (1, "有")])
+    iswifi = models.IntegerField(choices=[(0, '无'), (1, '有')])
+    bathroom = models.IntegerField(choices=[(0, '无'), (1, '有')])
+    breakfast = models.IntegerField(choices=[(0, '无'), (1, '有')])
+    desc = models.TextField(max_length=100)
+    dorprice = models.FloatField()
+    webprice = models.FloatField()
+    huiyuanprice = models.FloatField()
 
     class Meta:
-        managed = True
-        db_table = 'bbs_reply'
+        db_table = "hotel_roomstyle"
 
 
-class Siteinfo(models.Model):
-    sitename = models.CharField(max_length=100, blank=True, null=True)
-    website = models.CharField(max_length=100, blank=True, null=True)
-    url = models.CharField(max_length=200, blank=True, null=True)
-    reference = models.CharField(max_length=200, blank=True, null=True)
-    isclose = models.IntegerField(blank=True, null=True)
+class Room(models.Model):
+    # room_id = models.CharField(primary_key=True)
+    room_status = models.IntegerField(default=2, choices=[(0, '预定'), (1, '入住'), (2, '空闲')])
+    typeid = models.ForeignKey(RoomStyle, db_column='roomstyleid', related_name='type')
 
     class Meta:
-        managed = True
-        db_table = 'bbs_siteinfo'
+        db_table = 'hotel_room'
 
 
-class User(AbstractUser):
-    uid = models.AutoField(primary_key=True)
-    # username = models.CharField(unique=True, max_length=30)
-    # password = models.CharField(max_length=128)
-    portrait = models.CharField(max_length=100, blank=True, null=True)
-    gender = models.IntegerField(blank=True, null=True)
-    usertype = models.IntegerField(blank=True, null=True)
-    # isactive = models.IntegerField(blank=True, null=True)
-    email = models.CharField(max_length=200, blank=True, null=True)
-    autologin = models.IntegerField(blank=True, null=True)
-    regtime = models.DateTimeField(blank=True, null=True)
-    score = models.IntegerField(blank=True, null=True)
+class Reflex(models.Model):
+    username = models.CharField(null=True,max_length=60)
+    create_time = models.DateTimeField(auto_now_add=True)
+    level = models.IntegerField(default=2, choices=[(0, '吐槽'), (1, '差'), (2, '一般'), (3, '很满意'), (4, '强烈推荐')])
+    content = models.TextField(max_length=150)
+    # user_id = models.ForeignKey(User, db_column="userid", related_name='userid')
+    order = models.OneToOneField(Order, related_name="orderid")
+    score = models.FloatField(default=6.0)
 
     class Meta:
-        managed = True
-        db_table = 'bbs_user'
+        db_table = 'hotel_reflex'
 
 
-class Userdetail(models.Model):
-    birthday = models.DateField(blank=True, null=True)
-    address = models.CharField(max_length=200, blank=True, null=True)
-    qq = models.CharField(max_length=15, blank=True, null=True)
-    signature = models.CharField(max_length=200, blank=True, null=True)
-    quesstion = models.CharField(max_length=100, blank=True, null=True)
-    answer = models.CharField(max_length=200, blank=True, null=True)
-    grade = models.CharField(max_length=100, blank=True, null=True)
-    uid = models.ForeignKey(User, models.DO_NOTHING, db_column='uid', blank=True, null=True, related_name='detail')
+class HotelInfo(models.Model):
+    phone = models.CharField(max_length=11)
+    address = models.CharField(max_length=128)
+    desc = models.CharField(max_length=150)
+    web = models.IntegerField(default=0, choices=[(0, '无'), (1, '有')])
+    service = models.TextField(max_length=150)
+    inquerment = models.TextField(max_length=100)
 
     class Meta:
-        managed = True
-        db_table = 'bbs_userdetail'
-
+        db_table = 'hotel_info'

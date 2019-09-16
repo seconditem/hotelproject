@@ -79,10 +79,10 @@ WSGI_APPLICATION = 'mysuba.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'subayanshi01',
-        'HOST':'49.235.152.125',
+        'NAME': 'hotel',
+        'HOST':'49.235.229.86',
         'USER':'root',
-        'PASSWORD':'linux',
+        'PASSWORD':'123456',
         'PORT':3306
 
 
