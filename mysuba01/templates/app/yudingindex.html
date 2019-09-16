@@ -118,14 +118,14 @@
     <div class="top_menu_text">
         <a href="{% url 'app:yuding' %}" class="">首页</a>
         <a href="{% url 'app:yuding' %}" class="hover">酒店预订</a>
-        <a href="http://www.super8.com.cn/product/su8New.html" target="_blank" id="menuProduct" class="newProductMenu">速8精选酒店</a>
+        <a href="{% url 'app:hoteldetail' %}" target="_blank" id="menuProduct" class="newProductMenu">速8精选酒店</a>
     </div>
     <div class="top_menu_mys8">
 
     {% if user.is_autoenticated %}
-        <i><a href="/MemInfo/MemLogin">刘荣帅  女士</a></i>
+        <i><a href="/MemInfo/MemLogin">刘荣帅  </a></i>
     {% else %}
-        <em class="mys8-menu"><a href="javascript:void(0)" onclick="popupMemberSupper(&#39;pop-login&#39;);"
+        <em class="mys8-menu"><a href="{% url 'app:loginym' %}" onclick="popupMemberSupper(&#39;pop-login&#39;);"
                                  id="dlogin">登11录&nbsp;|&nbsp;</a>
             <a id="dregister" href="{% url 'app:registerym' %}">注99册</a></em>
         <span>
@@ -425,9 +425,9 @@
                                 </dl>
                                 <div class="desc">
                                     <h4 data-id="hotelname" data-data="4054">
-                                        <a href="javascript:void(0);" data-code="4054"
+                                        <a href="{% url 'app:hoteldetail' %}" data-code="4054"
                                            data-hotelname="速8精选酒店北京工体三里屯春秀路店"
-                                           data-id="hoteldetail" target="_blank">速8精选酒店北京工体三里屯春秀路店</a>
+                                           data-id="hoteldetail" target="_blank">速8精选酒店北京77工体三里屯春秀路店</a>
                                         <input type="hidden" data-id="h_hotelid" value="4054" data-hid="4054">
 
                                         <span class="pride jiaoao"><div class="hover-pride">速8骄傲：最优质的酒店</div></span>
@@ -549,9 +549,10 @@
                                                 最后1间
                                             </span>
                                             </li>
-                                            <li class="col-6">
-                                            <span class="btn-s btn-red btn-redd" style="margin: 6px 0;" data-id="ckyd"
-                                                  onclick="HotelList.IconCick.call(this);"><em>预订</em></span>
+                                            <li class="col-6" >
+                                            <span class="" style="margin: 6px 0;" data-id="ckyd"
+                                                  onclick="HotelList.IconCick.call(this);" ><a href="{% url 'app:makeorder' %}"><em>预订</em></a></span>
+
 
                                             </li>
                                         </ul>
@@ -671,8 +672,8 @@
                                             </span>
                                             </li>
                                             <li class="col-6">
-                                            <span class="btn-s btn-red btn-redd" style="margin: 6px 0;" data-id="ckyd"
-                                                  onclick="HotelList.IconCick.call(this);"><em>预订</em></span>
+                                            <span class="" style="margin: 6px 0;" data-id="ckyd"
+                                                  onclick="HotelList.IconCick.call(this);"><a href="{% url 'app:makeorder' %}"><em>预订</em></a></span>
 
                                             </li>
                                         </ul>
@@ -792,8 +793,8 @@
                                             </span>
                                             </li>
                                             <li class="col-6">
-                                            <span class="btn-s btn-red btn-redd" style="margin: 6px 0;" data-id="ckyd"
-                                                  onclick="HotelList.IconCick.call(this);"><em>预订</em></span>
+                                            <span class="" style="margin: 6px 0;" data-id="ckyd"
+                                                  onclick="HotelList.IconCick.call(this);"><a href="{% url 'app:makeorder' %}"><em>预订</em></a></span>
 
                                             </li>
                                         </ul>
@@ -913,8 +914,8 @@
                                             </span>
                                             </li>
                                             <li class="col-6">
-                                            <span class="btn-s btn-red btn-redd" style="margin: 6px 0;" data-id="ckyd"
-                                                  onclick="HotelList.IconCick.call(this);"><em>预订</em></span>
+                                            <span class="" style="margin: 6px 0;" data-id="ckyd"
+                                                  onclick="HotelList.IconCick.call(this);"><a href="{% url 'app:makeorder' %}"><em>预订</em></a></span>
 
                                             </li>
                                         </ul>
@@ -1003,123 +1004,7 @@
 
                                     <!--]]〉-->
                                     <input type="hidden" value="520" data-id="hidprice">
-                                    <div class="group" data-id="27296" style="display: none;">
-                                        <input type="hidden" value="27296" data-bind="roomid">
-                                        <ul class="row-base">
-                                            <li class="col-1">
-                                                <a class="icon-pic" href="javascript:void(0)"
-                                                   onclick="HotelList.IconCick.call(this);">高级家庭房</a>
-                                                <span class="cheapest te" data-id="ajaxblock" title="客房团购">团</span>
-                                                <span class="cheapest quanr" data-id="ajaxblock" data-account="0"
-                                                      data-voucher="0">券</span>
-                                                <span class="cheapest return">返券10元</span>
-                                                <em class="cheapest li" data-id="ajaxnone" data-li="null"
-                                                    style="display: none;">促</em>
-                                            </li>
-                                            <li class="col-2">
-                                                <del><span style="padding-top: 9px;" data-id="jg">￥668</span></del>
-                                            </li>
-                                            <li class="col-3"><span style="padding-top: 9px;" data-id="jg">￥634</span>
-                                            </li>
-                                            <li class="col-4"><span class="memberprice memberpriceHover"
-                                                                    style="padding-top: 6px;" data-web="634"
-                                                                    data-ep="599"
-                                                                    data-vip="558" data-gold="539" data-super="520"
-                                                                    data-account="0" data-voucher="0" data-id="jg">￥<em
-                                                    data-id="kyj">520</em><i>起</i></span></li>
-                                            <li class="col-5">
-                                            <span data-tag="curnum" class="red" style="padding-top: 9px;">
 
-
-                                            </span>
-                                            </li>
-                                            <li class="col-6">
-                                            <span class="btn-s btn-red btn-redd" style="margin: 6px 0;" data-id="ckyd"
-                                                  onclick="HotelList.IconCick.call(this);"><em>预订</em></span>
-
-                                            </li>
-                                        </ul>
-                                        <div class="price_box hidden">
-                                            <ul class="price_ul" data-id="ajaxblock">
-                                                <li class="col-1a">
-                                                    <span class="cheapest te">团</span>
-                                                    <span class="cheapest return">返券2元</span>
-                                                    <span style="padding-top: 9px;">团购价</span>
-                                                </li>
-                                                <li class="col-2">
-                                                    <del><span style="padding-top: 9px;"></span></del>
-                                                </li>
-                                                <li class="col-3"><span style="padding-top: 9px;"></span></li>
-                                                <li class="col-4"><span class="memberprice memberpriceTe"
-                                                                        style="padding-top: 6px;" data-account="0"
-                                                                        data-id="jg">￥<em>558</em></span></li>
-                                                <li class="col-5"><span class="red" style="padding-top: 9px;"></span>
-                                                </li>
-                                                <li class="col-6a">
-
-                                                <span class="btn-s btn-red" style="margin: 6px 0;"><a id="addcart"
-                                                                                                      href="javascript:void(0);"
-                                                                                                      onclick="HotelList.TBYDClick.call(this);"><em>预订</em></a></span><span
-                                                        class="icon_prepay">预付</span>
-                                                </li>
-                                            </ul>
-                                            <ul class="price_ul">
-                                                <li class="col-1a">
-                                                <span class="cheapest quanr" data-id="ajaxblock" data-account="0"
-                                                      data-voucher="0">券</span>
-                                                    <span style="padding-top: 9px;">会员价(无早）</span>
-                                                </li>
-                                                <li class="col-2">
-                                                    <del><span style="padding-top: 9px;" data-id="jg">￥668</span></del>
-                                                </li>
-                                                <li class="col-3"><span style="padding-top: 9px;"
-                                                                        data-id="jg">￥634</span>
-                                                </li>
-                                                <li class="col-4"><span class="memberprice memberpriceHover"
-                                                                        style="padding-top: 6px;" data-web="634"
-                                                                        data-ep="599" data-vip="558" data-gold="539"
-                                                                        data-super="520" data-account="0"
-                                                                        data-voucher="0"
-                                                                        data-id="jg">￥<em>520</em><i>起</i></span></li>
-                                                <li class="col-5">
-                                                <span data-tag="curnum" class="red" style="padding-top: 9px;">
-
-                                                </span>
-                                                </li>
-                                                <li class="col-6a">
-                                                <span class="btn-s btn-red fl" style="margin: 6px 0;"
-                                                      data-id="ydspan"><a id="addcart" href="javascript:void(0);"
-                                                                          data-id="yd"
-                                                                          onclick="HotelList.YDClick.call(this);"><em>预订</em></a></span>
-
-                                                </li>
-
-                                            </ul>
-                                            <ul class="room_detail">
-                                                <img src="../../static/images/20180209183511492.jpg" width="100"
-                                                     height="75"
-                                                     class="room_pic" alt="速8精选酒店">
-
-                                                <ul class="room_equipment">
-                                                    <li>
-                                                        床型：1.5*2+1.2*2米
-                                                    </li>
-                                                    <li>
-                                                        建筑面积：28平米
-                                                    </li>
-                                                    <li>
-
-                                                    </li>
-                                                    <li>
-                                                        特殊说明：无烟房
-                                                    </li>
-                                                    <li>
-
-                                                    </li>
-                                                </ul>
-                                            </ul>
-                                        </div>
-                                    </div>
                                     <!--[CDATA[-->
 
                                     <!--]]〉-->
@@ -1155,8 +1040,8 @@
                                             </span>
                                             </li>
                                             <li class="col-6">
-                                            <span class="btn-s btn-red btn-redd" style="margin: 6px 0;" data-id="ckyd"
-                                                  onclick="HotelList.IconCick.call(this);"><em>预订</em></span>
+                                            <span class="" style="margin: 6px 0;" data-id="ckyd"
+                                                  onclick="HotelList.IconCick.call(this);"><a href="{% url 'app:makeorder' %}"><em>预订</em></a></span>
 
                                             </li>
                                         </ul>
@@ -1180,7 +1065,8 @@
 
                                                 <span class="btn-s btn-red btn-group-full" style="margin: 6px 0;"><a
                                                         href="javascript:void(0);"><em>满房</em></a></span><span
-                                                        class="icon_prepay">预付</span>
+                                                        class="icon_prepay">预333付</span>
+                                                     <a href="{% url 'app:makeorder' %}"><em>预订</em></a>
                                                 </li>
                                             </ul>
                                             <ul class="price_ul">
@@ -1287,6 +1173,9 @@
         </div>
 
     {% endblock %}
+
+{% block loginymm %}
+{% endblock %}
 
 
 
