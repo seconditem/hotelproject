@@ -1,0 +1,42 @@
+.grid-regist{margin-top:50px;width:950px}
+.grid-regist .g1{width:595px;float:left}
+.grid-regist .g2{width:355px;float:left}
+.regist-box h2{font:bold 18px/30px "microsoft Yahei";color:#514b4b}
+.regist-box .formWrap{padding-left:95px}
+.reg-sex{display:inline-block;border:1px solid #cfcfcf;background:#fff;color:#474747;width:230px;height:29px}
+.reg-sex em{width:50%;display:inline-block;height:29px;line-height:29px;text-align:center;cursor:pointer}
+.reg-sex em.current{background:#83ddff;color:#fff;cursor:default}
+.formWrap .fwSpan .i_text_f{width:222px}
+.formWrap .fwSpan .i-text-w1{width:100px;margin-right:7px}
+.formWrap .fwSpan .i-text-w2{width:124px;margin-right:7px}
+.formWrap .fwSpan .btn-register-check{ display:inline-block; width:90px; height:27px; color:#fff; background:#f12516; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; text-align:center; font:normal 12px/27px microsoft Yahei; text-decoration:none; border:none;cursor:pointer; }
+.formWrap .fwSpan .btn-register-nocheck{ display:inline-block; width:90px; height:27px; color:#fff; background:#847676; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; text-align:center; font:normal 12px/27px microsoft Yahei; text-decoration:none; border:none; }
+.formWrap .fwSpan .vertify-btn{width:113px;height:31px;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;background:#ffa200;border:none;color:#fff}
+.formWrap .img-vertif{margin-left:0;cursor:pointer}
+.regist-box .fp-btn-Yahei{width:230px}
+.regist-box .registbtn{margin-top:10px;}
+.regist-thumb{background:url(../images/register-cocorperat.jpg) no-repeat 0 25px;height:185px;display:block}
+.regist-AD-2{ background:url(../images/regist-activity-AD.gif) no-repeat 0 15px; height:200px; display:block }
+.regist-box .agreement-wrap{border:1px solid #e2e3ea;padding:3px 0 3px 5px;overflow-y:scroll;margin-top:40px;margin-left:-50px;width:500px;height:200px;line-height:18px}
+.ad-link-phoenix{ width:318px; padding-top:361px; background:url(../images/regist-phoenix-pic.gif) no-repeat center 50px; display:block; margin-top:50px }
+.ad-link-phoenix p{ line-height:24px; padding:12px; text-align:center; font-size:14px; text-decoration:underline }
+/*注册完成*/
+.regist-success{ padding-bottom:110px; }
+.regist-success .main-info{ padding-left:70px; background:url(../images/icon_check_refinish.gif) no-repeat 0 0; line-height:24px; color:#d49220; font-size:14px; line-height:25px; width:195px; margin:0 auto; margin-top:50px; }
+.regist-success .main-info h3{ font-size:18px; }
+.regist-success .main-info h4{ font-weight:normal; }
+.regist-success .detail-info{ border:1px dashed #ccc; margin:20px auto 0; padding:10px; width:410px; color:#686868; line-height:25px; font-size:14px; }
+.regist-success .detail-info em, .regist-success .detail-info b{ color:#e60012; }
+.regist-success .detail-info .check-more{ color:#3867bb;  }
+.regist-success .detail-info p{ padding-top:8px; }
+
+/*打包卖会员卡活动*/
+.formWrap .act-choice{ padding-bottom:3px;font-size:14px}
+.formWrap .act-choice li{ line-height:26px; color:#666 }
+.formWrap .act-choice li .act-link{ color:#3377dd; text-decoration:underline; padding-left:8px }
+
+	
+
+
+
+

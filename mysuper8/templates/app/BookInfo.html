@@ -1,0 +1,337 @@
+{% extends 'app/yudingindex.html' %}
+{% block title %}
+<title>BookInfo</title>
+
+{% endblock title %}
+
+{% block contents %}
+
+
+<body class="page-login" style="">
+
+<link href="/static/css/login.css" rel="stylesheet">
+
+
+<script type="text/javascript">
+    try {
+        var _oztime = (new Date()).getTime();
+        var _ozuid;
+        var _user = "";
+        var _domain = document.domain.match(/\.[a-zA-Z0-9.-]+/);
+        if ($.cookie("ozuid")) {
+            if ($.cookie("ozuid") == _user) {
+                _ozuid = $.cookie("ozuid");
+            } else {
+                $.cookie("ozuid", _user, { path: "/", expires: 365, domain: _domain });
+                _ozuid = $.cookie("ozuid");
+            }
+        } else {
+            $.cookie("ozuid", _user, { path: "/", expires: 365, domain: _domain });
+            _ozuid = $.cookie("ozuid");
+        }
+    } catch (e) { }
+</script>
+
+
+<!--登录框弹出层-->
+
+<script src="/static/js/HeardInfo.js"></script>
+
+
+
+
+<link href="/static/css/hotel-reserve.css" rel="stylesheet">
+<script type="text/javascript">
+    window.history.forward(1);
+</script>
+<input type="hidden" id="hidmemflag">
+<input type="hidden" id="hidPricePolicy">
+<div class="grid wrapper clearfix">
+    <div class="crumbs">
+        <div class="crumbs-reserve-step">
+            <ul class="step-1">
+                <li><i>1</i>选择酒店</li>
+                <li class="current"><i>2</i>预订填写</li>
+                <li class="last"><i>3</i>预订完成</li>
+            </ul>
+        </div>
+        您当前的位置：<a href="http://www.super8.com.cn/Home/Index">速8首页</a><em class="sep">&gt;</em><a href="http://www.super8.com.cn/Hotel/List?citycode=110100&amp;stime=2019-09-15&amp;etime=2019-09-16&amp;keycode=">北京市酒店</a><em class="sep">&gt;</em><span class="last"><a href="http://www.super8.com.cn/Hotel/Detail/4054">速8精选酒店北京工体三里屯春秀路店</a></span>
+    </div>
+</div>
+<div class="grid wrapper clearfix content">
+    <div class="g1">
+        <div class="hotel-subject">
+            <h3><a href="http://www.super8.com.cn/Hotel/Detail/4054" id="a_HotelName">速8精选酒店北京工体三里屯春秀路店</a></h3>
+            <p class="desc" id="p_Address">北京市朝阳区春秀路幸福二村25号楼</p>
+            <p class="img">
+                <img src="../../static/images/20180209183209354.jpg" alt="">
+            </p>
+            <p class="attr">
+                <b>房型：</b><label id="lbl_RoomName">标准双床房</label><br>
+                <b>房型说明：</b>23 平米，1张(1.2*2 米)无烟房<br>
+                <b>床型：</b>双床<br>
+                <b>宽带：</b>免费<br>
+                    <b>特殊说明：</b>无烟房            </p>
+            <input class="text w2" id="room_RoomName" name="room.RoomName" style="display:none;" type="text" value="标准双床房">
+            <div class="tip-list">
+                温馨提示：<br>
+                如有任何疑问，请随时联系速8酒店24小时预订热线：40018-40018
+            </div>
+        </div>
+    </div>
+    <div class="g2" id="grid-g2">
+        <div class="shadow"></div>
+
+        <div class="section" id="section-info">
+            <div class="title-bar">
+                <h3>预订信息</h3>
+            </div>
+            <div class="form">
+                <div class="form-group">
+                    <label class="col-name" id="lbl_days" data-rmdays="1" data-days="1">入住时段：</label>
+                    <div class="col-item">
+                        <span class="labl" data-id="sdate">2019-09-15</span> 入住 &nbsp;&nbsp;
+                        <span class="labl" data-id="edate">2019-09-16</span> 退房 &nbsp;&nbsp;
+						<a href="http://www.super8.com.cn/Hotel/Detail/4054/2019-09-15/2019-09-16/1" class="btn-red btn-s"><em>更改入住时间</em></a>
+                    </div>
+                </div>
+                <input class="text w2" id="HotelId" name="HotelId" style="display:none;" type="text" value="4054">
+                <input class="text w2" id="RoomId" name="RoomId" style="display:none;" type="text" value="27293">
+                <input class="text w2" id="StartDate" name="StartDate" style="display:none;" type="text" value="2019-09-15">
+                <input class="text w2" id="EndDate" name="EndDate" style="display:none;" type="text" value="2019-09-16">
+                <div class="form-group">
+                    <label class="col-name"><em class="red">*</em>&nbsp;入住人：</label>
+                    <div class="col-item">
+                        <input class="text w2 i_text_red" data-check="Null;ChcOrLetter;" data-id="checktxt" id="GstsName" name="GstsName" type="text" value="">
+                        <span class="tip">请填写身份证上的姓名</span>
+                    <span data-imgid="checkno"><img src="../../static/images/checkicon_wrong.gif" class="checkicon"><span class="checkTip">不能为空！</span></span></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-name">房间数量：</label>
+                    <div class="col-item">
+                        <div class="ui-menu-select select-num" node_type="num" data-id="roomnum">
+                            <div class="menu-list">
+                                <ul>
+                                        <li class="current"><a href="javascript:void(0)" class="option" value="1"><span class="item-text">1 间</span></a></li>
+                                </ul>
+                            </div>
+                            <input class="text w2" id="RoomNum" name="RoomNum" style="display:none;" type="text" value="1">
+                            <span class="menu-arrows"></span>
+                            <span class="menu-name" data-id="roomnum_txt"><span>1</span>间</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-name">订单总价：</label>
+                    <div class="col-item">
+                        <input type="hidden" value="318" data-id="totalprice">
+                        <input type="hidden" value="0" data-id="price">
+                        <div><b class="red f18">￥<span data-id="totalprice_span">318</span></b>  &nbsp;&nbsp;<a node_type="expand" href="javascript:void(0)" class="link-expand">查看房费日历</a></div>
+                        <div class="day-price hidden">
+                                <span class="span-day-price">
+                                    <div class="date">09-15 (日)</div>
+                                    <em>￥318<i></i></em>
+                                </span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label class="col-name">最晚到店时间：</label>
+                    <div class="col-item">
+                        <div class="ui-menu-select " node_type="time" data-id="savetime">
+                            <div class="menu-list">
+                                <ul style="height: 300px;">
+                                        <li class="current"><a href="javascript:void(0)" class="option" value="19"><span class="item-text">19:00</span></a></li>
+                                        <li><a href="javascript:void(0)" class="option" value="20"><span class="item-text">20:00</span></a></li>
+                                        <li><a href="javascript:void(0)" class="option" value="21"><span class="item-text">21:00</span></a></li>
+                                        <li><a href="javascript:void(0)" class="option" value="22"><span class="item-text">22:00</span></a></li>
+                                        <li><a href="javascript:void(0)" class="option" value="23"><span class="item-text">23:00</span></a></li>
+                                        <li><a href="javascript:void(0)" class="option" value="24"><span class="item-text">24:00</span></a></li>
+
+                                    <li><a href="javascript:void(0)" class="option" value="1"><span class="item-text">次日01:00</span></a></li>
+                                    <li><a href="javascript:void(0)" class="option" value="2"><span class="item-text">次日02:00</span></a></li>
+                                    <li><a href="javascript:void(0)" class="option" value="3"><span class="item-text">次日03:00</span></a></li>
+                                    <li><a href="javascript:void(0)" class="option" value="4"><span class="item-text">次日04:00</span></a></li>
+                                    <li><a href="javascript:void(0)" class="option" value="5"><span class="item-text">次日05:00</span></a></li>
+                                    <li><a href="javascript:void(0)" class="option" value="0"><span class="item-text">次日06:00</span></a></li>
+                                </ul>
+                            </div>
+                            <input class="text w2" id="ArrTime" name="ArrTime" style="display:none;" type="text" value="19">
+                            <input class="text w2" id="hidStartTime" name="room.Guaranty.StartTime" style="display:none;" type="text" value="20:00">
+                            <input class="text w2" id="hidEndTime" name="room.Guaranty.EndTime" style="display:none;" type="text" value="06:00">
+                            <input class="text w2" id="hidBeginNum" name="room.Guaranty.BeginNum" style="display:none;" type="text" value="0">
+                            <input class="text w2" id="hidIfAllRoom" name="room.Guaranty.IfAllRoom" style="display:none;" type="text" value="1">
+                            <input class="text w2" id="hidIIfAdvancePayMent" name="hotel.IfAdvancePayMent" style="display:none;" type="text" value="1">
+                            <span class="menu-arrows"></span>
+                            <span class="menu-name">19:00</span>
+                        </div>
+                    </div>
+                    <div class="danbao-tip" data-id="tip" style="display: none;">房间紧张，速8需冻结/暂扣您的信用卡金额￥<span data-id="dbje">318</span>用于担保订单。如订单不确认，我们将立即进行解冻/退款。订单确认后不可修改，不可取消。若未按时入住，担保费用将不予退还。</div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="title-bar">
+                <h3>联系信息</h3>
+            </div>
+            <div class="form">
+                <div class="form-group">
+                    <label class="col-name"><em class="red">*</em>  联系人：</label>
+                    <div class="col-item">
+<input class="text w2 i_text_red" data-check="Null;ChcOrLetter;" data-id="checktxt" id="ContactName" name="ContactName" type="text" value="">                    <span data-imgid="checkno"><img src="../../static/images/checkicon_wrong.gif" class="checkicon"><span class="checkTip">不能为空！</span></span></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-name"><em class="red">*</em> 联系电话：</label>
+                    <div class="col-item">
+<input class="text w2 i_text_red" data-check="Null;Phone;" data-id="checktxt" id="ContactMobile" name="ContactMobile" type="text" value="">                        <span class="tip">获取预订或确认短信</span>
+                    <span data-imgid="checkno"><img src="../../static/images/checkicon_wrong.gif" class="checkicon"><span class="checkTip">不能为空！</span></span></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-name">联系邮箱：</label>
+                    <div class="col-item">
+                        <input class="text w2" data-check="Email;" data-id="checktxt" id="ContactEmail" name="ContactEmail" type="text" value="">
+                        <span class="tip">获取预订或确认邮件</span>
+                    <span data-imgid="checkok"><img src="../../static/images/checkicon_check.gif" class="checkicon"></span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="title-bar">
+                <h3>付款方式</h3>
+            </div>
+
+            <dl class="coupon-info">
+            </dl>
+
+            <div class="form">
+                <ul class="pay-info" id="pay-info">
+                    <li class="current">
+                    </li><li class="current">
+                        <label for="pay-item-2">
+                            <input type="radio" name="t" id="pay-item-2" data-id="paytype" paytype="3" checked="checked">
+                            在线预付 ——房间保留到入住日第二天中午12:00。</label></li>
+                </ul>
+            </div>
+            <div class="blank-20"></div>
+            <div style="margin-top: 15px; margin-left: 30px;" data-id="tipnew">
+                <p class="tip">房间保留到入住日第二天中午12:00。</p>
+                <div class="pay-warning">退订政策：入住前一日18点前可无条件取消或变更，之后不可取消或变更，若未按时入住，扣除全额房费。</div>
+            </div>
+            <div class="submit-wrap">
+                <div class="pay-button">
+                    <p>应付金额  <em class="red">￥<span data-id="payable">318</span></em></p>
+                    <div data-id="loadgroups" style="text-align: center; display: none;">
+                        <img src="../../static/images/list_loading.gif">
+                    </div>
+                    <p><a class="btn-pay" href="javascript:void(0)" data-id="tj_a" id="tj_a"><em>提交订单</em></a></p>
+                </div>
+            </div>
+
+            <input class="text w2" id="IsCoupon" name="IsCoupon" style="display:none;" type="text" value="0">
+            <input class="text w2" id="IsBalance" name="IsBalance" style="display:none;" type="text" value="0">
+
+        </div>
+    </div>
+</div>
+
+{% endblock  %}
+
+{% block contentlogin %}
+
+  <div class="box-login" id="pop-login" style="top: 98px; left: 497px; position: absolute; z-index: 19999;">
+        <div class="close">
+            <a href="javascript:void(0)" id="closelogin" onclick="closeWindow('pop-login')">
+                <img src="../../static/images/close-icon.gif">
+            </a>
+        </div>
+        <div class="title-barlogin title-bar-pop">
+            <h2 class="tab-person current" id="checkchengeindexlogin"><em>个人</em>登录</h2>
+
+        </div>
+
+        <div class="login-tab-content login-tab-content-pop">
+            <div class="tab-person">
+                <form action="http://www.super8.com.cn/MemInfo/IndexLogin" id="IndexLogin" method="post">
+                    <div id="Indexloginerror">
+
+                    </div>
+                    <div class="form-group form-group-name">
+                        <label class="ui-placeholder" for="input-name" node_type="key">
+                            <span class="placeholder-text" style="display: none;">手机号码</span>
+                            <input name="LoginName" type="text" value="" placeholder="手机号码">
+                        </label>
+                        <input id="RefUrl" name="RefUrl" type="hidden" value="http://127.0.0.1:8000/">
+                    </div>
+                    <div class="form-group form-group-password">
+                        <label class="ui-placeholder" for="input-pw" node_type="key">
+                            <span class="placeholder-text" style="display: none;">密码</span>
+                            <input name="PassWd" type="password" placeholder="密码">
+                        </label>
+                    </div>
+                    <div class="form-imgcode form-group-imgcode">
+                        <input node_type="input" name="ImgCode" type="text" autocomplete="off" placeholder="验证码">
+                        <img id="sp_imag_HM" src="../../static/images/NewValidateCodeImageType" onclick="IndexNewValidateCode('s8LGHeaderMem','sp_imag_HM')" style="width:70px">
+                        <a class="a-vertif" href="javascript:void(0)" style="color: blue;" onclick="IndexNewValidateCode('s8LGHeaderMem','sp_imag_HM')">看不清?</a>
+                    </div>
+
+
+                    <div class="item item-remember">
+                        <a class="link-forgot fr" href="/findcode/">忘记密码</a>
+                        <label for="input-remember">
+                            <input name="RememberMe" type="checkbox" value="true"><input name="RememberMe" type="hidden" value="false">
+                            30天内自动登录</label>
+                    </div>
+                    <div class="item">
+                        <a href="javascript:void(0)" id="btn3" class="btn"></a>
+                    </div>
+                    <a class="btn btn-nMem" href="http://www.super8.com.cn/Hotel/List#" onclick="closeWindow('pop-login');"><em>非会员直接预订</em></a>
+                    <dl class="item item-third">
+
+                        <dt><a id="tandregister" href="/registerym">立即66注册</a></dt>
+                    </dl>
+                </form>
+            </div>
+            <div class="tab-company" style="display: none">
+                <form action="http://www.super8.com.cn/Company/IndexCompanyLogin" id="IndexCompanyLogin" method="post">
+                    <div id="Indexcompanyloginerror">
+
+                    </div>
+                    <div class="form-group form-group-name">
+                        <label class="ui-placeholder" for="input-name" node_type="key">
+                            <span class="placeholder-text" style="display: none;">企业用户名</span>
+                            <input name="LoginName" type="text" value="" placeholder="企业用户名">
+                        </label>
+                    </div>
+                    <div class="form-group form-group-password">
+                        <label class="ui-placeholder" for="input-pw" node_type="key">
+                            <span class="placeholder-text" style="display: none;">密码</span>
+                            <input name="PassWd" type="password" placeholder="密码">
+                        </label>
+                    </div>
+                    <div class="form-imgcode form-group-imgcode">
+                        <input node_type="input" name="ImgCode" type="text" autocomplete="off" placeholder="验证码">
+                        <img id="sp_imag_com_HM" src="../../static/images/NewValidateCodeImageType(1)" onclick="IndexNewValidateCode('s8LGHeaderCom','sp_imag_com_HM')" style="width:70px">
+                        <a class="a-vertif" href="javascript:void(0)" style="color: blue;" onclick="IndexNewValidateCode('s8LGHeaderCom','sp_imag_com_HM')">看不清?</a>
+                    </div>
+                    <div class="item item-remember">
+                        <a class="link-forgot fr" href="http://www.super8.com.cn/Forgotpwd/Forgotpwd1">忘记密码</a>
+                        <label for="input-remember">
+                            <input name="RememberMe" type="checkbox" value="true"><input name="RememberMe" type="hidden" value="false">
+                            30天内自动登录</label>
+                    </div>
+                    <div class="item">
+                        <a href="javascript:void(0)" id="btn4" class="btn"></a>
+                    </div>
+                    <a class="btn btn-nMem" href="http://www.super8.com.cn/Hotel/List"><em>非会员直接预订</em></a>
+                    <dl class="item item-third">
+                        <dt><a href="http://www.super8.com.cn/Register/RegisterCompany">立即注册企业会员</a></dt>
+                    </dl>
+                </form>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

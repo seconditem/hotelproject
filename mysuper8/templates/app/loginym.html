@@ -1,0 +1,103 @@
+{% extends 'app/yudingindex.html' %}
+
+{% block contents %}
+{% endblock %}
+
+
+{% block loginymm %}
+
+
+<!--REG START-->
+<div style="z-index: 19999; position: fixed; top: 45px; left: 50.5px;">
+    <div class="box-login" id="pop-login" style="top: 193.5px; left: 456.5px; position: absolute; z-index: 19999;">
+        <div class="close">
+            <a href="{% url 'app:yuding' %}" id="closelogin" onclick="closeWindow('pop-login')">
+                <img src="../../static/images/close-icon.gif">
+            </a>
+        </div>
+        <div class="title-barlogin title-bar-pop">
+            <h2 class="tab-person current" id="checkchengeindexlogin"><em>个人</em>登录</h2>
+
+        </div>
+
+        <div class="login-tab-content login-tab-content-pop">
+            <div class="tab-person">
+                <form action="/login" id="IndexLogin" method="post">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="CAJDuVGRC9p11hjeDGF4lVCTUvXnBsW9i0lHaF7j8YjbRHl2Ur1A1876glFCoXx0">
+                    <div id="Indexloginerror">
+
+                    </div>
+                    <div class="form-group form-group-name">
+                        <label class="ui-placeholder" for="input-name" node_type="key">
+                            <span class="placeholder-text" style="display: none;">手机号码</span>
+                            <input name="LoginName" type="text" value="" placeholder="手机号码">
+                        </label>
+                        <input id="RefUrl" name="RefUrl" type="hidden" value="http://127.0.0.1:8000/">
+                    </div>
+                    <div class="form-group form-group-password">
+                        <label class="ui-placeholder" for="input-pw" node_type="key">
+                            <span class="placeholder-text" style="display: none;">密码</span>
+                            <input name="PassWd" type="password" placeholder="密码">
+                        </label>
+                    </div>
+                    <div class="form-imgcode form-group-imgcode">
+                        <input node_type="input" name="ImgCode" type="text" autocomplete="off" placeholder="验证码">
+                        <img id="sp_imag_HM" src="../../static/images/NewValidateCodeImageType" onclick="IndexNewValidateCode('s8LGHeaderMem','sp_imag_HM')" style="width:70px">
+                        <a class="a-vertif" href="javascript:void(0)" style="color: blue;" onclick="IndexNewValidateCode('s8LGHeaderMem','sp_imag_HM')">看不清?</a>
+                    </div>
+                    <div class="item item-remember">
+                        <a class="link-forgot fr" href="/findcode/">忘记密码</a>
+                    </div>
+                    <input type="submit" value="登录">
+
+                    <a class="btn btn-nMem" href="http://www.super8.com.cn/Hotel/List#" onclick="closeWindow('pop-login');"><em>非会员直接预订</em></a>
+                    <dl class="item item-third">
+                        <dt><a id="tandregister" href="/registerym">立即66注册</a></dt>
+                    </dl>
+                </form>
+            </div>
+            <div class="tab-company" style="display: none">
+                <form action="http://www.super8.com.cn/Company/IndexCompanyLogin" id="IndexCompanyLogin" method="post">
+                    <div id="Indexcompanyloginerror">
+
+                    </div>
+                    <div class="form-group form-group-name">
+                        <label class="ui-placeholder" for="input-name" node_type="key">
+                            <span class="placeholder-text" style="display: none;">企业用户名</span>
+                            <input name="LoginName" type="text" value="" placeholder="企业用户名">
+                        </label>
+                    </div>
+                    <div class="form-group form-group-password">
+                        <label class="ui-placeholder" for="input-pw" node_type="key">
+                            <span class="placeholder-text" style="display: none;">密码</span>
+                            <input name="PassWd" type="password" placeholder="密码">
+                        </label>
+                    </div>
+                    <div class="form-imgcode form-group-imgcode">
+                        <input node_type="input" name="ImgCode" type="text" autocomplete="off" placeholder="验证码">
+                        <img id="sp_imag_com_HM" src="../../static/images/NewValidateCodeImageType(1)" onclick="IndexNewValidateCode('s8LGHeaderCom','sp_imag_com_HM')" style="width:70px">
+                        <a class="a-vertif" href="javascript:void(0)" style="color: blue;" onclick="IndexNewValidateCode('s8LGHeaderCom','sp_imag_com_HM')">看不清?</a>
+                    </div>
+                    <div class="item item-remember">
+                        <a class="link-forgot fr" href="http://www.super8.com.cn/Forgotpwd/Forgotpwd1">忘记密码</a>
+                        <label for="input-remember">
+                            <input name="RememberMe" type="checkbox" value="true"><input name="RememberMe" type="hidden" value="false">
+                            30天内自动登录</label>
+                    </div>
+                    <div class="item">
+                        <a href="javascript:void(0)" id="btn4" class="btn"></a>
+                    </div>
+                    <a class="btn btn-nMem" href="http://www.super8.com.cn/Hotel/List"><em>非会员直接预订</em></a>
+                    <dl class="item item-third">
+                        <dt><a href="http://www.super8.com.cn/Register/RegisterCompany">立即注册企业会员</a></dt>
+                    </dl>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--REG END-->
+
+
+{% endblock %}
