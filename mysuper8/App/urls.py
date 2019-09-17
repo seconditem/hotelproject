@@ -21,9 +21,8 @@ from App import views
 urlpatterns = [
     #首页
     url(r'^$',views.yuding,name='yuding'),
+
     #登录
-    url(r'^login/$',views.userlogin,name='userlogin'),
-    #登录验证码
     url(r'^loginym/$',views.loginym, name='loginym'),
 
     #注册

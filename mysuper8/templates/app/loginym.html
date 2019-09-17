@@ -18,7 +18,7 @@
 
         <div class="login-tab-content login-tab-content-pop">
             <div class="tab-person">
-                <form action="/login" id="IndexLogin" method="post">
+                <form action="{% url 'app:userlogin' %}" id="IndexLogin" method="post">
                     <input type="hidden" name="csrfmiddlewaretoken" value="CAJDuVGRC9p11hjeDGF4lVCTUvXnBsW9i0lHaF7j8YjbRHl2Ur1A1876glFCoXx0">
                     <div id="Indexloginerror">
 
@@ -52,43 +52,7 @@
                     </dl>
                 </form>
             </div>
-            <div class="tab-company" style="display: none">
-                <form action="http://www.super8.com.cn/Company/IndexCompanyLogin" id="IndexCompanyLogin" method="post">
-                    <div id="Indexcompanyloginerror">
 
-                    </div>
-                    <div class="form-group form-group-name">
-                        <label class="ui-placeholder" for="input-name" node_type="key">
-                            <span class="placeholder-text" style="display: none;">企业用户名</span>
-                            <input name="LoginName" type="text" value="" placeholder="企业用户名">
-                        </label>
-                    </div>
-                    <div class="form-group form-group-password">
-                        <label class="ui-placeholder" for="input-pw" node_type="key">
-                            <span class="placeholder-text" style="display: none;">密码</span>
-                            <input name="PassWd" type="password" placeholder="密码">
-                        </label>
-                    </div>
-                    <div class="form-imgcode form-group-imgcode">
-                        <input node_type="input" name="ImgCode" type="text" autocomplete="off" placeholder="验证码">
-                        <img id="sp_imag_com_HM" src="../../static/images/NewValidateCodeImageType(1)" onclick="IndexNewValidateCode('s8LGHeaderCom','sp_imag_com_HM')" style="width:70px">
-                        <a class="a-vertif" href="javascript:void(0)" style="color: blue;" onclick="IndexNewValidateCode('s8LGHeaderCom','sp_imag_com_HM')">看不清?</a>
-                    </div>
-                    <div class="item item-remember">
-                        <a class="link-forgot fr" href="http://www.super8.com.cn/Forgotpwd/Forgotpwd1">忘记密码</a>
-                        <label for="input-remember">
-                            <input name="RememberMe" type="checkbox" value="true"><input name="RememberMe" type="hidden" value="false">
-                            30天内自动登录</label>
-                    </div>
-                    <div class="item">
-                        <a href="javascript:void(0)" id="btn4" class="btn"></a>
-                    </div>
-                    <a class="btn btn-nMem" href="http://www.super8.com.cn/Hotel/List"><em>非会员直接预订</em></a>
-                    <dl class="item item-third">
-                        <dt><a href="http://www.super8.com.cn/Register/RegisterCompany">立即注册企业会员</a></dt>
-                    </dl>
-                </form>
-            </div>
         </div>
 
     </div>

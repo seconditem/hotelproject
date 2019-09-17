@@ -13,27 +13,6 @@ from tools.verifycode import VerifyCode
 
 
 
-#登录
-def userlogin(request):
-    # if request.method == 'POST':
-    #     if request.POST.get('loginsubmit'):
-    #         username = request.POST.get('username')
-    #         password = request.POST.get('password')
-    #         autologin = request.POST.get('cookietime')
-    #         # 验证成功返回用户对象，否则返回None
-    #         user = authenticate(request, username=username, password=password)
-    #         if user:
-    #             # 判断是否自动登录
-    #             if autologin:
-    #                 user.autologin = 1
-    #                 user.save()
-    #
-    #             # 登录写入session，并把user写入request
-    #             login(request, user)
-    #         return redirect(reverse('app:index'))
-    #
-    # return redirect(reverse('app:index'))
-    return render(request,'app/login.html',locals())
 
 #首页
 def yuding(request):
@@ -77,26 +56,7 @@ def registerym(request):
     else:
         form = RegisterForm()
         return render(request,'app/registerym.html',locals())
-#用户登录
-def user_login(request):
-    if request.method=='POST':
-         if request.POST.get('loginsubmit'):
-             username = request.POST.get('username')
-             password = request.POST.get('password')
-             autologin = request.POST.get('cookietime')
-             #验证成功返回用户对象，否则返回None
-             user = authenticate(request,username=username,password=password)
-             if user:
-                 #判断是否自动登录
-                 if autologin:
-                     user.autologin = 1
-                     user.save()
 
-                 #登录写入session，并把user写入request
-                 login(request,user)
-             return  redirect(reverse('app:index'))
-
-    return redirect(reverse('app:index'))
 
 #退出登录
 def user_logout(request):
