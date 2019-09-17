@@ -17,7 +17,6 @@ from tools.verifycode import VerifyCode
 
 
 
-
 #首页
 def yuding(request):
 
@@ -52,17 +51,37 @@ def registerym(request):
             usertype = 0
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
-            user = User.objects.create_user(username=username, password=password, email=email, regtime=regtime,usertype=usertype)
+            user = User.objects.create_user(username=username, password=password, email=email, regtime=regtime,
+                                            usertype=usertype)
             login(request, user)
             return redirect(reverse('app:yuding'))
         return render(request,'app/registerym.html',locals())
     else:
         form = RegisterForm()
         return render(request,'app/registerym.html',locals())
+def loginym(request):
+    if request.method=='POST':
+         print('12000000000000000000')
+         username = request.POST.get('username')
+         password = request.POST.get('password')
+
+         #验证成功返回用户对象，否则返回None
+         user = authenticate(request,username=username,password=password)
+         if user:
+             #登录写入session，并把user写入request
+             print('000000000000000000')
+             login(request,user)
+             return redirect(reverse('app:yuding'))
+
+         return render(request, 'app/loginym.html', locals())
+    return render(request, 'app/loginym.html', locals())
+
+
+
 #退出登录
-def user_logout(request):
+def userlogout(request):
     logout(request)
-    return redirect(reverse('app:index'))
+    return redirect(reverse('app:yuding'))
 
 #验证码
 def get_yzm(request):
@@ -102,9 +121,7 @@ def makeorder(request):
     return render(request, 'app/BookInfo.html', locals())
 
 
-def loginym(request):
 
-    return render(request, 'app/loginym.html', locals())
 
 
 def phoneyzm(request):

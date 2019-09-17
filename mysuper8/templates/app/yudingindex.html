@@ -123,25 +123,18 @@
     <div class="top_menu_mys8">
 
 
-    {% if user.is_autoenticated %}
-        <i><a href="/MemInfo/MemLogin">刘荣帅</a></i>
-{#         <em class="mys8-menu"><a href="{% url 'app:userlogin' %}"#}
+    {% if user.is_authenticated %}
+        <em class="mys8-menu"><a href="{% url 'app:makeorder' %}" id="dlogin">刘荣帅&nbsp;|&nbsp;</a>
+        <span>
+            <a href="{% url 'app:makeorder' %}"  class="mys8-menu ">我的速8</a>
+        </span>
+         <a id="dregister" href="{% url 'app:userlogout' %}">退出</a></em>
     {% else %}
 
-        <em class="mys8-menu"><a href="{% url 'app:loginym' %}" onclick="popupMemberSupper(&#39;pop-login&#39;);"
-
-                                 id="dlogin">登11录&nbsp;|&nbsp;</a>
-            <a id="dregister" href="{% url 'app:registerym' %}">注99册</a></em>
+        <em class="mys8-menu"><a href="{% url 'app:loginym' %}" id="dlogin">登11录&nbsp;|&nbsp;</a>
+        <a id="dregister" href="{% url 'app:registerym' %}">注99册</a></em>
         <span>
-                <a href="http://www.super8.com.cn/MemInfo/MemLogin" onclick="return false;" class="mys8-menu ">我的速8</a>
-            <!--有待付款订单时class中添加alert-pay-->
-
-                <div class="dropmenu-content dropmenu-nlogin">
-                    <a href="" class="login-btn">登录</a><br>
-                    <a href="http://www.super8.com.cn/MemInfo/MemLogin?tabconpanytype=1"
-                       class="login-company">企业会员登录</a>
-                </div>
-
+            <a href="{% url 'app:loginym' %}"  class="mys8-menu ">我的速8</a>
         </span>
     {% endif %}
     </div>

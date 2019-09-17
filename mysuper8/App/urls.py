@@ -21,14 +21,15 @@ from App import views
 urlpatterns = [
     #首页
     url(r'^$',views.yuding,name='yuding'),
+
     #登录
     url(r'^loginym/$',views.loginym, name='loginym'),
+    #退出
+    url(r'^userlogout/$',views.userlogout,name='userlogout'),
     #注册
     url(r'^registerym/$',views.registerym,name='registerym'),
-    # 图片验证码
+    # 验证码
     url(r'^yzm/$', views.get_yzm, name='yzm'),
-    # 手机验证码
-    url(r'^phoneyzm/$', views.phoneyzm, name='phoneyzm'),
     #忘记密码
     url(r'^findcode/$', views.findcode, name='findcode'),
     #忘记密码
