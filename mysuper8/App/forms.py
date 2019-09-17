@@ -7,10 +7,10 @@ from App.models import User
 
 
 def check_password(password):
-    if re.search(r'\d',password) and \
-       re.search(r'[a-z]',password) and  \
-       re.search(r'[A-Z]',password) and  \
-       re.search(r'[^0-9a-zA-Z]',password): \
+    if re.search(r'\d',password):
+       # re.search(r'[a-z]',password) and  \
+       # re.search(r'[A-Z]',password) and  \
+       # re.search(r'[^0-9a-zA-Z]',password): \
         return password
     raise ValidationError('密码强度不满足要求')
 
