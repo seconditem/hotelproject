@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c279839-34f2-474a-9acb-2effbf15a898" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../mysuba01/templates/app/yudingindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/../mysuba01/templates/app/yudingindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mysuba.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mysuba.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/app/hoteldetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/hoteldetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/app/loginym.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/loginym.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/app/registerym.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/registerym.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +78,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.deploy.options" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -167,6 +175,8 @@
       <workItem from="1568622441417" duration="4550000" />
       <workItem from="1568631723065" duration="11314000" />
       <workItem from="1568681011692" duration="2904000" />
+      <workItem from="1568708332684" duration="431000" />
+      <workItem from="1568708859382" duration="2411000" />
     </task>
     <task id="LOCAL-00001" summary="日常更新">
       <created>1568706850934</created>

@@ -11,9 +11,11 @@ class User(AbstractUser):
     phone = models.CharField(max_length=11, null=True)
     realname = models.CharField(max_length=60)
     usertype = models.IntegerField(default=0, null=True)
+    gender = models.IntegerField(default=0)
     # email = models.EmailField()
     regtime = models.DateField(auto_now_add=True)
     pict = models.CharField(null=True,max_length=128)
+
 
     class Meta:
         db_table = "hotel_user"
