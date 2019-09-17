@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c279839-34f2-474a-9acb-2effbf15a898" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/app/loginym.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/loginym.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/app/yudingindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/yudingindex.html" afterDir="false" />
-    </list>
+    <list default="true" id="9c279839-34f2-474a-9acb-2effbf15a898" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +60,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../bj1906/django/7/day07" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -172,7 +166,7 @@
       <workItem from="1568631723065" duration="11314000" />
       <workItem from="1568681011692" duration="2904000" />
       <workItem from="1568708332684" duration="431000" />
-      <workItem from="1568708859382" duration="14533000" />
+      <workItem from="1568708859382" duration="14639000" />
     </task>
     <task id="LOCAL-00001" summary="日常更新">
       <created>1568706850934</created>
@@ -188,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568713293999</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="实现简单登录">
+      <created>1568725585058</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1568725585058</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,6 +211,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="日常更新" />
     <MESSAGE value="干掉重复登录，保持一直" />
-    <option name="LAST_COMMIT_MESSAGE" value="干掉重复登录，保持一直" />
+    <MESSAGE value="实现简单登录" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现简单登录" />
   </component>
 </project>
