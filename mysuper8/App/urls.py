@@ -24,7 +24,8 @@ urlpatterns = [
 
     #登录
     url(r'^loginym/$',views.loginym, name='loginym'),
-
+    #退出
+    url(r'^userlogout/$',views.userlogout,name='userlogout'),
     #注册
     url(r'^registerym/$',views.registerym,name='registerym'),
     # 验证码
