@@ -22,14 +22,13 @@ urlpatterns = [
     #首页
     url(r'^$',views.yuding,name='yuding'),
     #登录
-    url(r'^login/$',views.userlogin,name='userlogin'),
-    #登录验证码
     url(r'^loginym/$',views.loginym, name='loginym'),
-
     #注册
     url(r'^registerym/$',views.registerym,name='registerym'),
-    # 验证码
+    # 图片验证码
     url(r'^yzm/$', views.get_yzm, name='yzm'),
+    # 手机验证码
+    url(r'^phoneyzm/$', views.phoneyzm, name='phoneyzm'),
     #忘记密码
     url(r'^findcode/$', views.findcode, name='findcode'),
     #忘记密码

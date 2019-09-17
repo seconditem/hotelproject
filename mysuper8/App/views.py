@@ -1,5 +1,7 @@
 import datetime
 from datetime import datetime
+from random import randint
+
 from django.contrib.auth import login, authenticate, logout
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
@@ -9,31 +11,12 @@ from django.urls import reverse
 
 from App.forms import RegisterForm
 from App.models import User
+from tools.sms import send_sms
 from tools.verifycode import VerifyCode
 
 
 
-#登录
-def userlogin(request):
-    # if request.method == 'POST':
-    #     if request.POST.get('loginsubmit'):
-    #         username = request.POST.get('username')
-    #         password = request.POST.get('password')
-    #         autologin = request.POST.get('cookietime')
-    #         # 验证成功返回用户对象，否则返回None
-    #         user = authenticate(request, username=username, password=password)
-    #         if user:
-    #             # 判断是否自动登录
-    #             if autologin:
-    #                 user.autologin = 1
-    #                 user.save()
-    #
-    #             # 登录写入session，并把user写入request
-    #             login(request, user)
-    #         return redirect(reverse('app:index'))
-    #
-    # return redirect(reverse('app:index'))
-    return render(request,'app/login.html',locals())
+
 
 #首页
 def yuding(request):
@@ -69,35 +52,13 @@ def registerym(request):
             usertype = 0
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
-            user = User.objects.create_user(username=username, password=password, email=email, regtime=regtime,
-                                            usertype=usertype)
+            user = User.objects.create_user(username=username, password=password, email=email, regtime=regtime,usertype=usertype)
             login(request, user)
             return redirect(reverse('app:yuding'))
         return render(request,'app/registerym.html',locals())
     else:
         form = RegisterForm()
         return render(request,'app/registerym.html',locals())
-#用户登录
-def user_login(request):
-    if request.method=='POST':
-         if request.POST.get('loginsubmit'):
-             username = request.POST.get('username')
-             password = request.POST.get('password')
-             autologin = request.POST.get('cookietime')
-             #验证成功返回用户对象，否则返回None
-             user = authenticate(request,username=username,password=password)
-             if user:
-                 #判断是否自动登录
-                 if autologin:
-                     user.autologin = 1
-                     user.save()
-
-                 #登录写入session，并把user写入request
-                 login(request,user)
-             return  redirect(reverse('app:index'))
-
-    return redirect(reverse('app:index'))
-
 #退出登录
 def user_logout(request):
     logout(request)
@@ -144,3 +105,12 @@ def makeorder(request):
 def loginym(request):
 
     return render(request, 'app/loginym.html', locals())
+
+
+def phoneyzm(request):
+
+    num = str(randint(10000, 1000000))
+    res = send_sms('18725882067', {'number': num})
+    print(res, num, 'num就是验证码')
+
+    return HttpResponse(res,'image/png')

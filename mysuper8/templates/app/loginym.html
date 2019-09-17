@@ -18,7 +18,8 @@
 
         <div class="login-tab-content login-tab-content-pop">
             <div class="tab-person">
-                <form action="/login" id="IndexLogin" method="post">
+                <form action="{% url 'app:loginym' %}" id="IndexLogin" method="post">
+                    {% csrf_token %}
                     <input type="hidden" name="csrfmiddlewaretoken" value="CAJDuVGRC9p11hjeDGF4lVCTUvXnBsW9i0lHaF7j8YjbRHl2Ur1A1876glFCoXx0">
                     <div id="Indexloginerror">
 
