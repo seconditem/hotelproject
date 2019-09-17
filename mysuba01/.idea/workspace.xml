@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c279839-34f2-474a-9acb-2effbf15a898" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/css/yudingindex.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysuba/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysuba/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/app/registerym.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/registerym.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/app/yudingindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/yudingindex.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,6 +21,8 @@
       <list>
         <option value="CSS File" />
         <option value="Python Script" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -34,9 +32,10 @@
   <component name="ProjectId" id="1Qgv0QUS3irbEzHWJGKwQIUtnS3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mysuba" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -47,19 +46,19 @@
     <property name="settings.editor.selected.configurable" value="reference.settings.deploy.options" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/app" />
+      <recent name="$PROJECT_DIR$/static/images" />
+      <recent name="$PROJECT_DIR$/static/js" />
+      <recent name="$PROJECT_DIR$/static/css" />
+      <recent name="$PROJECT_DIR$/static/scripts" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/static/css" />
       <recent name="$PROJECT_DIR$/static/fonts" />
       <recent name="$PROJECT_DIR$/static" />
       <recent name="$PROJECT_DIR$/tools" />
       <recent name="$PROJECT_DIR$/App" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/static/images" />
-      <recent name="$PROJECT_DIR$/static/js" />
-      <recent name="$PROJECT_DIR$/static/css" />
-      <recent name="$PROJECT_DIR$/templates/app" />
-      <recent name="$PROJECT_DIR$/static/scripts" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -117,7 +116,7 @@
       <workItem from="1568543848583" duration="6537000" />
       <workItem from="1568597051471" duration="737000" />
       <workItem from="1568601086615" duration="9956000" />
-      <workItem from="1568622441417" duration="4550000" />
+      <workItem from="1568622441417" duration="7448000" />
     </task>
     <servers />
   </component>

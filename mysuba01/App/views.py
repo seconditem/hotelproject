@@ -13,7 +13,9 @@ from tools.verifycode import VerifyCode
 
 
 
-
+#登录
+def userlogin(request):
+    return render(request,'app/login.html',locals())
 #首页
 def yuding(request):
 
@@ -106,3 +108,4 @@ def findcodetwo(request):
 
 def HotelDetail(request):
     return render(request, 'app/BookInfo.html', locals())
+
