@@ -106,6 +106,22 @@ def findcodetwo(request):
     return render(request, 'app/findcode2.html', locals())
 
 
+
 def HotelDetail(request):
     return render(request, 'app/BookInfo.html', locals())
 
+
+
+
+
+def hoteldetail(request):
+    return render(request, 'app/hoteldetail.html', locals())
+
+
+def makeorder(request):
+    return render(request, 'app/BookInfo.html', locals())
+
+
+def loginym(request):
+
+    return render(request, 'app/loginym.html', locals())

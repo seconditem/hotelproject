@@ -2,14 +2,102 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c279839-34f2-474a-9acb-2effbf15a898" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/mysuba.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mysuba.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/app/yudingindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/yudingindex.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/css/bmap_autocomplete.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/css/jplayer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/css/video-js.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/images/20180209183209567.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/images/20180209183309852.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/images/20180209183310056.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/images/20180209183411016.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/images/20180209183511847.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/images/20180209183612202.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/images/20180209183612578.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/images/20180209183612848.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/images/20180209183713229.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/images/20180209183713581.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/images/4054.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/images/a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/images/a_002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/images/a_003.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/images/a_004.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/images/a_005.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/images/a_006.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/images/a_007.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/images/a_008.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/images/a_009.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/images/a_010.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/images/a_011.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/images/a_012.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/images/a_013.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/images/a_014.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/images/a_015.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/js/Detail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/js/HotelComment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/js/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/js/jquery_002.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/js/slide.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/static/js/video.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/BaiduMap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/NewValidateCodeImageType.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/NewValidateCodeImageType_002.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/a.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/a_002.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/a_003.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/app_ad.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/baidu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/bg_white.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/citydata.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/close-icon.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/copyright_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/detail-icon-qcode.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/f_icon_hy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/f_icon_jm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/f_icon_zf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/f_icon_zn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/footer" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/home-pop-180131.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/home-pop-btn-170815.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/home-pop-icon-close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/homeAd.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/icon-sale-6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/imgbox-close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/invite-close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/iw3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/iw_close1d3.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/iw_plus1d3.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/iws3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/list_loading.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/marker_red_sprite.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/moor_chat.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/moor_chat_data/close-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/moor_chat_data/continue-advisory.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/moor_chat_data/iconfont.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/moor_chat_data/left_float_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/moor_chat_data/m7AllQuote.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/moor_chat_data/moor_style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/moor_chat_data/right_float_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/moor_chat_data/warning.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/online.asc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/phone.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/quanjing.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/slogan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/small.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/hoteldetail_files/top_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mysuba01/templates/app/loginym.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mysuba01/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mysuba01/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mysuba01/.idea/mysuba.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../mysuba01/.idea/mysuba.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mysuba01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mysuba01/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mysuba01/App/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../mysuba01/App/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mysuba01/App/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../mysuba01/App/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mysuba01/static/js/hm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../mysuba01/static/js/hm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mysuba01/static/js/hoteldata.js" beforeDir="false" afterPath="$PROJECT_DIR$/../mysuba01/static/js/hoteldata.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mysuba01/static/scripts/getscript" beforeDir="false" afterPath="$PROJECT_DIR$/../mysuba01/static/scripts/getscript" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mysuba01/templates/app/BookInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/../mysuba01/templates/app/BookInfo.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mysuba01/templates/app/yudingindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/../mysuba01/templates/app/yudingindex.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,7 +125,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../bbs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mysuba01" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -110,6 +198,7 @@
       <workItem from="1568435689809" duration="10131000" />
       <workItem from="1568455769491" duration="6413000" />
       <workItem from="1568632413958" duration="1406000" />
+      <workItem from="1568681647044" duration="107000" />
     </task>
     <servers />
   </component>
@@ -121,7 +210,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

@@ -1,0 +1,808 @@
+
+{% extends 'app/yudingindex.html' %}
+{% load static %}
+
+{% block contents %}
+
+    <div class="g2">
+        <div class="subject-img">
+            <div class="img-big" id="slider-img-big">
+
+                        <a><img src="../../static/images/20180209183209354.jpg" alt="速8精选酒店"></a>
+                    <a onclick="popupMemberSupperVidel('video-pop',this)" href="javascript:void(0)"><img alt="" src="hoteldetail_files/bg_white.jpg" style="display:none"></a>
+
+            </div>
+            <div id="slidecontianer"><div class="img-list" id="slider-img-list"><a class="arrow arrow-left arrow-left-disable" href="javascript:void(0)" data-id="left"></a><a class="arrow arrow-right" href="javascript:void(0);" data-id="right"></a><div class="img-list-wrapper"><ul class="img-list-content" data-id="groups"><li class="item-group" data-id="group"><ul><li class=""><a href="javascript:void(0);"><img src="../../static/images/20180209183209354.jpg" alt="速8精选酒店" data-pic="http://admin.super8.com.cn/hotelimage/480_360/4054/20180209183209354.jpg" data-videourl="" data-picturetypeid="1"></a></li><li><a href="javascript:void(0);"><img src="../../static/images/20180209183209567.jpg" alt="速8精选酒店" data-pic="http://admin.super8.com.cn/hotelimage/480_360/4054/20180209183209567.jpg" data-videourl="" data-picturetypeid="9"></a></li><li><a href="javascript:void(0);"><img src="../../static/images/20180209183309852.jpg" alt="速8精选酒店" data-pic="http://admin.super8.com.cn/hotelimage/480_360/4054/20180209183309852.jpg" data-videourl="" data-picturetypeid="9"></a></li><li><a href="javascript:void(0);"><img src="../../static/images/20180209183310056.jpg" alt="速8精选酒店" data-pic="http://admin.super8.com.cn/hotelimage/480_360/4054/20180209183310056.jpg" data-videourl="" data-picturetypeid="9"></a></li><li><a href="javascript:void(0);"><img src="../../static/images/20180209183310256.jpg" alt="速8精选酒店" data-pic="http://admin.super8.com.cn/hotelimage/480_360/4054/20180209183310256.jpg" data-videourl="" data-picturetypeid="3"></a></li><li><a href="javascript:void(0);"><img src="../../static/images/20180209183310435.jpg" alt="速8精选酒店" data-pic="http://admin.super8.com.cn/hotelimage/480_360/4054/20180209183310435.jpg" data-videourl="" data-picturetypeid="3"></a></li><li class="current"><a href="javascript:void(0);"><img src="../../static/images/20180209183410647.jpg" alt="速8精选酒店" data-pic="http://admin.super8.com.cn/hotelimage/480_360/4054/20180209183410647.jpg" data-videourl="" data-picturetypeid="3"></a></li><li><a href="javascript:void(0);"><img src="../../static/images/20180209183410816.jpg" alt="速8精选酒店" data-pic="http://admin.super8.com.cn/hotelimage/480_360/4054/20180209183410816.jpg" data-videourl="" data-picturetypeid="3"></a></li><li><a href="javascript:void(0);"><img src="../../static/images/20180209183411016.jpg" alt="速8精选酒店" data-pic="http://admin.super8.com.cn/hotelimage/480_360/4054/20180209183411016.jpg" data-videourl="" data-picturetypeid="3"></a></li></ul></li><li class="item-group" data-id="group"><ul><li><a href="javascript:void(0);"><img src="../../static/images/20180209183511241.jpg" alt="速8精选酒店" data-pic="http://admin.super8.com.cn/hotelimage/480_360/4054/20180209183511241.jpg" data-videourl="" data-picturetypeid="3"></a></li><li><a href="javascript:void(0);"><img src="../../static/images/20180209183511492.jpg" alt="速8精选酒店" data-pic="http://admin.super8.com.cn/hotelimage/480_360/4054/20180209183511492.jpg" data-videourl="" data-picturetypeid="3"></a></li><li><a href="javascript:void(0);"><img src="../../static/images/20180209183511847.jpg" alt="速8精选酒店" data-pic="http://admin.super8.com.cn/hotelimage/480_360/4054/20180209183511847.jpg" data-videourl="" data-picturetypeid="3"></a></li><li><a href="javascript:void(0);"><img src="../../static/images/20180209183612202.jpg" alt="速8精选酒店" data-pic="http://admin.super8.com.cn/hotelimage/480_360/4054/20180209183612202.jpg" data-videourl="" data-picturetypeid="10"></a></li><li><a href="javascript:void(0);"><img src="../../static/images/20180209183612578.jpg" alt="速8精选酒店" data-pic="http://admin.super8.com.cn/hotelimage/480_360/4054/20180209183612578.jpg" data-videourl="" data-picturetypeid="10"></a></li><li><a href="javascript:void(0);"><img src="../../static/images/20180209183612848.jpg" alt="速8精选酒店" data-pic="http://admin.super8.com.cn/hotelimage/480_360/4054/20180209183612848.jpg" data-videourl="" data-picturetypeid="10"></a></li><li><a href="javascript:void(0);"><img src="../../static/images/20180209183713581.jpg" alt="速8精选酒店" data-pic="http://admin.super8.com.cn/hotelimage/480_360/4054/20180209183713581.jpg" data-videourl="" data-picturetypeid="11"></a></li><li><a href="javascript:void(0);"><img src="../../static/images/20180209183713229.jpg" alt="速8精选酒店" data-pic="http://admin.super8.com.cn/hotelimage/480_360/4054/20180209183713229.jpg" data-videourl="" data-picturetypeid="29"></a></li></ul></li></ul></div></div></div>
+        </div>
+
+        <div class="title-bar-group-wrapper mt20" id="hotel-title-bar">
+            <div class="title-bar-group ">
+                <ul data-id="refdetail">
+                    <li class=""><a href="javascript:void(0)" rel="#hotel-price">房价</a></li>
+                    <li class="current"><a href="javascript:void(0)" rel="#hotel-detail">酒店信息</a></li>
+                    <li><a href="javascript:void(0)" rel="#hotel-commentTop">住客评价 <small>（累计评价<span data-id="commcount">12</span>条）</small></a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="hotel-price">
+            <div class="hotel-inner-filter" id="hotel-inner-filter">
+                <dl class="item">
+                    <dt>入住日期</dt>
+                    <dd>
+                        <div class="su8-dp"><div class="dp-info"><b></b><span class="dp-text"></span></div><input class="input-calendar textbox" type="text" node_type="from" style="z-index: 0;" data-id="from" maxlength="10" value="2019-09-16"><div class="q-datepicker" style="display: none;"></div></div>
+                    </dd>
+                </dl>
+                <dl class="item">
+                    <dt>离店日期</dt>
+                    <dd>
+                        <div class="su8-dp"><div class="dp-info"><b></b><span class="dp-text"></span></div><input class="input-calendar textbox" type="text" node_type="to" style="z-index: 0;" data-id="to" maxlength="10" value="2019-09-17"><div class="q-datepicker" style="display: none;"></div></div>
+                    </dd>
+                </dl>
+                <dl class="item">
+                    <dt>房数</dt>
+                    <dd>
+                        <div class="ui-menu-select select-num" node_type="nummid">
+                            <input type="hidden" name="" value="">
+                            <div class="menu-list">
+                                <ul data-id="roomnum">
+                                    <li class="current"><a href="javascript:void(0)" class="option" value="1"><span class="item-text">1间</span></a></li>
+                                    <li><a href="javascript:void(0)" class="option" value="2"><span class="item-text">2间</span></a></li>
+                                    <li><a href="javascript:void(0)" class="option" value="3"><span class="item-text">3间</span></a></li>
+                                    <li><a href="javascript:void(0)" class="option" value="4"><span class="item-text">4间</span></a></li>
+                                    <li><a href="javascript:void(0)" class="option" value="5"><span class="item-text">5间</span></a></li>
+                                </ul>
+                            </div>
+                            <span class="menu-arrows"></span>
+                            <span class="menu-name" data-id="roomnummid" value="1">1间</span>
+                        </div>
+                    </dd>
+                </dl>
+                <a class="btn-red btn-s fr" href="javascript:void(0)" id="ajaxSerch"><em>更改入住时间</em></a>
+            </div>
+
+            <div data-tag="groupspp">
+                <!--[CDATA[-->
+                <div data-bind="repeter_pproom" style="display: none;">
+                    <!--]]〉-->
+                    <div class="sale-6-room mt15" data-tag="roomspp">
+                        <input type="hidden" value="#arrdata.RoomtypeID#" data-bind="roomidpp">
+                        <!--[CDATA[-->
+                        <!--]]〉-->
+                        $HotelDetail.PPAddPic('#arrdata.RoomPic#')$<!--[CDATA[--><!--]]〉-->
+                        <h3 class="room-name">
+                            <span class="room-tit">#arrdata.RmTypeName#</span>
+                            <img src="hoteldetail_files/icon-sale-6.png" class="icon-sale-6">
+                            <span class="cheapest-return">返券2元</span>
+                        </h3>
+                        <!--[CDATA[-->
+                        <!--]]〉-->
+
+$HotelDetail.PPRoomLeft('#arrdata.RoomNum#','#arrdata.Price#','#arrdata.Amount#','#arrdata.RoomtypeID#')$
+
+                        <!--[CDATA[-->
+                        <!--]]〉-->
+                        <ul class="room-features-ul">
+                            <li>
+                                <!--[CDATA[-->
+                                <!--]]〉-->
+                                $HotelDetail.BedSize('#arrdata.BedSize#')$<!--[CDATA[--><!--]]〉-->
+                            </li>
+                            <li>
+                                <!--[CDATA[-->
+                                <!--]]〉-->
+                                $HotelDetail.RmTypeArea('#arrdata.RmTypeArea#')$<!--[CDATA[--><!--]]〉-->
+                            </li>
+                            <li>
+                                <!--[CDATA[-->
+                                <!--]]〉-->
+                                $HotelDetail.AddPrice('#arrdata.AddBedPrice#')$<!--[CDATA[--><!--]]〉-->
+                            </li>
+                            <li>
+                                <!--[CDATA[-->
+                                <!--]]〉-->
+                                $HotelDetail.SpecialDesc('#arrdata.SpecialDesc#')$<!--[CDATA[--><!--]]〉-->
+                            </li>
+                            <li>
+                                <!--[CDATA[-->
+                                <!--]]〉-->
+                                $HotelDetail.RoomDesc('#arrdata.RmTypeDesc#')$<!--[CDATA[--><!--]]〉-->
+                            </li>
+                        </ul>
+                    </div>
+                    <!--[CDATA[-->
+                </div>
+                <!--]]〉-->
+            </div>
+
+            <div class="table-hotel-price mt15" data-tag="groups">
+                <ul class="row-head">
+                    <li class="col-1">&nbsp;</li>
+                    <li class="col-2">门店价</li>
+                    <li class="col-3">官网价</li>
+                    <li class="col-4" data-id="memtitle">网络会员价</li>
+                    <li class="col-5">&nbsp;</li>
+                    <li class="col-6">&nbsp;</li>
+                </ul>
+                <div data-id="loadgroups" style="text-align: center; display: none;">
+                    <img src="hoteldetail_files/list_loading.gif">
+                </div>
+                <div data-bind="container" style="">
+                    <!--[CDATA[-->
+                    <div data-bind="repeter" style="">
+                        <!--]]〉-->
+                        <input type="hidden" value="308" data-id="hidprice">
+                        <div class="group" data-id="27293">
+                            <input type="hidden" value="27293" data-bind="roomid">
+                            <ul class="row-base">
+                                <li class="col-1">
+                                    <a class="icon-pic" href="javascript:void(0)" onclick="HotelDetail.IconCick.call(this);">标准双床房</a>
+                                    <span class="cheapest te" data-id="ajaxblock">团</span>
+                                    <span class="cheapest quanr" data-id="ajaxblock" data-account="0" data-voucher="0">券</span>
+                                    <span class="cheapest return">返券10元</span>
+                                    <em class="cheapest li" data-id="ajaxnone" data-li="null" style="display: none;">促</em>
+                                </li>
+                                <li class="col-2"><del><span style="padding-top: 9px;" data-id="jg">￥448</span></del></li>
+                                <li class="col-3"><span style="padding-top: 9px;" data-id="jg">￥441</span></li>
+                                <li class="col-4"><span class="memberprice memberpriceHover" style="padding-top: 6px;" data-web="419" data-ep="419" data-vip="388" data-gold="375" data-super="359" data-account="0" data-voucher="0" data-id="jg">￥<em data-id="kyj">308</em><i>起</i></span></li>
+                                <li class="col-5">
+                                    <span data-tag="curnum" class="red" style="padding-top: 9px;">
+
+                                        <!--[CDATA[-->
+                                        最后1间
+                                    </span>
+                                </li>
+                                <li class="col-6">
+                                    <span class="" style="margin: 6px 0;" data-web="419" data-id="ckyd" onclick="HotelDetail.IconCick.call(this);"><a href="{% url 'app:makeorder' %}"><em>预订</em></a></span>
+
+                                </li>
+                            </ul>
+                            <div class="price_box hidden">
+                                <ul class="price_ul" data-id="ajaxblock">
+                                    <li class="col-1a">
+                                        <span class="cheapest te">团</span>
+                                        <span class="cheapest return">返券2元</span>
+                                        <span style="padding-top: 9px;">团购价</span>
+                                    </li>
+                                    <li class="col-2"><del><span style="padding-top: 9px;"></span></del></li>
+                                    <li class="col-3"><span style="padding-top: 9px;"></span></li>
+                                    <li class="col-4"><span class="memberprice memberpriceTe" style="padding-top: 6px;" data-account="0" data-id="jg">￥<em>308</em></span></li>
+                                    <li class="col-5"><span class="red" style="padding-top: 9px;"></span></li>
+                                    <li class="col-6a">
+
+                                        <span class="btn-s btn-red" style="margin: 6px 0;"><a id="addcart" href="javascript:void(0);" onclick="HotelDetail.TBYDClick.call(this);"><em>预订</em></a></span><span class="icon_prepay">预3付</span>
+                                    </li>
+                                </ul>
+                                <ul class="price_ul">
+                                    <li class="col-1a">
+                                        <span class="cheapest quanr" data-id="ajaxblock" data-account="0" data-voucher="0">券</span>
+                                        <span style="padding-top: 9px;">会员价(无早）</span>
+                                    </li><li class="col-2"><del><span style="padding-top: 9px;" data-id="jg">￥448</span></del></li>
+                                    <li class="col-3"><span style="padding-top: 9px;" data-id="jg">￥441</span></li>
+                                    <li class="col-4"><span class="memberprice memberpriceHover" style="padding-top: 6px;" data-web="419" data-ep="419" data-vip="388" data-gold="375" data-super="359" data-account="0" data-voucher="0" data-id="jg">￥<em>419</em><i>起</i></span></li>
+                                    <li class="col-5">
+                                        <span data-tag="curnum" class="red" style="padding-top: 9px;">
+
+                                        </span>
+                                    </li>
+                                    <li class="col-6a">
+                                        <span class="btn-s btn-red fl" style="margin: 6px 0;" data-id="ydspan"><a id="addcart" href="javascript:void(0);" data-id="yd" onclick="HotelDetail.YDClick.call(this);"><em>预订</em></a></span>
+
+                                    </li>
+                                </ul>
+                                <ul class="room_detail">
+                                    <img src="../../static/images/20180209183310435.jpg" class="room_pic" alt="速8精选酒店" width="100" height="75">
+                                    <ul class="room_equipment">
+                                        <li>
+                                            床型：1.2*2米
+                                        </li>
+                                        <li>
+                                            建筑面积：23平米
+                                        </li>
+                                        <li>
+
+                                        </li>
+                                        <li>
+                                            特殊说明：无烟房
+                                        </li>
+                                        <li>
+
+                                        </li>
+                                    </ul>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <!--[CDATA[-->
+
+                        <!--]]〉-->
+                        <input type="hidden" value="328" data-id="hidprice">
+                        <div class="group" data-id="27294">
+                            <input type="hidden" value="27294" data-bind="roomid">
+                            <ul class="row-base">
+                                <li class="col-1">
+                                    <a class="icon-pic" href="javascript:void(0)" onclick="HotelDetail.IconCick.call(this);">标准大床房</a>
+                                    <span class="cheapest te" data-id="ajaxblock">团</span>
+                                    <span class="cheapest quanr" data-id="ajaxblock" data-account="0" data-voucher="0">券</span>
+                                    <span class="cheapest return">返券10元</span>
+                                    <em class="cheapest li" data-id="ajaxnone" data-li="null" style="display: none;">促</em>
+                                </li>
+                                <li class="col-2"><del><span style="padding-top: 9px;" data-id="jg">￥498</span></del></li>
+                                <li class="col-3"><span style="padding-top: 9px;" data-id="jg">￥464</span></li>
+                                <li class="col-4"><span class="memberprice memberpriceHover" style="padding-top: 6px;" data-web="439" data-ep="439" data-vip="408" data-gold="395" data-super="380" data-account="0" data-voucher="0" data-id="jg">￥<em data-id="kyj">328</em><i>起</i></span></li>
+                                <li class="col-5">
+                                    <span data-tag="curnum" class="red" style="padding-top: 9px;">
+
+                                        <!--[CDATA[-->
+                                        最后1间
+                                    </span>
+                                </li>
+                                <li class="col-6">
+                                    <span class="" style="margin: 6px 0;" data-web="439" data-id="ckyd" onclick="HotelDetail.IconCick.call(this);"><a href="{% url 'app:makeorder' %}"><em>预订</em></a></span>
+
+                                </li>
+                            </ul>
+                            <div class="price_box hidden">
+                                <ul class="price_ul" data-id="ajaxblock">
+                                    <li class="col-1a">
+                                        <span class="cheapest te">团</span>
+                                        <span class="cheapest return">返券2元</span>
+                                        <span style="padding-top: 9px;">团购价</span>
+                                    </li>
+                                    <li class="col-2"><del><span style="padding-top: 9px;"></span></del></li>
+                                    <li class="col-3"><span style="padding-top: 9px;"></span></li>
+                                    <li class="col-4"><span class="memberprice memberpriceTe" style="padding-top: 6px;" data-account="0" data-id="jg">￥<em>328</em></span></li>
+                                    <li class="col-5"><span class="red" style="padding-top: 9px;"></span></li>
+                                    <li class="col-6a">
+
+                                        <span class="btn-s btn-red" style="margin: 6px 0;"><a id="addcart" href="javascript:void(0);" onclick="HotelDetail.TBYDClick.call(this);"><em>预订</em></a></span><span class="icon_prepay">预3付</span>
+                                    </li>
+                                </ul>
+                                <ul class="price_ul">
+                                    <li class="col-1a">
+                                        <span class="cheapest quanr" data-id="ajaxblock" data-account="0" data-voucher="0">券</span>
+                                        <span style="padding-top: 9px;">会员价(无早）</span>
+                                    </li><li class="col-2"><del><span style="padding-top: 9px;" data-id="jg">￥498</span></del></li>
+                                    <li class="col-3"><span style="padding-top: 9px;" data-id="jg">￥464</span></li>
+                                    <li class="col-4"><span class="memberprice memberpriceHover" style="padding-top: 6px;" data-web="439" data-ep="439" data-vip="408" data-gold="395" data-super="380" data-account="0" data-voucher="0" data-id="jg">￥<em>439</em><i>起</i></span></li>
+                                    <li class="col-5">
+                                        <span data-tag="curnum" class="red" style="padding-top: 9px;">
+
+                                        </span>
+                                    </li>
+                                    <li class="col-6a">
+                                        <span class="btn-s btn-red fl" style="margin: 6px 0;" data-id="ydspan"><a id="addcart" href="javascript:void(0);" data-id="yd" onclick="HotelDetail.YDClick.call(this);"><em>预订</em></a></span>
+
+                                    </li>
+                                </ul>
+                                <ul class="room_detail">
+                                    <img src="../../static/images/20180209183310256.jpg" class="room_pic" alt="速8精选酒店" width="100" height="75">
+                                    <ul class="room_equipment">
+                                        <li>
+                                            床型：1.8*2米
+                                        </li>
+                                        <li>
+                                            建筑面积：23平米
+                                        </li>
+                                        <li>
+
+                                        </li>
+                                        <li>
+                                            特殊说明：无烟房
+                                        </li>
+                                        <li>
+
+                                        </li>
+                                    </ul>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <!--[CDATA[-->
+
+                        <!--]]〉-->
+                        <input type="hidden" value="408" data-id="hidprice">
+                        <div class="group" data-id="27297">
+                            <input type="hidden" value="27297" data-bind="roomid">
+                            <ul class="row-base">
+                                <li class="col-1">
+                                    <a class="icon-pic" href="javascript:void(0)" onclick="HotelDetail.IconCick.call(this);">高级双床房</a>
+                                    <span class="cheapest te" data-id="ajaxblock">团</span>
+                                    <span class="cheapest quanr" data-id="ajaxblock" data-account="0" data-voucher="0">券</span>
+                                    <span class="cheapest return">返券10元</span>
+                                    <em class="cheapest li" data-id="ajaxnone" data-li="null" style="display: none;">促</em>
+                                </li>
+                                <li class="col-2"><del><span style="padding-top: 9px;" data-id="jg">￥538</span></del></li>
+                                <li class="col-3"><span style="padding-top: 9px;" data-id="jg">￥498</span></li>
+                                <li class="col-4"><span class="memberprice memberpriceHover" style="padding-top: 6px;" data-web="475" data-ep="475" data-vip="438" data-gold="425" data-super="408" data-account="0" data-voucher="0" data-id="jg">￥<em data-id="kyj">408</em><i>起</i></span></li>
+                                <li class="col-5">
+                                    <span data-tag="curnum" class="red" style="padding-top: 9px;">
+
+                                        <!--[CDATA[-->
+
+                                    </span>
+                                </li>
+                                <li class="col-6">
+                                    <span class="" style="margin: 6px 0;" data-web="475" data-id="ckyd" onclick="HotelDetail.IconCick.call(this);"><a href="{% url 'app:makeorder' %}"><em>预订</em></a></span>
+
+                                </li>
+                            </ul>
+                            <div class="price_box hidden">
+                                <ul class="price_ul" data-id="ajaxblock">
+                                    <li class="col-1a">
+                                        <span class="cheapest te">团</span>
+                                        <span class="cheapest return">返券2元</span>
+                                        <span style="padding-top: 9px;">团购价</span>
+                                    </li>
+                                    <li class="col-2"><del><span style="padding-top: 9px;"></span></del></li>
+                                    <li class="col-3"><span style="padding-top: 9px;"></span></li>
+                                    <li class="col-4"><span class="memberprice memberpriceTe" style="padding-top: 6px;" data-account="0" data-id="jg">￥<em>438</em></span></li>
+                                    <li class="col-5"><span class="red" style="padding-top: 9px;"></span></li>
+                                    <li class="col-6a">
+
+                                        <span class="btn-s btn-red" style="margin: 6px 0;"><a id="addcart" href="javascript:void(0);" onclick="HotelDetail.TBYDClick.call(this);"><em>预订</em></a></span><span class="icon_prepay">预3付</span>
+                                    </li>
+                                </ul>
+                                <ul class="price_ul">
+                                    <li class="col-1a">
+                                        <span class="cheapest quanr" data-id="ajaxblock" data-account="0" data-voucher="0">券</span>
+                                        <span style="padding-top: 9px;">会员价(无早）</span>
+                                    </li><li class="col-2"><del><span style="padding-top: 9px;" data-id="jg">￥538</span></del></li>
+                                    <li class="col-3"><span style="padding-top: 9px;" data-id="jg">￥498</span></li>
+                                    <li class="col-4"><span class="memberprice memberpriceHover" style="padding-top: 6px;" data-web="475" data-ep="475" data-vip="438" data-gold="425" data-super="408" data-account="0" data-voucher="0" data-id="jg">￥<em>475</em><i>起</i></span></li>
+                                    <li class="col-5">
+                                        <span data-tag="curnum" class="red" style="padding-top: 9px;">
+
+                                        </span>
+                                    </li>
+                                    <li class="col-6a">
+                                        <span class="btn-s btn-red fl" style="margin: 6px 0;" data-id="ydspan"><a id="addcart" href="javascript:void(0);" data-id="yd" onclick="HotelDetail.YDClick.call(this);"><em>预订</em></a></span>
+
+                                    </li>
+                                </ul>
+                                <ul class="room_detail">
+                                    <img src="../../static/images/20180209183511241.jpg" class="room_pic" alt="速8精选酒店" width="100" height="75">
+                                    <ul class="room_equipment">
+                                        <li>
+                                            床型：1.2*2米
+                                        </li>
+                                        <li>
+                                            建筑面积：25平米
+                                        </li>
+                                        <li>
+
+                                        </li>
+                                        <li>
+                                            特殊说明：无烟房
+                                        </li>
+                                        <li>
+
+                                        </li>
+                                    </ul>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <!--[CDATA[-->
+
+                        <!--]]〉-->
+                        <input type="hidden" value="418" data-id="hidprice">
+                        <div class="group" data-id="27295">
+                            <input type="hidden" value="27295" data-bind="roomid">
+                            <ul class="row-base">
+                                <li class="col-1">
+                                    <a class="icon-pic" href="javascript:void(0)" onclick="HotelDetail.IconCick.call(this);">高级大床房</a>
+                                    <span class="cheapest te" data-id="ajaxblock">团</span>
+                                    <span class="cheapest quanr" data-id="ajaxblock" data-account="0" data-voucher="0">券</span>
+                                    <span class="cheapest return">返券10元</span>
+                                    <em class="cheapest li" data-id="ajaxnone" data-li="null" style="display: none;">促</em>
+                                </li>
+                                <li class="col-2"><del><span style="padding-top: 9px;" data-id="jg">￥548</span></del></li>
+                                <li class="col-3"><span style="padding-top: 9px;" data-id="jg">￥509</span></li>
+                                <li class="col-4"><span class="memberprice memberpriceHover" style="padding-top: 6px;" data-web="485" data-ep="485" data-vip="448" data-gold="435" data-super="418" data-account="0" data-voucher="0" data-id="jg">￥<em data-id="kyj">418</em><i>起</i></span></li>
+                                <li class="col-5">
+                                    <span data-tag="curnum" class="red" style="padding-top: 9px;">
+
+                                        <!--[CDATA[-->
+
+                                    </span>
+                                </li>
+                                <li class="col-6">
+                                    <span class="" style="margin: 6px 0;" data-web="485" data-id="ckyd" onclick="HotelDetail.IconCick.call(this);"><a href="{% url 'app:makeorder' %}"><em>预订</em></a></span>
+
+                                </li>
+                            </ul>
+                            <div class="price_box hidden">
+                                <ul class="price_ul" data-id="ajaxblock">
+                                    <li class="col-1a">
+                                        <span class="cheapest te">团</span>
+                                        <span class="cheapest return">返券2元</span>
+                                        <span style="padding-top: 9px;">团购价</span>
+                                    </li>
+                                    <li class="col-2"><del><span style="padding-top: 9px;"></span></del></li>
+                                    <li class="col-3"><span style="padding-top: 9px;"></span></li>
+                                    <li class="col-4"><span class="memberprice memberpriceTe" style="padding-top: 6px;" data-account="0" data-id="jg">￥<em>448</em></span></li>
+                                    <li class="col-5"><span class="red" style="padding-top: 9px;"></span></li>
+                                    <li class="col-6a">
+
+                                        <span class="btn-s btn-red" style="margin: 6px 0;"><a id="addcart" href="javascript:void(0);" onclick="HotelDetail.TBYDClick.call(this);"><em>预订</em></a></span><span class="icon_prepay">预3付</span>
+                                    </li>
+                                </ul>
+                                <ul class="price_ul">
+                                    <li class="col-1a">
+                                        <span class="cheapest quanr" data-id="ajaxblock" data-account="0" data-voucher="0">券</span>
+                                        <span style="padding-top: 9px;">会员价(无早）</span>
+                                    </li><li class="col-2"><del><span style="padding-top: 9px;" data-id="jg">￥548</span></del></li>
+                                    <li class="col-3"><span style="padding-top: 9px;" data-id="jg">￥509</span></li>
+                                    <li class="col-4"><span class="memberprice memberpriceHover" style="padding-top: 6px;" data-web="485" data-ep="485" data-vip="448" data-gold="435" data-super="418" data-account="0" data-voucher="0" data-id="jg">￥<em>485</em><i>起</i></span></li>
+                                    <li class="col-5">
+                                        <span data-tag="curnum" class="red" style="padding-top: 9px;">
+
+                                        </span>
+                                    </li>
+                                    <li class="col-6a">
+                                        <span class="btn-s btn-red fl" style="margin: 6px 0;" data-id="ydspan"><a id="addcart" href="javascript:void(0);" data-id="yd" onclick="HotelDetail.YDClick.call(this);"><em>预订</em></a></span>
+
+                                    </li>
+                                </ul>
+                                <ul class="room_detail">
+                                    <img src="../../static/images/20180209183410816.jpg" class="room_pic" alt="速8精选酒店" width="100" height="75">
+                                    <ul class="room_equipment">
+                                        <li>
+                                            床型：1.8*2米
+                                        </li>
+                                        <li>
+                                            建筑面积：25平米
+                                        </li>
+                                        <li>
+
+                                        </li>
+                                        <li>
+                                            特殊说明：无烟房
+                                        </li>
+                                        <li>
+
+                                        </li>
+                                    </ul>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <!--[CDATA[-->
+
+                        <!--]]〉-->
+                        <input type="hidden" value="499" data-id="hidprice">
+                        <div class="group" data-id="27298">
+                            <input type="hidden" value="27298" data-bind="roomid">
+                            <ul class="row-base">
+                                <li class="col-1">
+                                    <a class="icon-pic" href="javascript:void(0)" onclick="HotelDetail.IconCick.call(this);">家庭房</a>
+                                    <span class="cheapest te" data-id="ajaxblock">团</span>
+                                    <span class="cheapest quanr" data-id="ajaxblock" data-account="0" data-voucher="0">券</span>
+                                    <span class="cheapest return">返券10元</span>
+                                    <em class="cheapest li" data-id="ajaxnone" data-li="null" style="display: none;">促</em>
+                                </li>
+                                <li class="col-2"><del><span style="padding-top: 9px;" data-id="jg">￥648</span></del></li>
+                                <li class="col-3"><span style="padding-top: 9px;" data-id="jg">￥611</span></li>
+                                <li class="col-4"><span class="memberprice memberpriceHover" style="padding-top: 6px;" data-web="580" data-ep="580" data-vip="538" data-gold="519" data-super="499" data-account="0" data-voucher="0" data-id="jg">￥<em data-id="kyj">499</em><i>起</i></span></li>
+                                <li class="col-5">
+                                    <span data-tag="curnum" class="red" style="padding-top: 9px;">
+
+                                        <!--[CDATA[-->
+                                        最后1间
+                                    </span>
+                                </li>
+                                <li class="col-6">
+                                    <span class="" style="margin: 6px 0;" data-web="580" data-id="ckyd" onclick="HotelDetail.IconCick.call(this);"><a href="{% url 'app:makeorder' %}"><em>预订</em></a></span>
+
+                                </li>
+                            </ul>
+                            <div class="price_box hidden">
+                                <ul class="price_ul" data-id="ajaxblock">
+                                    <li class="col-1a">
+                                        <span class="cheapest te">团</span>
+                                        <span class="cheapest return">返券2元</span>
+                                        <span style="padding-top: 9px;">团购价</span>
+                                    </li>
+                                    <li class="col-2"><del><span style="padding-top: 9px;"></span></del></li>
+                                    <li class="col-3"><span style="padding-top: 9px;"></span></li>
+                                    <li class="col-4"><span class="memberprice memberpriceTe" style="padding-top: 6px;" data-account="0" data-id="jg">￥<em>538</em></span></li>
+                                    <li class="col-5"><span class="red" style="padding-top: 9px;"></span></li>
+                                    <li class="col-6a">
+
+                                        <span class="btn-s btn-red" style="margin: 6px 0;"><a id="addcart" href="javascript:void(0);" onclick="HotelDetail.TBYDClick.call(this);"><em>预订</em></a></span><span class="icon_prepay">预3付</span>
+                                    </li>
+                                </ul>
+                                <ul class="price_ul">
+                                    <li class="col-1a">
+                                        <span class="cheapest quanr" data-id="ajaxblock" data-account="0" data-voucher="0">券</span>
+                                        <span style="padding-top: 9px;">会员价(无早）</span>
+                                    </li><li class="col-2"><del><span style="padding-top: 9px;" data-id="jg">￥648</span></del></li>
+                                    <li class="col-3"><span style="padding-top: 9px;" data-id="jg">￥611</span></li>
+                                    <li class="col-4"><span class="memberprice memberpriceHover" style="padding-top: 6px;" data-web="580" data-ep="580" data-vip="538" data-gold="519" data-super="499" data-account="0" data-voucher="0" data-id="jg">￥<em>580</em><i>起</i></span></li>
+                                    <li class="col-5">
+                                        <span data-tag="curnum" class="red" style="padding-top: 9px;">
+
+                                        </span>
+                                    </li>
+                                    <li class="col-6a">
+                                        <span class="btn-s btn-red fl" style="margin: 6px 0;" data-id="ydspan"><a id="addcart" href="javascript:void(0);" data-id="yd" onclick="HotelDetail.YDClick.call(this);"><em>预订</em></a></span>
+
+                                    </li>
+                                </ul>
+                                <ul class="room_detail">
+                                    <img src="../../static/images/20180209183410647.jpg" class="room_pic" alt="速8精选酒店" width="100" height="75">
+                                    <ul class="room_equipment">
+                                        <li>
+                                            床型：1.5*2+1.2*2米
+                                        </li>
+                                        <li>
+                                            建筑面积：25平米
+                                        </li>
+                                        <li>
+
+                                        </li>
+                                        <li>
+                                            特殊说明：无窗, 无烟房
+                                        </li>
+                                        <li>
+                                            房型说明：无窗
+                                        </li>
+                                    </ul>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <!--[CDATA[-->
+
+                        <!--]]〉-->
+
+                        <!--[CDATA[-->
+                    </div>
+                    <!--]]〉-->
+                </div>
+            </div>
+        </div>
+
+        <div id="hotel-detail">
+            <div class="section mt15">
+                <div class="title-bar">
+                    <h3>酒店介绍</h3>
+                </div>
+                <div class="subject-detail">
+                    速8酒店北京三里屯工体春秀路店位于东二环外春秀路上，东临农展馆，西接著名饮食文化街——“簋街”，毗邻老国展中心，使馆区，工人体育馆等，酒店地理位置优越，交通十分便利。
+　　酒店拥有各类客房，大堂有咖啡机及商务中心，供您在工作之余可以放松一下疲惫的身体，房内设有电视、电话、空调、独立淋浴间、24小时热水，半智能话设备一应俱全，房间风格独特，采光充足，以满足宾客的不同需求，让您住得舒心舒适，是居家旅行的不错选择。
+                </div>
+            </div>
+            <div class="section">
+                <div class="title-bar">
+                    <h3>酒店设施</h3>
+                </div>
+                <div class="subject-facility">
+
+
+                        <dl>
+                            <dt>上网服务</dt>
+                            <dd>
+                                        <br>
+                                        <span>免费宽带</span>
+                                        <br>
+                                        <span>免费WiFi </span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>酒店服务</dt>
+                            <dd>
+                                        <br>
+                                        <span>钟点房</span>
+                                            <span style="color: #F00; font-size: 11px;">(收费)</span>
+&nbsp;<span>158元/3小时</span><span></span>
+                                        <br>
+                                        <span>结算服务</span>
+&nbsp;<span>酒店可接受以现金、储蓄卡、国内信用卡、MASTAR信用卡进行结算</span><span></span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>房间设施</dt>
+                            <dd>
+                                        <br>
+                                        <span>24小时热水</span>
+                                        <br>
+                                        <span>免费洗漱用品</span>
+                                        <br>
+                                        <span>空调</span>
+&nbsp;<span>中央空调</span><span></span>
+                            </dd>
+                        </dl>
+                </div>
+            </div>
+
+        </div>
+
+
+<div class="section" id="hotel-commentTop">
+    <div class="title-bar">
+        <h3>住客评价<small>（累计评价<em class="red" data-id="commentcount">12</em>条）</small></h3>
+        <div class="item-score">
+            <span class="score">75% <small>好评率</small></span>
+                <a class="btn-comment" href="http://www.super8.com.cn/MemInfo/MemCusOrder"><em>我要点评</em></a>
+        </div>
+    </div>
+
+    <ul class="comment-tab" data-id="comment-tab">
+        <li class="current item-tab" data-type="0"><span>全部(12 条)</span></li>
+        <li class="item-tab" data-type="1"><span>网络评价(6 条)</span></li>
+        <li class="item-tab" data-type="2"><span>短信评价(6 条)</span></li>
+        <li class="fr">
+            <a class="btn-comment-expand" href="javascript:void(0);" id="zpicon"></a>
+        </li>
+    </ul>
+    <input type="hidden" id="Cpid">
+    <div class="comment-content" id="HuiZong">
+        <table class="comment-table">
+            <tbody><tr>
+                <th>综合评价</th>
+                <th>最近1个月</th>
+                <th>最近3个月</th>
+                <th>最近6个月</th>
+            </tr>
+            <tr>
+                <td>强烈推荐</td>
+                <td>0</td>
+                <td>3</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>很满意</td>
+                <td>0</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>一般</td>
+                <td>0</td>
+                <td>1</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>差</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>吐槽</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+        </tbody></table>
+    </div>
+    <div data-id="g2" class="comment-content mt20">
+        <div data-id="loadgroups" style="text-align: center; display: none;">
+            <img src="hoteldetail_files/list_loading.gif">
+        </div>
+        <div data-bind="containercomment">
+            <span style="display: none">&nbsp;</span>
+            <!--[CDATA[-->
+            <div data-bind="repetercomment" style="">
+                <!--]]〉-->
+                <div class="item-comment" data-id="itemcomment" data-data="3284616">
+                    <div class="col-user">
+                        158****1485
+
+                        <span class="time">2019-08-06</span>
+                    </div>
+                    <div class="col-content">
+                        <div class="score">强烈推荐</div>
+                        <input type="hidden" name="name" data-id="itemhid" value="#位置好# #服务赞# #卫生好# #硬件好# #性价比高# 很好">
+                        <span data-id="span">#位置好# #服务赞# #卫生好# #硬件好# #性价比高# 很好</span>
+
+
+
+                    </div>
+                    <input type="hidden" data-id="hid_pageindex" value="1">
+                    <input type="hidden" data-id="hid_pages" value="3">
+                    <input type="hidden" data-id="hid_rscount" value="12">
+                </div>
+                <!--[CDATA[-->
+
+                <!--]]〉-->
+                <div class="item-comment" data-id="itemcomment" data-data="3283964">
+                    <div class="col-user">
+                        50*****37
+                        贵宾会员
+                        <span class="time">2019-08-02</span>
+                    </div>
+                    <div class="col-content">
+                        <div class="score">强烈推荐</div>
+                        <input type="hidden" name="name" data-id="itemhid" value="#位置好# #服务赞# #卫生好# #硬件好# #性价比高# 很不错的选择">
+                        <span data-id="span">#位置好# #服务赞# #卫生好# #硬件好# #性价比高# 很不错的选择</span>
+
+
+
+                    </div>
+                    <input type="hidden" data-id="hid_pageindex" value="1">
+                    <input type="hidden" data-id="hid_pages" value="3">
+                    <input type="hidden" data-id="hid_rscount" value="12">
+                </div>
+                <!--[CDATA[-->
+
+                <!--]]〉-->
+                <div class="item-comment" data-id="itemcomment" data-data="3279438">
+                    <div class="col-user">
+                        159****8595
+
+                        <span class="time">2019-06-28</span>
+                    </div>
+                    <div class="col-content">
+                        <div class="score">一般</div>
+                        <input type="hidden" name="name" data-id="itemhid" value="#WIFI信号差# 网超极慢，隔音效果不好">
+                        <span data-id="span">#WIFI信号差# 网超极慢，隔音效果不好</span>
+
+
+
+                    </div>
+                    <input type="hidden" data-id="hid_pageindex" value="1">
+                    <input type="hidden" data-id="hid_pages" value="3">
+                    <input type="hidden" data-id="hid_rscount" value="12">
+                </div>
+                <!--[CDATA[-->
+
+                <!--]]〉-->
+                <div class="item-comment" data-id="itemcomment" data-data="3278882">
+                    <div class="col-user">
+                        73*****17
+                        超级会员
+                        <span class="time">2019-06-25</span>
+                    </div>
+                    <div class="col-content">
+                        <div class="score">强烈推荐</div>
+                        <input type="hidden" name="name" data-id="itemhid" value="#服务赞# #卫生好# 不错不错不错不错不错不错不错不错不错不错不错不错">
+                        <span data-id="span">#服务赞# #卫生好# 不错不错不错不错不错不错不错不错不错不错不错不错</span>
+
+
+
+                    </div>
+                    <input type="hidden" data-id="hid_pageindex" value="1">
+                    <input type="hidden" data-id="hid_pages" value="3">
+                    <input type="hidden" data-id="hid_rscount" value="12">
+                </div>
+                <!--[CDATA[-->
+
+                <!--]]〉-->
+                <div class="item-comment" data-id="itemcomment" data-data="3278314">
+                    <div class="col-user">
+                        75*****98
+                        金卡会员
+                        <span class="time">2019-06-21</span>
+                    </div>
+                    <div class="col-content">
+                        <div class="score">很满意</div>
+                        <input type="hidden" name="name" data-id="itemhid" value="#位置好# #卫生好# 稍微窄了点、但还算过的去吧！">
+                        <span data-id="span">#位置好# #卫生好# 稍微窄了点、但还算过的去吧！</span>
+
+
+
+                    </div>
+                    <input type="hidden" data-id="hid_pageindex" value="1">
+                    <input type="hidden" data-id="hid_pages" value="3">
+                    <input type="hidden" data-id="hid_rscount" value="12">
+                </div>
+                <!--[CDATA[-->
+            </div>
+            <!--]]〉-->
+        </div>
+
+        <div class="pager" id="comment-pager"><a href="javascript:void(0);" class="current">1</a><a href="javascript:void(0);">2</a><a href="javascript:void(0);">3</a><a href="javascript:void(0);" class="next unclick">下一页</a></div>
+    </div>
+</div>
+<script src="../../static/js/HotelComment.js"></script>
+<script>
+
+</script>
+
+
+
+    </div>
+
+{% endblock %}

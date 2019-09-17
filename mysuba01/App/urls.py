@@ -23,8 +23,11 @@ urlpatterns = [
     url(r'^$',views.yuding,name='yuding'),
     #登录
     url(r'^login/$',views.userlogin,name='userlogin'),
+    #登录验证码
+    url(r'^loginym/$',views.loginym, name='loginym'),
+
     #注册
-    url(r'^registerym$',views.registerym,name='registerym'),
+    url(r'^registerym/$',views.registerym,name='registerym'),
     # 验证码
     url(r'^yzm/$', views.get_yzm, name='yzm'),
     #忘记密码
@@ -32,6 +35,9 @@ urlpatterns = [
     #忘记密码
     url(r'^findcodetwo/$', views.findcodetwo, name='findcodetwo'),
     #酒店详情
-    url(r'^hoteldetail/$',views.HotelDetail,name='hoteldetail')
+    url(r'^hoteldetail/$',views.hoteldetail,name='hoteldetail'),
+    #预定页面
+    url(r'^makeorder/$',views.makeorder,name='makeorder'),
+
 
 ]
