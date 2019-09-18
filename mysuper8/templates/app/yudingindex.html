@@ -124,9 +124,9 @@
 
 
     {% if user.is_authenticated %}
-        <em class="mys8-menu"><a href="{% url 'app:makeorder' %}" id="dlogin">刘荣帅&nbsp;|&nbsp;</a>
+        <em class="mys8-menu"><a href="" id="dlogin">刘荣帅&nbsp;|&nbsp;{{ request.user.username }}</a>
         <span>
-            <a href="{% url 'app:makeorder' %}"  class="mys8-menu ">我的速8</a>
+            <a href=""  class="mys8-menu ">我的速8</a>
         </span>
          <a id="dregister" href="{% url 'app:userlogout' %}">退出</a></em>
     {% else %}
@@ -538,7 +538,7 @@
                                                 </li>
                                                 <li class="col-6">
                                                     <span class="btn-s btn-red btn-redd" style="margin: 6px 0;background-color: red;"
-                                                          data-id="ckyd" ><em><a href="{% url 'app:makeorder' %}" style="color: #FFFFFF">预订</a></em></span>
+                                                          data-id="ckyd" ><em><a href="{% url 'app:makeorder' roomstyle.id %}" style="color: #FFFFFF">预订</a></em></span>
 
                                                 </li>
                                             </ul>

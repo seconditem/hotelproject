@@ -117,18 +117,15 @@ def findcodetwo(request):
 
 
 
-def HotelDetail(request):
-    return render(request, 'app/BookInfo.html', locals())
-
-
-
-
-
 def hoteldetail(request):
+    roomstyles = RoomStyle.objects.all()
+
     return render(request, 'app/hoteldetail.html', locals())
 
 @login_required(login_url='/loginym/')
-def makeorder(request):
+def makeorder(request,rid):
+    print(rid,'11111111')
+    roomstyle = RoomStyle.objects.get(pk=rid)
     return render(request, 'app/BookInfo.html', locals())
 
 
