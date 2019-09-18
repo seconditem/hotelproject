@@ -14,6 +14,7 @@ class User(AbstractUser):
     gender = models.IntegerField(default=0)
     # email = models.EmailField()
     regtime = models.DateField(auto_now_add=True)
+    ID_Number = models.CharField(null=False, max_length=21)
     pict = models.CharField(null=True,max_length=128)
     ID_Number = models.CharField(null=False,max_length=21)
 

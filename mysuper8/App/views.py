@@ -29,19 +29,29 @@ def registerym(request):
     if request.method == 'POST':
         # 用POST数据实例化表单，表单对象会验证POST数据
         form = RegisterForm(request.POST)
+        print('++++++++++++进入注册了+++++++')
 
         # 验证码验证
         yzm1 = request.POST.get('yzm')
         yzm2 = request.session.get('code')
+        #手机验证码
+        sjyzm1 = request.POST.get('sjyzm')
+        sjyzm2 = request.session.get('code1')
+        print(sjyzm2,'正确的手机验证码','前台输入的：',sjyzm1)
+        res2 = sjyzm1 == sjyzm2
         # print(yzm1,'yzm1')
         # print(yzm2, 'yzm2')
         # 判定验证码是否匹配
         res = (yzm1 == yzm2)
         # 如果验证码不匹配
+
         if not res:
             form.errors['yzm'] = "验证码不匹配"
 
-        if res and form.is_valid():  # 验证通过
+        if not res2:
+            form.errors['sjyzm'] = "手机验证码不正确"
+
+        if res and form.is_valid() and res2:  # 验证通过
             # form.cleaned_data.pop('repassword')
             # form.cleaned_data.pop('yzm')
             # User.objects.create(**form.cleaned_data)
@@ -133,6 +143,8 @@ def phoneyzm(request,*args,**kwargs):
 
     num = str(randint(10000, 1000000))
     res = send_sms(phnumber, {'number': num})
+    request.session['code1'] = num
     print(res, num, 'num就是验证码')
+
     return HttpResponse(res,'image/png')
 

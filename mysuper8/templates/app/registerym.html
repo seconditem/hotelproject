@@ -23,7 +23,7 @@
 {#					<h3 id="layer_reginfo_t" class="xs2">立即注册</h3>#}
 				</div>
 				<p id="returnmessage4"></p>
-				<form method="post" autocomplete="off" name="register" id="registerform" action="">
+				<form method="post" autocomplete="off" name="register" id="registerform" action="{% url 'app:registerym' %}">
 					{% csrf_token %}
                     <div id="layer_reg" class="bm_c">
 						<div class="mtw">
@@ -76,14 +76,15 @@
 									</table>
 								</div>
                                 <div class="rfm">
-                                    <form method="post"  name="sjyzm" action="/sjyzm/" >
+
                                         <table>
                                                 <script src="https://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
                                             <tr>
                                                 <td>
                                                    <th><span class="rq">*</span><label for="yzm">手机号:</label></th>
-                                                   <td><input type="text" name="phonenum" value="手机号"><input type="button" value="获取验证码"></td>
-                                                   <td><a>输入手机验证码：</a><input type="text" value="手机验证码"></td>
+                                                   <td><input type="text" name="phonenum" placeholder="手机号"><input type="button" value="获取验证码"></td>
+                                                <td><a>输入手机验证码：</a><input type="text" placeholder="手机验证码" id="sjyzm" name="sjyzm"></td>
+                                                <td>{{ form.errors.sjyzm }}</td>
                                                 <script>
                                                     $("[type = 'button']").click(function () {
                                                         $.get('http://127.0.0.1:8000/phoneyzm/',$("[name = 'phonenum']")
@@ -96,7 +97,7 @@
 
                                             </tr>
                                         </table>
-                                    </form>
+
                                 </div>
 							</div>
 						</div>
