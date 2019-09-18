@@ -30,6 +30,8 @@ urlpatterns = [
     url(r'^registerym/$',views.registerym,name='registerym'),
     # 验证码
     url(r'^yzm/$', views.get_yzm, name='yzm'),
+    # 手机验证码
+    url(r'^phoneyzm/$', views.phoneyzm, name='phoneyzm'),
     #忘记密码
     url(r'^findcode/$', views.findcode, name='findcode'),
     #忘记密码

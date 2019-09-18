@@ -124,10 +124,14 @@ def makeorder(request):
 
 
 
-def phoneyzm(request):
+def phoneyzm(request,*args,**kwargs):
+    data = dict(request.GET)
+    phnumber = data['phonenum'][0]
+    print(data,'88888000888888888')
+    print(phnumber,'前台的输入手机号')
 
     num = str(randint(10000, 1000000))
-    res = send_sms('18725882067', {'number': num})
+    res = send_sms(phnumber, {'number': num})
     print(res, num, 'num就是验证码')
-
     return HttpResponse(res,'image/png')
+

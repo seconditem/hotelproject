@@ -72,20 +72,31 @@
 											<td class="tipcol"><i id="tip_yzm" class="p_tip"><img src="{% url 'app:yzm' %}" id="p_yzm" onclick="show('p_yzm')" style="cursor:pointer;width: 56px;height: 25px" /> <a href="javascript:;" onclick="show('p_yzm')">看不清？</a></i>&nbsp;&nbsp;{{ form.yzm.errors }}</td>
 										</tr>
 
+
 									</table>
 								</div>
                                 <div class="rfm">
-                                    <table>
-                                        <tr>
-                                            <td>
-                                               <th><span class="rq">*</span><label for="yzm">手机号:</label></th>
-                                               <td><input type="text" value="手机号"><button>获取验证码</button></td>
-                                            <td><a>输入手机验证码：</a><input type="text" value="手机验证码"></td>
+                                    <form method="post"  name="sjyzm" action="/sjyzm/" >
+                                        <table>
+                                                <script src="https://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+                                            <tr>
+                                                <td>
+                                                   <th><span class="rq">*</span><label for="yzm">手机号:</label></th>
+                                                   <td><input type="text" name="phonenum" value="手机号"><input type="button" value="获取验证码"></td>
+                                                   <td><a>输入手机验证码：</a><input type="text" value="手机验证码"></td>
+                                                <script>
+                                                    $("[type = 'button']").click(function () {
+                                                        $.get('http://127.0.0.1:8000/phoneyzm/',$("[name = 'phonenum']")
+                                                        )
+                                                    });
+                                                </script>
 
 
-                                            </td>
-                                        </tr>
-                                    </table>
+                                                </td>
+
+                                            </tr>
+                                        </table>
+                                    </form>
                                 </div>
 							</div>
 						</div>
