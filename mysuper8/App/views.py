@@ -41,6 +41,9 @@ def registerym(request):
         # 验证码验证
         yzm1 = request.POST.get('yzm')
         yzm2 = request.session.get('code')
+        #获取手机号
+        phoneunm = request.POST.get('phonenum')
+        print(phoneunm,'手机号')
         #手机验证码
         sjyzm1 = request.POST.get('sjyzm')
         sjyzm2 = request.session.get('code1')
@@ -65,7 +68,7 @@ def registerym(request):
             # 基础写法
             email = form.cleaned_data.get('email')
             regtime = datetime.now()
-
+            phone = phoneunm
             usertype = 0
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
