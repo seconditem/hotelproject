@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="9c279839-34f2-474a-9acb-2effbf15a898" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/urls.py" afterDir="false" />
@@ -8,6 +9,9 @@
       <change beforePath="$PROJECT_DIR$/templates/app/registerym.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/registerym.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/app/yudingindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/yudingindex.html" afterDir="false" />
     </list>
+=======
+    <list default="true" id="9c279839-34f2-474a-9acb-2effbf15a898" name="Default Changelist" comment="" />
+>>>>>>> Stashed changes
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568727874242</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="实现简单登录3">
+      <created>1568804617720</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1568804617720</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,7 +234,13 @@
     <MESSAGE value="日常更新" />
     <MESSAGE value="干掉重复登录，保持一直" />
     <MESSAGE value="实现简单登录" />
+<<<<<<< Updated upstream
     <MESSAGE value="验证码半成品" />
     <option name="LAST_COMMIT_MESSAGE" value="验证码半成品" />
+=======
+    <MESSAGE value="实现简单登录2" />
+    <MESSAGE value="实现简单登录3" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现简单登录3" />
+>>>>>>> Stashed changes
   </component>
 </project>
