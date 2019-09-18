@@ -112,6 +112,9 @@ class RegisterForm(forms.Form):
     yzm = forms.CharField(label='验证码',error_messages={
         'required':'验证码必须输入'
     })
+    # sjyzm = forms.CharField(label='手机验证码', error_messages={
+    #     'required': '手机验证码必须输入'
+    # })
 
     #自定义验证方法
     #自定义的验证规则：clean_字段名
