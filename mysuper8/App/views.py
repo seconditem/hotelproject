@@ -10,7 +10,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 
 from App.forms import RegisterForm
-from App.models import User
+from App.models import *
 from tools.sms import send_sms
 from tools.verifycode import VerifyCode
 
@@ -19,8 +19,8 @@ from tools.verifycode import VerifyCode
 
 #首页
 def yuding(request):
-
-
+    #所有房间展示
+    roomstyles = RoomStyle.objects.all()
     return render(request,'app/yudingindex.html',locals())
 
 #注册

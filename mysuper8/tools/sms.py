@@ -23,4 +23,5 @@ def send_sms(phone,templateParam):
 if __name__ == "__main__":
     num = str(randint(10000,1000000))
     res = send_sms('18725882067',{'number':num})
-    print(res)
+    print(num, '2111111')
+    print(res,'1111111')
