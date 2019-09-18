@@ -3,6 +3,7 @@ from datetime import datetime
 from random import randint
 
 from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
@@ -123,18 +124,15 @@ def findcodetwo(request):
 
 
 
-def HotelDetail(request):
-    return render(request, 'app/BookInfo.html', locals())
-
-
-
-
-
 def hoteldetail(request):
+    roomstyles = RoomStyle.objects.all()
+
     return render(request, 'app/hoteldetail.html', locals())
 
-
-def makeorder(request):
+@login_required(login_url='/loginym/')
+def makeorder(request,rid):
+    print(rid,'11111111')
+    roomstyle = RoomStyle.objects.get(pk=rid)
     return render(request, 'app/BookInfo.html', locals())
 
 

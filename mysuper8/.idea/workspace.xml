@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="9c279839-34f2-474a-9acb-2effbf15a898" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/urls.py" afterDir="false" />
@@ -8,6 +9,9 @@
       <change beforePath="$PROJECT_DIR$/templates/app/registerym.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/registerym.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/app/yudingindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/yudingindex.html" afterDir="false" />
     </list>
+=======
+    <list default="true" id="9c279839-34f2-474a-9acb-2effbf15a898" name="Default Changelist" comment="" />
+>>>>>>> Stashed changes
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,21 +50,7 @@
         <item name="hotel@49.235.229.86" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="hotel: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="hotel_room: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="hotel@49.235.229.86" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="hotel: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="hotel_roomstyle: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="hotel@49.235.229.86" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="hotel: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="hotel_user: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="django_session: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -78,12 +68,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="PUSH_TAGS">
-      <GitPushTagMode>
-        <option name="argument" value="--tags" />
-        <option name="title" value="All" />
-      </GitPushTagMode>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1Qgv0QUS3irbEzHWJGKwQIUtnS3" />
@@ -190,7 +174,7 @@
       <workItem from="1568681011692" duration="2904000" />
       <workItem from="1568708332684" duration="431000" />
       <workItem from="1568708859382" duration="14639000" />
-      <workItem from="1568766015989" duration="29895000" />
+      <workItem from="1568766015989" duration="12116000" />
     </task>
     <task id="LOCAL-00001" summary="日常更新">
       <created>1568706850934</created>
@@ -220,21 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568727874242</updated>
     </task>
-    <task id="LOCAL-00005" summary="能实现发送手机验证码， 未实现验证">
-      <created>1568791052131</created>
+    <task id="LOCAL-00005" summary="实现简单登录3">
+      <created>1568804617720</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1568791052131</updated>
+      <updated>1568804617720</updated>
     </task>
-    <task id="LOCAL-00006" summary="实现手机验证码注册">
-      <created>1568804337980</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1568804337980</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,9 +234,13 @@
     <MESSAGE value="日常更新" />
     <MESSAGE value="干掉重复登录，保持一直" />
     <MESSAGE value="实现简单登录" />
+<<<<<<< Updated upstream
     <MESSAGE value="验证码半成品" />
-    <MESSAGE value="能实现发送手机验证码， 未实现验证" />
-    <MESSAGE value="实现手机验证码注册" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现手机验证码注册" />
+    <option name="LAST_COMMIT_MESSAGE" value="验证码半成品" />
+=======
+    <MESSAGE value="实现简单登录2" />
+    <MESSAGE value="实现简单登录3" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现简单登录3" />
+>>>>>>> Stashed changes
   </component>
 </project>

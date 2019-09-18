@@ -40,7 +40,7 @@ urlpatterns = [
     #酒店详情
     url(r'^hoteldetail/$',views.hoteldetail,name='hoteldetail'),
     #预定页面
-    url(r'^makeorder/$',views.makeorder,name='makeorder'),
+    url(r'^makeorder/(\d+)/$',views.makeorder,name='makeorder'),
 
 
 
