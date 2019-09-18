@@ -21,6 +21,7 @@ from App import views
 urlpatterns = [
     #首页
     url(r'^$',views.yuding,name='yuding'),
+    url(r'^/(\d+)/$',views.yuding,name='yuding'),
 
     #登录
     url(r'^loginym/$',views.loginym, name='loginym'),

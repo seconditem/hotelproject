@@ -157,65 +157,7 @@
 
 
     {% block headone %}
-    <div class="hotel-top-filter-wrapper">
-        <div class="hotel-top-filter" id="hotel-top-filter">
-            <dl class="item">
-                <dt>入住城市</dt>
-                <dd>
-                    <input type="text" node_type="city" fs="" id="t-input-city" growing-track="true" value="北京市"></dd>
-            </dl>
-            <dl class="item">
-                <dt>入住日期</dt>
-                <dd>
-                    <div class="su8-dp">
-                        <div class="dp-info"><b></b><span class="dp-text"></span></div>
-                        <input class="input-calendar textbox" type="text" node_type="from" value="2019-09-12"
-                               maxlength="10">
-                        <div class="q-datepicker" style="display: none;"></div>
-                    </div>
-                </dd>
-            </dl>
-            <dl class="item">
-                <dt>离店日期</dt>
-                <dd>
-                    <div class="su8-dp">
-                        <div class="dp-info"><b></b><span class="dp-text"></span></div>
-                        <input class="input-calendar textbox" type="text" node_type="to" value="2019-09-13"
-                               maxlength="10">
-                        <div class="q-datepicker" style="display: none;"></div>
-                    </div>
-                </dd>
-            </dl>
-            <dl class="item">
-                <dt>房数</dt>
 
-
-                <dd>
-                    <div class="ui-menu-select select-num" node_type="num">
-                        <div class="menu-list">
-                            <ul>
-                                <li class=""><a href="javascript:void(0)" class="option" value="1"><span
-                                        class="item-text">1间</span></a></li>
-                                <li><a href="javascript:void(0)" class="option" value="2"><span
-                                        class="item-text">2间</span></a></li>
-                                <li><a href="javascript:void(0)" class="option" value="3"><span
-                                        class="item-text">3间</span></a></li>
-                                <li><a href="javascript:void(0)" class="option" value="4"><span
-                                        class="item-text">4间</span></a></li>
-                                <li><a href="javascript:void(0)" class="option" value="5"><span
-                                        class="item-text">5间</span></a></li>
-                            </ul>
-
-                        </div>
-                        <span class="menu-arrows"></span>
-                        <span class="menu-name" data-id="roomnum" value="1">1间</span>
-                        <input type="hidden" id="hidmenu">
-                    </div>
-                </dd>
-            </dl>
-            <a class="btn-search" href="javascript:void(0)" id="ajaxSerch">确定</a>
-        </div>
-    </div>
     <input type="hidden" id="hid_city" value="110100">
     <input type="hidden" id="hid_key" value="0">
     <input type="hidden" id="hid_keygov" value="0">
@@ -258,26 +200,17 @@
     <input type="hidden" id="hid_brand">
 
     <input type="hidden" name="name" id="AmMinus" value="0">
+         <form action="{% url 'app:yuding' %}">
     <div class="search-sort mt25">
         <span class="item-name">选择排序：</span>
+
         <ul class="item-sort" data-id="itemsort">
-            <li class="current"><a href="javascript:void(0);" data-code="1">推荐↑</a></li>
-            <li><a href="javascript:void(0);" data-code="2">按价格</a></li>
-            <li><a href="javascript:void(0);" data-code="3">按好评率</a></li>
+            <li class="current"><a href="{% url 'app:yuding' %}" data-code="1">推荐↑</a></li>
+            <li><a href="{% url 'app:yuding' 1 %}" data-code="2">按价格</a></li>
+            <li><a href="{% url 'app:yuding' 2 %}" data-code="3">按好评率</a></li>
         </ul>
-        <label class="quick-filter" for="c-q-filter-1">
-            <input type="checkbox" id="c-q-filter-1" data-id="newsearch" data-code="1"><span class="balance-filter">会员(点了只显示会员价钱)</span>
-        </label>
-        {% comment %}<label class="quick-filter" for="c-q-filter-2">
-            <input type="checkbox" id="c-q-filter-2" data-id="newsearch" data-code="2">有团购
-        </label>
-        <a class="item-map" href="javascript:void(0);" id="mapSearch">地图模式</a>{% endcomment %}
-        {% comment %}  <span class="item-result"><b class="red-number" data-id="datacount">227</b>家酒店符合条件</span>{% endcomment %}
     </div>
-
-
-
-
+         </form>
 
         <div class="g2" id="g2">
             <div class="search-result" id="search-result">
@@ -327,9 +260,7 @@
                                         <div class="order-map">1</div>
                                     </h4>
                                     <p><span class="gray" title=""></span></p>
-                                    <p>地址：北京市朝阳区春秀路幸福二村25号楼<a href="javascript:void(0);" class="icon-map"
-                                                              data-code="4054"
-                                                              data-id="mappop">地图</a></p>
+                                    <p>地址：北京市朝阳区春秀路幸福二村25号楼</p>
                                     <p class="paddress" style="display: none" data-distin="0">距离<span class="spkeyword"
                                                                                                       style="color: red; bottom: 0px;"></span>直线距离<span
                                             style="color: red">0</span>公里</p>

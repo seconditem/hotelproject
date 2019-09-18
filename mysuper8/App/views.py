@@ -18,9 +18,16 @@ from tools.verifycode import VerifyCode
 
 
 #首页
-def yuding(request):
-    #所有房间展示
-    roomstyles = RoomStyle.objects.all()
+def yuding(request,order = 0):
+    order = int(order)
+    if request.method == 'POST':
+    #房间排序选择
+        if order == 1 : # 1 代表给出官网价格价格最低的可用房间
+            roomstyles = RoomStyle.objects.ordered()
+            print(roomstyles,'按价格排序')
+
+
+    roomstyles = RoomStyle.objects.all() #所有房间展示
     return render(request,'app/yudingindex.html',locals())
 
 #注册
@@ -142,6 +149,7 @@ def phoneyzm(request,*args,**kwargs):
 
     num = str(randint(10000, 1000000))
     res = send_sms(phnumber, {'number': num})
+    #写入session
     request.session['code1'] = num
     print(res, num, 'num就是验证码')
 
