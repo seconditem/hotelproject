@@ -3,6 +3,7 @@ from datetime import datetime
 from random import randint
 
 from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
@@ -116,7 +117,7 @@ def HotelDetail(request):
 def hoteldetail(request):
     return render(request, 'app/hoteldetail.html', locals())
 
-
+@login_required(login_url='/loginym/')
 def makeorder(request):
     return render(request, 'app/BookInfo.html', locals())
 

@@ -514,9 +514,9 @@
                                                 <li class="col-1">
                                                     <a class="icon-pic" href="javascript:void(0)"
                                                        onclick="HotelList.IconCick.call(this);">{{ roomstyle.desc }}</a>
-                                                    <span class="cheapest te" data-id="ajaxblock" title="客房团购">团</span>
+                                                    <span class="cheapest te" data-id="ajaxblock" title="客房团购">&nbsp;&nbsp;&nbsp;</span>
                                                     <span class="cheapest quanr" data-id="ajaxblock" data-account="0"
-                                                          data-voucher="0">券</span>
+                                                          data-voucher="0">&nbsp;&nbsp;&nbsp;</span>
                                                     <span class="cheapest return">速8精选</span>
 
                                                 </li>
@@ -548,7 +548,7 @@
                                                     <li class="col-1a">
                                                     <span class="cheapest quanr" data-id="ajaxblock" data-account="0"
                                                           data-voucher="0">券</span>
-                                                        <span style="padding-top: 9px;">会员价(无早）</span>
+                                                        <span style="padding-top: 9px;">会员价(含早）</span>
                                                     </li>
                                                     <li class="col-2">
                                                         <del><span style="padding-top: 9px;" data-id="jg">￥{{ roomstyle.dorprice }}</span></del>
@@ -583,19 +583,25 @@
 
                                                     <ul class="room_equipment">
                                                         <li>
-                                                            床型：1.2*2米
+                                                            {% if roomstyle.iswifi == 1 %}
+                                                                WIFI:免费
+                                                            {% endif %}
                                                         </li>
                                                         <li>
-                                                            建筑面积：23平米
+                                                            建筑面积：{{ roomstyle.size }}平米
                                                         </li>
                                                         <li>
-
+                                                            {% if roomstyle.breakfast == 1 %}
+                                                                早餐：油条
+                                                            {% else %}
+                                                                早餐：无
+                                                            {% endif %}
                                                         </li>
                                                         <li>
                                                             特殊说明：无烟房
                                                         </li>
                                                         <li>
-
+                                                              外窗
                                                         </li>
                                                     </ul>
                                                 </ul>
@@ -659,179 +665,179 @@
 
 
 
+{##}
+{#<div class="g1 sidebar" data-id="sliderwrapper">#}
+{#    <div class="sidebar-keeptop-wrapper" id="sidebar-keeptop-wrapper" style="position: static; top: 38px;">#}
+{##}
+{#        <div class="box-hotel mt20">#}
+{##}
+{#            <div data-id="hotloadgroups" style="text-align: center; display: none;">#}
+{#                <img src="../../static/images/list_loading.gif">#}
+{#            </div>#}
+{#            <!--[CDATA[-->#}
+{##}
+{##}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{#<div class="clear"></div>#}
+{#</div>#}
+{#<div id="divmap"></div>#}
+{#<div class="member-price" style="display: none;">#}
+{#    <div class="hp-arrow"></div>#}
+{#    <div class="sale-intro">抵扣券可减<span class="red">0元</span>，现金券可减<span class="red">0元</span></div>#}
+{#    <ul>#}
+{#        <li class="current">#}
+{#            官网价<br>#}
+{#            ￥0#}
+{#        </li>#}
+{#        <li>#}
+{#            网络会员#}
+{#            <br>#}
+{#            ￥0#}
+{#        </li>#}
+{#        <li>#}
+{#            贵宾会员<br>#}
+{#            ￥0#}
+{#        </li>#}
+{#        <li>#}
+{#            金卡会员<br>#}
+{#            ￥0#}
+{#        </li>#}
+{#        <li>#}
+{#            超级会员<br>#}
+{#            ￥0#}
+{#        </li>#}
+{#    </ul>#}
+{#</div>#}
+{##}
+{#<div class="hover-li" style="display: none;">#}
+{#    <div class="hp-arrow"></div>#}
+{#    <div></div>#}
+{#</div>#}
+{##}
+{#<div class="hover-quanr" style="display: none">#}
+{#    <div class="hp-arrow"></div>#}
+{#    <div></div>#}
+{#</div>#}
+{##}
+{#<div class="hover-quanr border-red" style="display: none">#}
+{#    <div class="hp-arrow"></div>#}
+{#    <div></div>#}
+{#</div>#}
+{##}
+{#<link href="../../static/css/pop-map.css" rel="stylesheet">#}
+{#<div class="pop-map" id="pop-map" style="display: block;position:absolute;top:-9999px;">#}
+{#    <a class="map-del" href="javascript:void(0)" onclick="closeWindow(&#39;pop-map&#39;);">×</a>#}
+{#    <div class="map-tabs">#}
+{#        <a class="tab-map tab-current" href="javascript:void(0)">地图</a>#}
+{##}
+{#    </div>#}
+{#    <div class="map-box">#}
+{#        <div class="map-side">#}
+{#            <div class="side-arrow-close"><a href="javascript:void(0)"></a></div>#}
+{#            <div class="around-search" style="display: block;">#}
+{#                <div class="map-side-title"><span class="back" style="display:none;"><a href="javascript:void(0);">&lt; 返回</a>|</span>周边查询#}
+{#                </div>#}
+{#                <div class="around-box clearfix clear">#}
+{#                    <a href="javascript:void(0)" class="hotel">速8</a>#}
+{#                    <a href="javascript:void(0)" class="restaurant" data-id="nearby">餐厅</a>#}
+{#                    <a href="javascript:void(0)" class="subway" data-id="nearby">地铁</a>#}
+{#                    <a href="javascript:void(0)" class="entertainment" data-id="nearby">娱乐</a>#}
+{#                    <a href="javascript:void(0)" class="sight" data-id="nearby">景点</a>#}
+{#                    <a href="javascript:void(0)" class="market" data-id="nearby">商场</a>#}
+{#                </div>#}
+{#            </div>#}
+{##}
+{##}
+{#            <div class="map-route-search" style="display: block;">#}
+{#                <div class="map-side-title"><span class="back" style="display:none;"><a href="javascript:void(0);">&lt; 返回</a>|</span>线路查询#}
+{#                </div>#}
+{#                <div class="route-way clearfix clear" id="route-way">#}
+{#                    <a href="javascript:void(0)" class="selected">公交</a>#}
+{#                    <a href="javascript:void(0)">驾车</a>#}
+{#                    <a href="javascript:void(0)">步行</a>#}
+{#                </div>#}
+{#                <div class="route-box">#}
+{#                    <div class="change" data-id="change"><a href="javascript:void(0);">换</a></div>#}
+{#                    <input type="text" value="" class="input_txt" id="suggestId">#}
+{#                    <input type="text" class="input_txt" id="suggestendId">#}
+{#                    <a href="javascript:;" class="map-btn-srch" id="result">查询路线</a>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="map-around-result" style="display: none;">#}
+{#                <div class="around_title">#}
+{#                    <p class="result"><span class="num" data-id="aroundnum">0</span>条结果</p>#}
+{#                    周边<b><span>5</span>公里</b>的<span>酒店</span>#}
+{#                </div>#}
+{#                <div class="no-result-spot" style="display: none">您所选范围内未找到<b>酒店</b></div>#}
+{#                <div class="around-list" id="aroundlist">#}
+{#                </div>#}
+{#                <div class="c_page_mini" id="pagermap">#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="no_result" style="display: none;">#}
+{#                <p class="txt">没有查询到相关路线，</p>#}
+{#                <p class="txt">请更换地点重新查询。</p>#}
+{#            </div>#}
+{##}
+{#            <div id="searchResultPanel"#}
+{#                 style="border: 1px solid #C0C0C0; width: 150px; height: auto; display: none;"></div>#}
+{#            <div class="route_search_box">#}
+{#                <div class="route_detail_box" id="resl" style="overflow: auto; height: 378px;"></div>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="map-content" id="allmapBig">为了更好的地图 查询体验，建议您用更高版本IE浏览器或其他浏览器</div>#}
+{#        <div class="street-content" id="allmapBigall">为了更好的地图 查询体验，建议您用更高版本IE浏览器或其他浏览器</div>#}
+{##}
+{#    </div>#}
+{#    <input type="hidden" data-id="hid_pageindex" value="1">#}
+{#</div>#}
+{#<script>#}
+{#    $('#traffic-ways').children().click(function () {#}
+{#        $(this).addClass('selected-favorate').siblings().removeClass('selected-favorate');#}
+{#    })#}
+{#</script>#}
+{#<script src="../../static/js/BaiduMap.js"></script>#}
+{##}
+{#<div class="popup advice-pop" id="advice-pop" style="display: none;">#}
+{#    <div class="close">#}
+{#        <a href="javascript:void(0)" onclick="closeWindow(&#39;advice-pop&#39;);">#}
+{#            <img src="../../static/images/close-icon.gif">#}
+{#        </a>#}
+{#    </div>#}
+{#    <div class="titleBar">#}
+{#        <h3>意见反馈</h3>#}
+{#    </div>#}
+{#    <dl class="item-advice">#}
+{#        <dt>标题：</dt>#}
+{#        <dd>#}
+{#            <input type="text" class="i-title">#}
+{#        </dd>#}
+{#    </dl>#}
+{#    <dl class="item-advice">#}
+{#        <dt>内容：</dt>#}
+{#        <dd>#}
+{#            <textarea class="ta-ctn"></textarea>#}
+{#        </dd>#}
+{#    </dl>#}
+{#    <div class="bottom-btns">#}
+{#        <a href="javascript:void(0)" class="btns btn-light" onclick="closeWindow(&#39;advice-pop&#39;);">返回</a>#}
+{#        <a href="javascript:void(0)" class="btns btn-orange" onclick="closeWindow(&#39;advice-pop&#39;);">确定</a>#}
+{#    </div>#}
+{#</div>#}
 
-<div class="g1 sidebar" data-id="sliderwrapper">
-    <div class="sidebar-keeptop-wrapper" id="sidebar-keeptop-wrapper" style="position: static; top: 38px;">
-
-        <div class="box-hotel mt20">
-
-            <div data-id="hotloadgroups" style="text-align: center; display: none;">
-                <img src="../../static/images/list_loading.gif">
-            </div>
-            <!--[CDATA[-->
-
-
-        </div>
-    </div>
-</div>
-<div class="clear"></div>
-</div>
-<div id="divmap"></div>
-<div class="member-price" style="display: none;">
-    <div class="hp-arrow"></div>
-    <div class="sale-intro">抵扣券可减<span class="red">0元</span>，现金券可减<span class="red">0元</span></div>
-    <ul>
-        <li class="current">
-            官网价<br>
-            ￥0
-        </li>
-        <li>
-            网络会员
-            <br>
-            ￥0
-        </li>
-        <li>
-            贵宾会员<br>
-            ￥0
-        </li>
-        <li>
-            金卡会员<br>
-            ￥0
-        </li>
-        <li>
-            超级会员<br>
-            ￥0
-        </li>
-    </ul>
-</div>
-
-<div class="hover-li" style="display: none;">
-    <div class="hp-arrow"></div>
-    <div></div>
-</div>
-
-<div class="hover-quanr" style="display: none">
-    <div class="hp-arrow"></div>
-    <div></div>
-</div>
-
-<div class="hover-quanr border-red" style="display: none">
-    <div class="hp-arrow"></div>
-    <div></div>
-</div>
-
-<link href="../../static/css/pop-map.css" rel="stylesheet">
-<div class="pop-map" id="pop-map" style="display: block;position:absolute;top:-9999px;">
-    <a class="map-del" href="javascript:void(0)" onclick="closeWindow(&#39;pop-map&#39;);">×</a>
-    <div class="map-tabs">
-        <a class="tab-map tab-current" href="javascript:void(0)">地图</a>
-
-    </div>
-    <div class="map-box">
-        <div class="map-side">
-            <div class="side-arrow-close"><a href="javascript:void(0)"></a></div>
-            <div class="around-search" style="display: block;">
-                <div class="map-side-title"><span class="back" style="display:none;"><a href="javascript:void(0);">&lt; 返回</a>|</span>周边查询
-                </div>
-                <div class="around-box clearfix clear">
-                    <a href="javascript:void(0)" class="hotel">速8</a>
-                    <a href="javascript:void(0)" class="restaurant" data-id="nearby">餐厅</a>
-                    <a href="javascript:void(0)" class="subway" data-id="nearby">地铁</a>
-                    <a href="javascript:void(0)" class="entertainment" data-id="nearby">娱乐</a>
-                    <a href="javascript:void(0)" class="sight" data-id="nearby">景点</a>
-                    <a href="javascript:void(0)" class="market" data-id="nearby">商场</a>
-                </div>
-            </div>
-
-
-            <div class="map-route-search" style="display: block;">
-                <div class="map-side-title"><span class="back" style="display:none;"><a href="javascript:void(0);">&lt; 返回</a>|</span>线路查询
-                </div>
-                <div class="route-way clearfix clear" id="route-way">
-                    <a href="javascript:void(0)" class="selected">公交</a>
-                    <a href="javascript:void(0)">驾车</a>
-                    <a href="javascript:void(0)">步行</a>
-                </div>
-                <div class="route-box">
-                    <div class="change" data-id="change"><a href="javascript:void(0);">换</a></div>
-                    <input type="text" value="" class="input_txt" id="suggestId">
-                    <input type="text" class="input_txt" id="suggestendId">
-                    <a href="javascript:;" class="map-btn-srch" id="result">查询路线</a>
-                </div>
-            </div>
-            <div class="map-around-result" style="display: none;">
-                <div class="around_title">
-                    <p class="result"><span class="num" data-id="aroundnum">0</span>条结果</p>
-                    周边<b><span>5</span>公里</b>的<span>酒店</span>
-                </div>
-                <div class="no-result-spot" style="display: none">您所选范围内未找到<b>酒店</b></div>
-                <div class="around-list" id="aroundlist">
-                </div>
-                <div class="c_page_mini" id="pagermap">
-                </div>
-            </div>
-            <div class="no_result" style="display: none;">
-                <p class="txt">没有查询到相关路线，</p>
-                <p class="txt">请更换地点重新查询。</p>
-            </div>
-
-            <div id="searchResultPanel"
-                 style="border: 1px solid #C0C0C0; width: 150px; height: auto; display: none;"></div>
-            <div class="route_search_box">
-                <div class="route_detail_box" id="resl" style="overflow: auto; height: 378px;"></div>
-            </div>
-        </div>
-        <div class="map-content" id="allmapBig">为了更好的地图 查询体验，建议您用更高版本IE浏览器或其他浏览器</div>
-        <div class="street-content" id="allmapBigall">为了更好的地图 查询体验，建议您用更高版本IE浏览器或其他浏览器</div>
-
-    </div>
-    <input type="hidden" data-id="hid_pageindex" value="1">
-</div>
-<script>
-    $('#traffic-ways').children().click(function () {
-        $(this).addClass('selected-favorate').siblings().removeClass('selected-favorate');
-    })
-</script>
-<script src="../../static/js/BaiduMap.js"></script>
-
-<div class="popup advice-pop" id="advice-pop" style="display: none;">
-    <div class="close">
-        <a href="javascript:void(0)" onclick="closeWindow(&#39;advice-pop&#39;);">
-            <img src="../../static/images/close-icon.gif">
-        </a>
-    </div>
-    <div class="titleBar">
-        <h3>意见反馈</h3>
-    </div>
-    <dl class="item-advice">
-        <dt>标题：</dt>
-        <dd>
-            <input type="text" class="i-title">
-        </dd>
-    </dl>
-    <dl class="item-advice">
-        <dt>内容：</dt>
-        <dd>
-            <textarea class="ta-ctn"></textarea>
-        </dd>
-    </dl>
-    <div class="bottom-btns">
-        <a href="javascript:void(0)" class="btns btn-light" onclick="closeWindow(&#39;advice-pop&#39;);">返回</a>
-        <a href="javascript:void(0)" class="btns btn-orange" onclick="closeWindow(&#39;advice-pop&#39;);">确定</a>
-    </div>
-</div>
-
-<div class="pop-confirm" id="pop-vip" style="display: none">
-    <a class="icon-close" onclick="closeWindow(&#39;pop-vip&#39;)">
-        <img src="../../static/images/close-icon.gif">
-    </a>
-    <p class="txt">新店6折活动限VIP级以上会员参与，升级会员级别后再来预订吧。</p>
-    <div class="btn-wrap">
-        <a href="http://www.super8.com.cn/Activity/cardGiftBox/saleCombination.html" target="_blank"
-           class="btn btn-gold">升级会员</a>
-        <a class="btn btn-grey" onclick="closeWindow(&#39;pop-vip&#39;)">取消</a>
-    </div>
-</div>
+{#<div class="pop-confirm" id="pop-vip" style="display: none">#}
+{#    <a class="icon-close" onclick="closeWindow(&#39;pop-vip&#39;)">#}
+{#        <img src="../../static/images/close-icon.gif">#}
+{#    </a>#}
+{#    <p class="txt">新店6折活动限VIP级以上会员参与，升级会员级别后再来预订吧。</p>#}
+{#    <div class="btn-wrap">#}
+{#        <a href="http://www.super8.com.cn/Activity/cardGiftBox/saleCombination.html" target="_blank"#}
+{#           class="btn btn-gold">升级会员</a>#}
+{#        <a class="btn btn-grey" onclick="closeWindow(&#39;pop-vip&#39;)">取消</a>#}
+{#    </div>#}
+{#</div>#}
 
 <input type="hidden" data-id="hid_select" value="1">
 <input type="hidden" id="hid_newsearch" value="0">
