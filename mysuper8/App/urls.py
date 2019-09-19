@@ -21,7 +21,7 @@ from App import views
 urlpatterns = [
     #首页
     url(r'^$',views.yuding,name='yuding'),
-    url(r'^/(\d+)/$',views.yuding,name='yuding'),
+    url(r'^(\d+)/$',views.yuding,name='yuding'),
 
     #登录
     url(r'^loginym/$',views.loginym, name='loginym'),
@@ -41,6 +41,8 @@ urlpatterns = [
     url(r'^hoteldetail/$',views.hoteldetail,name='hoteldetail'),
     #预定页面
     url(r'^makeorder/(\d+)/$',views.makeorder,name='makeorder'),
+    #确认订单
+    url(r'^confirmorder/(\d+)/$',views.confirmorder,name='confirmorder')
 
 
 

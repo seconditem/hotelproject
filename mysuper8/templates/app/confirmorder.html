@@ -1,0 +1,67 @@
+{% extends 'app/yudingindex.html' %}
+{% block contents %}
+    <!--提示层2秒消失-->
+
+<script src="/static/js/HeardInfo.js"></script>
+<script src="/static/js/popup.js"></script>
+<link href="/static/css/hotel-reserve.css" rel="stylesheet" />
+<link href="/static/css/v-user.css" rel="stylesheet" />
+<script type="text/javascript">
+    window.history.forward(1);
+</script>
+<div class="popup confirm-pop" id="confirm-pop" style="">
+    <div class="close">
+        <a href="" onclick="closeWindow('confirm-pop');">
+            <img src="/static/images/close-icon.gif" /></a>
+    </div>
+    <div class="titleBar">
+        <h3>订单确认</h3>
+    </div>
+    <dl class="item-confirm">
+        <dt>酒店：</dt>
+        <dd>速88酒店北京宝盛北里店</dd>
+    </dl>
+    <dl class="item-confirm">
+        <dt>房型：</dt>
+        <dd>{{ order.room_set.desc }}</dd>
+    </dl>
+    <dl class="item-confirm">
+        <dt>入住时段：</dt>
+        <dd><em>2019-09-18</em>&nbsp;至&nbsp;<em>2019-09-19</em></dd>
+    </dl>
+    <dl class="item-confirm">
+        <dt>入住人：</dt>
+        <dd data-id="GstsName">{{ order.username }}</dd>
+    </dl>
+    <dl class="item-confirm">
+        <dt>房间数量：</dt>
+        <dd data-id="roomnumdd">{{ order.order_room_num }}间</dd>
+    </dl>
+
+
+    <dl class="item-confirm">
+        <dt>应付金额：</dt>
+        <dd><em class="money" data-id="pay">{{ order.price }} 元</em></dd>
+    </dl>
+    <dl class="item-confirm">
+        <dt>付款方式：</dt>
+        <dd data-id="paytypetxt">在线预付</dd>
+    </dl>
+    <dl class="item-confirm">
+        <dt>预订保留时间：</dt>
+        <dd><span>12</span>:00至<span data-id="rmetime">18</span>:00</dd>
+    </dl>
+    <dl class="item-confirm">
+        <dt>联系人：</dt>
+        <dd data-id="ContactName">{{ order.username }}</dd>
+    </dl>
+    <dl class="item-confirm">
+        <dt>联系电话：</dt>
+        <dd data-id="ContactMobile">{{ order.phone }}</dd>
+    </dl>
+    <div class="bottom-btns">
+        <a href="" class="btns btn-light" onclick="closeWindow('confirm-pop');">返回</a>
+        <a href="https://www.baidu.com" class="btns btn-orange" onclick="closeWindow('confirm-pop');" data-id="submit" id="tj">确定</a>
+    </div>
+</div>
+{% endblock %}

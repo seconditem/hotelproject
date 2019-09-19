@@ -31,8 +31,8 @@
 <div class="grid wrapper clearfix content" id="node_container">
     <div class="g1">
         <div class="hotel-subject">
-            <h3><a href="/Hotel/Detail/4172" id="a_HotelName">速8酒店北京房山城关中医院店（内宾）</a></h3>
-            <p class="desc" id="p_Address">北京市房山区城关街道城关南路6号16号楼4层及1层大堂</p>
+            <h3><a href="/Hotel/Detail/4172" id="a_HotelName">速88酒店北京宝盛北里店</a></h3>
+            <p class="desc" id="p_Address">北京市速88酒店北京宝盛北里店_刘氏集团</p>
             <p class="img">
                 <img src="http://admin.super8.com.cn/hotelimage/480_360/4172/20190408141127517.jpg" alt="" />
             </p>
@@ -48,7 +48,9 @@
             </div>
         </div>
     </div>
-<form action="/Book/PayGuarantee" id="GuaFrom" method="post">        <div class="g2" id="grid-g2">
+<form action="{% url 'app:makeorder' roomstyle.id %}" id="GuaFrom" method="post">
+{% csrf_token %}
+    <div class="g2" id="grid-g2">
             <div class="shadow"></div>
             <div class="section" id="section-info">
                 <div class="title-bar">
@@ -60,7 +62,7 @@
                         <div class="col-item">
                             <span class="labl" data-id="sdate">2019-09-21</span> 入住 &nbsp;&nbsp;
                         <span class="labl" data-id="edate">2019-09-22</span> 退房 &nbsp;&nbsp;
-						<a href="/Hotel/Detail/4172/2019-09-21/2019-09-22//1" class="btn-red btn-s"><em>更改入住时间</em></a>
+						<a href="" class="btn-red btn-s"><em>更改入住时间</em></a>
                         </div>
                     </div>
                     <input class="text w2" id="HotelId" name="HotelId" style="display:none;" type="text" value="4172" />
@@ -77,10 +79,10 @@
                     </div>
                     <div class="form-group">
                         <label class="col-name">房间数量：</label>
-                        <select style="width: 65px;height: 26px">
-                          <option value ="volvo">1</option>
-                          <option value ="saab">2</option>
-                          <option value="opel">3</option>
+                        <select style="width: 65px;height: 26px" name="order_room_num">
+                          <option name="order_room_num" value ="1">1</option>
+                          <option name="order_room_num" value ="2">2</option>
+                          <option name="order_room_num" value="3">3</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -102,17 +104,17 @@
                     </div>
                     <div class="form-group">
                         <label class="col-name">最晚到店时间：</label>
-                        <select style="width: 65px;height: 26px">
-                             <option value ="volvo">18:00</option>
-                          <option value ="volvo">6:00</option>
-                          <option value ="saab">8:00</option>
-                          <option value="opel">10:00</option>
-                            <option value ="volvo">12:00</option>
-                          <option value ="saab">14:00</option>
-                          <option value="opel">16:00</option>
-                            <option value ="volvo">18:00</option>
-                          <option value ="saab">20:00</option>
-                          <option value="opel">22:00</option>
+                        <select style="width: 65px;height: 26px" name="last_time">
+                             <option name="last_time" value ="18:00">18:00</option>
+                          <option name="last_time" value ="6:00">6:00</option>
+                          <option name="last_time" value ="8:00">8:00</option>
+                          <option name="last_time" value="10:00">10:00</option>
+                            <option name="last_time" value ="12:00">12:00</option>
+                          <option name="last_time" value ="14:00">14:00</option>
+                          <option name="last_time" value="16:00">16:00</option>
+                            <option name="last_time" value ="18:00">18:00</option>
+                          <option name="last_time" value ="20:00">20:00</option>
+                          <option  name="last_time" value="22:00">22:00</option>
                         </select>
                     </div>
                 </div>
@@ -125,12 +127,14 @@
                     <div class="form-group">
                         <label class="col-name"><em class="red">*</em>  联系人：</label>
                         <div class="col-item">
-<input Value="刘荣帅" class="text w2" data-check="Null;ChcOrLetter;" data-id="checktxt" id="ContactName" name="ContactName" type="text" value="" />                        </div>
+                        <input Value="刘荣帅" class="text w2" data-check="Null;ChcOrLetter;"
+                        data-id="checktxt" id="ContactName" name="ContactName" type="text" value="" />                        </div>
                     </div>
                     <div class="form-group">
                         <label class="col-name"><em class="red">*</em> 联系电话：</label>
                         <div class="col-item">
-<input Value="18725882067" class="text w2" data-check="Null;Phone;" data-id="checktxt" id="ContactMobile" name="ContactMobile" type="text" value="" />
+                    <input Value="18725882067" class="text w2" data-check="Null;Phone;"
+                           data-id="checktxt" id="ContactMobile" name="ContactMobile" type="text" value="" />
                             <span class="tip">获取预订或确认短信</span>
                         </div>
                     </div>
@@ -169,8 +173,9 @@
 
                         </span></em></p>
 
-                        <p><a class="btn-pay" href="javascript:void(0)" data-id="tj_a" id="tj_a"style="background-color: #A90000">
-                            <em>提交订单</em></a></p>
+                        <p>
+                            <em><input type="submit"  value="提交订单" style="background-color: #A90000;width: 130px;height: 40px;font-size: 20px;color: #FFFFFF"></em></p>
+
                     </div>
                 </div>
 

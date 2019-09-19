@@ -36,7 +36,7 @@ class Order(models.Model):
     create_time = models.DateTimeField(auto_now_add=True)
     order_status = models.IntegerField(default=0)
     user_id = models.ForeignKey(User, related_name="user", db_column='user_id', on_delete=models.CASCADE, null=True)
-    room = models.OneToOneField('RoomStyle', on_delete=models.CASCADE, db_column='roomstyle')
+    room = models.ForeignKey('RoomStyle', on_delete=models.CASCADE, db_column='roomstyle')
 
     class Meta:
         db_table = 'hotel_order'

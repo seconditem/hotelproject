@@ -73,7 +73,7 @@ def registerym(request):
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
             user = User.objects.create_user(username=username, password=password, email=email, regtime=regtime,
-                                            usertype=usertype)
+                                            usertype=usertype,phone=phone)
             login(request, user)
             return redirect(reverse('app:yuding'))
         return render(request,'app/registerym.html',locals())
@@ -126,18 +126,41 @@ def findcodetwo(request):
     return render(request, 'app/findcode2.html', locals())
 
 
-
+#
 def hoteldetail(request):
     roomstyles = RoomStyle.objects.all()
 
     return render(request, 'app/hoteldetail.html', locals())
 
+
+#预订订单
 @login_required(login_url='/loginym/')
 def makeorder(request,rid):
-    print(rid,'11111111')
-    roomstyle = RoomStyle.objects.get(pk=rid)
-    return render(request, 'app/BookInfo.html', locals())
 
+    roomstyle = RoomStyle.objects.get(pk=rid)
+    if request.method == 'POST':
+        roomstyle = RoomStyle.objects.get(pk=rid)
+        print(rid, '21111111')
+        user_id= request.user.uid
+        desc = roomstyle.desc
+        username = request.POST.get('GstsName')
+        order_room_num = request.POST.get('order_room_num')
+        # last_time = request.POST.get('last_time')
+        ContactName = request.POST.get('ContactName')
+        ContactMobile = request.POST.get('ContactMobile')
+
+        Order.objects.create(user_id_id=user_id,username=username,
+                             order_room_num=order_room_num,last_in_time=datetime.now(),
+                             room_id=rid,order_status=0,create_time=datetime.now(),
+                             check_in_time=datetime.now(),check_out_time=datetime.now(),
+                             price=roomstyle.webprice,phone=ContactMobile)
+        order = Order.objects.all().last()
+        return redirect(reverse('app:confirmorder', args=[order.id]))
+    return render(request, 'app/BookInfo.html', locals())
+#确认订单
+def confirmorder(request,id):
+    order = Order.objects.get(pk=id)
+    return render(request,'app/confirmorder.html',locals())
 
 
 
