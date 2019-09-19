@@ -9,35 +9,31 @@
 {% endblock %}
 {% block contents %}
 <link href="../../static/css/forgetpass.css" rel="stylesheet">
-<form action="http://www.super8.com.cn/Forgotpwd/Forgotpwd2" method="post">
+<form action="" method="post">
+{% csrf_token %}
     <div class="wrapper grid-950">
         <h4 class="fp-title mt50">找回密码</h4>
         <div class="fpassCtnWrap">
             <ul class="fsteps">
-                <li class="first fcurrent"><span><i>1</i><em>验证身份</em></span></li>
-                <li class="center"><span><i>2</i><em>重置密码</em></span></li>
+                <li class="first "><span><i>1</i><em>验证身份</em></span></li>
+                <li class="center fcurrent "><span><i>2</i><em>重置密码</em></span></li>
                 <li class="end"><span><i>3</i><em>完成</em></span></li>
 
             </ul>
-            <div class="formWrap">
+<div class="formWrap">
                 <div class="fwSpan ui-placeholder-re">
-                    <label class="tit">手机号码</label>
-                    <label for="account">
-                        <input class="i_text_f" id="CuName" name="CuName" type="text" value="">
+                    <label class="tit">新密码</label>
+                    <label for="new-pass">
+                        <input class="i_text_f" id="new-pass" name="UsPwd" placeholder="密码长度6-14位，区分大小写" type="password">
+                        <input id="UsPhone" name="UsPhone" type="hidden" value="18725882067">
                     </label>
-
                 </div>
-
                 <div class="fwSpan fwSpan2">
-                    <label class="tit">验证码</label>
-                    <input class="i_text_f" id="CuCode" name="CuCode" type="text" value="">
-                    <img id="sp_imag" src="findcode_files/NewValidateCodeImage" onclick="NewValidateCode()"
-                         class="img-vertif">
-                    <a class="a-vertif" href="http://www.super8.com.cn/Forgotpwd/Forgotpwd1#"
-                       onclick="NewValidateCode()">看不清 换一张</a>
+                    <label class="tit">确认密码</label>
+                    <input class="i_text_f" id="UsPwd2" name="UsPwd2" type="password">
 
                 </div>
-                <button id="issubmit" type="submit"  href="{% url 'app:findcodetwo' %}" onclick="return GetSubmit();" class="fp-btn">下一步</button>
+                 <a id="dregister" href="{% url 'app:findcodesan' %}" class="fp-btn">下一步</a>
             </div>
         </div>
     </div>
