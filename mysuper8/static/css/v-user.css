@@ -86,7 +86,7 @@ a:hover {
         line-height: 36px;
         text-align: center;
     }
-/*闂村鐐规暟*/
+/*间夜点数*/
 .yeNumh2 {
     font: bold 16px/21px "microsoft Yahei";
     color: #383838;
@@ -337,13 +337,13 @@ a:hover {
     border: 1px solid #dfdfdf;
     margin: 0;
 }
-/*浣欓璐︽埛*/
+/*余额账户*/
 .box-user .title-bar .srtip {
     color: #9a9a9a;
     text-decoration: underline;
 }
 
-/*閫熺背璐︽埛*/
+/*速米账户*/
 .box-user .title-bar-SM {
     border-bottom: 1px solid #e1e1e1;
     height: 50px;
@@ -484,7 +484,7 @@ a:hover {
     background: #ddd;
     cursor: default;
 }
-/*涓汉璧勬枡*/
+/*个人资料*/
 .data-wrap {
     padding-left: 85px;
     margin-top: 12px;
@@ -582,7 +582,7 @@ a:hover {
     line-height: 20px;
     font: 12px/20px "simsun";
 }
-/*甯哥敤淇℃伅绠＄悊*/
+/*常用信息管理*/
 .info-stit {
     border-top: 1px solid #e1e1e1;
 }
@@ -639,7 +639,7 @@ a:hover {
     background: #fff;
 }
 
-/*鎴戠殑璁㈠崟-鏈嶅姟涔嬫槦鎶曠エ*/
+/*我的订单-服务之星投票*/
 .vote-wrap .box-user {
     min-height: 490px;
     height: 100%;
@@ -811,7 +811,7 @@ a.vote-btn {
 
 
 
-/*鎴戠殑鎺ㄨ崘*/
+/*我的推荐*/
 .box-recommend {
     padding: 20px;
     font-family: microsoft Yahei;
@@ -867,7 +867,7 @@ a.vote-btn {
         background: url(../images/map-arrow-bg.png) no-repeat -7px -9px
     }
 
-/*鎴戠殑鏀惰棌*/
+/*我的收藏*/
 .collection-city {
     background: #fff9f9;
     border-top: 1px solid #f9cdcf;
@@ -980,7 +980,7 @@ a.vote-btn {
     margin-bottom: 10px;
 }
 
-/*鍏呭€肩爜*/
+/*充值码*/
 .recharge-wrap {
     padding: 8px 20px;
     margin-bottom: 15px;
@@ -1034,7 +1034,7 @@ a.vote-btn {
         font-weight: normal
     }
 
-/*鎴戠殑淇濋櫓*/
+/*我的保险*/
 .box-insurance {
     padding-bottom: 40px;
     overflow: hidden
@@ -1214,7 +1214,7 @@ a.vote-btn {
             padding: 0;
         }
 
-/*鏂扮偣璇�*/
+/*新点评*/
 .main-face-ul {
     background: #fff;
     overflow: hidden;

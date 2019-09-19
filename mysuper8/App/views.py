@@ -12,6 +12,7 @@ from django.urls import reverse
 
 from App.forms import RegisterForm
 from App.models import *
+from mysuba import settings
 from tools.sms import send_sms
 from tools.verifycode import VerifyCode
 
@@ -148,11 +149,10 @@ def hoteldetail(request):
 #预订订单
 @login_required(login_url='/loginym/')
 def makeorder(request,rid):
-    print(rid,'11111111')
+
     roomstyle = RoomStyle.objects.get(pk=rid)
     if request.method == 'POST':
         roomstyle = RoomStyle.objects.get(pk=rid)
-        print(rid, '21111111')
         user_id= request.user.uid
         desc = roomstyle.desc
         username = request.POST.get('GstsName')
@@ -160,12 +160,17 @@ def makeorder(request,rid):
         # last_time = request.POST.get('last_time')
         ContactName = request.POST.get('ContactName')
         ContactMobile = request.POST.get('ContactMobile')
-
         Order.objects.create(user_id_id=user_id,username=username,
                              order_room_num=order_room_num,last_in_time=datetime.now(),
                              room_id=rid,order_status=0,create_time=datetime.now(),
                              check_in_time=datetime.now(),check_out_time=datetime.now(),
                              price=roomstyle.webprice,phone=ContactMobile)
+        #该订单生成后，相应房型数量减一
+        r1 = RoomStyle.objects.get(pk=rid)
+        print(r1.num,'122223')
+        # num = r1.num -1
+        r1.num=r1.num -1
+        r1.save()
         order = Order.objects.all().last()
         return redirect(reverse('app:confirmorder', args=[order.id]))
     return render(request, 'app/BookInfo.html', locals())
@@ -191,3 +196,8 @@ def phoneyzm(request,*args,**kwargs):
 
     return HttpResponse(res,'image/png')
 
+
+
+#我的订单
+def myorderdetail(request):
+    return render(request,'app/myorderdetail.html')

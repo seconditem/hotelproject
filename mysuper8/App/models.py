@@ -44,7 +44,7 @@ class Order(models.Model):
 
 class RoomStyle(models.Model):
     # id = models.CharField(primary_key=True)
-    style = models.IntegerField(default=0)
+    style = models.CharField(max_length=16)
     size = models.IntegerField()
     num = models.IntegerField(default=10)
     iswindow = models.IntegerField(choices=[(0, "无"), (1, "有")])

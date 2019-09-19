@@ -44,7 +44,9 @@ urlpatterns = [
     #预定页面
     url(r'^makeorder/(\d+)/$',views.makeorder,name='makeorder'),
     #确认订单
-    url(r'^confirmorder/(\d+)/$',views.confirmorder,name='confirmorder')
+    url(r'^confirmorder/(\d+)/$',views.confirmorder,name='confirmorder'),
+    #我的订单
+    url(r'^myorderdetail/$',views.myorderdetail,name='myorderdetail')
 
 
 
