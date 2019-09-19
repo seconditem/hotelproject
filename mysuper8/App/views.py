@@ -72,8 +72,7 @@ def registerym(request):
             usertype = 0
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
-            user = User.objects.create_user(username=username, password=password, email=email, regtime=regtime,
-                                            usertype=usertype)
+            user = User.objects.create_user(username=username, password=password, email=email, regtime=regtime,usertype=usertype,phone = phone)
             login(request, user)
             return redirect(reverse('app:yuding'))
         return render(request,'app/registerym.html',locals())
@@ -85,10 +84,18 @@ def loginym(request):
          print('12000000000000000000')
          username = request.POST.get('username')
          password = request.POST.get('password')
+         #验证码对比
+         yzm1 = request.POST.get('ImgCode')
+         yzm2 = request.session.get('code')
+         print('实际验证码====>',yzm2,'用户输入===>',yzm1)
+         res = yzm1 == yzm2
+         restyzm = ''
+         if  not res:
+             restyzm = "验证码不匹配"
 
          #验证成功返回用户对象，否则返回None
          user = authenticate(request,username=username,password=password)
-         if user:
+         if user and res:
              #登录写入session，并把user写入request
              print('000000000000000000')
              login(request,user)
@@ -116,6 +123,8 @@ def get_yzm(request):
 #忘记密码(验证身份)
 def findcode(request):
 
+    print(request.POST,"收到的数据")
+
     return render(request,'app/findcode.html',locals())
 
 #重置密码
@@ -124,6 +133,9 @@ def findcodetwo(request):
     # if request.method == "POST":
     #     a = 1
     return render(request, 'app/findcode2.html', locals())
+#密码重置成功的跳转
+def findcodesan(request):
+    return render(request, 'app/findcode3.html', locals())
 
 
 
@@ -143,6 +155,8 @@ def makeorder(request,rid):
 
 
 def phoneyzm(request,*args,**kwargs):
+    print(dict(request.GET))
+    print('进了手机验证码')
     data = dict(request.GET)
     phnumber = data['phonenum'][0]
     print(data,'88888000888888888')

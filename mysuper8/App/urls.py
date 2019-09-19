@@ -33,10 +33,12 @@ urlpatterns = [
     url(r'^yzm/$', views.get_yzm, name='yzm'),
     # 手机验证码
     url(r'^phoneyzm/$', views.phoneyzm, name='phoneyzm'),
-    #忘记密码
+    #忘记密码（验证身份）
     url(r'^findcode/$', views.findcode, name='findcode'),
-    #忘记密码
+    #忘记密码（重置密码）
     url(r'^findcodetwo/$', views.findcodetwo, name='findcodetwo'),
+    # 重置密码成功
+    url(r'^findcodesan/$', views.findcodesan, name='findcodesan'),
     #酒店详情
     url(r'^hoteldetail/$',views.hoteldetail,name='hoteldetail'),
     #预定页面

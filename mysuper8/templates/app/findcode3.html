@@ -1,0 +1,28 @@
+
+{% extends 'app/yudingindex.html' %}
+{% load static %}
+{% block title %}
+    用户注册
+{% endblock %}
+{% block headone %}
+{% endblock %}
+{% block contents %}
+
+<link href="../../static/css/forgetpass.css" rel="stylesheet">
+<div class="wrapper grid-950">
+    <h4 class="fp-title mt50">找回密码</h4>
+    <div class="fpassCtnWrap">
+        <ul class="fsteps">
+            <li class="first"><span><i>1</i><em>输入账户名</em></span></li>
+            <li class="center"><span><i>2</i><em>验证身份</em></span></li>
+            <li class="center"><span><i>3</i><em>重置密码</em></span></li>
+            <li class="end ecurrent"><span><i>4</i><em>完成</em></span></li>
+        </ul>
+        <div class="formWrap">
+            <div class="fp-sucess">
+                <img src="../../static/images/icon_check.gif"><span>恭喜您重置密码成功</span></div>
+            <a href="{% url 'app:loginym' %}" class="fp-btn fp-btn-Yahei">去登录</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

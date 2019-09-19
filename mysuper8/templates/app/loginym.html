@@ -35,7 +35,7 @@
                     <div class="form-imgcode form-group-imgcode">
                         <input onfocus="checkReg('yzm')" size="25" class="px" node_type="input" name="ImgCode" id="yzm" type="text" autocomplete="off" placeholder="验证码">
                        <img src="{% url 'app:yzm' %}" id="p_yzm" onclick="show('p_yzm')" style="cursor:pointer;width: 65px;height: 30px" />
-                        <a href="javascript:;" onclick="show('p_yzm')">看不清？</a></i>&nbsp;&nbsp;{{ form.yzm.errors }}
+                        <a href="javascript:;" onclick="show('p_yzm')">看不清？</a></i>&nbsp;&nbsp;{{ restyzm }}
                     </div>
                         <script>
                             function checkReg(obj){
