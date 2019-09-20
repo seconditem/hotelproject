@@ -23,11 +23,11 @@
     </dl>
     <dl class="item-confirm">
         <dt>房型：</dt>
-        <dd>{{ order.room_set.desc }}</dd>
+        <dd>{{ order.room.desc }}</dd>
     </dl>
     <dl class="item-confirm">
         <dt>入住时段：</dt>
-        <dd><em>2019-09-18</em>&nbsp;至&nbsp;<em>2019-09-19</em></dd>
+        <dd><em>{{ order.check_in_time }}</em>&nbsp;至&nbsp;<em>{{ order.check_out_time }}</em></dd>
     </dl>
     <dl class="item-confirm">
         <dt>入住人：</dt>
@@ -49,7 +49,7 @@
     </dl>
     <dl class="item-confirm">
         <dt>预订保留时间：</dt>
-        <dd><span>12</span>:00至<span data-id="rmetime">18</span>:00</dd>
+        <dd>当天<span data-id="rmetime">22</span>:00</dd>
     </dl>
     <dl class="item-confirm">
         <dt>联系人：</dt>

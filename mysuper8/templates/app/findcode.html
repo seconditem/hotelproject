@@ -39,8 +39,8 @@
                 <div class="fwSpan fwSpan2">
                     <label class="tit">验证码</label>
                     <input class="i_text_f" id="rpcode" name="rpcode" type="text" placeholder="手机验证码">
-                    <input id="getCode" type="button" value="获取验证码" onclick="sendMessages()"></input>
-                    <a id="errMsg2" color="red" style="display:none;  "></a>
+                    <input id="getCode" type="button" value="获取验证码" onclick="sendMessages()" class="fp-btn" ></input>
+                    <a id="errMsg2" color="red" >{{ error }}</a>
                 </div>
                 <input type="text" id="code" hidden="true">
                 <input type="submit" value="下一步" class="fp-btn">

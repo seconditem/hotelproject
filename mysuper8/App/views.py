@@ -21,13 +21,16 @@ from tools.verifycode import VerifyCode
 #首页
 def yuding(request,order = 0):
     order = int(order)
+    rooms = RoomStyle.objects.all()
+    #将空闲房间数量写进roomstyle表里
+    for roomstyle in rooms:
+        roomstyle.num = Room.objects.filter(typeid=roomstyle.id).filter(room_status=2).count()
+        roomstyle.save()
     if request.method == 'POST':
     #房间排序选择
         if order == 1 : # 1 代表给出官网价格价格最低的可用房间
             roomstyles = RoomStyle.objects.ordered()
             print(roomstyles,'按价格排序')
-
-
     roomstyles = RoomStyle.objects.all() #所有房间展示
     return render(request,'app/yudingindex.html',locals())
 
@@ -92,7 +95,6 @@ def loginym(request):
          restyzm = ''
          if  not res:
              restyzm = "验证码不匹配"
-
          #验证成功返回用户对象，否则返回None
          user = authenticate(request,username=username,password=password)
          if user and res:
@@ -103,9 +105,6 @@ def loginym(request):
 
          return render(request, 'app/loginym.html', locals())
     return render(request, 'app/loginym.html', locals())
-
-
-
 #退出登录
 def userlogout(request):
     logout(request)
@@ -122,9 +121,21 @@ def get_yzm(request):
 
 #忘记密码(验证身份)
 def findcode(request):
-
-    print(request.POST,"收到的数据")
-
+    print(request.POST,"修改密码第一层收到的数据")
+    userphone = request.POST.get('phone')
+    print(userphone,'--')
+    curuser = User.objects.filter(phone=userphone).first()
+    print(curuser.username)
+    sjyzm1 = request.POST.get('rpcode')
+    sjyzm2 = request.session.get('code1')
+    print(sjyzm1,'前台写的验证码',sjyzm2,'后台收到的验证码')
+    error = ''
+    print(curuser,'----------')
+    # if curuser:
+    #     if sjyzm1 == sjyzm2:
+    #         return render(request, 'app/findcode2.html', locals())
+    #     else:
+    #         error = '手机验证码不正确'
     return render(request,'app/findcode.html',locals())
 
 #重置密码
@@ -147,31 +158,66 @@ def hoteldetail(request):
 
 #预订订单
 @login_required(login_url='/loginym/')
-def makeorder(request,rid):
+def makeorder(request,rid):#rid 是房间类型
     print(rid,'11111111')
+    #该类型剩余的数量
+    roomcount = Room.objects.filter(typeid=rid).filter(room_status=2).count()
+    roomcountlist = []
+    for i in range(roomcount):
+        roomcountlist.append(i+1)
+
+    # print(roomcountlist,'列表')
+    # print(roomcount,'剩余数量')
     roomstyle = RoomStyle.objects.get(pk=rid)
     if request.method == 'POST':
-        roomstyle = RoomStyle.objects.get(pk=rid)
+        print(request.POST,'收到的订单数据')
+        cheak_in = request.POST.get('ruzhu')
+        cheak_out = request.POST.get('lidian')
+        username = request.POST.get("GstsName")
+        order_room_num = request.POST.get('order_room_num')
+        #更改对应的房间状态
+        order_room_ids = ""
+        for i in range(int(order_room_num)):
+            room = Room.objects.filter(typeid=rid).filter(room_status=2).first()
+            room.room_status = 1
+            order_room_ids = order_room_ids +str(room.id) +","
+            room.save()
+            print(room.id,'空闲房间的id')
+            print(i,'次数')
+
+        print('00000o0o0o0o0o0o0o0',order_room_ids,'idididididididididissssss')
+        print(order_room_num,'房间数')
+        last_intime = request.POST.get("last_time")
+        ContactMobile = request.POST.get('ContactMobile')
+        curroomstyle = RoomStyle.objects.get(pk=rid)
+        print(curroomstyle.webprice,'看看这里是不是800？')
+        tolprice = roomstyle.webprice * int(order_room_num)
         print(rid, '21111111')
         user_id= request.user.uid
         desc = roomstyle.desc
-        username = request.POST.get('GstsName')
-        order_room_num = request.POST.get('order_room_num')
-        # last_time = request.POST.get('last_time')
-        ContactName = request.POST.get('ContactName')
-        ContactMobile = request.POST.get('ContactMobile')
-
         Order.objects.create(user_id_id=user_id,username=username,
                              order_room_num=order_room_num,last_in_time=datetime.now(),
                              room_id=rid,order_status=0,create_time=datetime.now(),
-                             check_in_time=datetime.now(),check_out_time=datetime.now(),
-                             price=roomstyle.webprice,phone=ContactMobile)
+                             check_in_time=cheak_in,check_out_time=cheak_out,
+                             price=tolprice,phone=ContactMobile,order_room_ids = order_room_ids)
         order = Order.objects.all().last()
         return redirect(reverse('app:confirmorder', args=[order.id]))
+
     return render(request, 'app/BookInfo.html', locals())
 #确认订单
 def confirmorder(request,id):
+    id = int(id)
     order = Order.objects.get(pk=id)
+    #计算天数
+    days = order.check_out_time - order.check_in_time
+    days = int(str(days)[0])
+    print(days,'天数')
+    order.price = int(order.price)*days
+    order.save()
+    order.check_in_time = str(order.check_in_time).split(' ')[0]
+    order.check_out_time = str(order.check_out_time).split(' ')[0]
+
+    print(order.room.desc,'方形')
     return render(request,'app/confirmorder.html',locals())
 
 

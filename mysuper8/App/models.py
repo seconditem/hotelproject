@@ -37,6 +37,7 @@ class Order(models.Model):
     order_status = models.IntegerField(default=0)
     user_id = models.ForeignKey(User, related_name="user", db_column='user_id', on_delete=models.CASCADE, null=True)
     room = models.ForeignKey('RoomStyle', on_delete=models.CASCADE, db_column='roomstyle')
+    order_room_ids = models.CharField(max_length=8,null=True)
 
     class Meta:
         db_table = 'hotel_order'
@@ -44,7 +45,7 @@ class Order(models.Model):
 
 class RoomStyle(models.Model):
     # id = models.CharField(primary_key=True)
-    style = models.IntegerField(default=0)
+    style = models.CharField(max_length=32)
     size = models.IntegerField()
     num = models.IntegerField(default=10)
     iswindow = models.IntegerField(choices=[(0, "无"), (1, "有")])

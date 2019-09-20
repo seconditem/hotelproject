@@ -60,8 +60,8 @@
                     <div class="form-group">
                         <label class="col-name" id="lbl_days" data-rmDays="1" data-Days="1">入住时段：</label>
                         <div class="col-item">
-                            <span class="labl" data-id="sdate">2019-09-21</span> 入住 &nbsp;&nbsp;
-                        <span class="labl" data-id="edate">2019-09-22</span> 退房 &nbsp;&nbsp;
+                            <span class="labl" data-id="sdate"><input class="labl" type="date" value="2019-09-23"  name="ruzhu"></span> 入住 &nbsp;&nbsp;
+                        <span class="labl" data-id="edate"><input class="labl" type="date" value="2019-09-24" name="lidian"></span> 退房 &nbsp;&nbsp;
 						<a href="" class="btn-red btn-s"><em>更改入住时间</em></a>
                         </div>
                     </div>
@@ -79,14 +79,16 @@
                     </div>
                     <div class="form-group">
                         <label class="col-name">房间数量：</label>
+
                         <select style="width: 65px;height: 26px" name="order_room_num">
-                          <option name="order_room_num" value ="1">1</option>
-                          <option name="order_room_num" value ="2">2</option>
-                          <option name="order_room_num" value="3">3</option>
+                            {% for i in roomcountlist %}
+                          <option name="order_room_num" value ="{{ i }}">{{ i }}</option>
+                            {% endfor %}
                         </select>
+
                     </div>
                     <div class="form-group">
-                        <label class="col-name">订单总价：</label>
+                        <label class="col-name">房间单价：</label>
                         <div class="col-item">
                             <input type="hidden" value="160" data-id="totalprice"/>
                             <input type="hidden" value="160" data-id="price"/>
@@ -121,30 +123,17 @@
             </div>
             <div class="section">
                 <div class="title-bar">
-                    <h3>联系信息</h3>
+                    <h3>联系方式</h3>
                 </div>
                 <div class="form">
-                    <div class="form-group">
-                        <label class="col-name"><em class="red">*</em>  联系人：</label>
-                        <div class="col-item">
-                        <input Value="刘荣帅" class="text w2" data-check="Null;ChcOrLetter;"
-                        data-id="checktxt" id="ContactName" name="ContactName" type="text" value="" />                        </div>
-                    </div>
                     <div class="form-group">
                         <label class="col-name"><em class="red">*</em> 联系电话：</label>
                         <div class="col-item">
                     <input Value="18725882067" class="text w2" data-check="Null;Phone;"
                            data-id="checktxt" id="ContactMobile" name="ContactMobile" type="text" value="" />
-                            <span class="tip">获取预订或确认短信</span>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-name">联系邮箱：</label>
-                        <div class="col-item">
-                            <input class="text w2" data-check="Email;" data-id="checktxt" id="ContactEmail" name="ContactEmail" type="text" value="" />
-                            <span class="tip">获取预订或确认邮件</span>
-                        </div>
-                    </div>
+
                 </div>
             </div>
 
@@ -181,7 +170,8 @@
 
             </div>
         </div>
-</form></div>
+</form>
+</div>
 
 
 {% endblock  %}
