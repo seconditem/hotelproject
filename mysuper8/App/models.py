@@ -76,7 +76,7 @@ class Reflex(models.Model):
     level = models.IntegerField(default=2, choices=[(0, '吐槽'), (1, '差'), (2, '一般'), (3, '很满意'), (4, '强烈推荐')])
     content = models.TextField(max_length=150)
     # user_id = models.ForeignKey(User, db_column="userid", related_name='userid')
-    order = models.OneToOneField(Order, related_name="orderid")
+    order = models.OneToOneField(Order, related_name="order_id")
     score = models.FloatField(default=6.0)
 
     class Meta:

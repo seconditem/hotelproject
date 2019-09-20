@@ -153,7 +153,7 @@ def findcodesan(request):
 
 def hoteldetail(request):
     roomstyles = RoomStyle.objects.all()
-
+    reflexs = Reflex.objects.all()
     return render(request, 'app/hoteldetail.html', locals())
 
 
@@ -180,7 +180,7 @@ def makeorder(request,rid):#rid 是房间类型
         order_room_ids = ""
         for i in range(int(order_room_num)):
             room = Room.objects.filter(typeid=rid).filter(room_status=2).first()
-            room.room_status = 1
+            room.room_status = 4
             order_room_ids = order_room_ids +str(room.id) +","
             room.save()
             print(room.id,'空闲房间的id')
@@ -242,4 +242,40 @@ def phoneyzm(request,*args,**kwargs):
 
 #我的订单
 def myorderdetail(request):
-    return render(request,'app/myorderdetail.html')
+    myorder=request.GET.get('myorder')
+
+    uid = request.user.uid
+    #筛选已预订，未入住0
+    if myorder == '1':
+        myorderdetails = Order.objects.filter(user_id=uid).filter(order_status=0)
+    #待评价，必须是已入住订单1才可以评价
+    elif myorder == '3':
+
+        myorderdetails = Order.objects.filter(user_id=uid).filter(order_status=1)
+    else:
+        myorderdetails = Order.objects.filter(user_id=uid)
+
+    return render(request,'app/myorderdetail.html',locals())
+
+#订单评价
+def hotelreflex(request):
+    #当前订单评价的id
+    order_id =request.GET.get('myorderdetail_id')
+    print(order_id,type(order_id),'====')
+    if request.method=='POST':
+        print(request.POST.get('reflex'),'111')
+        #评价写入数据库
+        content = request.POST.get('reflex')
+        create_time= datetime.now()
+        level = 4
+        score = 100
+        order_id = int(order_id)
+        Reflex.objects.create(create_time=create_time,level=level,
+                              content=content,score=score,order_id=order_id)
+        # 当前订单状态由已入住未评价1转为已入住已评价3
+        orders = Order.objects.get(pk=order_id)
+        orders.order_status = 3
+        orders.save()
+        return redirect(reverse('app:myorderdetail'))
+
+    return render(request,'app/hotelreflex.html',locals())

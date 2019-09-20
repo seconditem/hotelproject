@@ -61,26 +61,7 @@
     </dl>
     <div class="bottom-btns">
         <a href="" class="btns btn-light">返回</a>
-        <a href="https://www.baidu.com" class="btns btn-orange"  data-id="submit" id="tj">确定</a>
+        <a href="{% url 'app:myorderdetail' %}" class="btns btn-orange"  data-id="submit" id="tj">确定</a>
     </div>
-</div
-<div class="info fixed mt10">
-                            <p class="fl weight">总量：<em>233g</em>净重：<em>80g</em>箱重：<em>153g</em></p>
-                            <p class="fr total2">
-							<span id="total_goods_price">
-								获得积分：<em>4</em>总计（不含运费）：<span class="price3"><b>￥</b>4.50</span>
-							</span>
-                                <a onclick="order();">提交订单</a>
-                            </p>
-                            <script>
-
-                                function order() {
-                                    total = $(".price3").text().substring(1)
-                                    $.post("http://127.0.0.1:8000/pay/",{'gname':'零食','total':total},function (data) {
-                                       console.log(data)
-                                        window.location.href = data
-                                    })
-                                }
-                            </script>
-                        </div>
+</div>
 {% endblock %}
