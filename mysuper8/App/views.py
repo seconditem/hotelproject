@@ -12,6 +12,7 @@ from django.urls import reverse
 
 from App.forms import RegisterForm
 from App.models import *
+from mysuba import settings
 from tools.sms import send_sms
 from tools.verifycode import VerifyCode
 
@@ -237,3 +238,8 @@ def phoneyzm(request,*args,**kwargs):
 
     return HttpResponse(res,'image/png')
 
+
+
+#我的订单
+def myorderdetail(request):
+    return render(request,'app/myorderdetail.html')

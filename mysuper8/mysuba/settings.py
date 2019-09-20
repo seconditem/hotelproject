@@ -134,3 +134,7 @@ STATICFILES_DIRS = [
 #应该使用自己的User进行验证
 AUTH_USER_MODEL = 'App.User'
 
+#支付宝支付配置
+APP_PRIVATE_KEY = open(os.path.join(BASE_DIR,'tools/app_private_key.pem')).read()
+ALIPAY_PUBLIC_KEY = open(os.path.join(BASE_DIR,'tools/alipay_public_key.pem')).read()
+APPID = "2016101400684170"
