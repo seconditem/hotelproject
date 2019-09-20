@@ -36,7 +36,7 @@ urlpatterns = [
     #忘记密码（验证身份）
     url(r'^findcode/$', views.findcode, name='findcode'),
     #忘记密码（重置密码）
-    url(r'^findcodetwo/$', views.findcodetwo, name='findcodetwo'),
+    url(r'^findcodetwo/(\d+)/$', views.findcodetwo, name='findcodetwo'),
     # 重置密码成功
     url(r'^findcodesan/$', views.findcodesan, name='findcodesan'),
     #酒店详情
@@ -47,6 +47,8 @@ urlpatterns = [
     url(r'^confirmorder/(\d+)/$',views.confirmorder,name='confirmorder'),
     #我的订单
     url(r'^myorderdetail/$',views.myorderdetail,name='myorderdetail'),
+    #支付宝付款
+    url(r'^alipay/(\d+)/$',views.alipay,name='alipay'),
     #酒店评价
     url(r'^hotelreflex/$',views.hotelreflex,name='hotelreflex'),
 

@@ -61,7 +61,8 @@
     </dl>
     <div class="bottom-btns">
         <a href="" class="btns btn-light">返回</a>
-        <a href="{% url 'app:myorderdetail' %}" class="btns btn-orange"  data-id="submit" id="tj">确定</a>
+        <a href="{% url 'app:alipay'  order.id %}" class="btns btn-orange"  data-id="submit" id="tj">确定</a>
     </div>
 </div>
+
 {% endblock %}
