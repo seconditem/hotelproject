@@ -126,24 +126,38 @@ def findcode(request):
     userphone = request.POST.get('phone')
     print(userphone,'--')
     curuser = User.objects.filter(phone=userphone).first()
-    print(curuser.username)
     sjyzm1 = request.POST.get('rpcode')
     sjyzm2 = request.session.get('code1')
     print(sjyzm1,'前台写的验证码',sjyzm2,'后台收到的验证码')
     error = ''
     print(curuser,'----------')
-    # if curuser:
-    #     if sjyzm1 == sjyzm2:
-    #         return render(request, 'app/findcode2.html', locals())
-    #     else:
-    #         error = '手机验证码不正确'
+
+    if request.method == 'POST':
+        if curuser and sjyzm2:
+            if sjyzm1 == sjyzm2:
+                return redirect(reverse('app:findcodetwo', args=[curuser.uid]))
+            else:
+                error = '手机验证码不正确'
     return render(request,'app/findcode.html',locals())
 
 #重置密码
-def findcodetwo(request):
+def findcodetwo(request , uid = 0 ):
+    #当前用户为
+    curuser = User.objects.get(pk=int(uid))
 
-    # if request.method == "POST":
-    #     a = 1
+    if request.method == "POST":
+        print(request.POST,'修改密码第二层设置密码')
+        newcode = request.POST.get("UsPwd")
+        confignewcode = request.POST.get("UsPwd2")
+        print(newcode,'第一次的密码设置',confignewcode,'<++++++第二次的密码设置')
+        if newcode == confignewcode:
+            print('进入了修改密码if')
+            curuser.set_password(newcode)
+            curuser.save()
+            print('修改成功')
+            return render(request, 'app/findcode3.html', locals())
+        else:
+            error = '两次输入的密码不一致'
     return render(request, 'app/findcode2.html', locals())
 #密码重置成功的跳转
 def findcodesan(request):
@@ -180,7 +194,7 @@ def makeorder(request,rid):#rid 是房间类型
         order_room_ids = ""
         for i in range(int(order_room_num)):
             room = Room.objects.filter(typeid=rid).filter(room_status=2).first()
-            room.room_status = 1
+            room.room_status = 0
             order_room_ids = order_room_ids +str(room.id) +","
             room.save()
             print(room.id,'空闲房间的id')

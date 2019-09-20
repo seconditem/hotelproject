@@ -9,7 +9,7 @@
 {% endblock %}
 {% block contents %}
 <link href="../../static/css/forgetpass.css" rel="stylesheet">
-<form action="" method="post">
+<form action="{% url 'app:findcodetwo' uid %}" method="post">
 {% csrf_token %}
     <div class="wrapper grid-950">
         <h4 class="fp-title mt50">找回密码</h4>
@@ -31,9 +31,9 @@
                 <div class="fwSpan fwSpan2">
                     <label class="tit">确认密码</label>
                     <input class="i_text_f" id="UsPwd2" name="UsPwd2" type="password">
-
+                    <span>{{ error }}</span>
                 </div>
-                 <a id="dregister" href="{% url 'app:findcodesan' %}" class="fp-btn">下一步</a>
+                 <input type="submit" value="下一步" class="fp-btn" >
             </div>
         </div>
     </div>
