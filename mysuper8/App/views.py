@@ -2,13 +2,16 @@ import datetime
 from datetime import datetime
 from random import randint
 
+from alipay import AliPay
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 
 # Create your views here.
 from django.urls import reverse
+from rest_framework.decorators import api_view
+
 
 from App.forms import RegisterForm
 from App.models import *
@@ -231,20 +234,21 @@ def confirmorder(request,id):
     order.save()
     order.check_in_time = str(order.check_in_time).split(' ')[0]
     order.check_out_time = str(order.check_out_time).split(' ')[0]
-
+    order = Order.objects.get(pk=id)
+    print(order.order_room_num,'《《《《《《《《《《《《房间数',order.price,'《《《《《《总价',days,'《《《《《《《《《《《天数')
     print(order.room.desc,'方形')
     return render(request,'app/confirmorder.html',locals())
 
 
 
-
+#手机验证码
 def phoneyzm(request,*args,**kwargs):
     data = dict(request.GET)
     phnumber = data['phonenum'][0]
     print(data,'88888000888888888')
     print(phnumber,'前台的输入手机号')
-
     num = str(randint(10000, 1000000))
+    print('------------------------',num)
     res = send_sms(phnumber, {'number': num})
     #写入session
     request.session['code1'] = num
@@ -252,8 +256,33 @@ def phoneyzm(request,*args,**kwargs):
 
     return HttpResponse(res,'image/png')
 
-
-
 #我的订单
 def myorderdetail(request):
     return render(request,'app/myorderdetail.html')
+
+#支付宝付款
+def alipay(request ,orderid):
+    order = Order.objects.get(id = int(orderid))
+    #生成支付对象
+    alipay = AliPay(
+        appid=settings.APPID,
+        # 默认回调url
+        app_notify_url=None,
+        app_private_key_string=settings.APP_PRIVATE_KEY,
+        # 支付宝的公钥，验证支付宝回传消息使用，不是你自己的公钥,
+        alipay_public_key_string=settings.ALIPAY_PUBLIC_KEY,
+        sign_type="RSA2",  # RSA 或者 RSA2
+        debug = False  # 默认False
+    )
+    trademun = str(randint(10000, 1000000))+str(randint(10000, 1000000))
+    order_string = alipay.api_alipay_trade_page_pay(
+        out_trade_no=trademun,
+        total_amount=float(order.price),
+        subject='黑八酒店',
+        return_url="http://127.0.0.1:8000/",
+      #  notify_url="http://127.0.0.1:8000/callback/"  # 可选, 不填则使用默认notify url
+    )
+    print(order_string)
+    url = "https://openapi.alipaydev.com/gateway.do?"+order_string
+    return HttpResponseRedirect(url)
+

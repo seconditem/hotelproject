@@ -46,7 +46,9 @@ urlpatterns = [
     #确认订单
     url(r'^confirmorder/(\d+)/$',views.confirmorder,name='confirmorder'),
     #我的订单
-    url(r'^myorderdetail/$',views.myorderdetail,name='myorderdetail')
+    url(r'^myorderdetail/$',views.myorderdetail,name='myorderdetail'),
+    #支付宝付款
+    url(r'^alipay/(\d+)/$',views.alipay,name='alipay'),
 
 
 
