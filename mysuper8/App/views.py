@@ -5,6 +5,7 @@ from random import randint
 from alipay import AliPay
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 
@@ -187,9 +188,14 @@ def findcodesan(request):
 
 
 
-def hoteldetail(request):
+def hoteldetail(request,page=1):
     roomstyles = RoomStyle.objects.all()
     reflexs = Reflex.objects.order_by('-id')
+    pagination = Paginator(reflexs, 3)
+    page = pagination.page(page)
+    data= page.object_list
+    # 当前⻚页的数据(列列表)
+    page_range= pagination.page_range # ⻚页码范围
 
     return render(request, 'app/hoteldetail.html', locals())
 
