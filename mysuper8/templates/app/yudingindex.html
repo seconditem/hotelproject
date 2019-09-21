@@ -13,18 +13,18 @@
     <meta http-equiv="pragma" content="no-cache">
 
     <script charset="UTF-8" src="{% static 'js/uba.min.js' %}"></script>
-    <script charset="UTF-8" src="../../static/js/QiMoIMSDK.js"></script>
-    <script src="../../static/js/push.js"></script>
-    <script src="../../static/js/hm.js"></script>
-    <script src="../../static/js/gomobile.js"></script>
-    <link rel="stylesheet" href="../../static/css/base.css">
-    <link rel="stylesheet" href="../../static/css/2015q2.css">
-    <link rel="stylesheet" href="../../static/css/popAd.css">
-    <link rel="stylesheet" href="../../static/css/homeAd.css">
-    <script src="../../static/js/arounddata.js" charset="utf8"></script>
-    <script src="../../static/js/citydata.js"></script>
-    <script src="../../static/js/hoteldata.js"></script>
-    <script src="../../static/js/baseJS"></script>
+    <script charset="UTF-8" src="{% static 'js/QiMoIMSDK.js' %}"></script>
+    <script src="{% static 'js/push.js' %}"></script>
+    <script src="{% static 'js/hm.js' %}"></script>
+    <script src="{%  static 'js/gomobile.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/2015q2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/popAd.css' %}">
+    <link rel="stylesheet" href="{% static 'css/homeAd.css' %}">
+    <script src="{% static 'js/arounddata.js' %}" charset="utf8"></script>
+    <script src="{% static 'js/citydata.js' %}"></script>
+    <script src="{% static 'js/hoteldata.js' %}"></script>
+    <script src="{% static 'js/baseJ' %}S"></script>
     {% block scripts %}
     {% endblock %}
     <script>
@@ -67,8 +67,8 @@
         })();
     </script>
     <!-- 百度收录 -->
-    <link type="text/css" rel="stylesheet" href="../../static/css/chatStyle.css">
-    <link type="text/css" rel="stylesheet" href="/static/css/yudingindex.css">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/chatStyle.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/yudingindex.css'  %}">
 </head>
 {% endblock heads %}
 {% block scriptone %}
@@ -77,7 +77,7 @@
 {% endblock %}
 <body class="page-login">
 
-<link href="../../static/css/login.css" rel="stylesheet">
+<link href="{% static 'css/login.css' %}" rel="stylesheet">
 
 
 <script type="text/javascript">
@@ -103,7 +103,7 @@
 <div id="mask"></div>
 <div class="top_head">
     <div class=" top_head_left">
-        <img src="../../static/images/slogan.png" width="382" height="26">
+        <img src="{% static 'images/slogan.png' %}" width="382" height="26">
     </div>
 
     <div class="top-head-400">预订热线 40018-40018</div>
@@ -112,7 +112,7 @@
         <a href="http://www.super8.com.cn/activity/iSuper8" class="pop-bottom" target="_blank">速8酒店手机版 &gt;</a>
     </div>
     <div class="top_logo">
-        <img src="../../static/images/top_logo.png" width="52" height="80">
+        <img src="{% static 'images/top_logo.png' %}" width="52" height="80">
     </div>
 </div>
 <div class="top_menu">
@@ -141,20 +141,20 @@
     </div>
 </div>
 {% block myorderdetail %}
-<script src="../../static/js/HeardInfo.js"></script>
+<script src="{% static 'js/HeardInfo.js' %}"></script>
 
 
-<link href="../../static/css/hotel-detail.css" rel="stylesheet">
-<link href="../../static/css/hotel-search.css" rel="stylesheet">
-<script src="../../static/js/baidu.js"></script>
-<script type="text/javascript" src="../../static/scripts/getscript"></script>
-<script src="../../static/js/jquery.livequery.min.js"></script>
+<link href="{% static 'css/hotel-detail.css' %}" rel="stylesheet">
+<link href="{% static 'css/hotel-search.css'  %}" rel="stylesheet">
+<script src="{% static 'js/baidu.js' %}"></script>
+<script type="text/javascript" src="{% static 'scripts/getscript' %}"></script>
+<script src="{% static 'js/jquery.livequery.min.js' %}"></script>
 <input type="hidden" id="hidmemflag">
 <div class="grid-1000B wrapper clearfix">
 
 
 
-    <link rel="stylesheet" href="../../static/css/hotel-search(1).css">
+    <link rel="stylesheet" href="{% static 'css/hotel-search(1).css' %}">
 
 
     {% block headone %}
@@ -266,7 +266,7 @@
                                                                                                       style="color: red; bottom: 0px;"></span>直线距离<span
                                             style="color: red">0</span>公里</p>
                                     <div class="hotel-icons">
-                                        <img title="24小时热水" src="../../static/images/icon-new-hotwater.png"
+                                        <img title="24小时热水" src="{% static 'images/icon-new-hotwater.png' %}"
                                              alt="24小时热水">
                                     </div>
                                 </div>
@@ -286,7 +286,7 @@
                                         $HotelList.PPAddPic('#arrdata.RoomPic#')$<!--[CDATA[--><!--]]〉-->
                                         <h3 class="room-name">
                                             <span class="room-tit">#arrdata.RmTypeName#</span>
-                                            <img src="../../static/images/icon-sale-6.png" class="icon-sale-6">
+                                            <img src="{% static 'images/icon-sale-6.png' %}" class="icon-sale-6">
                                             <span class="cheapest-return">返券2元</span>
                                         </h3>
                                         <!--[CDATA[-->
@@ -600,8 +600,8 @@
 
 <input type="hidden" data-id="hid_select" value="1">
 <input type="hidden" id="hid_newsearch" value="0">
-<script src="../../static/js/List.js"></script>
-<script src="../../static/js/showup.js"></script>
+<script src="{% static 'js/List.js' %}"></script>
+<script src="{% static 'js/showup.js' %}"></script>
 <div class="footer">
     <div class="k_link">
         <div>
@@ -618,7 +618,7 @@
         </div>
         <div>
             <h3>
-                <img src="../../static/images/f_icon_hy.png" width="32" height="32">会员服务</h3>
+                <img src="{% static 'images/f_icon_hy.png' %}" width="32" height="32">会员服务</h3>
             <ul>
                 <li><a href="http://www.super8.com.cn/News/42001.html">成为速8会员</a></li>
                 <li><a href="http://www.super8.com.cn/News/42017.html">会员等级和权益</a></li>
@@ -628,7 +628,7 @@
         </div>
         <div>
             <h3>
-                <img src="../../static/images/f_icon_zf.png" width="32" height="32">支付方式</h3>
+                <img src="{% static 'images/f_icon_zf.png' %}" width="32" height="32">支付方式</h3>
             <ul>
                 <li><a href="http://www.super8.com.cn/News/42019.html">前台付款</a></li>
                 <li><a href="http://www.super8.com.cn/News/42021.html">网上预付房费</a></li>
@@ -638,7 +638,7 @@
         </div>
         <div class="nofl">
             <h3>
-                <img src="../../static/images/f_icon_jm.png" width="32" height="32">酒店加盟</h3>
+                <img src="{% static 'images/f_icon_jm.png' %}" width="32" height="32">酒店加盟</h3>
             <ul>
                 <li><a href="http://www.super8.com.cn/News/40282.html">合作方式</a></li>
                 <li><a href="http://www.super8.com.cn/Article/Investment">招商会信息</a></li>
@@ -692,7 +692,7 @@
 <script type="text/javascript">
     var qimoClientId = {userId: '', nickName: ""};// 自定义用户的唯一id,由英文字母,数字,下划线组成
 </script>
-<script type="text/javascript" src="../../static/js/7moorInit.js" async="async">
+<script type="text/javascript" src="{% static 'js/7moorInit.js' %}" async="async">
 </script>
 
 </body>

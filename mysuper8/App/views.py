@@ -222,8 +222,8 @@ def makeorder(request,rid):#rid 是房间类型
                              check_in_time=cheak_in,check_out_time=cheak_out,
                              price=tolprice,phone=ContactMobile,order_room_ids = order_room_ids)
         order = Order.objects.all().last()
-        #更改房间状态
-        order.order_status = 0
+        #更改订单状态
+        order.order_status = 4
         order.save()
 
         return redirect(reverse('app:confirmorder', args=[order.id]))
@@ -245,6 +245,8 @@ def confirmorder(request,id):
     print(order.order_room_num,'《《《《《《《《《《《《房间数',order.price,'《《《《《《总价',days,'《《《《《《《《《《《天数')
     print(order.room.desc,'方形')
     return render(request,'app/confirmorder.html',locals())
+
+
 
 #手机验证码
 def phoneyzm(request,*args,**kwargs):
@@ -269,10 +271,14 @@ def myorderdetail(request):
     #筛选已预订，未入住0
     if myorder == '1':
         myorderdetails = Order.objects.filter(user_id=uid).filter(order_status=0)
+    #待付款，以下为已预订但未付款
+    elif myorder == '2':
+        myorderdetails = Order.objects.filter(user_id=uid).filter(order_status=4)
     #待评价，必须是已入住订单1才可以评价
     elif myorder == '3':
 
         myorderdetails = Order.objects.filter(user_id=uid).filter(order_status=1)
+    #取消订单
     else:
         myorderdetails = Order.objects.filter(user_id=uid)
 
@@ -324,7 +330,6 @@ def alipay(request ,orderid):
         # return_url="http://127.0.0.1:8000/",
       #  notify_url="http://127.0.0.1:8000/callback/"  # 可选, 不填则使用默认notify url
     )
-    print()
     print(order_string)
     url = "https://openapi.alipaydev.com/gateway.do?"+order_string
     return HttpResponseRedirect(url)

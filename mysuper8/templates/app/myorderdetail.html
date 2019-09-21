@@ -108,18 +108,9 @@
 
                         <td>
                             {% if myorderdetail.order_status == 0 %}
-                                <a class="link"   onClick="return ConfirmDel();" >
-                                    取消订单</a>
+                                <a class="link" href="{% url 'app:myorderdetail' %}?myorder={{ myorderdetail.id }}"
+                                   onclick="return confirm('确定要取消订单吗');">取消订单</a>
 
-                                <script language=javascript>
-                                function ConfirmDel()
-                                {
-                                   if(confirm("确定要取消订单吗"))
-                                     return true;
-                                   else
-                                     return false;
-                                }
-                                </script>
                             {% elif  myorderdetail.order_status == 1 %}
                                 <a class="link" href="{% url 'app:yuding' %}">再次预订</a>
                             {% else %}
