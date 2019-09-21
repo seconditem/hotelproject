@@ -24,17 +24,36 @@ from tools.verifycode import VerifyCode
 
 #首页
 def yuding(request,order = 0):
+    #评论的个数
+    reflexsnum = Reflex.objects.all().count()
+    #这里的order不是订单，是排序传的参数
     order = int(order)
     rooms = RoomStyle.objects.all()
+    #将官网价格放进一个列表里
+    webprices = []
     #将空闲房间数量写进roomstyle表里
     for roomstyle in rooms:
         roomstyle.num = Room.objects.filter(typeid=roomstyle.id).filter(room_status=2).count()
+        if roomstyle.num != 0:
+            webprices.append(roomstyle.webprice)
+
+
         roomstyle.save()
-    if request.method == 'POST':
+
+    #找出当前可用房间官网价最低的一类房间
+    priceless = '价格无从说起'
+    if webprices :
+        priceless = min(webprices)
+
+
     #房间排序选择
-        if order == 1 : # 1 代表给出官网价格价格最低的可用房间
-            roomstyles = RoomStyle.objects.ordered()
-            print(roomstyles,'按价格排序')
+    order = int(order)
+    if order == 1 : # 1 代表给出官网价格排序
+        print('进入了价格筛选')
+        roomstyles = RoomStyle.objects.order_by("webprice")
+        print(roomstyles,'按价格排序')
+        return render(request, 'app/yudingindex.html', locals())
+
     roomstyles = RoomStyle.objects.all() #所有房间展示
     return render(request,'app/yudingindex.html',locals())
 
@@ -170,7 +189,8 @@ def findcodesan(request):
 
 def hoteldetail(request):
     roomstyles = RoomStyle.objects.all()
-    reflexs = Reflex.objects.all()
+    reflexs = Reflex.objects.order_by('-id')
+
     return render(request, 'app/hoteldetail.html', locals())
 
 
@@ -200,7 +220,7 @@ def makeorder(request,rid):#rid 是房间类型
         order_room_ids = ""
         for i in range(int(order_room_num)):
             room = Room.objects.filter(typeid=rid).filter(room_status=2).first()
-            room.room_status = 1
+            room.room_status = 0
             order_room_ids = order_room_ids +str(room.id) +","
             room.save()
             print(room.id,'空闲房间的id')
@@ -211,8 +231,10 @@ def makeorder(request,rid):#rid 是房间类型
         last_intime = request.POST.get("last_time")
         ContactMobile = request.POST.get('ContactMobile')
         curroomstyle = RoomStyle.objects.get(pk=rid)
-        print(curroomstyle.webprice,'看看这里是不是800？')
-        tolprice = roomstyle.webprice * int(order_room_num)
+        if curuser.usertype == 0:
+            tolprice = roomstyle.webprice * int(order_room_num)
+        else:
+            tolprice = roomstyle.huiyuanprice * int(order_room_num)
         print(rid, '21111111')
         user_id= request.user.uid
         desc = roomstyle.desc
@@ -235,7 +257,8 @@ def confirmorder(request,id):
     order = Order.objects.get(pk=id)
     #计算天数
     days = order.check_out_time - order.check_in_time
-    days = int(str(days)[0])
+    print(days,'时间差')
+    days = int(str(days).split(' ')[0])
     print(days,'天数')
     order.price = int(order.price)*days
     order.save()

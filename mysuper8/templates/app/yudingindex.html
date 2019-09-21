@@ -125,7 +125,7 @@
 
 
     {% if user.is_authenticated %}
-        <em class="mys8-menu"><a href="{% url 'app:myorderdetail' %}" id="dlogin">刘荣帅&nbsp;|&nbsp;{{ request.user.username }}</a>
+        <em class="mys8-menu"><a href="{% url 'app:myorderdetail' %}" id="dlogin">已登录&nbsp;|&nbsp;{{ request.user.username }}</a>
         <span>
             <a href="{% url 'app:myorderdetail' %}"  class="mys8-menu ">我的速8</a>
         </span>
@@ -201,14 +201,15 @@
     <input type="hidden" id="hid_brand">
 
     <input type="hidden" name="name" id="AmMinus" value="0">
-         <form action="{% url 'app:yuding' %}">
+         <form action="{% url 'app:yuding' %}" method="post">
+         {% csrf_token %}
     <div class="search-sort mt25">
         <span class="item-name">选择排序：</span>
 
         <ul class="item-sort" data-id="itemsort">
             <li class="current"><a href="{% url 'app:yuding' %}" data-code="1">推荐↑</a></li>
             <li><a href="{% url 'app:yuding' 1 %}" data-code="2">按价格</a></li>
-            <li><a href="{% url 'app:yuding' 2 %}" data-code="3">按好评率</a></li>
+{#            <li><a href="{% url 'app:yuding' 2 %}" data-code="3">按好评率</a></li>#}
         </ul>
     </div>
          </form>
@@ -237,13 +238,13 @@
                                 <dl class="score">
                                     <dt class="price" data-priceid="price">
                                         ￥
-                                        <b data-id="price">318</b>元
+                                        <b data-id="price">{{ priceless }}</b>元
                                         <em>起</em>
                                     </dt>
                                     <a href="http://www.super8.com.cn/Hotel/Detail/4054#hotel-commentTop"
                                        target="_blank">
-                                        <dt><span><b>75</b>% </span>好评率</dt>
-                                        <dd><em class="red">12</em>点评</dd>
+{#                                        <dt><span><b>75</b>% </span>好评率</dt>#}
+                                        <dd><em class="red">{{reflexsnum}}</em>点评</dd>
                                     </a>
                                     <dd><a href="http://www.super8.com.cn/Hotel/Detail/4054#hotel-commentTop"
                                            target="_blank">

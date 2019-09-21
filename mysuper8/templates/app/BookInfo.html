@@ -73,7 +73,7 @@
 
                         <label class="col-name"><em class="red">*</em>&nbsp;入住人：</label>
                         <div class="col-item">
-                            <input class="text w2" data-check="Null;ChcOrLetter;" data-id="checktxt" id="GstsName" name="GstsName" type="text" value="刘荣帅" />
+                            <input class="text w2" data-check="Null;ChcOrLetter;" data-id="checktxt" id="GstsName" name="GstsName" type="text" value="{{ request.user }}" />
                             <span class="tip">请填写身份证上的姓名</span>
                         </div>
                     </div>
@@ -129,7 +129,7 @@
                     <div class="form-group">
                         <label class="col-name"><em class="red">*</em> 联系电话：</label>
                         <div class="col-item">
-                    <input Value="18725882067" class="text w2" data-check="Null;Phone;"
+                    <input Value="{{request.user.phone}}" class="text w2" data-check="Null;Phone;"
                            data-id="checktxt" id="ContactMobile" name="ContactMobile" type="text" value="" />
                         </div>
                     </div>
@@ -153,7 +153,7 @@
 
                     <div class="pay-button">
 
-                        <p>应付金额 <em class="red">￥<span data-id="payable">
+                        <p>应付单价金额 <em class="red">￥<span data-id="payable">
                             {% if request.user.usertype == 1 %}
                                 {{ roomstyle.huiyuanprice }}
                             {% else %}

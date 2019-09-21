@@ -451,7 +451,7 @@
                         <!--]]〉-->
                         <div class="item-comment" data-id="itemcomment" data-data="3284616">
                             <div class="col-user">
-                               {{ request.user.phone | slice:":3"}}****{{ request.user.phone | slice:"7:"}}
+                               {{ reflex.order.user_id.phone | slice:":3"}}****{{ reflex.order.user_id.phone | slice:"7:"}}
                                <span class="time">{{ reflex.create_time | date }}</span>
                             </div>
                             <div class="col-content">
