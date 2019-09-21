@@ -50,6 +50,4 @@ urlpatterns = [
     #支付宝付款
     url(r'^alipay/(\d+)/$',views.alipay,name='alipay'),
 
-
-
 ]

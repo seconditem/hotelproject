@@ -177,6 +177,9 @@ def hoteldetail(request):
 #预订订单
 @login_required(login_url='/loginym/')
 def makeorder(request,rid):#rid 是房间类型
+    #当前用户
+    curuser = request.user
+    print(curuser,curuser.usertype,'当前登录用户')
     print(rid,'11111111')
     #该类型剩余的数量
     roomcount = Room.objects.filter(typeid=rid).filter(room_status=2).count()
@@ -197,7 +200,7 @@ def makeorder(request,rid):#rid 是房间类型
         order_room_ids = ""
         for i in range(int(order_room_num)):
             room = Room.objects.filter(typeid=rid).filter(room_status=2).first()
-            room.room_status = 0
+            room.room_status = 4
             order_room_ids = order_room_ids +str(room.id) +","
             room.save()
             print(room.id,'空闲房间的id')
