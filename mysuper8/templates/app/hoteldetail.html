@@ -2,7 +2,13 @@
 {% load static %}
 
 {% block contents %}
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <div class="g2">
         <div class="subject-img">
             <div class="img-big" id="slider-img-big">
@@ -106,7 +112,8 @@
                 <ul data-id="refdetail">
                     <li class=""><a href="#fangjia" rel="#hotel-price">房价</a></li>
                     <li class="current"><a href="#hotel_detail" rel="#hotel-detail">酒店信息</a></li>
-                    <li><a href="#pingjia" rel="#hotel-commentTop">住客评价 <small>（累计评价<span data-id="commcount">{{ reflexs | length }}</span>条）</small></a>
+                    <li><a href="#pingjia" rel="#hotel-commentTop">住客评价 <small>
+                        （累计评价<span data-id="commcount">{{ reflexs | length }}</span>条）</small></a>
                     </li>
                 </ul>
             </div>
@@ -446,7 +453,7 @@
             <div data-id="g2" class="comment-content mt20">
 
                 <div data-bind="containercomment">
-                    {% for reflex in reflexs %}
+                    {% for reflex in data %}
                     <div data-bind="repetercomment" style="">
                         <!--]]〉-->
                         <div class="item-comment" data-id="itemcomment" data-data="3284616">
@@ -474,11 +481,48 @@
                     {% endfor %}
                     <!--]]〉-->
                 </div>
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        {% if page.has_previous %}
+                            <li>
+                                <a href="{% url 'app:hoteldetail' page.number|add:'-1' %}" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;
+                                </span>
+                                </a>
+                            </li>
+                        {% else %}
+                            <li class="disabled"><span href="{% url 'app:hoteldetail' page.number|add:'-1' %}" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;
+                                </span>
+                                </span>
+                            </li>
+                        {% endif %}
+                        {% for num in page_range %}
+                            {% ifequal num page.number %}
+                                <li class="active"><a href="{% url 'app:hoteldetail' num %}#pingjia">{{ num }}</a></li>
+                            {% else %}
+                                <li><a href="{% url 'app:hoteldetail' num %}#pingjia">{{ num }}</a></li>
+                            {% endifequal %}
+                        {% endfor %}
 
-                <div class="pager" id="comment-pager"><a href="javascript:void(0);" class="current">1</a><a
-                        href="javascript:void(0);">2</a><a href="javascript:void(0);">3</a>
-                    <a href="javascript:void(0);"class="next unclick">下一页</a>
-                </div>
+                        {% if page.has_next %}
+                            <li>
+                                <a href="{% url 'app:hoteldetail' page.number|add:'1' %}" aria-label="Next">
+                                <span aria-hidden="true">&raquo;
+                                </span>
+                                </a>
+                            </li>
+                        {% else %}
+                            <li class="disabled">
+                                    <span href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;
+                                    </span>
+                                    </span>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+
             </div>
         </div>
         <script src="/static/js/HotelComment.js"></script>
