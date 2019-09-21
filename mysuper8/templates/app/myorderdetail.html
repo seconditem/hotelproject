@@ -96,23 +96,30 @@
                         {% elif  myorderdetail.order_status == 3 %}
                             <td>已入住</td>
                             <td>已评价</td>
-                        {% elif  myorderdetail.order_status == 2 %}
-                            <td>已取消，失效
+{#                        {% elif  myorderdetail.order_status == 2 %}#}
+{#                            <td>已取消，失效#}
+{#                            </td>#}
+{#                            <td></td>#}
+                        {% elif  myorderdetail.order_status == 4 %}
+                            <td>已预订
                             </td>
                             <td></td>
                         {% else %}
-                            <td>取消订单</td>
+                            <td>已取消，失效</td>
                             <td></td>
                         {% endif %}
 
 
                         <td>
                             {% if myorderdetail.order_status == 0 %}
-                                <a class="link" href="{% url 'app:myorderdetail' %}?myorder={{ myorderdetail.id }}"
+                                <a class="link" href="{% url 'app:myorderdetail' myorderdetail.id  %}?myorder=44"
                                    onclick="return confirm('确定要取消订单吗');">取消订单</a>
+                            {% elif  myorderdetail.order_status == 4 %}
+                                <a class="link" href="{% url 'app:myorderdetail' myorderdetail.id  %}?myorder=44"
+                                   onclick="return confirm('确定要取消订单吗');">取消订单</a>
+                                <a class="link" href="{% url 'app:alipay'  myorderdetail.id %}"
+                                   class="btns btn-orange"  data-id="submit" id="tj">去付款</a>
 
-                            {% elif  myorderdetail.order_status == 1 %}
-                                <a class="link" href="{% url 'app:yuding' %}">再次预订</a>
                             {% else %}
                                 <a class="link" href="{% url 'app:yuding' %}">再次预订</a>
                             {% endif %}

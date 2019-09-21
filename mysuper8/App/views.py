@@ -170,7 +170,7 @@ def findcodesan(request):
 
 def hoteldetail(request):
     roomstyles = RoomStyle.objects.all()
-    reflexs = Reflex.objects.all()
+    reflexs = Reflex.objects.order_by('-id')
     return render(request, 'app/hoteldetail.html', locals())
 
 
@@ -200,20 +200,16 @@ def makeorder(request,rid):#rid 是房间类型
         order_room_ids = ""
         for i in range(int(order_room_num)):
             room = Room.objects.filter(typeid=rid).filter(room_status=2).first()
-            room.room_status = 1
+            room.room_status = 0
             order_room_ids = order_room_ids +str(room.id) +","
             room.save()
-            print(room.id,'空闲房间的id')
-            print(i,'次数')
 
-        print('00000o0o0o0o0o0o0o0',order_room_ids,'idididididididididissssss')
-        print(order_room_num,'房间数')
         last_intime = request.POST.get("last_time")
         ContactMobile = request.POST.get('ContactMobile')
         curroomstyle = RoomStyle.objects.get(pk=rid)
-        print(curroomstyle.webprice,'看看这里是不是800？')
+
         tolprice = roomstyle.webprice * int(order_room_num)
-        print(rid, '21111111')
+
         user_id= request.user.uid
         desc = roomstyle.desc
         Order.objects.create(user_id_id=user_id,username=username,
@@ -264,7 +260,11 @@ def phoneyzm(request,*args,**kwargs):
     return HttpResponse(res,'image/png')
 
 #我的订单
-def myorderdetail(request):
+def myorderdetail(request,*args):
+
+    if args:
+        removeorder_id = int(args[0])
+        print(type(removeorder_id), '说你呢')
     myorder=request.GET.get('myorder')
 
     uid = request.user.uid
@@ -279,6 +279,23 @@ def myorderdetail(request):
 
         myorderdetails = Order.objects.filter(user_id=uid).filter(order_status=1)
     #取消订单
+    elif myorder == '44':
+        print('myorder',myorder)
+        #要取消的订单
+        removeorder = Order.objects.get(pk=removeorder_id)
+        print(removeorder.order_room_ids,'00000')
+        removeorder.order_status = 2
+        removeorder.save()
+        removeorder = removeorder.order_room_ids.split(',')
+        print(removeorder)
+        for i in removeorder:
+            if i:
+                print(i,type(i))
+                print(int(i), type(int(i)))
+                room = Room.objects.get(pk=int(i))
+                room.room_status = 2
+                room.save()
+        myorderdetails = Order.objects.filter(user_id=uid)
     else:
         myorderdetails = Order.objects.filter(user_id=uid)
 

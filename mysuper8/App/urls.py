@@ -47,6 +47,8 @@ urlpatterns = [
     url(r'^confirmorder/(\d+)/$',views.confirmorder,name='confirmorder'),
     #我的订单
     url(r'^myorderdetail/$',views.myorderdetail,name='myorderdetail'),
+    #取消订单的路由
+    url(r'^myorderdetail/(\d+)/$',views.myorderdetail,name='myorderdetail'),
     #支付宝付款
     url(r'^alipay/(\d+)/$',views.alipay,name='alipay'),
     #酒店评价
