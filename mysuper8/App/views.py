@@ -200,7 +200,7 @@ def makeorder(request,rid):#rid 是房间类型
         order_room_ids = ""
         for i in range(int(order_room_num)):
             room = Room.objects.filter(typeid=rid).filter(room_status=2).first()
-            room.room_status = 4
+            room.room_status = 1
             order_room_ids = order_room_ids +str(room.id) +","
             room.save()
             print(room.id,'空闲房间的id')
@@ -222,6 +222,10 @@ def makeorder(request,rid):#rid 是房间类型
                              check_in_time=cheak_in,check_out_time=cheak_out,
                              price=tolprice,phone=ContactMobile,order_room_ids = order_room_ids)
         order = Order.objects.all().last()
+        #更改房间状态
+        order.order_status = 0
+        order.save()
+
         return redirect(reverse('app:confirmorder', args=[order.id]))
 
     return render(request, 'app/BookInfo.html', locals())
@@ -241,8 +245,6 @@ def confirmorder(request,id):
     print(order.order_room_num,'《《《《《《《《《《《《房间数',order.price,'《《《《《《总价',days,'《《《《《《《《《《《天数')
     print(order.room.desc,'方形')
     return render(request,'app/confirmorder.html',locals())
-
-
 
 #手机验证码
 def phoneyzm(request,*args,**kwargs):
@@ -298,7 +300,6 @@ def hotelreflex(request):
         return redirect(reverse('app:myorderdetail'))
 
     return render(request,'app/hotelreflex.html',locals())
-    return render(request,'app/myorderdetail.html')
 
 #支付宝付款
 def alipay(request ,orderid):
@@ -319,10 +320,26 @@ def alipay(request ,orderid):
         out_trade_no=trademun,
         total_amount=float(order.price),
         subject='黑八酒店',
-        return_url="http://127.0.0.1:8000/",
+        return_url="http://127.0.0.1:8000/finishpay/?" +"orderid=" + str(order.id) ,
+        # return_url="http://127.0.0.1:8000/",
       #  notify_url="http://127.0.0.1:8000/callback/"  # 可选, 不填则使用默认notify url
     )
+    print()
     print(order_string)
     url = "https://openapi.alipaydev.com/gateway.do?"+order_string
     return HttpResponseRedirect(url)
 
+
+def finishpay(request):
+    print('进了finish函数')
+    orderid = request.GET.get("orderid")
+    print (request.user.uid,'当前用户的id')
+    curorder = Order.objects.get(pk=int(orderid))
+    curorder.order_status = 0
+    curorder.save()
+    print(curorder.id,"当前订单的id")
+    curorder.order_status = 0
+    curorder.save()
+    print('状态修改完毕')
+
+    return redirect(reverse('app:myorderdetail'))

@@ -51,5 +51,7 @@ urlpatterns = [
     url(r'^alipay/(\d+)/$',views.alipay,name='alipay'),
     #酒店评价
     url(r'^hotelreflex/$',views.hotelreflex,name='hotelreflex'),
+    #预定付款成功后修改订单状态
+    url(r'^finishpay/$',views.finishpay,name='finishpay'),
 
 ]
