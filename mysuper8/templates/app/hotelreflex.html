@@ -1,0 +1,102 @@
+{% extends 'app/yudingindex.html' %}
+
+{% block contents %}
+    <link href="/static/css/user.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/static/css/v-user.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/static/css/jquery.mloading.css" rel="stylesheet" />
+<script src="/static/js/UC/HeardInfo.js?ver=201909011001"></script>
+<link href="/static/css/login.css" rel="stylesheet" />
+    <link href="/static/css/base.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="/static/css/popAd.css?ver=201909011001" />
+    <script src="/static/js/baseJS?v=2qafpHAwSduJFaq_uFhkO9xidX7DPB-YLKUCS3_BzhE1"></script>
+
+    <script src="/static/js/baidust.js"></script>
+<!--填写点评-->
+     <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .comment {
+            font-size: 40px;
+            color: #fff536;
+        }
+
+        .comment li {
+            float: left;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style: none;
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/1.8.0/jquery-1.8.0.min.js"></script>
+    <script>
+        $(function () {
+            var wjx_none = '☆';
+            var wjx_sel = '★';
+
+            //鼠标放上去当前的li和之前所有的li内容全部变为实心五角星，移开变为空心。
+            $(".comment li").on("mouseenter",function () {
+                $(this).text(wjx_sel).prevAll("li").text(wjx_sel).end().nextAll("li").text(wjx_none);
+            });
+            $(".comment li").on("mouseleave",function () {
+                if($("li.current").length === 0){
+                    $(".current").text(wjx_none);
+                }else {
+                    $("li.current").text(wjx_sel).prevAll("li").text(wjx_sel).end().nextAll("li").text(wjx_none);
+                }
+            });
+            //鼠标点击那个li，当你前li和之前所有的li都变成实心五角星，其他变为空心。
+            $(".comment li").on("click",function () {
+                $(this).attr("class","current").siblings("li").removeAttr("class");
+            })
+        });
+    </script>
+
+<form action="" method="post">
+{% csrf_token %}
+<div class="popup comment-write-pop"  id="comment-write-pop" >
+
+	<div class="close"><a href="javascript:void(0)" onClick="closeWindow('comment-write-pop');">
+        <img src="/static/images/close-icon.gif" /></a>
+    </div>
+    <div class="titleBar">
+    	<h3>酒店点评</h3>
+        <div id="error4" style="color: #FF0000">必须选择！</div>
+        <br>
+         <table>
+            <tr style="font-size: 12px"> &nbsp;
+                吐槽  &nbsp;&nbsp; &nbsp;&nbsp;
+                差  &nbsp;&nbsp; &nbsp;&nbsp;
+                一般 &nbsp;&nbsp;
+                推荐 &nbsp;&nbsp;
+                强烈推荐
+            </tr>
+        </table>
+        <br>
+        <ul class="comment">
+            <li>☆</li>
+            <li>☆</li>
+            <li>☆</li>
+            <li>☆</li>
+            <li>☆</li>
+        </ul>
+    </div>
+
+
+    <br><br><br><br><br><br><h4>点评内容：</h4>
+    <div id="error2" style="color: #FF0000">请填写评价内容！</div>
+    <textarea id="pjtt" name="reflex"></textarea>
+    <div class="btm-btn">
+        <input type="submit" value="提交评价"style="background-color: #A90000;width: 130px;
+                                       height: 40px;font-size: 20px;color: #FFFFFF">
+        </div>
+    </div>
+</form>
+
+{% endblock  %}
+
+

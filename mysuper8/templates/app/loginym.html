@@ -21,8 +21,8 @@
                     {% csrf_token %}
                     <div class="form-group form-group-name">
                         <label class="ui-placeholder" for="input-name" node_type="key">
-                            <span class="placeholder-text" style="display: none;">手机号码</span>
-                            <input name="username" type="text" value="" placeholder="手机号码">
+                            <span class="placeholder-text" style="display: none;">用户名</span>
+                            <input name="username" type="text" value="" placeholder="用户名">
                         </label>
                         <input id="RefUrl" name="RefUrl" type="hidden" value="http://127.0.0.1:8000/">
                     </div>
@@ -64,7 +64,9 @@
 {#                        <button  type="submit" name="loginsubmit" value="true" >#}
 {#                            <strong><a href="{% url 'app:yuding' %}"></a>提交</strong>#}
 {#                        </button>#}
-                        <input type="submit" name="loginsubmit"  value="提交1">
+                        <input type="submit" name="loginsubmit"  value="骑马登录"
+                               style="background-color: #A90000;width: 90px;
+                                       height: 35px;font-size: 14px;color: #FFFFFF;margin: 0px auto 0px 100px" >
                     </div>
                 </form>
             </div>

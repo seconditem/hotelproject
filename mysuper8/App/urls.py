@@ -49,5 +49,7 @@ urlpatterns = [
     url(r'^myorderdetail/$',views.myorderdetail,name='myorderdetail'),
     #支付宝付款
     url(r'^alipay/(\d+)/$',views.alipay,name='alipay'),
+    #酒店评价
+    url(r'^hotelreflex/$',views.hotelreflex,name='hotelreflex'),
 
 ]

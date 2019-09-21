@@ -437,186 +437,51 @@
         </div>
         <a href="" name="pingjia"></a>
         <div class="section" id="hotel-commentTop">
-            <div class="title-bar">
-                <h3>住客评价<small>（累计评价<em class="red" data-id="commentcount">12</em>条）</small></h3>
-                <div class="item-score">
-                    <span class="score">75% <small>好评率</small></span>
-                    <a class="btn-comment" href="http://www.super8.com.cn/MemInfo/MemCusOrder"><em>我要点评</em></a>
-                </div>
-            </div>
 
-            <ul class="comment-tab" data-id="comment-tab">
-                <li class="current item-tab" data-type="0"><span>全部(12 条)</span></li>
-                <li class="item-tab" data-type="1"><span>网络评价(6 条)</span></li>
-                <li class="item-tab" data-type="2"><span>短信评价(6 条)</span></li>
-                <li class="fr">
-                    <a class="btn-comment-expand" href="javascript:void(0);" id="zpicon"></a>
-                </li>
-            </ul>
-            <input type="hidden" id="Cpid">
-            <div class="comment-content" id="HuiZong">
-                <table class="comment-table">
-                    <tbody>
-                    <tr>
-                        <th>综合评价</th>
-                        <th>最近1个月</th>
-                        <th>最近3个月</th>
-                        <th>最近6个月</th>
-                    </tr>
-                    <tr>
-                        <td>强烈推荐</td>
-                        <td>0</td>
-                        <td>3</td>
-                        <td>8</td>
-                    </tr>
-                    <tr>
-                        <td>很满意</td>
-                        <td>0</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>一般</td>
-                        <td>0</td>
-                        <td>1</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>差</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>吐槽</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    </tbody>
-                </table>
+            <div class="title-bar">
+                <h3>住客评价<small>（累计评价<em class="red" data-id="commentcount">{{ reflexs | length }}</em>条）</small></h3>
             </div>
+             <ul class="comment-tab" data-id="comment-tab">
+            </ul>
             <div data-id="g2" class="comment-content mt20">
-                <div data-id="loadgroups" style="text-align: center; display: none;">
-                    <img src="hoteldetail_files/list_loading.gif">
-                </div>
+
                 <div data-bind="containercomment">
-                    <span style="display: none">&nbsp;</span>
-                    <!--[CDATA[-->
+                    {% for reflex in reflexs %}
                     <div data-bind="repetercomment" style="">
                         <!--]]〉-->
                         <div class="item-comment" data-id="itemcomment" data-data="3284616">
                             <div class="col-user">
-                                158****1485
-
-                                <span class="time">2019-08-06</span>
+                               {{ request.user.phone | slice:":3"}}****{{ request.user.phone | slice:"7:"}}
+                               <span class="time">{{ reflex.create_time | date }}</span>
                             </div>
                             <div class="col-content">
-                                <div class="score">强烈推荐</div>
-                                <input type="hidden" name="name" data-id="itemhid"
-                                       value="#位置好# #服务赞# #卫生好# #硬件好# #性价比高# 很好">
-                                <span data-id="span">#位置好# #服务赞# #卫生好# #硬件好# #性价比高# 很好</span>
-
-
+                                {% if reflex.level == 4 %}
+                                    <div class="score">强烈推荐</div>
+                                {% elif reflex.level == 3%}
+                                    <div class="score">推荐</div>
+                                {% elif reflex.level == 2 %}
+                                    <div class="score">一般</div>
+                                {% elif reflex.level == 1 %}
+                                    <div class="score">差</div>
+                                {% else %}
+                                    <div class="score">吐槽</div>
+                                {% endif %}
+                                <span data-id="span">{{ reflex.content }}</span>
                             </div>
-                            <input type="hidden" data-id="hid_pageindex" value="1">
-                            <input type="hidden" data-id="hid_pages" value="3">
-                            <input type="hidden" data-id="hid_rscount" value="12">
-                        </div>
-                        <!--[CDATA[-->
-
-                        <!--]]〉-->
-                        <div class="item-comment" data-id="itemcomment" data-data="3283964">
-                            <div class="col-user">
-                                50*****37
-                                贵宾会员
-                                <span class="time">2019-08-02</span>
-                            </div>
-                            <div class="col-content">
-                                <div class="score">强烈推荐</div>
-                                <input type="hidden" name="name" data-id="itemhid"
-                                       value="#位置好# #服务赞# #卫生好# #硬件好# #性价比高# 很不错的选择">
-                                <span data-id="span">#位置好# #服务赞# #卫生好# #硬件好# #性价比高# 很不错的选择</span>
-
-
-                            </div>
-                            <input type="hidden" data-id="hid_pageindex" value="1">
-                            <input type="hidden" data-id="hid_pages" value="3">
-                            <input type="hidden" data-id="hid_rscount" value="12">
-                        </div>
-                        <!--[CDATA[-->
-
-                        <!--]]〉-->
-                        <div class="item-comment" data-id="itemcomment" data-data="3279438">
-                            <div class="col-user">
-                                159****8595
-
-                                <span class="time">2019-06-28</span>
-                            </div>
-                            <div class="col-content">
-                                <div class="score">一般</div>
-                                <input type="hidden" name="name" data-id="itemhid" value="#WIFI信号差# 网超极慢，隔音效果不好">
-                                <span data-id="span">#WIFI信号差# 网超极慢，隔音效果不好</span>
-
-
-                            </div>
-                            <input type="hidden" data-id="hid_pageindex" value="1">
-                            <input type="hidden" data-id="hid_pages" value="3">
-                            <input type="hidden" data-id="hid_rscount" value="12">
-                        </div>
-                        <!--[CDATA[-->
-
-                        <!--]]〉-->
-                        <div class="item-comment" data-id="itemcomment" data-data="3278882">
-                            <div class="col-user">
-                                73*****17
-                                超级会员
-                                <span class="time">2019-06-25</span>
-                            </div>
-                            <div class="col-content">
-                                <div class="score">强烈推荐</div>
-                                <input type="hidden" name="name" data-id="itemhid"
-                                       value="#服务赞# #卫生好# 不错不错不错不错不错不错不错不错不错不错不错不错">
-                                <span data-id="span">#服务赞# #卫生好# 不错不错不错不错不错不错不错不错不错不错不错不错</span>
-
-
-                            </div>
-                            <input type="hidden" data-id="hid_pageindex" value="1">
-                            <input type="hidden" data-id="hid_pages" value="3">
-                            <input type="hidden" data-id="hid_rscount" value="12">
-                        </div>
-                        <!--[CDATA[-->
-
-                        <!--]]〉-->
-                        <div class="item-comment" data-id="itemcomment" data-data="3278314">
-                            <div class="col-user">
-                                75*****98
-                                金卡会员
-                                <span class="time">2019-06-21</span>
-                            </div>
-                            <div class="col-content">
-                                <div class="score">很满意</div>
-                                <input type="hidden" name="name" data-id="itemhid" value="#位置好# #卫生好# 稍微窄了点、但还算过的去吧！">
-                                <span data-id="span">#位置好# #卫生好# 稍微窄了点、但还算过的去吧！</span>
-
-
-                            </div>
-                            <input type="hidden" data-id="hid_pageindex" value="1">
-                            <input type="hidden" data-id="hid_pages" value="3">
-                            <input type="hidden" data-id="hid_rscount" value="12">
                         </div>
                         <!--[CDATA[-->
                     </div>
+                    {% endfor %}
                     <!--]]〉-->
                 </div>
 
                 <div class="pager" id="comment-pager"><a href="javascript:void(0);" class="current">1</a><a
-                        href="javascript:void(0);">2</a><a href="javascript:void(0);">3</a><a href="javascript:void(0);"
-                                                                                              class="next unclick">下一页</a>
+                        href="javascript:void(0);">2</a><a href="javascript:void(0);">3</a>
+                    <a href="javascript:void(0);"class="next unclick">下一页</a>
                 </div>
             </div>
         </div>
-        <script src="../../static/js/HotelComment.js"></script>
+        <script src="/static/js/HotelComment.js"></script>
         <script>
 
         </script>

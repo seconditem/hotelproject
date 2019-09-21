@@ -1,22 +1,4 @@
 {% extends 'app/yudingindex.html' %}
-
-{#<!DOCTYPE html>#}
-{#<!-- saved from url=(0044)http://www.super8.com.cn/MemInfo/MemCusOrder -->#}
-{#<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">#}
-{##}
-{#    <title>会员专区-速8会员专属福利</title>#}
-{# <link href="/static/css/base.css" rel="stylesheet" type="text/css" media="all">#}
-{#    <link rel="stylesheet" href="/static/css/popAd.css">#}
-{#    <script charset="UTF-8" src="/static/js/uba.min.js"></script>#}
-{#    <script charset="UTF-8" src="/static/js/QiMoIMSDK.js"></script>#}
-{#    <script src="/static/js/hm.js"></script>#}
-{#    <script src="/static/js/push.js"></script>#}
-{#    <script src="/static/js/hm.js"></script>#}
-{#    <script src="/static/js/baseJS"></script>#}
-{##}
-{#    <script src="/static/js/baidust.js"></script>#}
-{##}
-{#<link type="text/css" rel="stylesheet" href="/static/css/chatStyle.css"></head>#}
 {% block myorderdetail %}
 <body class="page-user">
 
@@ -65,10 +47,13 @@
         </div>
 
         <ul class="order-tab" data-id="order-tab">
-            <li class="current item-tab" data-type="0"><a href="javascript:void(0);" style="color: #A90000;background-color: #0C88E8">全部</a></li>
-            <li class="item-tab" data-type="1"><a href="javascript:void(0);">待入住</a></li>
-            <li class="item-tab" data-type="5"><a href="javascript:void(0);">待付款</a></li>
-            <li class="item-tab" data-type="20"><a href="javascript:void(0);">待评价</a></li>
+            <li class="item-tab" data-type="0" style="background-color: #ff4328">
+                <a href="{% url 'app:myorderdetail' %}">全部
+                </a></li>
+            <li class="item-tab" data-type="1"><a href="{% url 'app:myorderdetail' %}?myorder=1">待入住</a></li>
+            <li class="item-tab" data-type="20"><a href="{% url 'app:myorderdetail' %}?myorder=2">代付款</a></li>
+            <li class="item-tab" data-type="20"><a href="{% url 'app:myorderdetail' %}?myorder=3">待评价</a></li>
+
         </ul>
         <!--[CDATA[-->
         <div data-bind="container" style="width: 820px;">
@@ -84,35 +69,70 @@
                     <th width="">操作</th>
                     <th width="60">&nbsp;</th>
                 </tr>
-                <tr data-id="loadgroups" style="text-align: center; display: none;">
-                    <td colspan="7">
-                        <img src="./myorderdetail_files/list_loading.gif"></td>
-                </tr>
+
                 <!--[CDATA[-->
-                </tbody><tbody data-bind="repeter" style="">
+                </tbody>
+
+                {% if myorderdetails %}
+                {% for myorderdetail in myorderdetails %}
+                <tbody data-bind="repeter" style="">
                     <!--[CDATA[-->
                     <tr class="item-order">
-                        <td>38015114<br>
+                        <td>{{ myorderdetail.create_time | date:'Ymd' }}{{ myorderdetail.id }}<br>
                             <a class="red link-expand" href="javascript:void(0)">订单详情 <i class="arrow"></i></a>
                         </td>
-                        <td><a class="link" href="http://www.super8.com.cn/Hotel/Detail/4172/">速8酒店北京房山城关中医院店（内宾）</a></td>
-                        <td>2019-09-21 18:00</td>
-                        <td><em class="font-yahei">￥160</em></td>
-                        <td>取消</td>
+                        <td><a class="link" href="http://www.super8.com.cn/Hotel/Detail/4172/">速88酒店北京宝盛北里店</a></td>
+                        <td>{{ myorderdetail.check_in_time | date:'Y-m-d'}}</td>
+                        <td><em class="font-yahei">￥{{ myorderdetail.price }}</em></td>
+{#                        判断订单状态    #}
+                        {% if myorderdetail.order_status == 0 %}
+                            <td>已预订</td>
+                            <td></td>
+                        {% elif  myorderdetail.order_status == 1 %}
+                            <td>已入住</td>
+                            <td><a  href="{% url 'app:hotelreflex' %}?myorderdetail_id={{ myorderdetail.id }}"
+                                    style="color: #0d88c1;">去评价</a>
+                            </td>
+                        {% elif  myorderdetail.order_status == 3 %}
+                            <td>已入住</td>
+                            <td>已评价</td>
+                        {% elif  myorderdetail.order_status == 2 %}
+                            <td>已取消，失效
+                            </td>
+                            <td></td>
+                        {% else %}
+                            <td>取消订单</td>
+                            <td></td>
+                        {% endif %}
+
+
                         <td>
-                            
-                            <input type="hidden" id="hid_getOrderid" name="name" value="">
-                            <input type="hidden" id="hid_getHotelid" name="name" value="">
-                        </td>
-                        <td>
-                            <a class="link" href="http://www.super8.com.cn/Hotel/Detail/4172/">再次预订</a>  
+                            {% if myorderdetail.order_status == 0 %}
+                                <a class="link"   onClick="return ConfirmDel();" >
+                                    取消订单</a>
+
+                                <script language=javascript>
+                                function ConfirmDel()
+                                {
+                                   if(confirm("确定要取消订单吗"))
+                                     return true;
+                                   else
+                                     return false;
+                                }
+                                </script>
+                            {% elif  myorderdetail.order_status == 1 %}
+                                <a class="link" href="{% url 'app:yuding' %}">再次预订</a>
+                            {% else %}
+                                <a class="link" href="{% url 'app:yuding' %}">再次预订</a>
+                            {% endif %}
+
                         </td>
                         <td></td>
                     </tr>
                     <tr class="item-order-info hidden">
                         <td colspan="8">
                             <div class="box-order-info">
-                                <h4>速822官网<b></b></h4>
+                                <h4>速88官网-刘氏集团<b></b></h4>
                                 <input type="hidden" value="38015114" data-bind="OrderID">
 
                                 <table class="table-order-info">
@@ -120,38 +140,33 @@
                                     <tbody data-bind="repeter1" style="">
                                         <!--]]〉-->
                                         <tr>
-                                            <td width="33%">订单号：38015114</td>
-                                            <td width="33%">联系人：刘荣帅 预付订单</td>
-                                            <td width="33%">联系电话：18725882067</td>
+                                            <td width="33%">订单号：{{ myorderdetail.create_time | date:'Ymd' }}{{ myorderdetail.id }}</td>
+                                            <td width="33%">联系人：{{ myorderdetail.username }}  预付订单</td>
+                                            <td width="33%">联系电话：{{ myorderdetail.phone }}</td>
                                         </tr>
                                         <tr>
-                                            <td>入住人：刘荣帅 预付订单</td>
-                                            <td colspan="2">住店日期：2019-09-21 18:00 至 2019-09-22 12:00</td>
+                                            <td>入住人：{{ myorderdetail.username }} 预付订单</td>
+                                            <td colspan="2">住店日期：{{ myorderdetail.check_in_time }} 18:00 至 {{ myorderdetail.check_out_time }} 12:00</td>
                                         </tr>
                                         <tr>
-                                            <td>房型：高级大床房 </td>
-                                            <td colspan="2">房间数：1间</td>
+                                            <td>房型：{{ myorderdetail.room.desc }} </td>
+                                            <td colspan="2">房间数：{{ myorderdetail.order_room_num }}间</td>
                                         </tr>
                                         <tr>
-                                            <td>付款方式：预付 </td>
-                                            <td colspan="2">预订保留时间：2019-09-21 18:00</td>
+                                            {% if myorderdetail.order_status == 2 %}
+                                            <td>付款方式：订单取消，已退款 </td>
+                                            {% else %}
+                                                <td>付款方式：预付 </td>
+                                            {% endif %}
+                                            <td colspan="2">预订保留时间：{{ myorderdetail.check_in_time }} 22:00</td>
                                         </tr>
                                         <tr>
                                             <td colspan="3">
-                                                <div class="day-price">
-                                                     <span class="span-day-price span-quan"><div class="date">2019-09-21（六）</div><em>￥160<i>（无早）</i></em></span>
-                                                </div>
-                                                
-                                                
-                                                <span class="f14">总金额：<b class="red">￥160</b></span><br>
+                                                <span class="f14">总金额：<b class="red">￥{{ myorderdetail.price }}</b></span><br>
                                                 <span class="gray">非现金支付部分不开具发票</span>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td colspan="3" align="center">
-                                                
-                                            </td>
-                                        </tr>
+
                                         <!--[CDATA[-->
                                     </tbody>
                                     <!--]]〉-->
@@ -168,9 +183,19 @@
                         </td>
                     </tr>
                     <!--[CDATA[-->
+
                 </tbody>
+                {% endfor %}
+                {% endif %}
                 <!--]]〉-->
             </table>
+            {% if not myorderdetails %}
+                    <div style="margin: 30px auto 0px; width: 100%; color: rgb(174, 0, 0); font-size: 14px; line-height: 30px; background: left center no-repeat; text-align: center;">
+                        <img src="/static/images/icon-srch-empty.gif" alt="">
+                        "很抱歉，没有最新的信息，你可以继续搜索"
+
+                    </div>
+            {% endif %}
             <!--[CDATA[-->
         </div>
         <!--]]〉-->
