@@ -1,157 +1,282 @@
-
 {% extends 'app/yudingindex.html' %}
 {% load static %}
 {% block title %}
-      <title>用户注册</title>
+    <title>用户注册</title>
 {% endblock title %}
 {% block headone %}
 {% endblock %}
 {% block contents %}
 
-<!--REG START-->
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="{% static 'css/restyle.css' %}">
-</head>
-<body>
-<div id="wp" class="wp">
-	<div id="ct" class="ptm wp cl">
-		<div class="mn">
-			<div class="bm" id="main_message">
-				<div class="bm_h bbs" id="main_hnav">
-{#					<h3 id="layer_reginfo_t" class="xs2">立即注册</h3>#}
-				</div>
-				<p id="returnmessage4"></p>
-				<form method="post" autocomplete="off" name="register" id="registerform" action="{% url 'app:registerym' %}">
-					{% csrf_token %}
-                    <div id="layer_reg" class="bm_c">
-						<div class="mtw">
-							<div id="reginfo_a">
-								<div class="rfm">
-									<table>
-										<tr>
-											<th><span class="rq">*</span><label for="5sMVeV">用户名:</label></th>
-											<td><input type="text" id="5sMVeV" onblur="checkRegOut('5sMVeV','请输入用户名');" onfocus="checkReg('5sMVeV')" name="username" class="px" autocomplete="off" size="25" maxlength="15"/></td>
-											<td class="tipcol">{{ form.username.errors }}</td>
-										</tr>
-									</table>
-								</div>
-								<div class="rfm">
-									<table>
-										<tr>
-											<th><span class="rq">*</span><label for="WXETc3">密码:</label></th>
-											<td><input type="password" id="WXETc3" onblur="checkRegOut('WXETc3','请输入密码');" onfocus="checkReg('WXETc3')" name="password" size="25" class="px" /></td>
-											<td class="tipcol">{{ form.password.errors }}</td>
-										</tr>
-									</table>
-								</div>
-								<div class="rfm">
-									<table>
-										<tr>
-											<th><span class="rq">*</span><label for="LzI33d">确认密码:</label></th>
-											<td><input type="password" id="LzI33d" onblur="checkRegOut('LzI33d','请确认密码');" onfocus="checkReg('LzI33d')" name="repassword" size="25" class="px" /></td>
-											<td class="tipcol">{% for err in form.password.errors %}{{ err }},{% endfor %}</td>
-										</tr>
-									</table>
-								</div>
-								<div class="rfm">
-									<table>
-										<tr>
-											<th><span class="rq">*</span><label for="FQ817D">Email:</label></th>
-											<td><input type="text" id="FQ817D" name="email"  onblur="checkRegOut('FQ817D','请输入正确的邮箱地址');" onfocus="checkReg('FQ817D')" size="25" class="px" /><br /><em id="emailmore">&nbsp;</em></td>
-											<td class="tipcol">{{ form.email.errors }}</td>
-										</tr>
-									</table>
-								</div>
-								<div class="rfm">
-									<table>
-										<tr>
-											<th><span class="rq">*</span><label for="yzm">验证码:</label></th>
-											<td><input style=" width:50px;" maxlength="4" type="text" id="yzm" name="yzm" onfocus="checkReg('yzm')" size="25" class="px" /><br /><em id="emailmore">&nbsp;</em></td>
-											<td class="tipcol"><i id="tip_yzm" class="p_tip"><img src="{% url 'app:yzm' %}" id="p_yzm" onclick="show('p_yzm')" style="cursor:pointer;width: 56px;height: 25px" /> <a href="javascript:;" onclick="show('p_yzm')">看不清？</a></i>&nbsp;&nbsp;{{ form.yzm.errors }}</td>
-										</tr>
-									</table>
-								</div>
-                                <div class="rfm">
-
+    <!--REG START-->
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link rel="stylesheet" href="{% static 'css/restyle.css' %}">
+    </head>
+    <body>
+    <div id="wp" class="wp">
+        <div id="ct" class="ptm wp cl">
+            <div class="mn">
+                <div class="bm" id="main_message">
+                    <div class="bm_h bbs" id="main_hnav">
+                        {#					<h3 id="layer_reginfo_t" class="xs2">立即注册</h3>#}
+                    </div>
+                    <p id="returnmessage4"></p>
+                    <form method="post" autocomplete="off" name="register" id="registerform"
+                          action="{% url 'app:registerym' %}">
+                        {% csrf_token %}
+                        <div id="layer_reg" class="bm_c">
+                            <div class="mtw">
+                                <div id="reginfo_a">
+                                    <div class="rfm">
                                         <table>
-                                                <script src="https://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
                                             <tr>
-                                                <td>
-                                                   <th><span class="rq">*</span><label for="yzm">手机号:</label></th>
-                                                   <td><input type="text" name="phonenum" placeholder="手机号"><input type="button" value="获取验证码"></td>
-                                                <td><a>输入手机验证码：</a><input type="text" placeholder="手机验证码" id="sjyzm" name="sjyzm"></td>
-                                                <td>{{ form.errors.sjyzm }}</td>
-                                                <script>
-                                                    $("[type = 'button']").click(function () {
-                                                        $.get('http://127.0.0.1:8000/phoneyzm/',$("[name = 'phonenum']")
-                                                        )
-                                                    });
-                                                </script>
-
-
-                                                </td>
-
+                                                <th><span class="rq">*</span><label for="5sMVeV">用户名:</label></th>
+                                                <td><input type="text" id="5sMVeV"
+                                                           onblur="checkRegOut('5sMVeV','请输入用户名');"
+                                                           onfocus="checkReg('5sMVeV')" name="username" class="px"
+                                                           autocomplete="off" size="25" maxlength="15"/></td>
+                                                <td class="tipcol">{{ form.username.errors }}</td>
                                             </tr>
                                         </table>
+                                    </div>
+                                    <div class="rfm">
+                                        <table>
+                                            <tr>
+                                                <th><span class="rq">*</span><label for="WXETc3">密码:</label></th>
+                                                <td><input type="password" id="WXETc3"
+                                                           onblur="checkRegOut('WXETc3','请输入密码');"
+                                                           onfocus="checkReg('WXETc3')" name="password" size="25"
+                                                           class="px"/></td>
+                                                <td class="tipcol">{{ form.password.errors }}</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="rfm">
+                                        <table>
+                                            <tr>
+                                                <th><span class="rq">*</span><label for="LzI33d">确认密码:</label></th>
+                                                <td><input type="password" id="LzI33d"
+                                                           onblur="checkRegOut('LzI33d','请确认密码');"
+                                                           onfocus="checkReg('LzI33d')" name="repassword" size="25"
+                                                           class="px"/></td>
+                                                <td class="tipcol">
+                                                    {% for err in form.password.errors %}{{ err }},{% endfor %}</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="rfm">
+                                        <table>
+                                            <tr>
+                                                <th><span class="rq">*</span><label for="FQ817D">Email:</label></th>
+                                                <td><input type="text" id="FQ817D" name="email"
+                                                           onblur="checkRegOut('FQ817D','请输入正确的邮箱地址');"
+                                                           onfocus="checkReg('FQ817D')" size="25" class="px"/><br/><em
+                                                        id="emailmore">&nbsp;</em></td>
+                                                <td class="tipcol">{{ form.email.errors }}</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="rfm">
+                                        <table>
+                                            <tr>
+                                                <th><span class="rq">*</span><label for="yzm">验证码:</label></th>
+                                                <td><input style=" width:50px;" maxlength="4" type="text" id="yzm"
+                                                           name="yzm" onfocus="checkReg('yzm')" size="25"
+                                                           class="px"/><br/><em id="emailmore">&nbsp;</em></td>
+                                                <td class="tipcol"><i id="tip_yzm" class="p_tip"><img
+                                                        src="{% url 'app:yzm' %}" id="p_yzm" onclick="show('p_yzm')"
+                                                        style="cursor:pointer;width: 56px;height: 25px"/> <a
+                                                        href="javascript:;" onclick="show('p_yzm')">看不清？</a></i>&nbsp;&nbsp;{{ form.yzm.errors }}
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="rfm">
 
+                               <table>
+                                    <script src="http://code.jquery.com/jquery-latest.js" ;></script>
+                                    <tr>
+                                        <div class="formWrap">
+                                        <div class="fwSpan ui-placeholder-re">
+                                            <td>
+                                            <span class="rq">*</span>
+                                            <label class="tit">手机号码</label>
+                                            <label for="account">
+                                                <input class="i_text_f" id="phone" name="phone" type="text"
+                                                       placeholder="请输入手机号">
+                                                <a id="errMsg1" color="red" style="display:none;  "></a>
+                                            </label>
+                                            <label class="tit">验证码</label>
+                                            <input class="i_text_f" id="rpcode" name="rpcode" type="text"
+                                                   placeholder="手机验证码">
+                                            <input id="getCode" type="button" value="获取验证码" onclick="sendMessages()"
+                                                   class="fp-btn"></input>
+                                            <a id="errMsg2" color="red">{{ form.errors.sjyzm}}{{ yzerrors }}</a>
+                                            </td>
+                                        </div>
+                                        <input type="text" id="code" hidden="true">
+                                    </div>
+                                    </tr>
+
+                                    <script>
+                                        var InterValObj; //timer变量，控制时间
+                                        var count = 60; //间隔函数，1秒执行
+                                        var curCount; //当前剩余秒数
+                                        var code = ""; //验证码
+                                        var codeLength = 6; //验证码长度
+                                        function sendMessages() {
+                                            curCount = count;
+                                            var someway = 1
+                                            var phone = $("#phone").val()
+                                            if (validatePhone(phone)) {
+                                                return;
+                                            }
+                                            if (phone != "") {
+                                                //设置button效果，开始计时
+                                                $("#getCode").attr("disabled", "true");
+                                                $("#getCode").val("请在" + curCount + "秒内输入");
+                                                InterValObj = window.setInterval(SetRemainTimes, 1000); //启动计时器，1秒执行一次
+                                                //向后台发送处理数据
+                                                $.ajax({
+                                                    url: "http://127.0.0.1:8000/phoneyzm/",
+                                                    {% comment %}dataType: "dict",{% endcomment %}
+                                                    type: "get",
+                                                    data:{ "phonenum" : phone,"someway":1}
+
+                                                });
+
+                                            } else {
+                                                alert("手机号码不能为空！！！！！！");
+                                            }
+                                        }
+
+                                        //timer处理函数
+                                        function SetRemainTimes() {
+                                            if (curCount == 0) {
+                                                window.clearInterval(InterValObj); //停止计时器
+                                                $("#getCode").removeAttr("disabled"); //启用按钮
+                                                $("#getCode").val("重新发送验证码");
+                                                code = ""; //清除验证码。如果不清除，过时间后，输入收到的验证码依然有效
+                                            } else {
+                                                curCount--;
+                                                $("#getCode").val("请在" + curCount + "秒内输入");
+                                            }
+                                        }
+
+                                        //开始按钮点击事件
+                                        $("#start").click(function () {
+                                            window.location.href = "regafter.html?phone=" + $("#phone").val();
+                                        })
+
+                                        //验证手机号
+                                        function validatePhone(phone) {
+                                            if (phone == '') {
+                                                $("#errMsg1").html("  请先填写手机号");
+                                                $("#errMsg1").show();
+                                                return true;
+                                            }
+                                            var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+                                            if (!myreg.test(phone)) {
+                                                $("#errMsg1").html("  请输入有效的手机号");
+                                                $("#errMsg1").show();
+                                                return true;
+                                            }
+                                            return false;
+                                        }
+
+                                        //验证码非空和错误验证
+                                        function validateCode() {
+                                            var phone = $("#phone").val();
+                                            var code = $("#code").val();
+                                            var rpcode = $("#rpcode").val();
+                                            if (validatePhone(phone)) {
+                                                return true;
+                                            }
+                                            if (code == '') {
+                                                $("#errMsg2").html("  请先获取验证码");
+                                                $("#errMsg2").show();
+                                                return true;
+                                            }
+                                            if (rpcode == '' || code != rpcode) {
+                                                $("#errMsg2").html("  请正确输入验证码");
+                                                $("#errMsg2").show();
+                                                return true;
+                                            }
+                                            alert(code != rpcode);
+                                            return false;
+                                        }
+
+                                        $("#phone").on("focus", function () {
+                                            $("#errMsg1").hide();
+                                        })
+                                        $("#rpcode").on("focus", function () {
+                                            $("#errMsg2").hide();
+                                        })
+                                    </script>
+                             </table>
+
+                                    </div>
                                 </div>
-							</div>
-						</div>
-					</div>
-					<div id="layer_reginfo_b">
-						<div class="rfm mbw bw0">
-							<table width="100%">
-								<tr>
-									<th>&nbsp;</th>
-									<td>
+                            </div>
+                        </div>
+                        <div id="layer_reginfo_b">
+                            <div class="rfm mbw bw0">
+                                <table width="100%">
+                                    <tr>
+                                        <td>
 									<span id="reginfo_a_btn">
 									<em>&nbsp;</em>
-									<button class="pn pnc" id="registerformsubmit" type="submit" name="regsubmit" value="true">
+									<button class="pn pnc" id="registerformsubmit" type="submit" name="regsubmit"
+                                            value="true">
 										<strong>提交</strong>
 									</button>
 									</span>
-									</td>
-									<td></td>
-								</tr>
-							</table>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-</div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                                {% comment %} 标记{% endcomment %}
 
-</body>
 
-<!--REG END-->
+
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+    <!--REG END-->
 {% endblock %}
 
 {% block scripttwo %}
 
     <script>
-function checkReg(obj){
-	document.getElementById('tip_'+obj).style.display='block';
-}
+        function checkReg(obj) {
+            document.getElementById('tip_' + obj).style.display = 'block';
+        }
 
-function checkRegOut(obj,test){
-	if(document.getElementById(obj).value==''){
-		document.getElementById('tip_'+obj).innerHTML='<b style="color:red;">'+test+'</b>';
-	}else{
-		document.getElementById('tip_'+obj).style.display='none';
-	}
-}
+        function checkRegOut(obj, test) {
+            if (document.getElementById(obj).value == '') {
+                document.getElementById('tip_' + obj).innerHTML = '<b style="color:red;">' + test + '</b>';
+            } else {
+                document.getElementById('tip_' + obj).style.display = 'none';
+            }
+        }
 
-function show(obj){
-	document.getElementById(obj).src='{% url "app:yzm" %}?math='+Math.random();
-}
+        function show(obj) {
+            document.getElementById(obj).src = '{% url "app:yzm" %}?math=' + Math.random();
+        }
 
-function show(obj){
-	document.getElementById(obj).src='{% url "app:yzm" %}?math='+Math.random();
-}
-</script>
+        function show(obj) {
+            document.getElementById(obj).src = '{% url "app:yzm" %}?math=' + Math.random();
+        }
+    </script>
 {% endblock %}
 
 

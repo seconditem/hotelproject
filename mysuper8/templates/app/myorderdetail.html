@@ -8,11 +8,11 @@
 <div class="grid wrapper clearfix">
 <div class="g1" style="width: 170px">
     <div class="sidenav">
-        <h2 class="title-bar"><a href="http://www.super8.com.cn/MemInfo/MemLogin">我的速8</a></h2>
+        <h2 class="title-bar"><a href="">我的速8</a></h2>
         <ul>
             <li class="item-parent">
 
-                <a href="http://www.super8.com.cn/MemInfo/MemCusOrder">我的订单
+                <a href="">我的订单
                 </a>
             </li>
 
@@ -20,16 +20,16 @@
             <li class="item-parent"><span class="name">个人信息</span></li>
             <li class="item-child">
                 <ul>
-                    <li><a href="http://www.super8.com.cn/MemInfo/MemPersonalDetail">个人资料</a></li>
-                    <li><a href="http://www.super8.com.cn/MemInfo/MemPwdEdit">密码修改</a></li>
+                    <li><a href="">个人资料</a></li>
+                    <li><a href="{% url 'app:findcode' %}">密码修改</a></li>
                     
-                    <li><a href="http://www.super8.com.cn/MemInfo/MemUseInforMent">常用信息管理</a></li>
+                    <li><a href="">常用信息管理</a></li>
                 </ul>
             </li>
-            <li class="item-parent last"><a href="http://www.super8.com.cn/MemInfo/MemFavorite">我的收藏</a></li>
+            <li class="item-parent last"><a href="">我的收藏</a></li>
         </ul>
     </div>
-    <div class="side-ad"><a target="_blank" href="http://www.super8.com.cn/Activity/cardGiftBox/saleCombination.html">
+    <div class="side-ad"><a target="_blank" href="">
         <img src="/static/room_images/1.jpg" alt=""></a>
     </div>
 </div>
@@ -43,7 +43,7 @@
     <div class="box-order" id="box-order" style="width: 820px;">
         <div class="title-bar" style="width: 820px;">
             <h2>我的订单</h2>
-            <a class="tip" href="http://www.super8.com.cn/MemInfo/MemPersonalDetail">完善个人信息</a>
+            <a class="tip" href="">完善个人信息</a>
         </div>
 
         <ul class="order-tab" data-id="order-tab">
@@ -81,7 +81,7 @@
                         <td>{{ myorderdetail.create_time | date:'Ymd' }}{{ myorderdetail.id }}<br>
                             <a class="red link-expand" href="javascript:void(0)">订单详情 <i class="arrow"></i></a>
                         </td>
-                        <td><a class="link" href="http://www.super8.com.cn/Hotel/Detail/4172/">速88酒店北京宝盛北里店</a></td>
+                        <td><a class="link" href="">速88酒店北京宝盛北里店</a></td>
                         <td>{{ myorderdetail.check_in_time | date:'Y-m-d'}}</td>
                         <td><em class="font-yahei">￥{{ myorderdetail.price }}</em></td>
 {#                        判断订单状态    #}

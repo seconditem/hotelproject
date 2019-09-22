@@ -109,7 +109,7 @@
     <div class="top-head-400">预订热线 40018-40018</div>
     <div class="top-head-pop">
         <div class="pop-img"></div>
-        <a href="http://www.super8.com.cn/activity/iSuper8" class="pop-bottom" target="_blank">速8酒店手机版 &gt;</a>
+        <a href="" class="pop-bottom" target="_blank">速8酒店手机版 &gt;</a>
     </div>
     <div class="top_logo">
         <img src="{% static 'images/top_logo.png' %}" width="52" height="80">
@@ -199,7 +199,6 @@
     <input type="hidden" id="hid_honour">
     <input type="hidden" id="hid_act">
     <input type="hidden" id="hid_brand">
-
     <input type="hidden" name="name" id="AmMinus" value="0">
          <form action="{% url 'app:yuding' %}" method="post">
          {% csrf_token %}
@@ -209,7 +208,6 @@
         <ul class="item-sort" data-id="itemsort">
             <li class="current"><a href="{% url 'app:yuding' %}" data-code="1">推荐↑</a></li>
             <li><a href="{% url 'app:yuding' 1 %}" data-code="2">按价格</a></li>
-{#            <li><a href="{% url 'app:yuding' 2 %}" data-code="3">按好评率</a></li>#}
         </ul>
     </div>
          </form>
@@ -228,9 +226,7 @@
                         <div class="item-result" data-id="groups">
                             <div class="item-result-subject">
                                 <img src="../../static/images/icon-new-list.png" class="icon-new-product">
-
-
-                                <a class="img" href="http://www.super8.com.cn/Hotel/Detail/4054" data-hotelid="4054"
+                                <a class="img" href="" data-hotelid="4054"
                                    data-hotelname="速8精选酒店北京工体三里屯春秀路店" onclick="HotelList.HotelNameClick.call(this);">
                                     <img data-src="http://admin.super8.com.cn/hotelimage/480_360/4054/20180209183209354.jpg"
                                          src="../../static/images/20180209183209354.jpg" alt="速8精选酒店北京工体三里屯春秀路店">
@@ -241,12 +237,12 @@
                                         <b data-id="price">{{ priceless }}</b>元
                                         <em>起</em>
                                     </dt>
-                                    <a href="http://www.super8.com.cn/Hotel/Detail/4054#hotel-commentTop"
+                                    <a href=""
                                        target="_blank">
 {#                                        <dt><span><b>75</b>% </span>好评率</dt>#}
                                         <dd><em class="red">{{reflexsnum}}</em>点评</dd>
                                     </a>
-                                    <dd><a href="http://www.super8.com.cn/Hotel/Detail/4054#hotel-commentTop"
+                                    <dd><a href=""
                                            target="_blank">
                                     </a>
                                     </dd>
@@ -609,52 +605,52 @@
             <h3>
                 <img src="../../static/images/f_icon_zn.png" width="32" height="32">订房指南</h3>
             <ul>
-                <li><a href="http://www.super8.com.cn/News/42004.html">预订酒店</a></li>
-                <li><a href="http://www.super8.com.cn/News/42005.html">修改取消订单</a></li>
-                <li><a href="http://www.super8.com.cn/News/42502.html">入住和离店</a></li>
-                <li><a href="http://www.super8.com.cn/News/42503.html">团购和钟点房</a></li>
-                <li><a href="http://www.super8.com.cn/News/42009.html">现金券规则</a></li>
-                <li><a href="http://www.super8.com.cn/News/42007.html">抵扣券规则</a></li>
+                <li><a href="">预订酒店</a></li>
+                <li><a href="">修改取消订单</a></li>
+                <li><a href="">入住和离店</a></li>
+                <li><a href="">团购和钟点房</a></li>
+                <li><a href="">现金券规则</a></li>
+                <li><a href="">抵扣券规则</a></li>
             </ul>
         </div>
         <div>
             <h3>
                 <img src="{% static 'images/f_icon_hy.png' %}" width="32" height="32">会员服务</h3>
             <ul>
-                <li><a href="http://www.super8.com.cn/News/42001.html">成为速8会员</a></li>
-                <li><a href="http://www.super8.com.cn/News/42017.html">会员等级和权益</a></li>
-                <li><a href="http://www.super8.com.cn/News/42010.html">间夜点数获取与使用</a></li>
-                <li><a href="http://www.super8.com.cn/Article/MemberAnnouncement">会员公告</a></li>
+                <li><a href="">成为速8会员</a></li>
+                <li><a href="">会员等级和权益</a></li>
+                <li><a href="">间夜点数获取与使用</a></li>
+                <li><a href="">会员公告</a></li>
             </ul>
         </div>
         <div>
             <h3>
                 <img src="{% static 'images/f_icon_zf.png' %}" width="32" height="32">支付方式</h3>
             <ul>
-                <li><a href="http://www.super8.com.cn/News/42019.html">前台付款</a></li>
-                <li><a href="http://www.super8.com.cn/News/42021.html">网上预付房费</a></li>
-                <li><a href="http://www.super8.com.cn/News/42022.html">信用卡担保</a></li>
-                <li><a href="http://www.super8.com.cn/News/42020.html">发票说明</a></li>
+                <li><a href="">前台付款</a></li>
+                <li><a href="">网上预付房费</a></li>
+                <li><a href="">信用卡担保</a></li>
+                <li><a href="">发票说明</a></li>
             </ul>
         </div>
         <div class="nofl">
             <h3>
                 <img src="{% static 'images/f_icon_jm.png' %}" width="32" height="32">酒店加盟</h3>
             <ul>
-                <li><a href="http://www.super8.com.cn/News/40282.html">合作方式</a></li>
-                <li><a href="http://www.super8.com.cn/Article/Investment">招商会信息</a></li>
-                <li><a href="http://www.super8.com.cn/News/40281.html">速8中国样板间</a></li>
-                <li><a href="http://www.super8.com.cn/News/40283.html">在线加盟申请表</a></li>
-                <li><a href="http://www.super8.com.cn/News/40430.html">投资方向</a></li>
+                <li><a href="">合作方式</a></li>
+                <li><a href="">招商会信息</a></li>
+                <li><a href="">速8中国样板间</a></li>
+                <li><a href="">在线加盟申请表</a></li>
+                <li><a href="">投资方向</a></li>
             </ul>
         </div>
     </div>
-    <div class="b_link"><a href="http://www.super8.com.cn/News/41119.html">关于速8</a>|<a
-            href="http://www.super8.com.cn/Article/Contact">联系我们</a>|<a href="http://www.super8.com.cn/Article/News">速8动态</a>|<a
-            href="http://www.super8.com.cn/Hotel/List">酒店列表</a>|<a href="http://mys8.super8.com.cn/" target="_blank">业主门户</a>|<a
-            href="http://www.super8.com.cn/News/41005.html">使用条款</a>|<a href="http://www.super8.com.cn/News/41120.html">温德姆集团</a>|<a
-            href="http://job.super8.com.cn/" target="_blank">招贤纳士</a>|<a
-            href="http://www.super8.com.cn/News/41006.html">友情链接</a>|<a href="http://www.super8.com.cn/News/41007.html">隐私声明</a>
+    <div class="b_link"><a href="">关于速8</a>|<a
+            href="">联系我们</a>|<a href="">速8动态</a>|<a
+            href="">酒店列表</a>|<a href="">业主门户</a>|<a
+            href="">使用条款</a>|<a href="">温德姆集团</a>|<a
+            href="" target="_blank">招贤纳士</a>|<a
+            href="">友情链接</a>|<a href="">隐私声明</a>
     </div>
     <div class="b_logobox">
         <img src="../../static/images/blogo-01.png" width="168" height="37">
@@ -675,14 +671,14 @@
                     Suites</a></li>
             </ul>
             <ul>
-                <li><a target="_blank" id="fb_ramada" href="http://www.ramada.com/">Ramada ®</a></li>
-                <li><a target="_blank" id="fb_baymont" href="http://www.baymontinns.com/">Baymont ® Inn &amp; Suites</a>
+                <li><a target="_blank" id="fb_ramada" href="">Ramada ®</a></li>
+                <li><a target="_blank" id="fb_baymont" href="">Baymont ® Inn &amp; Suites</a>
                 </li>
-                <li><a target="_blank" id="fb_days_inn" href="http://www.daysinn.com/">Days Inn ®</a></li>
-                <li><a target="_blank" id="fb_super8" href="http://www.super8.com/">Super 8 ®</a></li>
-                <li><a target="_blank" id="fb_howard_johnson" href="http://www.hojo.com/">Howard Johnson ®</a></li>
-                <li><a target="_blank" id="fb_travelodge" href="http://www.travelodge.com/">Travelodge ®</a></li>
-                <li><a target="_blank" id="fb_knights_inn" href="http://www.knightsinn.com/">Knights Inn ®</a></li>
+                <li><a target="_blank" id="fb_days_inn" href="">Days Inn ®</a></li>
+                <li><a target="_blank" id="fb_super8" href="">Super 8 ®</a></li>
+                <li><a target="_blank" id="fb_howard_johnson" href="">Howard Johnson ®</a></li>
+                <li><a target="_blank" id="fb_travelodge" href="">Travelodge ®</a></li>
+                <li><a target="_blank" id="fb_knights_inn" href="">Knights Inn ®</a></li>
             </ul>
         </div>
     </div>

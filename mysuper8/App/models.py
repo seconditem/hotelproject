@@ -93,3 +93,8 @@ class HotelInfo(models.Model):
 
     class Meta:
         db_table = 'hotel_info'
+
+
+
+
+

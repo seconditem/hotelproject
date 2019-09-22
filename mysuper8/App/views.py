@@ -20,7 +20,7 @@ from tools.sms import send_sms
 from tools.verifycode import VerifyCode
 
 
-
+a = 1
 
 #首页
 def yuding(request,order = 0):
@@ -45,7 +45,6 @@ def yuding(request,order = 0):
     if webprices :
         priceless = min(webprices)
 
-
     #房间排序选择
     order = int(order)
     if order == 1 : # 1 代表给出官网价格排序
@@ -59,6 +58,7 @@ def yuding(request,order = 0):
 
 #注册
 def registerym(request):
+
     if request.method == 'POST':
         # 用POST数据实例化表单，表单对象会验证POST数据
         form = RegisterForm(request.POST)
@@ -68,11 +68,12 @@ def registerym(request):
         yzm1 = request.POST.get('yzm')
         yzm2 = request.session.get('code')
         #获取手机号
-        phoneunm = request.POST.get('phonenum')
+        phoneunm = request.POST.get('phone')
         print(phoneunm,'手机号')
         #手机验证码
-        sjyzm1 = request.POST.get('sjyzm')
+        sjyzm1 = request.POST.get('rpcode')
         sjyzm2 = request.session.get('code1')
+        print(sjyzm2,'存进去的验证码')
         print(sjyzm2,'正确的手机验证码','前台输入的：',sjyzm1)
         res2 = sjyzm1 == sjyzm2
         # print(yzm1,'yzm1')
@@ -84,8 +85,13 @@ def registerym(request):
         if not res:
             form.errors['yzm'] = "验证码不匹配"
 
+
         if not res2:
             form.errors['sjyzm'] = "手机验证码不正确"
+
+        if request.session['code1'] == "000":
+
+            form.errors['sjyzm'] = "该手机号已经存在"
 
         if res and form.is_valid() and res2:  # 验证通过
             # form.cleaned_data.pop('repassword')
@@ -160,6 +166,8 @@ def findcode(request):
                 return redirect(reverse('app:findcodetwo', args=[curuser.uid]))
             else:
                 error = '手机验证码不正确'
+        elif not curuser :
+            error = '该用户不存在'
     return render(request,'app/findcode.html',locals())
 
 #重置密码
@@ -270,17 +278,48 @@ def confirmorder(request,id):
 #手机验证码
 def phoneyzm(request,*args,**kwargs):
     data = dict(request.GET)
+    print(data,'看看传的都是什么')
     phnumber = data['phonenum'][0]
-    print(data,'88888000888888888')
-    print(phnumber,'前台的输入手机号')
-    num = str(randint(10000, 1000000))
-    print('------------------------',num)
-    res = send_sms(phnumber, {'number': num})
-    #写入session
-    request.session['code1'] = num
-    print(res, num, 'num就是验证码')
+    someway = int(data['someway'][0])
+    #判断手机号是否存在
+    curuser = User.objects.filter(phone=phnumber).exists()
+    if  curuser:
+        if someway == 1:
+            print('注册验证码')
+            num = str(randint(10000, 1000000))
+            res = send_sms(phnumber, {'number': num})
+            request.session['code1'] = num
+            request.session['code1'] = "000"
+            print(request.session['code1'])
+            print(num, 'zhejiushi 验证ma')
 
-    return HttpResponse(res,'image/png')
+            return HttpResponse('ok')
+        else:
+            print('找回密码')
+            num = str(randint(10000, 1000000))
+            res = send_sms(phnumber, {'number': num})
+            request.session['code1'] = num
+            print(num, 'zhejiushi 验证ma')
+            return HttpResponse('ok')
+    else:
+        if someway == 1:
+            num = str(randint(10000, 1000000))
+            res = send_sms(phnumber, {'number': num})
+            request.session['code1'] = num
+            print(num, 'zhejiushi 验证ma')
+            return HttpResponse('ok')
+        else:
+            num = str(randint(10000, 1000000))
+            res = send_sms(phnumber, {'number': num})
+            request.session['code1'] = num
+            request.session['code1'] = "000"
+            print(request.session['code1'])
+            print(num, 'zhejiushi 验证ma')
+            return HttpResponse('ok')
+    print(num,'zhejiushi 验证ma')
+    return HttpResponse('ok')
+
+
 
 #我的订单
 def myorderdetail(request,*args):
