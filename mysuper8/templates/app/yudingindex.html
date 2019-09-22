@@ -121,19 +121,25 @@
         <a href="{% url 'app:yuding' %}" class="hover">酒店预订</a>
         <a href="{% url 'app:hoteldetail' %}" target="_blank" id="menuProduct" class="newProductMenu">速8精选酒店</a>
     </div>
-    <div class="top_menu_mys8">
+    <div class="top_menu_mys8" style="width: 280px">
 
 
     {% if user.is_authenticated %}
-        <em class="mys8-menu"><a href="{% url 'app:myorderdetail' %}" id="dlogin">已登录&nbsp;|&nbsp;{{ request.user.username }}</a>
+        <em class="mys8-menu"><a href="{% url 'app:myorderdetail' %}" id="dlogin">
+        {% if request.user.usertype == 1 %}
+            黑金会员
+        {% else %}
+            你还不是会员
+        {% endif %}
+            &nbsp;|&nbsp;{{ request.user.username }}</a>
         <span>
             <a href="{% url 'app:myorderdetail' %}"  class="mys8-menu ">我的速8</a>
         </span>
-         <a id="dregister" href="{% url 'app:userlogout' %}">退出</a></em>
+         <a id="dregister" href="{% url 'app:userlogout' %}">退&nbsp;&nbsp;出</a></em>
     {% else %}
 
-        <em class="mys8-menu"><a href="{% url 'app:loginym' %}" id="dlogin">登11录&nbsp;|&nbsp;</a>
-        <a id="dregister" href="{% url 'app:registerym'  %}">注99册</a></em>
+        <em class="mys8-menu"><a href="{% url 'app:loginym' %}" id="dlogin">登&nbsp;&nbsp;录&nbsp;|&nbsp;</a>
+        <a id="dregister" href="{% url 'app:registerym'  %}">注&nbsp;&nbsp;册</a></em>
         <span>
             <a href="{% url 'app:loginym' %}"  class="mys8-menu ">我的速8</a>
         </span>
@@ -184,21 +190,10 @@
         </dl>
 
 
-        <dl class="item-filter chosen-filter" data-id="specialdd" style="display: none;">
-            <dt><span>已选条件</span></dt>
-            <dd class="dd">
-            <span>
-                <em data-id="special"></em>
-                <a href="javascript:void(0);" data-id="specialqc">
-                    <img src="../../static/images/icon-filter-close.png" class="icon-filter-close"></a>
-            </span>
-            </dd>
-        </dl>
+
     </div>
-    <input type="hidden" id="hid_servercs">
-    <input type="hidden" id="hid_honour">
-    <input type="hidden" id="hid_act">
-    <input type="hidden" id="hid_brand">
+
+
     <input type="hidden" name="name" id="AmMinus" value="0">
          <form action="{% url 'app:yuding' %}" method="post">
          {% csrf_token %}

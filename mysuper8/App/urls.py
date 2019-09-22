@@ -41,6 +41,7 @@ urlpatterns = [
     url(r'^findcodesan/$', views.findcodesan, name='findcodesan'),
     #酒店详情
     url(r'^hoteldetail/$',views.hoteldetail,name='hoteldetail'),
+    url(r'^hoteldetail/(\d+)/$',views.hoteldetail,name='hoteldetail'),
     #预定页面
     url(r'^makeorder/(\d+)/$',views.makeorder,name='makeorder'),
     #确认订单

@@ -1,3 +1,4 @@
+
 {% extends 'app/yudingindex.html' %}
 {% block myorderdetail %}
 <body class="page-user">
@@ -13,6 +14,7 @@
             <li class="item-parent">
 
                 <a href="">我的订单
+                <a href="{% url 'app:myorderdetail' %}">我的订单
                 </a>
             </li>
 
@@ -34,7 +36,7 @@
     </div>
 </div>
 
-        
+{% block mysuper %}
 <link href="/static/css/user.css" rel="stylesheet" type="text/css" media="all">
 <link href="/static/css/v-user.css" rel="stylesheet" type="text/css" media="all">
 <link href="/static/css/jquery.mloading.css" rel="stylesheet">
@@ -47,9 +49,8 @@
         </div>
 
         <ul class="order-tab" data-id="order-tab">
-            <li class="item-tab" data-type="0" style="background-color: #ff4328">
-                <a href="{% url 'app:myorderdetail' %}">全部
-                </a></li>
+            <li class="item-tab current" data-type="0" style="background-color: #ff4328">
+                <a href="{% url 'app:myorderdetail' %}">全部</a></li>
             <li class="item-tab" data-type="1"><a href="{% url 'app:myorderdetail' %}?myorder=1">待入住</a></li>
             <li class="item-tab" data-type="20"><a href="{% url 'app:myorderdetail' %}?myorder=2">代付款</a></li>
             <li class="item-tab" data-type="20"><a href="{% url 'app:myorderdetail' %}?myorder=3">待评价</a></li>
@@ -201,7 +202,7 @@
     </div>
     <div class="pager" id="pager"><a href="javascript:void(0);" class="current">1</a></div>
 </div>
-
+{% endblock mysuper %}
 
 
 
@@ -515,9 +516,9 @@
 <script type="text/javascript">
     var qimoClientId = { userId: '+3KnwMLlw/sw/+CuxQMLiw==_f327bff0f1918eff_2019/9/19 19:42:58', nickName: "刘**女士" };// 自定义用户的唯一id,由英文字母,数字,下划线组成
 </script>
-<script type="text/javascript" src="./myorderdetail_files/7moorInit.js" async="async">
+<script type="text/javascript" src="/myorderdetail_files/7moorInit.js" async="async">
 </script>
-<script src="./myorderdetail_files/o_code.js"></script>
+<script src="/myorderdetail_files/o_code.js"></script>
 
     <script>
         $(function () {

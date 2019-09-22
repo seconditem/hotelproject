@@ -11,7 +11,7 @@
 </script>
 <div class="popup confirm-pop" id="confirm-pop" style="">
     <div class="close">
-        <a href="" onclick="closeWindow('confirm-pop');">
+        <a href="{% url 'app:myorderdetail' %}" onclick="closeWindow('confirm-pop');">
             <img src="/static/images/close-icon.gif" /></a>
     </div>
     <div class="titleBar">
@@ -60,7 +60,7 @@
         <dd data-id="ContactMobile">{{ order.phone }}</dd>
     </dl>
     <div class="bottom-btns">
-        <a href="" class="btns btn-light">返回</a>
+        <a href="{% url 'app:myorderdetail' %}" class="btns btn-light">返回</a>
         <a href="{% url 'app:alipay'  order.id %}" class="btns btn-orange"  data-id="submit" id="tj">确定</a>
     </div>
 </div>
