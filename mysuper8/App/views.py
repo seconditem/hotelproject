@@ -297,7 +297,7 @@ def phoneyzm(request,*args,**kwargs):
             request.session['code1'] = num
             request.session['code1'] = "000"
             print(request.session['code1'])
-            print(num, 'zhejiushi 验证ma')
+            print(num, '这就是手机号收到的验证码')
 
             return HttpResponse('ok')
         else:
@@ -305,14 +305,14 @@ def phoneyzm(request,*args,**kwargs):
             num = str(randint(10000, 1000000))
             res = send_sms(phnumber, {'number': num})
             request.session['code1'] = num
-            print(num, 'zhejiushi 验证ma')
+            print(num, '这就是手机号收到的验证码')
             return HttpResponse('ok')
     else:
         if someway == 1:
             num = str(randint(10000, 1000000))
             res = send_sms(phnumber, {'number': num})
             request.session['code1'] = num
-            print(num, 'zhejiushi 验证ma')
+            print(num, '这就是手机号收到的验证码')
             return HttpResponse('ok')
         else:
             num = str(randint(10000, 1000000))
@@ -320,9 +320,9 @@ def phoneyzm(request,*args,**kwargs):
             request.session['code1'] = num
             request.session['code1'] = "000"
             print(request.session['code1'])
-            print(num, 'zhejiushi 验证ma')
+            print(num, '这就是手机号收到的验证码')
             return HttpResponse('ok')
-    print(num,'zhejiushi 验证ma')
+    print(num,'这就是手机号收到的验证码')
     return HttpResponse('ok')
 
 
